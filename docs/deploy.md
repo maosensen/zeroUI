@@ -22,6 +22,8 @@ pnpm cf:deploy   # build and `wrangler deploy`
 
 ## Going live the first time
 
+Done 2026-10-24 (version `bdfd755c`); kept as the checklist for a full re-check.
+
 1. `pnpm cf:deploy` (after the user's go-ahead).
 2. Check the live site: the home page, a docs page, `/studio` (404), `/r/button.json` (JSON).
 3. Install from the live registry into a fresh `shadcn init -d -b base` project, the same test as

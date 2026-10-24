@@ -159,7 +159,11 @@ search, filter, take jobs from and hand them in, lets a dial turn `--zero-slant`
 tabs and a well, and lists every component. The deploy is prepared (2026-10-24): OpenNext on
 Cloudflare Workers, the domain in `wrangler.jsonc` and `src/lib/site.ts`, the bundle checked in a
 local Workers preview (pages, `/studio` a 404, the registry serving JSON and installing into a
-fresh project). Left: going live (docs/deploy.md has the checklist), SEO level 0, v0.1.0.
+fresh project). **Live since 2026-10-24** at https://zeroui.catforest.dev (Worker version
+`bdfd755c`): every route checked, the zone's analytics beacon present once and reporting 204,
+and the documented install commands, run against the live registry in a fresh shadcn project,
+install all five components, the theme and the icons into a project that builds and renders.
+Registered in yPulse (`seo: pending`). Left: SEO level 0, v0.1.0.
 
 `registry.json` → `shadcn build` → `public/r/*.json`; installing a component into a fresh shadcn
 project works. A docs page per component and the showcase. Deployed on Cloudflare Workers
