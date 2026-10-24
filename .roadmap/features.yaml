@@ -32,13 +32,15 @@ features:
   - id: tokens
     title: 设计 token(颜色、字号、描边、斜切角、间距、层级)
     area: 地基
-    status: doing
-    note: 颜色、字号、控件高度、描边、斜切角、层级、轨道内距(--zero-inset,Tabs 加的)已定(src/zero/foundation/tokens.css);Input、Select 不再改动才算完成。
+    status: done
+    completedAt: 2026-10-24
+    note: 颜色、字号、控件高度、描边、斜切角、层级、轨道内距(src/zero/foundation/tokens.css)。第三、四个组件(Input、Select)一处未改,第一阶段的退出检验通过。
   - id: motion
     title: 动效函数(时长、缓动、按下、滑块、展开、切入、故障)
     area: 地基
-    status: doing
-    note: 时长、缓动、按下 / 回弹、滑块(Tabs 在用)、展开、收起、扫光已定(motion.css + motion.ts);切入与故障等 Select 时再定。
+    status: done
+    completedAt: 2026-10-24
+    note: 时长、缓动、按下 / 回弹、滑块、展开、收起、扫光(motion.css + motion.ts),四个组件全部只用这些。切入与故障四个组件都没用到,留给第一个需要它们的组件族再定(docs/plan.md 2026-10-24)。
   - id: icon-spec
     title: 图标规范与第一批图标
     area: 地基
@@ -59,7 +61,9 @@ features:
   - id: select
     title: Select
     area: 组件
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: 触发器是和 Input 同样的内凹井,箭头打开时翻转;弹出层是靠描边抬起的直角方框(粗墨色边 + 外圈细线),从触发器往下展开、收起更快;高亮行是尾端斜切的强调色 slab,已选项前一枚斜块。分组、分隔线、禁用项、长列表滚动。没有改动地基 —— 退出检验通过。
   - id: tabs
     title: Tabs(斜切滑块)
     area: 组件
@@ -83,4 +87,4 @@ features:
     title: 工作台(调 token 与动效,只在本机)
     area: 工作台
     status: doing
-    note: /studio 已有:斜切角与描边粗细两个旋钮,Button、Input、Tabs 的全部状态;生产构建里是 404。
+    note: /studio 已有:斜切角与描边粗细两个旋钮,Button、Input、Select、Tabs 的全部状态;生产构建里是 404。

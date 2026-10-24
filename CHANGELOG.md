@@ -8,6 +8,11 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ### Added
 
+- Select: the trigger is the same sunken well as Input, its chevron flipping
+  when open; the list drops from it in a square box lifted by a double outline,
+  grows in and folds away faster. The highlighted row fills with the accent and
+  the chosen one carries a small slanted mark. Groups, separators, disabled
+  rows, and long lists that scroll.
 - Input: a sunken well with a quiet outline; the whole slab takes the click.
   Focus draws the yellow frame, an invalid value turns the outline red, and the
   caret is the accent. Three sizes and the four cuts.
@@ -24,7 +29,7 @@ All notable changes to zeroUI are documented here. The format is based on
 - The foundation: colour, type, control heights, outline weights and one slant
   angle as tokens; named durations, easings and transitions; the slab, the cut
   block every component is drawn from. One typeface, Montserrat.
-- The studio (local only): every button, input and tab state, with dials for the slant and the
+- The studio (local only): every button, input, select and tab state, with dials for the slant and the
   outline weight.
 
 - The project: a clean shadcn app on Base UI, dark only, with every shadcn

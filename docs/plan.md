@@ -51,6 +51,17 @@ Decisions land here with their date, in the commit that acts on them.
   carries an ink copy of its label clipped to where the slab is that frame, so a label is ink
   exactly where it lies over the accent, never ink on the dark track mid-slide.
 
+- **2026-10-24 — the foundation is settled; cut-in and glitch wait for a component that needs
+  them.** Input and Select, the third and fourth components, changed no token, no motion function
+  and no slab rule, which is phase 1's exit test. None of the four needed the cut-in or the glitch
+  the plan listed among the motion functions, so they are not defined yet: the first component
+  family that needs one adds it here with a dated decision, like any other new token.
+- **2026-10-24 — popups are rectangles lifted by outline.** A slab's cut follows from a known
+  height and a popup's height is whatever its content needs, so popups (Select now; dialogs,
+  menus, popovers later) are square-cornered boxes: a thick ink border, a thin quiet line outside
+  it, the surface with the hatching. They grow from their trigger on the reveal timing and leave on
+  the dismiss timing.
+
 ## Phases
 
 Each phase has an exit test; the next one does not start until it passes.
@@ -92,6 +103,9 @@ foundation could still move: it made slab inputs non-inheriting and added `--zer
 and Select are the exit test: they must change no token and no motion function. Input done
 (2026-10-24) with no change to tokens, motion or the slab — the first half of the exit test
 passed. It brought the Field parts with it (label, description, error) to show its error state.
+Select done (2026-10-24), again with no foundation change: **the exit test passed.** What is left
+of phase 1 is the icon specification and the icons these four components need (today the
+chevrons are one-off drawings inside the components).
 
 **Exit:** the four components are done, and building the third and fourth changed no token and no
 motion function. If they still change, the foundation is not settled yet.

@@ -9,11 +9,36 @@ import {
   FieldLabel,
 } from "@/zero/components/field";
 import { Input } from "@/zero/components/input";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@/zero/components/select";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/zero/components/tabs";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
 const sizes = ["sm", "md", "lg"] as const;
 const cuts = ["end", "start", "both", "none"] as const;
+
+const districts = {
+  harbor: "Harbor",
+  market: "Old market",
+  rail: "Rail yards",
+  tower: "Tower row",
+  canal: "Canal side",
+} as const;
+
+const shifts = Object.fromEntries(
+  Array.from({ length: 24 }, (_, hour) => [
+    String(hour),
+    `${String(hour).padStart(2, "0")}:00 shift`,
+  ]),
+);
 
 /** A placeholder glyph for checking how a button holds an icon, until the icon set exists. */
 function Chevron() {
@@ -221,6 +246,91 @@ export function Workbench() {
                 <FieldError match>That pier closed last season.</FieldError>
               </Field>
             </div>
+          </Row>
+        </Section>
+
+        <Section title="Select">
+          {sizes.map((size) => (
+            <Row key={size} label={size}>
+              <Select items={districts}>
+                <SelectTrigger size={size} className="max-w-64">
+                  <SelectValue placeholder="Pick a district" />
+                </SelectTrigger>
+                <SelectContent>
+                  {Object.entries(districts).map(([value, label]) => (
+                    <SelectItem key={value} value={value}>
+                      {label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select items={districts} defaultValue="rail">
+                <SelectTrigger size={size} className="max-w-64">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {Object.entries(districts).map(([value, label]) => (
+                    <SelectItem key={value} value={value}>
+                      {label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </Row>
+          ))}
+          <Row label="groups">
+            <Select items={districts} defaultValue="market">
+              <SelectTrigger className="max-w-64">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Waterfront</SelectLabel>
+                  <SelectItem value="harbor">Harbor</SelectItem>
+                  <SelectItem value="canal">Canal side</SelectItem>
+                </SelectGroup>
+                <SelectSeparator />
+                <SelectGroup>
+                  <SelectLabel>Inland</SelectLabel>
+                  <SelectItem value="market">Old market</SelectItem>
+                  <SelectItem value="rail">Rail yards</SelectItem>
+                  <SelectItem value="tower" disabled>
+                    Tower row
+                  </SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            <Select items={shifts}>
+              <SelectTrigger className="max-w-64">
+                <SelectValue placeholder="Long list" />
+              </SelectTrigger>
+              <SelectContent className="max-h-72">
+                {Object.entries(shifts).map(([value, label]) => (
+                  <SelectItem key={value} value={value}>
+                    {label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </Row>
+          <Row label="states">
+            <Select items={districts} disabled>
+              <SelectTrigger className="max-w-56">
+                <SelectValue placeholder="Disabled" />
+              </SelectTrigger>
+            </Select>
+            <Select items={districts} defaultValue="harbor">
+              <SelectTrigger aria-invalid className="max-w-56">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(districts).map(([value, label]) => (
+                  <SelectItem key={value} value={value}>
+                    {label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </Row>
         </Section>
 
