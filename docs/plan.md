@@ -107,7 +107,9 @@ Decisions land here with their date, in the commit that acts on them.
   `WebPage`s about it with breadcrumbs; every page embeds the catforest `Organization`. robots
   allows every crawler and names each AI crawler. The share card is drawn with the components
   (`/studio/og`, captured by `pnpm og:capture`, since Chrome's `--screenshot` fires before the
-  tab slab hydrates). The audit (`pnpm seo:audit`) is the gate.
+  tab slab hydrates). The audit (`pnpm seo:audit`) is the gate. Live the same day: L0 10/10 and
+  L1 21/21 against zeroui.catforest.dev, the sitemap pushed to IndexNow (202), and yPulse switched
+  to `seo: public`. Submitting the sitemap in Search Console and Bing is the author's step.
 
 ## Phases
 
@@ -172,7 +174,7 @@ fresh project). **Live since 2026-10-24** at https://zeroui.catforest.dev (Worke
 `bdfd755c`): every route checked, the zone's analytics beacon present once and reporting 204,
 and the documented install commands, run against the live registry in a fresh shadcn project,
 install all five components, the theme and the icons into a project that builds and renders.
-Registered in yPulse (`seo: pending`). Left: SEO level 0, v0.1.0.
+Registered in yPulse; public for SEO the same day (see the SEO decision). Left: v0.1.0.
 
 `registry.json` → `shadcn build` → `public/r/*.json`; installing a component into a fresh shadcn
 project works. A docs page per component and the showcase. Deployed on Cloudflare Workers

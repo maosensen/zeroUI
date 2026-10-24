@@ -90,8 +90,9 @@ features:
   - id: seo
     title: SEO / GEO(分级契约 L0 与 L1)
     area: 站点与文档
-    status: doing
-    note: 经 yPulse matrix:seo 接入模块;src/seo 一份页面清单供 metadata、sitemap、llms.txt、JSON-LD;robots 全放行并逐个列出 AI 爬虫;分享图用组件画、og:capture 截;pnpm seo:audit 为门禁。
+    status: done
+    completedAt: 2026-10-24
+    note: 经 yPulse matrix:seo 接入模块;src/seo 一份页面清单供 metadata、sitemap、llms.txt、JSON-LD;robots 全放行并逐个列出 AI 爬虫;分享图用组件画、og:capture 截;pnpm seo:audit 为门禁。线上体检 L0 10/10、L1 21/21,IndexNow 202;yPulse 里转为 seo:public。Search Console / Bing 的 sitemap 提交由作者做。
   - id: showcase
     title: 对外展示页
     area: 站点与文档
