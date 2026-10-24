@@ -2,6 +2,7 @@
 
 import { type CSSProperties, type ReactNode, useState } from "react";
 import { Button } from "@/zero/components/button";
+import { Tabs, TabsList, TabsPanel, TabsTab } from "@/zero/components/tabs";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
 const sizes = ["sm", "md", "lg"] as const;
@@ -160,6 +161,64 @@ export function Workbench() {
                 Schedule
               </Button>
             </div>
+          </Row>
+        </Section>
+
+        <Section title="Tabs">
+          {sizes.map((size) => (
+            <Row key={size} label={size}>
+              <Tabs size={size} defaultValue="notes">
+                <TabsList>
+                  <TabsTab value="notes">Notes</TabsTab>
+                  <TabsTab value="level">Level</TabsTab>
+                  <TabsTab value="schedule">Schedule</TabsTab>
+                </TabsList>
+              </Tabs>
+            </Row>
+          ))}
+          <Row label="widths">
+            <Tabs defaultValue="all">
+              <TabsList>
+                <TabsTab value="all">All</TabsTab>
+                <TabsTab value="commissions">Open commissions</TabsTab>
+                <TabsTab value="me">Me</TabsTab>
+                <TabsTab value="archive">
+                  Archive
+                  <Chevron />
+                </TabsTab>
+                <TabsTab value="locked" disabled>
+                  Locked
+                </TabsTab>
+              </TabsList>
+            </Tabs>
+          </Row>
+          <Row label="panels">
+            <Tabs defaultValue="today" className="w-full">
+              <TabsList>
+                <TabsTab value="today">Today</TabsTab>
+                <TabsTab value="week">This week</TabsTab>
+                <TabsTab value="later">Later</TabsTab>
+              </TabsList>
+              <TabsPanel
+                value="today"
+                className="font-semibold text-zero-md text-zero-text-2"
+              >
+                Three errands, one delivery across the river, a call at nine.
+              </TabsPanel>
+              <TabsPanel
+                value="week"
+                className="font-semibold text-zero-md text-zero-text-2"
+              >
+                The workshop reopens on Thursday; the parts arrive the day
+                before.
+              </TabsPanel>
+              <TabsPanel
+                value="later"
+                className="font-semibold text-zero-md text-zero-text-2"
+              >
+                Nothing planned yet.
+              </TabsPanel>
+            </Tabs>
           </Row>
         </Section>
       </main>

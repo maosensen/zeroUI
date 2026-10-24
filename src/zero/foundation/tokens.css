@@ -78,6 +78,9 @@
   --zero-stroke: 3px;
   --zero-stroke-thick: 4px;
 
+  /* The space between a track and the slab that moves inside it (tabs, segmented controls). */
+  --zero-inset: 3px;
+
   /* ── The slant ────────────────────────────────────────────────────────
    * One angle for every slanted thing: slab edges, the italic, tilted lettering. Measured from
    * the vertical; a slab's cut is its height × tan(slant). */

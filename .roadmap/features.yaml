@@ -33,12 +33,12 @@ features:
     title: 设计 token(颜色、字号、描边、斜切角、间距、层级)
     area: 地基
     status: doing
-    note: 颜色、字号、控件高度、描边、斜切角、层级已定(src/zero/foundation/tokens.css);第三、四个组件不再改动才算完成。
+    note: 颜色、字号、控件高度、描边、斜切角、层级、轨道内距(--zero-inset,Tabs 加的)已定(src/zero/foundation/tokens.css);Input、Select 不再改动才算完成。
   - id: motion
     title: 动效函数(时长、缓动、按下、滑块、展开、切入、故障)
     area: 地基
     status: doing
-    note: 时长、缓动、按下 / 回弹、滑块、展开、收起、扫光已定(motion.css + motion.ts);切入与故障等 Tabs、Select 时再定。
+    note: 时长、缓动、按下 / 回弹、滑块(Tabs 在用)、展开、收起、扫光已定(motion.css + motion.ts);切入与故障等 Select 时再定。
   - id: icon-spec
     title: 图标规范与第一批图标
     area: 地基
@@ -61,7 +61,9 @@ features:
   - id: tabs
     title: Tabs(斜切滑块)
     area: 组件
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: 两侧斜切的轨道 + 两侧斜切的强调色滑块,弹簧滑到当前页签,两端都与轨道切边平行、相距 --zero-inset;每个页签带一份裁到滑块位置的墨色标签,滑动中标签压在滑块上的部分变黑。三档尺寸。
   # ── 注册表、站点与工作台(第二阶段)──────────────────────────────────
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
@@ -79,4 +81,4 @@ features:
     title: 工作台(调 token 与动效,只在本机)
     area: 工作台
     status: doing
-    note: /studio 已有:斜切角与描边粗细两个旋钮,Button 全部状态;生产构建里是 404。
+    note: /studio 已有:斜切角与描边粗细两个旋钮,Button 与 Tabs 的全部状态;生产构建里是 404。

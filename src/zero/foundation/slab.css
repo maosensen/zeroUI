@@ -25,10 +25,66 @@
  *                     Set them with slab-cut-start, slab-cut-end, slab-cut-both, slab-cut-none.
  *
  * Inputs are read through fallbacks and never declared by the utility itself, so a class that
- * sets one wins whatever order the utilities land in.
+ * sets one wins whatever order the utilities land in. They do not inherit: a slab inside another
+ * slab (a tab in its track) starts from the defaults, not from its parent's fill and outline.
+ * The layers read them through the --_ copies below, which are resolved on the element.
  */
 
+@property --slab-h {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-o {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-gap {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-gap-fill {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-px {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-fill {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-hatch {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-sheen {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-line {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-ink {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-cs {
+  syntax: "*";
+  inherits: false;
+}
+@property --slab-ce {
+  syntax: "*";
+  inherits: false;
+}
+
 @utility slab {
+  --_h: var(--slab-h);
+  --_fill: var(--slab-fill, var(--color-zero-raised));
+  --_hatch: var(--slab-hatch, none);
+  --_sheen: var(--slab-sheen, none);
+  --_gap-fill: var(--slab-gap-fill, transparent);
   --_o: var(--slab-o, var(--zero-stroke));
   --_gap: var(--slab-gap, 0px);
   --_cs: var(--slab-cs, 0);
@@ -63,7 +119,7 @@
     clip-path: polygon(
       calc(
           var(--_cs) *
-          ((var(--slab-h) - var(--_d)) * var(--_t) + var(--_dk)) +
+          ((var(--_h) - var(--_d)) * var(--_t) + var(--_dk)) +
           (1 - var(--_cs)) *
           var(--_d)
         )
@@ -79,7 +135,7 @@
       calc(
           100% -
           var(--_ce) *
-          ((var(--slab-h) - var(--_d)) * var(--_t) + var(--_dk)) -
+          ((var(--_h) - var(--_d)) * var(--_t) + var(--_dk)) -
           (1 - var(--_ce)) *
           var(--_d)
         )
@@ -96,13 +152,13 @@
 
   &::before {
     --_d: var(--_o);
-    background: var(--slab-gap-fill, transparent);
+    background: var(--_gap-fill);
   }
 
   &::after {
     --_d: calc(var(--_o) + var(--_gap));
-    background-color: var(--slab-fill, var(--color-zero-raised));
-    background-image: var(--slab-sheen, none), var(--slab-hatch, none);
+    background-color: var(--_fill);
+    background-image: var(--_sheen), var(--_hatch);
     background-repeat: no-repeat, repeat;
     background-size:
       45% 100%,

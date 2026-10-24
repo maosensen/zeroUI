@@ -40,6 +40,17 @@ Decisions land here with their date, in the commit that acts on them.
   inside it. Yellow on the lime accent is 1.1 : 1, so a yellow outline alone vanishes on the
   primary button; the gap makes the frame read against any fill.
 
+- **2026-10-24 — slab inputs do not inherit** (`@property … inherits: false`); the layers read
+  them through copies resolved on the element. A tab inside its track would otherwise take the
+  track's fill and outline. Came out of Tabs, the second component, while the foundation was still
+  allowed to move. Tabs also added one token, `--zero-inset`: the space between a track and the
+  slab that moves inside it.
+- **2026-10-24 — Tabs: a parallelogram track, a parallelogram slab.** Both are cut on both sides,
+  so the slab sits parallel to the track's cut at either end with no first-or-last special case,
+  exactly `--zero-inset` away. The slab springs (`transition.slide`) to the active tab. Each tab
+  carries an ink copy of its label clipped to where the slab is that frame, so a label is ink
+  exactly where it lies over the accent, never ink on the dark track mid-slide.
+
 ## Phases
 
 Each phase has an exit test; the next one does not start until it passes.
@@ -76,7 +87,9 @@ References for the look: yLookbook's Inter-Knot and Band Tuner sections, which w
 screenshots with everything newly drawn.
 
 Progress: Button done (2026-10-24): four variants, three sizes, four cuts; tokens, motion and
-the slab came out of it, plus the workbench at `/studio`.
+the slab came out of it, plus the workbench at `/studio`. Tabs done (2026-10-24), second, so the
+foundation could still move: it made slab inputs non-inheriting and added `--zero-inset`. Input
+and Select are the exit test: they must change no token and no motion function.
 
 **Exit:** the four components are done, and building the third and fourth changed no token and no
 motion function. If they still change, the foundation is not settled yet.
