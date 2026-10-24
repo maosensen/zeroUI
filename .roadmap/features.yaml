@@ -32,11 +32,13 @@ features:
   - id: tokens
     title: 设计 token(颜色、字号、描边、斜切角、间距、层级)
     area: 地基
-    status: todo
+    status: doing
+    note: 颜色、字号、控件高度、描边、斜切角、层级已定(src/zero/foundation/tokens.css);第三、四个组件不再改动才算完成。
   - id: motion
     title: 动效函数(时长、缓动、按下、滑块、展开、切入、故障)
     area: 地基
-    status: todo
+    status: doing
+    note: 时长、缓动、按下 / 回弹、滑块、展开、收起、扫光已定(motion.css + motion.ts);切入与故障等 Tabs、Select 时再定。
   - id: icon-spec
     title: 图标规范与第一批图标
     area: 地基
@@ -45,7 +47,9 @@ features:
   - id: button
     title: Button
     area: 组件
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: 四种(primary / secondary / danger / ghost)× 三档 × 四种切边;按下回弹、扫光、选中框(黄框 + 墨色间隙)。
   - id: input
     title: Input
     area: 组件
@@ -74,4 +78,5 @@ features:
   - id: studio
     title: 工作台(调 token 与动效,只在本机)
     area: 工作台
-    status: todo
+    status: doing
+    note: /studio 已有:斜切角与描边粗细两个旋钮,Button 全部状态;生产构建里是 404。

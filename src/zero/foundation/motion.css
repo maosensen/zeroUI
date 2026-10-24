@@ -1,0 +1,62 @@
+/*
+ * zeroUI motion, CSS side. The same durations and easings as motion.ts, for transitions written
+ * in CSS (press, hover). Change one, change the other: the two files are a pair.
+ */
+
+:root {
+  --zero-dur-instant: 70ms; /* press down */
+  --zero-dur-fast: 140ms; /* colour changes, hover */
+  --zero-dur-base: 240ms; /* release, small moves */
+  --zero-dur-slow: 420ms; /* reveals, the sheen */
+
+  --zero-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1); /* things arriving */
+  --zero-ease-in: cubic-bezier(0.5, 0, 0.75, 0); /* things leaving */
+  --zero-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --zero-ease-spring: cubic-bezier(
+    0.34,
+    1.7,
+    0.5,
+    1
+  ); /* release: overshoot and settle */
+
+  --zero-press-scale: 0.94;
+}
+
+/*
+ * The sheen: a band of light crossing a slab along the slant, once, when it is pointed at.
+ * It is the top background layer of the slab's fill (slab.css), 45% of the slab wide, so it
+ * stays under the label and inside the outline. The keyframes move only that layer.
+ */
+@keyframes zero-sheen {
+  from {
+    background-position:
+      -100% 0,
+      0 0;
+  }
+  to {
+    background-position:
+      200% 0,
+      0 0;
+  }
+}
+
+@utility sheen {
+  --slab-sheen: linear-gradient(
+    calc(90deg + var(--zero-slant)),
+    transparent 25%,
+    rgb(255 255 255 / 0.42) 50%,
+    transparent 75%
+  );
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover:not(:disabled, [data-disabled])::after {
+      animation: zero-sheen var(--zero-dur-slow) var(--zero-ease-out);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --zero-press-scale: 1;
+  }
+}

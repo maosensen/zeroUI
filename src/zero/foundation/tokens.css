@@ -1,0 +1,94 @@
+/*
+ * zeroUI tokens — the one place colours, type, sizes, outlines and the slant are defined.
+ * Components read these and nothing else; a component that needs a value missing here adds it
+ * here first. Dark only: there is a single set, no light counterpart.
+ *
+ * Everything is namespaced `zero` so it can sit beside shadcn's own variables in a host project.
+ * Tailwind utilities come from the theme namespaces: bg-zero-accent, text-zero-md, h-zero-md,
+ * z-zero-popover and so on.
+ */
+
+@theme {
+  /* ── Colour ─────────────────────────────────────────────────────────────
+   * Ground and surfaces climb in small steps of charcoal; the accent is a single fluorescent
+   * lime. Elevation is shown by outline, not shadow, so there is no shadow colour. */
+  --color-zero-void: #000000; /* bars, the darkest wells */
+  --color-zero-ink: #0a0a0a; /* outlines, and text on the accent */
+  --color-zero-ground: #151515; /* the page */
+  --color-zero-surface: #1f1f1f; /* panels, cards */
+  --color-zero-raised: #2a2a2a; /* things on panels: rows, quiet buttons */
+  --color-zero-lifted: #363636; /* hover on raised */
+  --color-zero-line: #343434; /* dividers and quiet outlines on the ground */
+
+  --color-zero-text: #f5f5f0; /* 16.7 : 1 on ground */
+  --color-zero-text-2: #a6a6a6; /* 7.5 : 1 on ground, 6.8 : 1 on surface */
+  --color-zero-text-3: #707070; /* disabled and incidental; 3.7 : 1 on ground */
+
+  --color-zero-accent: #cde31c; /* 13.8 : 1 against ink */
+  --color-zero-accent-hi: #def44a; /* hover */
+  --color-zero-accent-lo: #a8bd0c; /* pressed */
+  --color-zero-focus: #f2e74b; /* the selection frame: focus, the chosen row. 1.1 : 1 against the
+                                   accent, so a frame always has an ink gap inside it */
+  --color-zero-danger: #e5432c; /* 4.5 : 1 on ground, 5.2 : 1 on void */
+  --color-zero-danger-hi: #ff6a4f;
+
+  /* ── Type ───────────────────────────────────────────────────────────────
+   * One heavy geometric sans with a true italic. Labels are 800–900 and lean with the slant. */
+  --font-zero:
+    var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  --text-zero-xs: 0.75rem; /* 12 */
+  --text-zero-xs--line-height: 1rem;
+  --text-zero-sm: 0.8125rem; /* 13 */
+  --text-zero-sm--line-height: 1.125rem;
+  --text-zero-md: 0.9375rem; /* 15 */
+  --text-zero-md--line-height: 1.25rem;
+  --text-zero-lg: 1.1875rem; /* 19 */
+  --text-zero-lg--line-height: 1.5rem;
+  --text-zero-xl: 1.625rem; /* 26 */
+  --text-zero-xl--line-height: 1.1;
+  --text-zero-2xl: 2.5rem; /* 40 */
+  --text-zero-2xl--line-height: 1;
+  --text-zero-3xl: 4rem; /* 64 */
+  --text-zero-3xl--line-height: 0.9;
+
+  /* ── Control heights ────────────────────────────────────────────────────
+   * Every slab is sized by its height; the cut on its slanted edge follows from it. */
+  --height-zero-sm: 2rem; /* 32 */
+  --height-zero-md: 2.5rem; /* 40 */
+  --height-zero-lg: 3.25rem; /* 52 */
+
+  /* ── Radius ─────────────────────────────────────────────────────────────
+   * Corners are cut, not rounded. The only radius is for things that are round by nature
+   * (avatars, dots). */
+  --radius-zero-none: 0;
+  --radius-zero-round: 9999px;
+
+  /* ── Layers ─────────────────────────────────────────────────────────── */
+  --z-index-zero-raised: 1;
+  --z-index-zero-sticky: 20;
+  --z-index-zero-popover: 40;
+  --z-index-zero-overlay: 50;
+  --z-index-zero-toast: 60;
+}
+
+:root {
+  /* ── Outline weights ──────────────────────────────────────────────────── */
+  --zero-stroke-thin: 2px;
+  --zero-stroke: 3px;
+  --zero-stroke-thick: 4px;
+
+  /* ── The slant ────────────────────────────────────────────────────────
+   * One angle for every slanted thing: slab edges, the italic, tilted lettering. Measured from
+   * the vertical; a slab's cut is its height × tan(slant). */
+  --zero-slant: 14deg;
+  --zero-tilt: -6deg; /* big display lettering is rotated, not just italic */
+
+  /* ── Texture ─────────────────────────────────────────────────────────
+   * A fine diagonal hatching laid over dark fills, running with the slant. */
+  --zero-hatch: repeating-linear-gradient(
+    135deg,
+    rgb(255 255 255 / 0.025) 0 2px,
+    transparent 2px 6px
+  );
+}

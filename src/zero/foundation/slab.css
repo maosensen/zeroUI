@@ -1,0 +1,134 @@
+/*
+ * The slab: zeroUI's basic shape. A flat block whose start and/or end edge is cut on the slant,
+ * wearing a thick outline. Both cut edges lean the same way (/), so a slab cut on both sides is a
+ * parallelogram, and slabs set side by side nest into each other.
+ *
+ * How it is drawn, in three clipped layers (a border cannot be used: the clip would cut it off on
+ * the slanted edges):
+ *   the element   the outer shape, painted in the outline colour
+ *   ::before      the shape moved inward by the outline weight: the gap (transparent unless set)
+ *   ::after       moved inward again by the gap: the fill, the hatching and the sheen
+ * With no gap, the fill sits directly inside the outline. The focus frame opens a gap in ink, so
+ * the frame reads against any fill, the accent included.
+ *
+ * Inputs, all custom properties on the element, all optional except --slab-h:
+ *   --slab-h          height; the cut is --slab-h × tan(slant)
+ *   --slab-o          outline weight                     var(--zero-stroke)
+ *   --slab-gap        gap between outline and fill        0
+ *   --slab-gap-fill   gap colour                          transparent
+ *   --slab-px         inline padding before the cut       1rem
+ *   --slab-fill       fill                                var(--color-zero-raised)
+ *   --slab-hatch      a texture over the fill             none
+ *   --slab-line       outline colour                      var(--color-zero-ink)
+ *   --slab-ink        text colour                         var(--color-zero-text)
+ *   --slab-cs / --slab-ce   1 cuts the start / end edge, 0 keeps it square (default: end cut).
+ *                     Set them with slab-cut-start, slab-cut-end, slab-cut-both, slab-cut-none.
+ *
+ * Inputs are read through fallbacks and never declared by the utility itself, so a class that
+ * sets one wins whatever order the utilities land in.
+ */
+
+@utility slab {
+  --_o: var(--slab-o, var(--zero-stroke));
+  --_gap: var(--slab-gap, 0px);
+  --_cs: var(--slab-cs, 0);
+  --_ce: var(--slab-ce, 1);
+  --_t: tan(var(--zero-slant));
+  --_cut: calc(var(--slab-h) * var(--_t));
+
+  position: relative;
+  isolation: isolate;
+  height: var(--slab-h);
+  padding-inline: calc(var(--slab-px, 1rem) + var(--_cs) * var(--_cut) * 0.5)
+    calc(var(--slab-px, 1rem) + var(--_ce) * var(--_cut) * 0.5);
+  background-color: var(--slab-line, var(--color-zero-ink));
+  color: var(--slab-ink, var(--color-zero-text));
+  clip-path: polygon(
+    calc(var(--_cs) * var(--_cut)) 0,
+    100% 0,
+    calc(100% - var(--_ce) * var(--_cut)) 100%,
+    0 100%
+  );
+
+  /* The outer shape moved inward by --_d on every side. Declared on each layer so --_d resolves
+     there. A cut edge moved inward by d moves sideways by d / cos(slant). */
+  &::before,
+  &::after {
+    --_dk: calc(var(--_d) / cos(var(--zero-slant)));
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    clip-path: polygon(
+      calc(
+          var(--_cs) *
+          ((var(--slab-h) - var(--_d)) * var(--_t) + var(--_dk)) +
+          (1 - var(--_cs)) *
+          var(--_d)
+        )
+        var(--_d),
+      calc(
+          100% -
+          var(--_ce) *
+          (var(--_d) * var(--_t) + var(--_dk)) -
+          (1 - var(--_ce)) *
+          var(--_d)
+        )
+        var(--_d),
+      calc(
+          100% -
+          var(--_ce) *
+          ((var(--slab-h) - var(--_d)) * var(--_t) + var(--_dk)) -
+          (1 - var(--_ce)) *
+          var(--_d)
+        )
+        calc(100% - var(--_d)),
+      calc(
+          var(--_cs) *
+          (var(--_d) * var(--_t) + var(--_dk)) +
+          (1 - var(--_cs)) *
+          var(--_d)
+        )
+        calc(100% - var(--_d))
+    );
+  }
+
+  &::before {
+    --_d: var(--_o);
+    background: var(--slab-gap-fill, transparent);
+  }
+
+  &::after {
+    --_d: calc(var(--_o) + var(--_gap));
+    background-color: var(--slab-fill, var(--color-zero-raised));
+    background-image: var(--slab-sheen, none), var(--slab-hatch, none);
+    background-repeat: no-repeat, repeat;
+    background-size:
+      45% 100%,
+      auto;
+    background-position:
+      -100% 0,
+      0 0;
+  }
+}
+
+@utility slab-cut-start {
+  --slab-cs: 1;
+  --slab-ce: 0;
+}
+
+@utility slab-cut-end {
+  --slab-cs: 0;
+  --slab-ce: 1;
+}
+
+@utility slab-cut-both {
+  --slab-cs: 1;
+  --slab-ce: 1;
+}
+
+@utility slab-cut-none {
+  --slab-cs: 0;
+  --slab-ce: 0;
+}

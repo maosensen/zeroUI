@@ -24,6 +24,22 @@ Decisions land here with their date, in the commit that acts on them.
   the props, the install command per component), `/studio` the workbench for tuning tokens and
   motion, which only runs locally and is never deployed.
 
+- **2026-10-24 — zeroUI lives in `src/zero/`.** `foundation/` (tokens.css; motion.css and
+  motion.ts, a pair holding the same numbers; slab.css), `components/`, and `lib/utils.ts`, its own
+  `cn` that knows the zero type scale (a host project's `cn` would read `text-zero-md` as a colour).
+  The registry ships this folder; the app only consumes it. Tokens are namespaced `zero` so they sit
+  beside shadcn's variables in a host project.
+- **2026-10-24 — one typeface: Montserrat** (variable weight, true italic) behind `--font-zero`.
+  Labels are 800–900 and italic; display lettering is also rotated by `--zero-tilt`.
+- **2026-10-24 — the slab is three clipped layers, not a border.** The element is the outer shape
+  in the outline colour, `::before` the gap, `::after` the fill (with the hatching and the sheen as
+  background layers). A border would be cut away on the slanted edges. One angle, `--zero-slant`
+  (14°), drives every cut: a slab's cut is its height × tan(slant), and each inner layer is the
+  outer shape moved inward exactly, so the outline stays even at any slant and weight.
+- **2026-10-24 — focus is the selection frame:** the outline turns yellow and an ink gap opens
+  inside it. Yellow on the lime accent is 1.1 : 1, so a yellow outline alone vanishes on the
+  primary button; the gap makes the frame read against any fill.
+
 ## Phases
 
 Each phase has an exit test; the next one does not start until it passes.
@@ -58,6 +74,9 @@ Out of it come:
 
 References for the look: yLookbook's Inter-Knot and Band Tuner sections, which were rebuilt from
 screenshots with everything newly drawn.
+
+Progress: Button done (2026-10-24): four variants, three sizes, four cuts; tokens, motion and
+the slab came out of it, plus the workbench at `/studio`.
 
 **Exit:** the four components are done, and building the third and fourth changed no token and no
 motion function. If they still change, the foundation is not settled yet.

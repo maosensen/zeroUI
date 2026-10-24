@@ -70,12 +70,20 @@ src/
 │   ├── ui/               # shadcn components — edit freely
 │   ├── providers.tsx     # Root provider stack (QueryClient + Theme)
 │   └── theme-provider.tsx
-└── lib/
-    ├── logger.ts
-    ├── get-query-client.ts
-    ├── stores/           # zustand stores, one file per store
-    └── utils.ts          # shadcn-generated `cn()` lives here
+├── lib/
+│   ├── logger.ts
+│   ├── get-query-client.ts
+│   ├── stores/           # zustand stores, one file per store
+│   └── utils.ts          # shadcn-generated `cn()` lives here
+└── zero/                 # zeroUI itself: everything the registry ships
+    ├── zero.css          # the foundation's CSS entry, imported by app/globals.css
+    ├── foundation/       # tokens.css, motion.css + motion.ts (a pair), slab.css
+    ├── components/       # zeroUI components; import only from foundation/ and lib/
+    └── lib/utils.ts      # zeroUI's own `cn()`, aware of the zero type scale
 ```
+
+`src/app/studio` is the workbench (dials for the slant and outline, every component in every
+state); it 404s in production builds.
 
 ### Logging
 
