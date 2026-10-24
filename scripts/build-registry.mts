@@ -19,9 +19,9 @@
  */
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import postcss, { type ChildNode, type Container } from "postcss";
+import { SITE_URL } from "../src/lib/site.ts";
 
 const NAMESPACE = "@zeroui";
-const HOMEPAGE = "https://zeroui.catforest.dev";
 
 type CssObject = { [key: string]: string | CssObject };
 
@@ -123,7 +123,7 @@ const component = (
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "zeroui",
-  homepage: HOMEPAGE,
+  homepage: SITE_URL,
   items: [
     {
       name: "font",

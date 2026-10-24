@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { REGISTRY_URL } from "@/lib/site";
 import { CodeBlock } from "./_components/code-block";
 import { DocHeader, DocSection, Prose } from "./_components/doc";
-import { REGISTRY_URL } from "./_components/install";
 
 export const metadata: Metadata = {
   title: "Getting started",

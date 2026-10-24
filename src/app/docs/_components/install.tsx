@@ -1,7 +1,6 @@
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
+import { REGISTRY_URL } from "@/lib/site";
 import { CodeBlock } from "./code-block";
-
-export const REGISTRY_URL = "https://zeroui.catforest.dev/r/{name}.json";
 
 const runners = [
   { id: "pnpm", run: "pnpm dlx" },

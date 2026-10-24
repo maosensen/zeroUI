@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "zeroui",
+  "compatibility_date": "2026-10-19",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "workers_dev": true,
+  "minify": true,
+  // The public site and the registry (/r/*.json) both live here; the registry URL in
+  // scripts/build-registry.mts and the docs must match this domain.
+  "routes": [
+    {
+      "pattern": "zeroui.catforest.dev",
+      "custom_domain": true
+    }
+  ]
+}

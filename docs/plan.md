@@ -88,7 +88,7 @@ Decisions land here with their date, in the commit that acts on them.
   five components.
 - **2026-10-24 — the foundation CSS reaches the host through the item, not an @import.** shadcn
   merges an item's `css` into the host stylesheet but cannot know the path from that stylesheet to
-  a file it wrote. `scripts/build-registry.ts` converts `src/styles/zero/*.css`: `@theme`
+  a file it wrote. `scripts/build-registry.mts` converts `src/styles/zero/*.css`: `@theme`
   declarations go to `cssVars.theme` (shadcn writes them into `@theme inline`; colours as a raw
   `--zero-*` on `:root` plus `--color-zero-*` pointing at it, shadcn's own pattern), everything
   else to `css`. The sheen lost its nested `@media` for this: no hover or reduced motion now set
@@ -156,7 +156,10 @@ install commands per package manager, live demos whose shown code is the demo fi
 behaviour in words, and a props table per part pointing at the Base UI part underneath. The
 showcase is done (2026-10-24): the home page puts the components to work in a job board you can
 search, filter, take jobs from and hand them in, lets a dial turn `--zero-slant` under a button,
-tabs and a well, and lists every component. Left: the deploy, v0.1.0.
+tabs and a well, and lists every component. The deploy is prepared (2026-10-24): OpenNext on
+Cloudflare Workers, the domain in `wrangler.jsonc` and `src/lib/site.ts`, the bundle checked in a
+local Workers preview (pages, `/studio` a 404, the registry serving JSON and installing into a
+fresh project). Left: going live (docs/deploy.md has the checklist), SEO level 0, v0.1.0.
 
 `registry.json` → `shadcn build` → `public/r/*.json`; installing a component into a fresh shadcn
 project works. A docs page per component and the showcase. Deployed on Cloudflare Workers

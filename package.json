@@ -9,7 +9,10 @@
     "start": "next start --port 4374",
     "lint": "biome check",
     "format": "biome format --write",
-    "registry:build": "node scripts/build-registry.ts && shadcn build"
+    "registry:build": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-registry.mts && shadcn build",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "pnpm cf:build && opennextjs-cloudflare preview --port 4378",
+    "cf:deploy": "pnpm cf:build && wrangler deploy"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -42,6 +45,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.2",
+    "@opennextjs/cloudflare": "^1.20.13",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -50,7 +54,8 @@
     "pino-pretty": "^13.2.0",
     "postcss": "^8.5.31",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.152.0"
   },
   "packageManager": "pnpm@10.33.4"
 }

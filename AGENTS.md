@@ -103,9 +103,16 @@ source, so demo and code cannot drift. Code is highlighted on the server (`_lib/
 cached with `"use cache"`) in zeroUI's own colours. A new component gets demos, a page, and an
 entry in `_nav.ts`.
 
+### Deploy
+
+Cloudflare Workers through OpenNext: `pnpm cf:build`, `pnpm cf:preview` (port 4378),
+`pnpm cf:deploy`. The domain lives in `wrangler.jsonc` and `src/lib/site.ts` together. Deploying
+is going live — only when the user says so. Details and the first-launch checklist:
+[docs/deploy.md](docs/deploy.md).
+
 ### Registry
 
-`pnpm registry:build` runs `scripts/build-registry.ts` (writes `registry.json`, converting the
+`pnpm registry:build` runs `scripts/build-registry.mts` (writes `registry.json`, converting the
 foundation CSS into the item's `css` and `cssVars`) and then `shadcn build` (writes `public/r/`).
 Both outputs are generated and ignored by git; `pnpm build` runs it first. A new component gets an
 entry in the script. The script's header lists the CSS shapes shadcn can merge — the foundation

@@ -2,12 +2,12 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Button } from "@/components/zero/button";
 import { ArrowRightIcon } from "@/components/zero/icons";
+import { REGISTRY_URL } from "@/lib/site";
 import { ComponentIndex } from "./_showcase/component-index";
 import { JobBoard } from "./_showcase/job-board";
 import { SlantDial } from "./_showcase/slant-dial";
 import { SiteHeader } from "./_site/site-header";
 import { CodeBlock } from "./docs/_components/code-block";
-import { REGISTRY_URL } from "./docs/_components/install";
 
 /** The showcase: what zeroUI looks like at work, and the way into the docs. */
 

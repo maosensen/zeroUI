@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 // zeroUI's one typeface (tokens.css: --font-zero). Variable weight, with a true italic.
@@ -17,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: { default: "zeroUI", template: "%s · zeroUI" },
   description:
     "A dark-only component library built on shadcn: its own tokens, motion and icons, installed through a shadcn registry.",
