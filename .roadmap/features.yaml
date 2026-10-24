@@ -96,30 +96,35 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 两侧斜切的小 slab,未选是内凹的井,选中填强调色、黑勾弹入;半选显示减号。尺寸用 em,跟着标签文字走。
   - id: radio-group
     title: Radio group
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 和 Checkbox 同样的小井,选中的那个里嵌一块强调色 slab(Tabs 的几何),弹入;勾选填满、单选嵌块,两者不会看混。
   - id: switch
     title: Switch
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 斜切轨道 + 一块滑块;打开时轨道填强调色,滑块变墨色、带过冲弹到另一端,两端都与轨道切边平行、相距 --zero-inset。
   - id: textarea
     title: Textarea
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 与 Input 同一口井;高度随内容长,所以按「高度不定 = 直角矩形」的规则做成矩形;在 Field 里就是 Field 的控件。
   - id: slider
     title: Slider
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 细的斜切轨道,已选段强调色,每个拇指一块 slab,拖动时转强调色;一个值或两个值的区间。
   # ── 注册表、站点与工作台(第二阶段)──────────────────────────────────
   # ── 浮层家族(第三阶段)──────────────────────────────────────────────
@@ -128,96 +133,112 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 暗下来的页面上一块 panel;黑色标题栏、倾斜标题、角上的关闭键;从中心展开、收起更快(pop),背景淡入(fade)。
   - id: sheet
     title: Sheet
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 从屏幕一边滑入并贴着那一边的对话框,朝页面的一侧是墨色粗边;上下左右四边;减弱动态效果时只淡入。
   - id: popover
     title: Popover
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 触发器旁边的一块 panel,放几行字或一个小表单;从触发器展开。
   - id: tooltip
     title: Tooltip
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 只一行,所以高度已知、做成两侧斜切的浅色 slab;悬停与键盘聚焦都会打开,TooltipProvider 里相邻的立即打开。
   - id: dropdown-menu
     title: Dropdown menu
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 行用 Select 的行(尾端斜切、高亮填强调色);图标、快捷键、勾选行、单选行(斜块)、危险行;暂无子菜单。
   - id: alert
     title: Alert
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 直角方框、起始边与徽章用类型色;信息/成功/警告/危险四种,颜色全用已有 token;新增 done 徽章图标。
   - id: progress
     title: Progress
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 斜切细轨道 + 强调色填充;segments 分段(一格格亮起);无值时小块来回扫,减弱动态时改为静止的暗色满条。
   - id: skeleton
     title: Skeleton
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 方块、斜切文字行、控件大小的 slab 三种形状;沿斜角循环划过的光(glint),减弱动态时停住;SkeletonText 多行。
   - id: toast
     title: Toast
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: Alert 的样子加浮起轮廓;从右滑入右下角,最新的贴角;右滑或关闭按钮提前关掉,其余收拢;最多同时三条,可带一个动作按钮。
   - id: card
     title: Card
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 直角方框(墨色边框 + 表面 + 斜纹);标题在黑色条上,尾端放 CardAction;页脚细线分隔;interactive 悬停时轮廓变强调色。
   - id: table
     title: Table
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 表头黑条 + 小号斜体大写;单元格用正文字体;悬停行变亮,选中行保持并在起始边加强调色;过宽时横向滚动。
   - id: badge
     title: Badge
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 两侧斜切的小 slab,四种(强调色、灰、黑色凹槽描边、危险红);可带图标,render 可变成链接。
   - id: avatar
     title: Avatar
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 圆形(按 tokens 的约定,天生圆的东西才用圆角),墨色圈加细线轮廓;三种尺寸对齐控件高度;首字母兜底、状态圆点、重叠的头像组与计数。
   - id: breadcrumb
     title: Breadcrumb
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 斜体路径,用斜切短条分隔;上级页面安静、悬停变亮,当前页最亮最粗;省略号用新的 more 图标;render 接路由链接。
   - id: pagination
     title: Pagination
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 每页是两侧斜切的小 Button slab,像 tabs 一样嵌套;当前页填强调色;上一页/下一页带箭头,手机上只留箭头。
   - id: sidebar
     title: Sidebar
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.1
     note: 黑色斜纹侧栏,行用 Dropdown menu 的行,当前页填强调色;可整个收起或折成图标栏(折叠时 tooltip 显示名称),手机上是 Sheet;⌘B / Ctrl+B 切换;子菜单、计数。暂无 floating/inset 变体、拖拽条、记住状态的 cookie。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)

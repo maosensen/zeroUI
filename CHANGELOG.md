@@ -6,6 +6,11 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-24
+
+Twenty-one more components, in five families: forms, overlays, feedback, data
+display and navigation. Running text now has its own typeface.
+
 ### Added
 
 - **Checkbox** — a small slanted well that fills with the accent when checked,
@@ -61,6 +66,9 @@ All notable changes to zeroUI are documented here. The format is based on
   opens as a sheet on phones, and toggles with ⌘B / Ctrl+B.
 - **More and sidebar icons** — three small leaning slabs for what is left
   out, and a frame with its side column filled.
+- **Waiting motion** — a loop timing for things that repeat while something
+  loads: a sweep for an unknown amount and a glint across placeholders, both
+  still under reduced motion.
 
 ### Changed
 
@@ -117,5 +125,6 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/maosensen/zeroUI/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/maosensen/zeroUI/releases/tag/v0.1.0
