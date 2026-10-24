@@ -8,6 +8,9 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ### Added
 
+- The showcase: a home page that puts the components to work — a job board you
+  can search, filter, take jobs from and hand them in, a dial that turns the
+  slant under a button, tabs and a field, and an index of every component.
 - Docs: a getting-started page, a page for each component and one for the
   icons — install commands for pnpm, npm, yarn and bun, live demos with their
   code, how each behaves, and every prop.

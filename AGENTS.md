@@ -89,6 +89,12 @@ for the host's plain `cn`) and never a path ending in `/lib/utils`.
 `src/app/studio` is the workbench (dials for the slant and outline, the icon sheet, every
 component in every state); it 404s in production builds.
 
+### Site
+
+`/` is the showcase (src/app/page.tsx, pieces in `_showcase/`): a working job board built from the
+components, a dial on `--zero-slant`, and the component index. `_site/site-header.tsx` is the bar
+shared by the showcase and the docs. Everything written into the showcase is invented for it.
+
 ### Docs
 
 `/docs` (src/app/docs): one page per component — install commands, live demos, behaviour, a props

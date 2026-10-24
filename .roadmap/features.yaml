@@ -90,7 +90,9 @@ features:
   - id: showcase
     title: 对外展示页
     area: 站点与文档
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: 首页:大号倾斜字的首屏 + 安装命令;一块能用的「委托板」(Tabs 切开放 / 已接 / 完成,搜索、按街区筛选、接单、交付);一个转 --zero-slant 的旋钮,按钮、页签、输入框一起重新切角;组件索引。文档与首页共用顶栏。手机宽度下委托板的标题折成两行。
   - id: studio
     title: 工作台(调 token 与动效,只在本机)
     area: 工作台

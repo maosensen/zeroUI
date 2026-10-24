@@ -1,0 +1,61 @@
+import Link from "next/link";
+import { ArrowRightIcon } from "@/components/zero/icons";
+
+const entries = [
+  {
+    href: "/docs/button",
+    name: "Button",
+    line: "A slab that drops when pressed and springs back.",
+  },
+  {
+    href: "/docs/input",
+    name: "Input",
+    line: "An inset well, with room for an icon or an action.",
+  },
+  {
+    href: "/docs/field",
+    name: "Field",
+    line: "Label, help and an error that slides in.",
+  },
+  {
+    href: "/docs/select",
+    name: "Select",
+    line: "A popup lifted by outline; the row lights up.",
+  },
+  {
+    href: "/docs/tabs",
+    name: "Tabs",
+    line: "A slab that springs along a slanted track.",
+  },
+  {
+    href: "/docs/icons",
+    name: "Icons",
+    line: "Nineteen solid glyphs on the same slant.",
+  },
+];
+
+/** Every component, as a slab that leads to its page. */
+export function ComponentIndex() {
+  return (
+    <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {entries.map(({ href, name, line }) => (
+        <li key={href}>
+          <Link
+            href={href}
+            className="group slab slab-cut-end flex items-center gap-4 outline-none [--slab-fill:var(--color-zero-raised)] [--slab-h:5.5rem] [--slab-px:1.25rem] hover:[--slab-fill:var(--color-zero-lifted)] focus-visible:[--slab-gap-fill:var(--color-zero-ink)] focus-visible:[--slab-gap:var(--zero-stroke-thin)] focus-visible:[--slab-line:var(--color-zero-focus)]"
+          >
+            <span className="grid min-w-0 flex-1 gap-1">
+              <span className="font-black font-zero text-zero-lg italic">
+                {name}
+              </span>
+              <span className="font-medium text-zero-sm text-zero-text-2">
+                {line}
+              </span>
+            </span>
+            <ArrowRightIcon className="text-zero-text-3 transition-[translate,color] duration-(--zero-dur-fast) ease-(--zero-ease-out) group-hover:translate-x-1 group-hover:text-zero-accent motion-reduce:group-hover:translate-x-0" />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}

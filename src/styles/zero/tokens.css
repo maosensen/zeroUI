@@ -82,8 +82,9 @@
   --zero-inset: 3px;
 
   /* ── The slant ────────────────────────────────────────────────────────
-   * One angle for every slanted thing: slab edges, the italic, tilted lettering. Measured from
-   * the vertical; a slab's cut is its height × tan(slant). */
+   * One angle for every slanted cut: slab edges and the slanted marks. Set to sit with
+   * Montserrat's italic, which keeps its own angle; icons draw it into their paths at 1 : 4.
+   * Measured from the vertical; a slab's cut is its height × tan(slant). */
   --zero-slant: 14deg;
   --zero-tilt: -6deg; /* big display lettering is rotated, not just italic */
 
