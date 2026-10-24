@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 4374",
+    "prebuild": "pnpm registry:build",
     "build": "next build",
     "start": "next start --port 4374",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "registry:build": "node scripts/build-registry.ts && shadcn build"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -46,6 +48,7 @@
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "pino-pretty": "^13.2.0",
+    "postcss": "^8.5.31",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

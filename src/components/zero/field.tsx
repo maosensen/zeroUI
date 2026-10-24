@@ -1,5 +1,5 @@
 import { Field as FieldPrimitive } from "@base-ui/react/field";
-import { cn } from "@/zero/lib/utils";
+import { cn } from "@/lib/zero/cn";
 
 /*
  * The parts around a control: label, description, error. Validation and the invalid state come

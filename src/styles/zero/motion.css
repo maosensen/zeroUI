@@ -20,23 +20,32 @@
   ); /* release: overshoot and settle */
 
   --zero-press-scale: 0.94;
+  --zero-sheen-dur: var(--zero-dur-slow);
 }
 
 /*
  * The sheen: a band of light crossing a slab along the slant, once, when it is pointed at.
  * It is the top background layer of the slab's fill (slab.css), 45% of the slab wide, so it
  * stays under the label and inside the outline. The keyframes move only that layer.
+ *
+ * The keyframes live in @theme and run through --animate-zero-sheen, so Tailwind keeps them
+ * wherever the sheen is used. Where there is no hover, or motion is reduced, the sheen's duration
+ * drops to zero and it does not play.
  */
-@keyframes zero-sheen {
-  from {
-    background-position:
-      -100% 0,
-      0 0;
-  }
-  to {
-    background-position:
-      200% 0,
-      0 0;
+@theme {
+  --animate-zero-sheen: zero-sheen var(--zero-sheen-dur) var(--zero-ease-out);
+
+  @keyframes zero-sheen {
+    from {
+      background-position:
+        -100% 0,
+        0 0;
+    }
+    to {
+      background-position:
+        200% 0,
+        0 0;
+    }
   }
 }
 
@@ -48,15 +57,20 @@
     transparent 75%
   );
 
-  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    &:hover:not(:disabled, [data-disabled])::after {
-      animation: zero-sheen var(--zero-dur-slow) var(--zero-ease-out);
-    }
+  &:hover:not(:disabled, [data-disabled])::after {
+    animation: var(--animate-zero-sheen);
+  }
+}
+
+@media (hover: none) {
+  :root {
+    --zero-sheen-dur: 0s;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
     --zero-press-scale: 1;
+    --zero-sheen-dur: 0s;
   }
 }

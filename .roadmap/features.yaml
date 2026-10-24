@@ -16,7 +16,9 @@ modules:
   - id: install-works
     title: 在一个全新的 shadcn 项目里装得上、跑得起来
     tier: required
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: shadcn init -d -b base 新建的 Next 项目,@zeroui 指向本机 registry,五个组件 + theme + icons 一条命令装上;import 全部落对、带类型检查的生产构建通过、页面与工作台一致。部署后要对线上地址再装一次。
 
 features:
   # ── 工程与基建 ────────────────────────────────────────────────────────
@@ -76,7 +78,9 @@ features:
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: '@zeroui 命名空间:registry add 一次,之后 shadcn add @zeroui/button。29 项:font、foundation、theme、icon、19 个图标 + icons、五个组件。scripts/build-registry.ts 把 src/styles/zero 的 CSS 转成条目的 css 与 cssVars,再 shadcn build 出 public/r。'
   - id: docs
     title: 文档页(每个组件的演示、属性、安装命令)
     area: 站点与文档

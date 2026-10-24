@@ -1,4 +1,0 @@
-/* zeroUI's foundation, in the order it depends on itself. Import once, after tailwindcss. */
-@import "./foundation/tokens.css";
-@import "./foundation/motion.css";
-@import "./foundation/slab.css";

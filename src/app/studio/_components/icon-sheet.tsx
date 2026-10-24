@@ -1,4 +1,4 @@
-import * as icons from "@/zero/icons";
+import * as icons from "@/components/zero/icons";
 
 const set = Object.entries(icons).filter(
   ([name]) => name.endsWith("Icon") && name !== "createIcon",

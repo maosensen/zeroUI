@@ -67,23 +67,35 @@ Use these for their respective domains. Do not introduce alternatives without ex
 src/
 ├── app/                  # App Router routes, layouts, route handlers
 ├── components/
-│   ├── ui/               # shadcn components — edit freely
+│   ├── ui/               # shadcn's neutral set — a starting point, never imported by zero/
+│   ├── zero/             # zeroUI components (registry targets @components/zero/…)
+│   │   └── icons/        # icon.tsx (createIcon) and one file per icon
 │   ├── providers.tsx     # Root provider stack (QueryClient + Theme)
 │   └── theme-provider.tsx
 ├── lib/
+│   ├── zero/             # cn.ts (aware of the zero type scale), motion.ts (pairs motion.css)
 │   ├── logger.ts
 │   ├── get-query-client.ts
 │   ├── stores/           # zustand stores, one file per store
-│   └── utils.ts          # shadcn-generated `cn()` lives here
-└── zero/                 # zeroUI itself: everything the registry ships
-    ├── zero.css          # the foundation's CSS entry, imported by app/globals.css
-    ├── foundation/       # tokens.css, motion.css + motion.ts (a pair), slab.css
-    ├── components/       # zeroUI components; import only from foundation/ and lib/
-    └── lib/utils.ts      # zeroUI's own `cn()`, aware of the zero type scale
+│   └── utils.ts          # shadcn-generated `cn()` for the neutral set
+└── styles/zero/          # the foundation's CSS: zero.css imports tokens, motion, slab
 ```
 
-`src/app/studio` is the workbench (dials for the slant and outline, every component in every
-state); it 404s in production builds.
+The paths are shadcn's on purpose: on install, shadcn rewrites `@/components/…` and `@/lib/…`
+imports to the host's aliases, so zeroUI files import each other only through
+`@/components/zero/…`, `@/lib/zero/…`, or `./` within a folder. Never `@/lib/utils` (it is swapped
+for the host's plain `cn`) and never a path ending in `/lib/utils`.
+
+`src/app/studio` is the workbench (dials for the slant and outline, the icon sheet, every
+component in every state); it 404s in production builds.
+
+### Registry
+
+`pnpm registry:build` runs `scripts/build-registry.ts` (writes `registry.json`, converting the
+foundation CSS into the item's `css` and `cssVars`) and then `shadcn build` (writes `public/r/`).
+Both outputs are generated and ignored by git; `pnpm build` runs it first. A new component gets an
+entry in the script. The script's header lists the CSS shapes shadcn can merge — the foundation
+CSS must stay within them.
 
 ### Logging
 

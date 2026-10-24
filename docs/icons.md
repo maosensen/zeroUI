@@ -52,7 +52,7 @@ with that title.
 | Action | plus, minus, search, clear, eye, eye-off, external |
 | Activity | spinner (static; whatever spins it supplies the motion) |
 
-Each icon is its own file in `src/zero/icons/`, built with `createIcon` from `icon.tsx`, so the
+Each icon is its own file in `src/components/zero/icons/`, built with `createIcon` from `icon.tsx`, so the
 registry can ship them one at a time. A shape is a path `d` with its fill rule; when an opening
 cannot come from the fill rule alone, `cut` takes a region out of `d` (through a mask) and `over`
 draws on top of it afterwards — that is how eye-off keeps a clear gap on both sides of its slash.

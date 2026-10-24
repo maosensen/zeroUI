@@ -1,6 +1,6 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/zero/lib/utils";
+import { cn } from "@/lib/zero/cn";
 
 /*
  * A slab with a label. The shape, outline and fill come from the `slab` utility; this file only

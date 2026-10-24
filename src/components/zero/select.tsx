@@ -2,8 +2,8 @@
 
 import { Select as SelectPrimitive } from "@base-ui/react/select";
 import { cva, type VariantProps } from "class-variance-authority";
-import { ChevronDownIcon } from "@/zero/icons/chevron-down";
-import { cn } from "@/zero/lib/utils";
+import { ChevronDownIcon } from "@/components/zero/icons/chevron-down";
+import { cn } from "@/lib/zero/cn";
 
 /*
  * Select: a trigger drawn as the same inset well as Input, and a popup that drops from it.

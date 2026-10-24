@@ -1,14 +1,22 @@
 "use client";
 
 import { type CSSProperties, type ReactNode, useState } from "react";
-import { Button } from "@/zero/components/button";
+import { Button } from "@/components/zero/button";
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "@/zero/components/field";
-import { Input, InputAction } from "@/zero/components/input";
+} from "@/components/zero/field";
+import {
+  ArrowRightIcon,
+  ClearIcon,
+  EyeIcon,
+  EyeOffIcon,
+  LockIcon,
+  SearchIcon,
+} from "@/components/zero/icons";
+import { Input, InputAction } from "@/components/zero/input";
 import {
   Select,
   SelectContent,
@@ -18,16 +26,8 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "@/zero/components/select";
-import { Tabs, TabsList, TabsPanel, TabsTab } from "@/zero/components/tabs";
-import {
-  ArrowRightIcon,
-  ClearIcon,
-  EyeIcon,
-  EyeOffIcon,
-  LockIcon,
-  SearchIcon,
-} from "@/zero/icons";
+} from "@/components/zero/select";
+import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
 import { IconSheet } from "./icon-sheet";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;

@@ -73,6 +73,33 @@ Decisions land here with their date, in the commit that acts on them.
   the padding instead of lying over it, so the slots have room; a click almost anywhere on the
   slab still lands in it.
 
+- **2026-10-24 — zeroUI moves to shadcn's paths** (supersedes "zeroUI lives in `src/zero/`"):
+  components and icons in `src/components/zero/`, `cn` and motion in `src/lib/zero/`, the
+  foundation CSS in `src/styles/zero/`. On install shadcn rewrites `@/components/…` and `@/lib/…`
+  imports to the host's aliases, but would turn `@/zero/lib/utils` into the host's own `cn` and
+  flatten `@/zero/components/x` to `@/components/x`; on these paths every import lands where its
+  file does.
+- **2026-10-24 — the registry is the `@zeroui` namespace.** Install is two commands: once
+  `pnpm dlx shadcn@latest registry add @zeroui=https://zeroui.catforest.dev/r/{name}.json`, then
+  `pnpm dlx shadcn@latest add @zeroui/button`. Items name each other `@zeroui/…`, so no host is
+  baked into the registry (pointing the namespace at localhost tests it). Items: `font`
+  (Montserrat), `foundation` (cn, motion, all the CSS), `theme` (the host's shadcn variables drawn
+  from zeroUI's tokens: the host goes dark), `icon` and one item per icon plus `icons`, and the
+  five components.
+- **2026-10-24 — the foundation CSS reaches the host through the item, not an @import.** shadcn
+  merges an item's `css` into the host stylesheet but cannot know the path from that stylesheet to
+  a file it wrote. `scripts/build-registry.ts` converts `src/styles/zero/*.css`: `@theme`
+  declarations go to `cssVars.theme` (shadcn writes them into `@theme inline`; colours as a raw
+  `--zero-*` on `:root` plus `--color-zero-*` pointing at it, shadcn's own pattern), everything
+  else to `css`. The sheen lost its nested `@media` for this: no hover or reduced motion now set
+  its duration to zero.
+- **2026-10-24 — installing into a fresh shadcn project works.** `shadcn init -d -b base` (Next,
+  no `src/`), the namespace pointed at the local registry, all five components plus theme and
+  icons added in one command: imports resolved, the project builds with type checks, and the page
+  looks and behaves as the studio does (tabs slide, select opens, clear clears, sheen keyframes
+  present). Known gap: shadcn's font item cannot ask for italics, so Montserrat's italic is
+  synthesised until the user adds `style: ["normal", "italic"]`; the install message says so.
+
 ## Phases
 
 Each phase has an exit test; the next one does not start until it passes.
@@ -122,6 +149,8 @@ complete.**
 motion function. If they still change, the foundation is not settled yet.
 
 ### Phase 2 — registry and site
+
+Progress: the registry is done and installs into a fresh shadcn project (2026-10-24).
 
 `registry.json` → `shadcn build` → `public/r/*.json`; installing a component into a fresh shadcn
 project works. A docs page per component and the showcase. Deployed on Cloudflare Workers

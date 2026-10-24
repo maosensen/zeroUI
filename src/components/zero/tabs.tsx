@@ -8,8 +8,8 @@ import {
   useReducedMotion,
 } from "motion/react";
 import { type CSSProperties, useEffect, useRef } from "react";
-import { transition } from "@/zero/foundation/motion";
-import { cn } from "@/zero/lib/utils";
+import { cn } from "@/lib/zero/cn";
+import { transition } from "@/lib/zero/motion";
 
 /*
  * Tabs: a track cut on both sides, and a slab of the accent sliding inside it to the active tab.

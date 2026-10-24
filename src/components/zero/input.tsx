@@ -2,7 +2,7 @@ import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { Input as InputPrimitive } from "@base-ui/react/input";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ReactNode } from "react";
-import { cn } from "@/zero/lib/utils";
+import { cn } from "@/lib/zero/cn";
 
 /*
  * A text field as an inset well: a slab filled with the void, outlined quietly, sitting lower than

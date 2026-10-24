@@ -8,6 +8,10 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ### Added
 
+- The registry: add the `@zeroui` namespace once, then install any component
+  with `shadcn add @zeroui/<name>`. It brings the foundation (tokens, motion,
+  the slab) into your stylesheet, Montserrat into your layout, and on request
+  a theme that turns your shadcn variables dark to match.
 - Icons: nineteen solid icons drawn for zeroUI on one grid — chevrons and
   arrows, check, close, alert, info, lock, plus, minus, search, clear, eye,
   eye-off, external and a spinner. Strokes end on the same slant as the slabs.
