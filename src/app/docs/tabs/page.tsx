@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
@@ -6,17 +8,14 @@ import TabsBasic from "../_demos/tabs-basic";
 import TabsIcons from "../_demos/tabs-icons";
 import TabsSizes from "../_demos/tabs-sizes";
 
-export const metadata: Metadata = {
-  title: "Tabs",
-  description:
-    "A slanted track with an accent slab that springs to the active tab.",
-};
+export const metadata = pageMetadata("/docs/tabs");
 
 const tabs = { href: "https://base-ui.com/react/components/tabs" };
 
 export default function TabsPage() {
   return (
     <>
+      <JsonLd data={docGraph("/docs/tabs")} />
       <DocHeader
         title="Tabs"
         lead="A track cut on the slant at both ends, and a slab of the accent that springs to the active tab. Every edge leans the same way, so at either end the slab sits parallel to the track."

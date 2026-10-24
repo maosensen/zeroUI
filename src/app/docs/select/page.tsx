@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
@@ -6,17 +8,14 @@ import SelectBasic from "../_demos/select-basic";
 import SelectField from "../_demos/select-field";
 import SelectGroups from "../_demos/select-groups";
 
-export const metadata: Metadata = {
-  title: "Select",
-  description:
-    "A well for a trigger and a popup lifted by outline; the highlighted row fills with the accent.",
-};
+export const metadata = pageMetadata("/docs/select");
 
 const select = { href: "https://base-ui.com/react/components/select" };
 
 export default function SelectPage() {
   return (
     <>
+      <JsonLd data={docGraph("/docs/select")} />
       <DocHeader
         title="Select"
         lead="The trigger is the same inset well as Input. The list drops from it in a square box lifted by a double outline; the highlighted row fills with the accent."

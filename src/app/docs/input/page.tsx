@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
@@ -8,15 +10,12 @@ import InputSizes from "../_demos/input-sizes";
 import InputSlots from "../_demos/input-slots";
 import InputStates from "../_demos/input-states";
 
-export const metadata: Metadata = {
-  title: "Input",
-  description:
-    "A text field as an inset well, with room for an icon or an action at either end.",
-};
+export const metadata = pageMetadata("/docs/input");
 
 export default function InputPage() {
   return (
     <>
+      <JsonLd data={docGraph("/docs/input")} />
       <DocHeader
         title="Input"
         lead="A text field as an inset well: the void for a fill, a quiet outline, the accent for a caret. A click almost anywhere on the slab lands in it."

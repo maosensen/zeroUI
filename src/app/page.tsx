@@ -2,7 +2,10 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Button } from "@/components/zero/button";
 import { ArrowRightIcon } from "@/components/zero/icons";
+import { JsonLd } from "@/lib/seo/json-ld";
 import { REGISTRY_URL } from "@/lib/site";
+import { homeGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { ComponentIndex } from "./_showcase/component-index";
 import { JobBoard } from "./_showcase/job-board";
 import { SlantDial } from "./_showcase/slant-dial";
@@ -10,6 +13,8 @@ import { SiteHeader } from "./_site/site-header";
 import { CodeBlock } from "./docs/_components/code-block";
 
 /** The showcase: what zeroUI looks like at work, and the way into the docs. */
+
+export const metadata = pageMetadata("/");
 
 function Heading({
   eyebrow,
@@ -46,6 +51,7 @@ const rules = [
 export default function Home() {
   return (
     <div className="relative min-h-svh overflow-x-clip bg-zero-ground bg-(image:--zero-hatch)">
+      <JsonLd data={homeGraph()} />
       <SiteHeader
         end={
           <Button size="sm" nativeButton={false} render={<Link href="/docs" />}>

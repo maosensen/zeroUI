@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import { SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { OG_IMAGE } from "@/seo/site";
 
 // zeroUI's one typeface (tokens.css: --font-zero). Variable weight, with a true italic.
 const montserrat = Montserrat({
@@ -19,6 +20,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  openGraph: {
+    type: "website",
+    siteName: "zeroUI",
+    locale: "en",
+    images: [OG_IMAGE],
+  },
+  twitter: { card: "summary_large_image", images: [OG_IMAGE.url] },
   title: { default: "zeroUI", template: "%s · zeroUI" },
   description:
     "A dark-only component library built on shadcn: its own tokens, motion and icons, installed through a shadcn registry.",

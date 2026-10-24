@@ -20,6 +20,13 @@ pnpm cf:deploy   # build and `wrangler deploy`
   one-time browser authorisation), or `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` for a
   Workers deployment token. Never the matrix DNS administration token.
 
+## After every deploy
+
+```sh
+pnpm seo:audit --base https://zeroui.catforest.dev   # L0 and L1 all green
+pnpm seo:indexnow                                     # push the sitemap to IndexNow (a failure is not fatal)
+```
+
 ## Going live the first time
 
 Done 2026-10-24 (version `bdfd755c`); kept as the checklist for a full re-check.

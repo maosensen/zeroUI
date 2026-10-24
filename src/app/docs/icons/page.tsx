@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
 import * as icons from "@/components/zero/icons";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { CodeBlock } from "../_components/code-block";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
 
-export const metadata: Metadata = {
-  title: "Icons",
-  description:
-    "Nineteen solid icons drawn for zeroUI on one grid, on the same slant as the slabs.",
-};
+export const metadata = pageMetadata("/docs/icons");
 
 // every export ending in Icon except the factory that makes them
 const set = Object.entries(icons).filter(
@@ -24,6 +22,7 @@ const kebab = (name: string) =>
 export default function IconsPage() {
   return (
     <>
+      <JsonLd data={docGraph("/docs/icons")} />
       <DocHeader
         title="Icons"
         lead="Nineteen solid icons drawn for zeroUI on a 24-unit grid. Strokes end on the same slant as the slabs, corners are cut, and only things round by nature are curved."

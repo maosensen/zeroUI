@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
@@ -7,14 +9,12 @@ import ButtonIcon from "../_demos/button-icon";
 import ButtonSizes from "../_demos/button-sizes";
 import ButtonVariants from "../_demos/button-variants";
 
-export const metadata: Metadata = {
-  title: "Button",
-  description: "A slab with a label: four variants, three sizes, four cuts.",
-};
+export const metadata = pageMetadata("/docs/button");
 
 export default function ButtonPage() {
   return (
     <>
+      <JsonLd data={docGraph("/docs/button")} />
       <DocHeader
         title="Button"
         lead="A slab with a label, cut on the slant and outlined in ink. It drops when pressed and springs back past its rest."

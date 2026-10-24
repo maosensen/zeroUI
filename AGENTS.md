@@ -110,6 +110,16 @@ Cloudflare Workers through OpenNext: `pnpm cf:build`, `pnpm cf:preview` (port 43
 is going live — only when the user says so. Details and the first-launch checklist:
 [docs/deploy.md](docs/deploy.md).
 
+### SEO
+
+Rules: yPulse `docs/seo-geo.md` (the user-level `seo-geo` skill is the way in). `src/lib/seo/` is
+the matrix module, written by yPulse `pnpm matrix:seo --write` — never edit it here.
+zeroUI's own part is `src/seo/`: `site.ts` (every public page with its title and description:
+metadata, sitemap, llms.txt and JSON-LD all read it), `graph.ts`, `keywords.ts`. A new public
+page gets an entry there, `metadata = pageMetadata(path)` and a `<JsonLd>`. The share card is
+`public/og.png`, remade from `/studio/og` with `pnpm og:capture`. Gate: `pnpm seo:audit`
+(L0 and L1 all green).
+
 ### Registry
 
 `pnpm registry:build` runs `scripts/build-registry.mts` (writes `registry.json`, converting the

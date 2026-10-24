@@ -87,6 +87,11 @@ features:
     status: done
     completedAt: 2026-10-24
     note: /docs:上手页、五个组件各一页、图标页。每页有分包管理器的安装命令、活的演示(展示的代码就是演示文件本身)、行为说明、每个部件一张属性表并链到底层的 Base UI 部件;代码在服务端用 zeroUI 自己的配色高亮。手机宽度下导航变成横向一行,宽的演示在自己的框里横向滚动。
+  - id: seo
+    title: SEO / GEO(分级契约 L0 与 L1)
+    area: 站点与文档
+    status: doing
+    note: 经 yPulse matrix:seo 接入模块;src/seo 一份页面清单供 metadata、sitemap、llms.txt、JSON-LD;robots 全放行并逐个列出 AI 爬虫;分享图用组件画、og:capture 截;pnpm seo:audit 为门禁。
   - id: showcase
     title: 对外展示页
     area: 站点与文档

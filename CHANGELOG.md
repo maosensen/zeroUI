@@ -8,6 +8,10 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ### Added
 
+- Search and AI visibility: every page has its own title, description,
+  canonical address and share card; the site publishes a sitemap, robots.txt
+  that welcomes search and AI crawlers, llms.txt, and structured data naming
+  catforest as the maker.
 - The showcase: a home page that puts the components to work — a job board you
   can search, filter, take jobs from and hand them in, a dial that turns the
   slant under a button, tabs and a field, and an index of every component.

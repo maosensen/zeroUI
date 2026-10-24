@@ -1,18 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/lib/seo/json-ld";
 import { REGISTRY_URL } from "@/lib/site";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { CodeBlock } from "./_components/code-block";
 import { DocHeader, DocSection, Prose } from "./_components/doc";
 
-export const metadata: Metadata = {
-  title: "Getting started",
-  description:
-    "Install zeroUI into a shadcn project: the namespace once, then any component.",
-};
+export const metadata = pageMetadata("/docs");
 
 export default function GettingStartedPage() {
   return (
     <>
+      <JsonLd data={docGraph("/docs")} />
       <DocHeader
         title="Getting started"
         lead="zeroUI is a dark-only component library with a strong game-UI look. It installs the shadcn way: the code lands in your project, yours to change."

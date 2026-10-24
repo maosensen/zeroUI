@@ -12,7 +12,10 @@
     "registry:build": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-registry.mts && shadcn build",
     "cf:build": "opennextjs-cloudflare build",
     "cf:preview": "pnpm cf:build && opennextjs-cloudflare preview --port 4378",
-    "cf:deploy": "pnpm cf:build && wrangler deploy"
+    "cf:deploy": "pnpm cf:build && wrangler deploy",
+    "og:capture": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/capture-og.mts",
+    "seo:audit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/seo/audit.mjs",
+    "seo:indexnow": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/seo/indexnow.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

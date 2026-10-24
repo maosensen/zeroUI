@@ -100,6 +100,15 @@ Decisions land here with their date, in the commit that acts on them.
   present). Known gap: shadcn's font item cannot ask for italics, so Montserrat's italic is
   synthesised until the user adds `style: ["normal", "italic"]`; the install message says so.
 
+- **2026-10-24 — SEO through the matrix module, levels 0 and 1.** `src/lib/seo/` came from yPulse
+  `matrix:seo --write`; zeroUI's own `src/seo/` lists every public page once (title,
+  description, breadcrumb), and the metadata, sitemap, llms.txt and JSON-LD all read it. The
+  home page is a product landing page (`SoftwareApplication`, no offers); the docs pages are
+  `WebPage`s about it with breadcrumbs; every page embeds the catforest `Organization`. robots
+  allows every crawler and names each AI crawler. The share card is drawn with the components
+  (`/studio/og`, captured by `pnpm og:capture`, since Chrome's `--screenshot` fires before the
+  tab slab hydrates). The audit (`pnpm seo:audit`) is the gate.
+
 ## Phases
 
 Each phase has an exit test; the next one does not start until it passes.

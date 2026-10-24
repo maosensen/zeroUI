@@ -1,22 +1,21 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
 import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
 import FieldInvalid from "../_demos/field-invalid";
 import FieldValidation from "../_demos/field-validation";
 
-export const metadata: Metadata = {
-  title: "Field",
-  description:
-    "Label, description and error around a control, with Base UI's validation.",
-};
+export const metadata = pageMetadata("/docs/field");
 
 const field = { href: "https://base-ui.com/react/components/field" };
 
 export default function FieldPage() {
   return (
     <>
+      <JsonLd data={docGraph("/docs/field")} />
       <DocHeader
         title="Field"
         lead="The parts around a control: a label, a line of help, and an error that slides in under a small slanted mark. Validation is Base UI's."
