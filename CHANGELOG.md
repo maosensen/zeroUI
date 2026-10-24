@@ -6,6 +6,12 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Changed
+
+- **Code in Martian Mono** — the docs' code blocks and install commands are
+  set in a wide, geometric monospace that sits with the heavy italic labels,
+  instead of a thin, neutral one.
+
 ## [0.1.0] - 2026-10-24
 
 The first release: a dark-only component library with a game-UI look, built on

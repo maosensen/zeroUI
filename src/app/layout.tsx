@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Montserrat } from "next/font/google";
+import { Martian_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { SITE_URL } from "@/lib/site";
@@ -13,8 +13,9 @@ const montserrat = Montserrat({
   style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// The docs' code face: wide and geometric, so code sits with Montserrat's width.
+const martianMono = Martian_Mono({
+  variable: "--font-martian-mono",
   subsets: ["latin"],
 });
 
@@ -41,7 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "h-full",
         "antialiased",
         montserrat.variable,
-        geistMono.variable,
+        martianMono.variable,
         "font-sans",
       )}
     >
