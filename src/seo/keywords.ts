@@ -60,6 +60,26 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["range slider two thumbs react", "base ui slider"],
       where: "description and behaviour",
     },
+    "/docs/dialog": {
+      phrases: ["modal dialog react base ui", "shadcn dialog dark"],
+      where: "description and lead",
+    },
+    "/docs/sheet": {
+      phrases: ["side sheet react", "slide over panel shadcn"],
+      where: "description and lead",
+    },
+    "/docs/popover": {
+      phrases: ["base ui popover", "react popover component"],
+      where: "description and lead",
+    },
+    "/docs/tooltip": {
+      phrases: ["react tooltip component", "tooltip on hover and focus"],
+      where: "description and behaviour",
+    },
+    "/docs/dropdown-menu": {
+      phrases: ["dropdown menu react base ui", "context menu with shortcuts"],
+      where: "description and behaviour",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

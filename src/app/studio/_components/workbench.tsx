@@ -30,6 +30,7 @@ import {
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
 import { FormsSection } from "./forms-section";
 import { IconSheet } from "./icon-sheet";
+import { OverlaysSection } from "./overlays-section";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
 const sizes = ["sm", "md", "lg"] as const;
@@ -373,6 +374,8 @@ export function Workbench() {
         </Section>
 
         <FormsSection />
+
+        <OverlaysSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

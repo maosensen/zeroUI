@@ -197,6 +197,13 @@ motion function changed: the small controls reuse the slab, the Tabs nesting geo
 (`--zero-inset` all round, parallel at both ends) and the release timing, and are sized in em so
 they follow their label. Textarea is a square box, like popups, since its height is not known.
 
+Overlays done (2026-10-24) — Dialog, Sheet, Popover, Tooltip, Dropdown menu. The family added to
+the foundation (allowed for a family, recorded here): `panel` (panel.css), the popup look Select
+had written out by hand, and `pop` / `fade` (motion.css), opening and closing on the reveal and
+dismiss timings with `--zero-pop-from` / `--zero-pop-to` dropping to no stretch under reduced
+motion. Select now uses them. Tooltip is the one overlay that is a slab: a single line has a known
+height. No submenus yet.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

@@ -21,6 +21,8 @@
 
   --zero-press-scale: 0.94;
   --zero-sheen-dur: var(--zero-dur-slow);
+  --zero-pop-from: 1 0.9; /* a panel opening grows out of this */
+  --zero-pop-to: 1 0.95; /* and folds back to this, faster */
 }
 
 /*
@@ -62,6 +64,47 @@
   }
 }
 
+/*
+ * Opening and closing anything that floats (panel.css): reveal grows it out of its trigger
+ * (Base UI sets --transform-origin) on the reveal timing; dismiss folds it back, faster. `fade`
+ * is the same without the stretch, for backdrops. Driven by Base UI's data-starting-style and
+ * data-ending-style. CSS only: motion.ts's reveal and dismiss are the same timings.
+ */
+@utility pop {
+  transform-origin: var(--transform-origin, center);
+  transition-property: opacity, scale;
+  transition-duration: var(--zero-dur-base);
+  transition-timing-function: var(--zero-ease-out);
+
+  &[data-starting-style] {
+    opacity: 0;
+    scale: var(--zero-pop-from);
+  }
+
+  &[data-ending-style] {
+    opacity: 0;
+    scale: var(--zero-pop-to);
+    transition-duration: var(--zero-dur-fast);
+    transition-timing-function: var(--zero-ease-in);
+  }
+}
+
+@utility fade {
+  transition-property: opacity;
+  transition-duration: var(--zero-dur-base);
+  transition-timing-function: var(--zero-ease-out);
+
+  &[data-starting-style] {
+    opacity: 0;
+  }
+
+  &[data-ending-style] {
+    opacity: 0;
+    transition-duration: var(--zero-dur-fast);
+    transition-timing-function: var(--zero-ease-in);
+  }
+}
+
 @media (hover: none) {
   :root {
     --zero-sheen-dur: 0s;
@@ -72,5 +115,7 @@
   :root {
     --zero-press-scale: 1;
     --zero-sheen-dur: 0s;
+    --zero-pop-from: 1;
+    --zero-pop-to: 1;
   }
 }

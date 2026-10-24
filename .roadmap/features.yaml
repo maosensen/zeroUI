@@ -122,6 +122,37 @@ features:
     completedAt: 2026-10-24
     note: 细的斜切轨道,已选段强调色,每个拇指一块 slab,拖动时转强调色;一个值或两个值的区间。
   # ── 注册表、站点与工作台(第二阶段)──────────────────────────────────
+  # ── 浮层家族(第三阶段)──────────────────────────────────────────────
+  - id: dialog
+    title: Dialog
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 暗下来的页面上一块 panel;黑色标题栏、倾斜标题、角上的关闭键;从中心展开、收起更快(pop),背景淡入(fade)。
+  - id: sheet
+    title: Sheet
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 从屏幕一边滑入并贴着那一边的对话框,朝页面的一侧是墨色粗边;上下左右四边;减弱动态效果时只淡入。
+  - id: popover
+    title: Popover
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 触发器旁边的一块 panel,放几行字或一个小表单;从触发器展开。
+  - id: tooltip
+    title: Tooltip
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 只一行,所以高度已知、做成两侧斜切的浅色 slab;悬停与键盘聚焦都会打开,TooltipProvider 里相邻的立即打开。
+  - id: dropdown-menu
+    title: Dropdown menu
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 行用 Select 的行(尾端斜切、高亮填强调色);图标、快捷键、勾选行、单选行(斜块)、危险行;暂无子菜单。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

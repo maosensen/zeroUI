@@ -28,7 +28,7 @@ export type Page = {
   description: string;
   /** Its name in the breadcrumb trail. */
   crumb: string;
-  group: "home" | "start" | "components" | "foundation";
+  group: "home" | "start" | "components" | "overlays" | "foundation";
 };
 
 export const PAGES = [
@@ -128,6 +128,46 @@ export const PAGES = [
       "Animated tabs with a sliding indicator: an accent slab that springs along a slanted track to the active tab.",
     crumb: "Tabs",
     group: "components",
+  },
+  {
+    path: "/docs/dialog",
+    title: "Dialog",
+    description:
+      "A modal dialog for shadcn on Base UI: a panel over a dimmed page, a black title bar, and the actions.",
+    crumb: "Dialog",
+    group: "overlays",
+  },
+  {
+    path: "/docs/sheet",
+    title: "Sheet",
+    description:
+      "A side sheet for React: a dialog that slides in from an edge of the screen and holds on to it.",
+    crumb: "Sheet",
+    group: "overlays",
+  },
+  {
+    path: "/docs/popover",
+    title: "Popover",
+    description:
+      "A Base UI popover for shadcn: a panel beside its trigger for a few lines of text or a small form.",
+    crumb: "Popover",
+    group: "overlays",
+  },
+  {
+    path: "/docs/tooltip",
+    title: "Tooltip",
+    description:
+      "A one-line tooltip for React on a light slanted slab, opening on hover and keyboard focus.",
+    crumb: "Tooltip",
+    group: "overlays",
+  },
+  {
+    path: "/docs/dropdown-menu",
+    title: "Dropdown menu",
+    description:
+      "A dropdown menu for shadcn on Base UI: actions, checkbox and radio rows, shortcuts, highlighted in the accent.",
+    crumb: "Dropdown menu",
+    group: "overlays",
   },
   {
     path: "/docs/icons",

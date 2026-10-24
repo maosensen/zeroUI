@@ -19,6 +19,17 @@ All notable changes to zeroUI are documented here. The format is based on
   what is typed, and the Field's control inside a Field.
 - **Slider** — a slanted track with an accent fill and slab thumbs that lift to
   the accent while dragged; one value, or two for a range.
+- **Dialog** — a panel over a dimmed page, with a black header bar holding a
+  tilted title and a close button in its corner; it opens out of its centre and
+  folds back faster.
+- **Sheet** — a dialog that slides in from any edge of the screen and holds on
+  to it.
+- **Popover** — a panel beside its trigger for a few lines or a small form.
+- **Tooltip** — a one-line label on a light slab cut on both sides, opening on
+  hover and on keyboard focus.
+- **Dropdown menu** — actions in Select's rows, filled with the accent while
+  highlighted, with icons, shortcuts, checkbox and radio rows, and a red row
+  for destructive actions.
 
 ### Changed
 
@@ -29,6 +40,8 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Code in Martian Mono** — the docs' code blocks and install commands are
   set in a wide, geometric monospace that sits with the heavy italic labels,
   instead of a thin, neutral one.
+- **Select's list holds still under reduced motion** — it now only fades, like
+  every other popup.
 
 ## [0.1.0] - 2026-10-24
 

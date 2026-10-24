@@ -28,6 +28,7 @@ export function GET() {
     sections: [
       { heading: "Start", links: section("start") },
       { heading: "Components", links: section("components") },
+      { heading: "Overlays", links: section("overlays") },
       { heading: "Foundation", links: section("foundation") },
       {
         heading: "Registry",

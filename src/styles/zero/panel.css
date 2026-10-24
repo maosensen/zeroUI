@@ -1,0 +1,13 @@
+/*
+ * The panel: what floats above the page — popups, menus, dialogs, sheets. A slab's cut follows
+ * from a known height and a panel's height is whatever it holds, so a panel is a square-cornered
+ * box (cut, never rounded) lifted by outline, never by shadow: a thick ink border, a thin quiet
+ * line outside it, the surface with the hatching.
+ */
+@utility panel {
+  border: var(--zero-stroke) solid var(--color-zero-ink);
+  outline: var(--zero-stroke-thin) solid var(--color-zero-line);
+  background-color: var(--color-zero-surface);
+  background-image: var(--zero-hatch);
+  color: var(--color-zero-text);
+}

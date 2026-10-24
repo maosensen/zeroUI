@@ -53,6 +53,31 @@ const entries = [
     line: "A slab that springs along a slanted track.",
   },
   {
+    href: "/docs/dialog",
+    name: "Dialog",
+    line: "A panel over a dimmed page, a black title bar.",
+  },
+  {
+    href: "/docs/sheet",
+    name: "Sheet",
+    line: "A dialog that slides in from an edge.",
+  },
+  {
+    href: "/docs/popover",
+    name: "Popover",
+    line: "A panel beside its trigger.",
+  },
+  {
+    href: "/docs/tooltip",
+    name: "Tooltip",
+    line: "One line on a light slab.",
+  },
+  {
+    href: "/docs/dropdown-menu",
+    name: "Dropdown menu",
+    line: "Actions in rows that light up.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

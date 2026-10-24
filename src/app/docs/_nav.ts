@@ -20,6 +20,16 @@ export const docsNav = [
     ],
   },
   {
+    group: "Overlays",
+    pages: [
+      { href: "/docs/dialog", title: "Dialog" },
+      { href: "/docs/sheet", title: "Sheet" },
+      { href: "/docs/popover", title: "Popover" },
+      { href: "/docs/tooltip", title: "Tooltip" },
+      { href: "/docs/dropdown-menu", title: "Dropdown menu" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },
