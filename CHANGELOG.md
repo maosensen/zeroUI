@@ -8,6 +8,9 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ### Added
 
+- Docs: a getting-started page, a page for each component and one for the
+  icons — install commands for pnpm, npm, yarn and bun, live demos with their
+  code, how each behaves, and every prop.
 - The registry: add the `@zeroui` namespace once, then install any component
   with `shadcn add @zeroui/<name>`. It brings the foundation (tokens, motion,
   the slab) into your stylesheet, Montserrat into your layout, and on request

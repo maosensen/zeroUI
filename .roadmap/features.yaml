@@ -84,7 +84,9 @@ features:
   - id: docs
     title: 文档页(每个组件的演示、属性、安装命令)
     area: 站点与文档
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: /docs:上手页、五个组件各一页、图标页。每页有分包管理器的安装命令、活的演示(展示的代码就是演示文件本身)、行为说明、每个部件一张属性表并链到底层的 Base UI 部件;代码在服务端用 zeroUI 自己的配色高亮。手机宽度下导航变成横向一行,宽的演示在自己的框里横向滚动。
   - id: showcase
     title: 对外展示页
     area: 站点与文档

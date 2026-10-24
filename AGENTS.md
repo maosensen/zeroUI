@@ -89,6 +89,14 @@ for the host's plain `cn`) and never a path ending in `/lib/utils`.
 `src/app/studio` is the workbench (dials for the slant and outline, the icon sheet, every
 component in every state); it 404s in production builds.
 
+### Docs
+
+`/docs` (src/app/docs): one page per component — install commands, live demos, behaviour, a props
+table per part. A demo is its own file in `_demos/`; the page renders it and shows that same file's
+source, so demo and code cannot drift. Code is highlighted on the server (`_lib/highlight.ts`,
+cached with `"use cache"`) in zeroUI's own colours. A new component gets demos, a page, and an
+entry in `_nav.ts`.
+
 ### Registry
 
 `pnpm registry:build` runs `scripts/build-registry.ts` (writes `registry.json`, converting the

@@ -150,7 +150,11 @@ motion function. If they still change, the foundation is not settled yet.
 
 ### Phase 2 — registry and site
 
-Progress: the registry is done and installs into a fresh shadcn project (2026-10-24).
+Progress: the registry is done and installs into a fresh shadcn project (2026-10-24). The docs
+are done (2026-10-24): getting started, a page per component and one for the icons, each with the
+install commands per package manager, live demos whose shown code is the demo file itself, the
+behaviour in words, and a props table per part pointing at the Base UI part underneath. Left: the
+showcase, the deploy, v0.1.0.
 
 `registry.json` → `shadcn build` → `public/r/*.json`; installing a component into a fresh shadcn
 project works. A docs page per component and the showcase. Deployed on Cloudflare Workers
