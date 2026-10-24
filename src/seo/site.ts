@@ -28,7 +28,13 @@ export type Page = {
   description: string;
   /** Its name in the breadcrumb trail. */
   crumb: string;
-  group: "home" | "start" | "components" | "overlays" | "foundation";
+  group:
+    | "home"
+    | "start"
+    | "components"
+    | "overlays"
+    | "feedback"
+    | "foundation";
 };
 
 export const PAGES = [
@@ -168,6 +174,38 @@ export const PAGES = [
       "A dropdown menu for shadcn on Base UI: actions, checkbox and radio rows, shortcuts, highlighted in the accent.",
     crumb: "Dropdown menu",
     group: "overlays",
+  },
+  {
+    path: "/docs/alert",
+    title: "Alert",
+    description:
+      "An alert component for React in four tones, info, success, warning and danger, each with its own slanted badge.",
+    crumb: "Alert",
+    group: "feedback",
+  },
+  {
+    path: "/docs/progress",
+    title: "Progress",
+    description:
+      "A Base UI progress bar for shadcn: a slanted track, a segmented gauge, and a sweep for an unknown amount.",
+    crumb: "Progress",
+    group: "feedback",
+  },
+  {
+    path: "/docs/skeleton",
+    title: "Skeleton",
+    description:
+      "Skeleton loading placeholders for React: blocks, slanted text lines and control-sized slabs with a moving glint.",
+    crumb: "Skeleton",
+    group: "feedback",
+  },
+  {
+    path: "/docs/toast",
+    title: "Toast",
+    description:
+      "Toast notifications for React on Base UI: they slide into the corner, stack, swipe away and leave on their own.",
+    crumb: "Toast",
+    group: "feedback",
   },
   {
     path: "/docs/icons",

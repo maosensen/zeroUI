@@ -78,6 +78,26 @@ const entries = [
     line: "Actions in rows that light up.",
   },
   {
+    href: "/docs/alert",
+    name: "Alert",
+    line: "Four tones, each with its badge.",
+  },
+  {
+    href: "/docs/progress",
+    name: "Progress",
+    line: "A slanted bar, or a gauge of charges.",
+  },
+  {
+    href: "/docs/skeleton",
+    name: "Skeleton",
+    line: "Placeholders with a moving glint.",
+  },
+  {
+    href: "/docs/toast",
+    name: "Toast",
+    line: "Messages that slide in and leave.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

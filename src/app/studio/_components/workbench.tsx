@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/zero/select";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
+import { FeedbackSection } from "./feedback-section";
 import { FormsSection } from "./forms-section";
 import { IconSheet } from "./icon-sheet";
 import { OverlaysSection } from "./overlays-section";
@@ -376,6 +377,8 @@ export function Workbench() {
         <FormsSection />
 
         <OverlaysSection />
+
+        <FeedbackSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

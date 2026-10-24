@@ -10,6 +10,7 @@ export { ChevronRightIcon } from "./chevron-right";
 export { ChevronUpIcon } from "./chevron-up";
 export { ClearIcon } from "./clear";
 export { CloseIcon } from "./close";
+export { DoneIcon } from "./done";
 export { ExternalIcon } from "./external";
 export { EyeIcon } from "./eye";
 export { EyeOffIcon } from "./eye-off";

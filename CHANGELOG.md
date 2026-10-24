@@ -30,6 +30,18 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Dropdown menu** — actions in Select's rows, filled with the accent while
   highlighted, with icons, shortcuts, checkbox and radio rows, and a red row
   for destructive actions.
+- **Alert** — a message set into the page in four tones (info, success,
+  warning, danger), each with its own slanted badge and its start edge in the
+  tone's colour.
+- **Progress** — a thin slanted track filling with the accent, a segmented
+  gauge whose cells light up one by one, and a block sweeping back and forth
+  when the amount is unknown.
+- **Skeleton** — loading placeholders as blocks, slanted text lines and
+  control-sized slabs, with a faint glint passing along the slant.
+- **Toast** — messages that slide into the bottom-right corner in Alert's
+  tones, stack three high, swipe away to the right and leave on their own,
+  with an optional action button.
+- **Done icon** — a check knocked out of the badge, beside alert and info.
 
 ### Changed
 

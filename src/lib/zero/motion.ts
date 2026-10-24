@@ -12,6 +12,8 @@ export const duration = {
   fast: 0.14,
   base: 0.24,
   slow: 0.42,
+  /** One pass of a waiting loop (sweep, glint). */
+  loop: 1.6,
 } as const;
 
 export const ease = {

@@ -353,6 +353,32 @@ const registry = {
       [dep("icon-check")],
     ),
     component(
+      "alert",
+      "Alert",
+      "A message in the page in four tones, each with its slanted badge.",
+      ["class-variance-authority"],
+      [dep("icon-alert"), dep("icon-info"), dep("icon-done")],
+    ),
+    component(
+      "progress",
+      "Progress",
+      "A slanted track or a segmented gauge, with a sweep for an unknown amount.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "skeleton",
+      "Skeleton",
+      "Loading placeholders: blocks, slanted text lines and slabs, with a moving glint.",
+      ["class-variance-authority"],
+    ),
+    component(
+      "toast",
+      "Toast",
+      "Messages that slide into the corner in Alert's tones, stack, and swipe away.",
+      ["@base-ui/react"],
+      [dep("alert"), dep("button"), dep("icon-close")],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

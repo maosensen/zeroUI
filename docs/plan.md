@@ -204,6 +204,16 @@ dismiss timings with `--zero-pop-from` / `--zero-pop-to` dropping to no stretch 
 motion. Select now uses them. Tooltip is the one overlay that is a slab: a single line has a known
 height. No submenus yet.
 
+Feedback done (2026-10-24) — Alert, Progress, Skeleton, Toast. Added to the foundation: the
+`--zero-dur-loop` timing (1.6 s; `duration.loop` in motion.ts) for anything that repeats while
+waiting, the `zero-sweep` animation (a block carried end to end and back, for Progress with no
+value) and the `glint` utility (a faint band dragged along the slant, for Skeleton). Under reduced
+motion the loop drops to zero: the sweep's block is drawn as a still dim fill and the glint stays
+out of sight. One icon, `done` (a check knocked out of the badge), so each Alert tone has its own
+badge. No new colours: the tones are text-2, the accent, the focus yellow and danger. The utility
+is `glint`, not `shimmer`: shadcn's stylesheet already has a `shimmer` (a text effect with
+`background-clip: text`) that would blank a placeholder in any shadcn project.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

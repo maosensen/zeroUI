@@ -153,6 +153,30 @@ features:
     status: done
     completedAt: 2026-10-24
     note: 行用 Select 的行(尾端斜切、高亮填强调色);图标、快捷键、勾选行、单选行(斜块)、危险行;暂无子菜单。
+  - id: alert
+    title: Alert
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 直角方框、起始边与徽章用类型色;信息/成功/警告/危险四种,颜色全用已有 token;新增 done 徽章图标。
+  - id: progress
+    title: Progress
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 斜切细轨道 + 强调色填充;segments 分段(一格格亮起);无值时小块来回扫,减弱动态时改为静止的暗色满条。
+  - id: skeleton
+    title: Skeleton
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 方块、斜切文字行、控件大小的 slab 三种形状;沿斜角循环划过的光(glint),减弱动态时停住;SkeletonText 多行。
+  - id: toast
+    title: Toast
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: Alert 的样子加浮起轮廓;从右滑入右下角,最新的贴角;右滑或关闭按钮提前关掉,其余收拢;最多同时三条,可带一个动作按钮。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

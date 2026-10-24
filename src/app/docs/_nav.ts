@@ -30,6 +30,15 @@ export const docsNav = [
     ],
   },
   {
+    group: "Feedback",
+    pages: [
+      { href: "/docs/alert", title: "Alert" },
+      { href: "/docs/progress", title: "Progress" },
+      { href: "/docs/skeleton", title: "Skeleton" },
+      { href: "/docs/toast", title: "Toast" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

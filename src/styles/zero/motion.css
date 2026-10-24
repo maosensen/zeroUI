@@ -8,6 +8,7 @@
   --zero-dur-fast: 140ms; /* colour changes, hover */
   --zero-dur-base: 240ms; /* release, small moves */
   --zero-dur-slow: 420ms; /* reveals, the sheen */
+  --zero-dur-loop: 1600ms; /* one pass of anything that repeats while waiting: a sweep, a glint */
 
   --zero-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1); /* things arriving */
   --zero-ease-in: cubic-bezier(0.5, 0, 0.75, 0); /* things leaving */
@@ -65,6 +66,54 @@
 }
 
 /*
+ * Waiting. Two loops that run for as long as something is not there yet, one --zero-dur-loop a
+ * pass. The sweep carries a block from one end of its track to the other and back (left: 100%
+ * less its own width, so it never leaves the track); the glint drags a faint band of light
+ * along the slant across a placeholder, from outside one edge to outside the other. Under reduced
+ * motion the loop's duration drops to zero and neither moves: the sweep's block rests at the start
+ * (whatever uses it gives it a still form) and the glint's band stays out of sight.
+ */
+@theme {
+  --animate-zero-sweep: zero-sweep var(--zero-dur-loop) var(--zero-ease-in-out)
+    infinite alternate;
+  --animate-zero-glint: zero-glint var(--zero-dur-loop) var(--zero-ease-in-out)
+    infinite;
+
+  @keyframes zero-sweep {
+    from {
+      left: 0;
+      translate: 0 0;
+    }
+    to {
+      left: 100%;
+      translate: -100% 0;
+    }
+  }
+
+  @keyframes zero-glint {
+    from {
+      background-position: 100% 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+}
+
+@utility glint {
+  background-image: linear-gradient(
+    calc(90deg + var(--zero-slant)),
+    transparent 40%,
+    rgb(255 255 255 / 0.07) 50%,
+    transparent 60%
+  );
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: var(--animate-zero-glint);
+}
+
+/*
  * Opening and closing anything that floats (panel.css): reveal grows it out of its trigger
  * (Base UI sets --transform-origin) on the reveal timing; dismiss folds it back, faster. `fade`
  * is the same without the stretch, for backdrops. Driven by Base UI's data-starting-style and
@@ -115,6 +164,7 @@
   :root {
     --zero-press-scale: 1;
     --zero-sheen-dur: 0s;
+    --zero-dur-loop: 0s;
     --zero-pop-from: 1;
     --zero-pop-to: 1;
   }

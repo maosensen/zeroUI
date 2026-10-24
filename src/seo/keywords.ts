@@ -80,6 +80,22 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["dropdown menu react base ui", "context menu with shortcuts"],
       where: "description and behaviour",
     },
+    "/docs/alert": {
+      phrases: ["react alert component", "success warning danger alert"],
+      where: "description and lead",
+    },
+    "/docs/progress": {
+      phrases: ["base ui progress bar", "segmented progress bar react"],
+      where: "description and lead",
+    },
+    "/docs/skeleton": {
+      phrases: ["skeleton loading react", "skeleton placeholder shadcn"],
+      where: "description and lead",
+    },
+    "/docs/toast": {
+      phrases: ["react toast notifications", "base ui toast"],
+      where: "description and behaviour",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",
