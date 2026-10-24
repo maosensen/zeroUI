@@ -76,8 +76,8 @@ function Input({ className, size, cut, start, end, ...props }: InputProps) {
         className={cn(
           "h-full min-w-0 flex-1 bg-transparent px-(--input-px) outline-none",
           // inputs inherit neither colour nor size by default
-          "font-semibold font-zero text-inherit [font-size:inherit] [line-height:inherit] caret-zero-accent",
-          "placeholder:text-zero-text-3 placeholder:italic",
+          "font-semibold font-zero-text text-inherit [font-size:inherit] [line-height:inherit] caret-zero-accent",
+          "placeholder:text-zero-text-3",
           "selection:bg-zero-accent selection:text-zero-ink",
           // keep the browser's autofill from painting over the well
           "autofill:shadow-[inset_0_0_0_10em_var(--color-zero-void)] autofill:[-webkit-text-fill-color:var(--color-zero-text)]",

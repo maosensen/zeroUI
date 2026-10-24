@@ -53,8 +53,9 @@ export default function GettingStartedPage() {
             The first component also brings the <strong>foundation</strong>: the
             tokens, the motion and the slab are written into your stylesheet,{" "}
             <code>cn</code> and the motion timings land in{" "}
-            <code>lib/zero/</code>, and Montserrat is loaded in your layout.
-            Components land in <code>components/zero/</code>.
+            <code>lib/zero/</code>, and Montserrat (the display face) and Outfit
+            (the text face) are loaded in your layout. Components land in{" "}
+            <code>components/zero/</code>.
           </p>
         </Prose>
       </DocSection>

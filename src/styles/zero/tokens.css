@@ -33,9 +33,14 @@
   --color-zero-danger-hi: #ff6a4f;
 
   /* ── Type ───────────────────────────────────────────────────────────────
-   * One heavy geometric sans with a true italic. Labels are 800–900 and lean with the slant. */
+   * Two faces. The display face, a heavy geometric sans with a true italic, sets everything that
+   * leans: labels, buttons, tabs, headings, 800–900 italic. The text face, compact and orderly,
+   * sets what is read or typed: running text, descriptions, the values in inputs. It has no
+   * italic of its own, so it is always set upright. */
   --font-zero:
     var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-zero-text:
+    var(--font-outfit), "Outfit", ui-sans-serif, system-ui, sans-serif;
 
   --text-zero-xs: 0.75rem; /* 12 */
   --text-zero-xs--line-height: 1rem;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Martian_Mono, Montserrat } from "next/font/google";
+import { Martian_Mono, Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { SITE_URL } from "@/lib/site";
@@ -11,6 +11,12 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   style: ["normal", "italic"],
+});
+
+// zeroUI's text face (tokens.css: --font-zero-text): running text and typed values, always upright.
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
 });
 
 // The docs' code face: wide and geometric, so code sits with Montserrat's width.
@@ -42,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "h-full",
         "antialiased",
         montserrat.variable,
+        outfit.variable,
         martianMono.variable,
         "font-sans",
       )}

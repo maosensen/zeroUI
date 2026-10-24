@@ -38,7 +38,7 @@ function FieldDescription({
     <FieldPrimitive.Description
       data-slot="field-description"
       className={cn(
-        "font-medium font-zero text-zero-text-2 text-zero-xs",
+        "font-medium font-zero-text text-zero-text-2 text-zero-xs",
         className,
       )}
       {...props}

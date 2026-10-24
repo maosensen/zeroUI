@@ -39,7 +39,7 @@ features:
     status: done
     completedAt: 2026-10-24
     shippedIn: v0.1.0
-    note: 颜色、字号、控件高度、描边、斜切角、层级、轨道内距(src/zero/foundation/tokens.css)。第三、四个组件(Input、Select)一处未改,第一阶段的退出检验通过。
+    note: 颜色、字号、控件高度、描边、斜切角、层级、轨道内距(src/styles/zero/tokens.css)。第三、四个组件(Input、Select)一处未改,第一阶段的退出检验通过。v0.1.0 之后加了正文字 --font-zero-text(Outfit),标签仍用 Montserrat(docs/plan.md 2026-10-24「two faces」)。
   - id: motion
     title: 动效函数(时长、缓动、按下、滑块、展开、切入、故障)
     area: 地基

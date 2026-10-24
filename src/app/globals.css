@@ -8,7 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-zero);
+  --font-sans: var(--font-zero-text);
   --font-mono: var(--font-martian-mono);
   --font-heading: var(--font-zero);
   --color-sidebar-ring: var(--sidebar-ring);

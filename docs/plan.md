@@ -111,6 +111,16 @@ Decisions land here with their date, in the commit that acts on them.
   L1 21/21 against zeroui.catforest.dev, the sitemap pushed to IndexNow (202), and yPulse switched
   to `seo: public`. Submitting the sitemap in Search Console and Bing is the author's step.
 
+- **2026-10-24 — two faces** (amends "one typeface: Montserrat"). The author likes Outfit's
+  compact, orderly letters, but Outfit has no italic, and zeroUI's labels are 800–900 italics. So
+  each face sets what it is good at: Montserrat (`--font-zero`, the display face) everything that
+  leans — labels, buttons, tabs, Select rows, headings; Outfit (`--font-zero-text`, the text face)
+  what is read or typed — running text, descriptions, the values in Input and the Select trigger,
+  job titles on the showcase. The text face is never italic (no browser-drawn obliques), so
+  placeholders became upright. The registry ships Outfit as `@zeroui/font-text`, a dependency of
+  the foundation; `@zeroui/font` stays Montserrat, so v0.1.0 installs keep working. The docs'
+  code is Martian Mono, a site choice outside the library.
+
 ## Phases
 
 Each phase has an exit test; the next one does not start until it passes.

@@ -215,7 +215,7 @@ export function JobBoard() {
                           <span className="font-bold font-zero text-zero-text-3 text-zero-xs uppercase italic tracking-[0.08em]">
                             {districts[job.district]}
                           </span>
-                          <span className="line-clamp-2 font-extrabold font-zero text-zero-md sm:truncate">
+                          <span className="line-clamp-2 font-bold font-zero-text text-zero-md sm:truncate">
                             {job.title}
                           </span>
                         </div>

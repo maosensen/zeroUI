@@ -77,6 +77,14 @@ try {
   console.log(`${OUT} written`);
   socket.close();
 } finally {
+  // Chrome keeps writing to its profile while it shuts down: wait for it before removing it
+  const exited = new Promise((resolve) => chrome.once("exit", resolve));
   chrome.kill();
-  rmSync(profile, { recursive: true, force: true });
+  await exited;
+  rmSync(profile, {
+    recursive: true,
+    force: true,
+    maxRetries: 5,
+    retryDelay: 200,
+  });
 }

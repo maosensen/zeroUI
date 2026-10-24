@@ -129,12 +129,27 @@ const registry = {
       name: "font",
       type: "registry:font",
       title: "Montserrat",
-      description: "zeroUI's one typeface, behind --font-montserrat.",
+      description:
+        "zeroUI's display face (labels, buttons, tabs, headings), behind --font-montserrat.",
       font: {
         family: "Montserrat",
         provider: "google",
         import: "Montserrat",
         variable: "--font-montserrat",
+        subsets: ["latin"],
+      },
+    },
+    {
+      name: "font-text",
+      type: "registry:font",
+      title: "Outfit",
+      description:
+        "zeroUI's text face (running text, typed values), behind --font-outfit.",
+      font: {
+        family: "Outfit",
+        provider: "google",
+        import: "Outfit",
+        variable: "--font-outfit",
         subsets: ["latin"],
       },
     },
@@ -145,7 +160,7 @@ const registry = {
       description:
         "Tokens, motion and the slab: everything zeroUI's components are drawn from.",
       dependencies: ["cn", "motion"],
-      registryDependencies: [dep("font")],
+      registryDependencies: [dep("font"), dep("font-text")],
       files: [
         {
           path: "src/lib/zero/cn.ts",

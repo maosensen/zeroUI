@@ -25,7 +25,7 @@ const Select = SelectPrimitive.Root;
 const triggerVariants = cva(
   [
     "group/trigger slab flex w-full min-w-0 items-center gap-2 text-left outline-none select-none",
-    "font-semibold font-zero",
+    "font-semibold font-zero-text",
     "[--slab-fill:var(--color-zero-void)] [--slab-line:var(--color-zero-line)] [--slab-ink:var(--color-zero-text)]",
     "hover:not-focus-visible:not-data-popup-open:[--slab-line:var(--color-zero-text-3)]",
     "focus-visible:[--slab-line:var(--color-zero-focus)] focus-visible:[--slab-gap:var(--zero-stroke-thin)] focus-visible:[--slab-gap-fill:var(--color-zero-ink)]",
@@ -86,7 +86,7 @@ function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
       data-slot="select-value"
       className={cn(
         "min-w-0 flex-1 truncate",
-        "in-data-placeholder:text-zero-text-3 in-data-placeholder:italic",
+        "in-data-placeholder:text-zero-text-3",
         className,
       )}
       {...props}

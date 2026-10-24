@@ -8,6 +8,10 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ### Changed
 
+- **Two typefaces** — what you read or type (running text, descriptions, the
+  values in Input and Select) is now set in Outfit, compact and orderly, while
+  labels, buttons and tabs keep Montserrat's heavy italics. Installing any
+  component brings both fonts; placeholders are now upright.
 - **Code in Martian Mono** — the docs' code blocks and install commands are
   set in a wide, geometric monospace that sits with the heavy italic labels,
   instead of a thin, neutral one.
