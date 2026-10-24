@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/zero/select";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
+import { FormsSection } from "./forms-section";
 import { IconSheet } from "./icon-sheet";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
@@ -370,6 +371,8 @@ export function Workbench() {
             </Select>
           </Row>
         </Section>
+
+        <FormsSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

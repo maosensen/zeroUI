@@ -40,6 +40,26 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["animated tabs sliding indicator", "shadcn tabs base ui"],
       where: "description and lead",
     },
+    "/docs/textarea": {
+      phrases: ["auto resize textarea react", "dark textarea shadcn"],
+      where: "description and lead",
+    },
+    "/docs/checkbox": {
+      phrases: ["indeterminate checkbox react", "base ui checkbox"],
+      where: "description and behaviour",
+    },
+    "/docs/radio-group": {
+      phrases: ["radio group react base ui", "custom radio button css"],
+      where: "description and lead",
+    },
+    "/docs/switch": {
+      phrases: ["toggle switch component react", "animated switch css"],
+      where: "description and lead",
+    },
+    "/docs/slider": {
+      phrases: ["range slider two thumbs react", "base ui slider"],
+      where: "description and behaviour",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

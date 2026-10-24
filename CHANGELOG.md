@@ -6,6 +6,20 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Checkbox** — a small slanted well that fills with the accent when checked,
+  an ink check springing in; an indeterminate minus for a box that stands for
+  several others. It sizes with the label beside it.
+- **Radio group** — the same well for one choice of several; the chosen one
+  holds a slab of the accent, nested like the Tabs slab in its track.
+- **Switch** — a slanted track and a slab that springs across to the other end
+  when turned on, the track filling with the accent.
+- **Textarea** — several lines in the same sunken well as Input, growing with
+  what is typed, and the Field's control inside a Field.
+- **Slider** — a slanted track with an accent fill and slab thumbs that lift to
+  the accent while dragged; one value, or two for a range.
+
 ### Changed
 
 - **Two typefaces** — what you read or type (running text, descriptions, the

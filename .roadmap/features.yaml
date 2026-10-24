@@ -90,6 +90,37 @@ features:
     completedAt: 2026-10-24
     shippedIn: v0.1.0
     note: 两侧斜切的轨道 + 两侧斜切的强调色滑块,弹簧滑到当前页签,两端都与轨道切边平行、相距 --zero-inset;每个页签带一份裁到滑块位置的墨色标签,滑动中标签压在滑块上的部分变黑。三档尺寸。
+  # ── 表单家族(第三阶段)──────────────────────────────────────────────
+  - id: checkbox
+    title: Checkbox
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 两侧斜切的小 slab,未选是内凹的井,选中填强调色、黑勾弹入;半选显示减号。尺寸用 em,跟着标签文字走。
+  - id: radio-group
+    title: Radio group
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 和 Checkbox 同样的小井,选中的那个里嵌一块强调色 slab(Tabs 的几何),弹入;勾选填满、单选嵌块,两者不会看混。
+  - id: switch
+    title: Switch
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 斜切轨道 + 一块滑块;打开时轨道填强调色,滑块变墨色、带过冲弹到另一端,两端都与轨道切边平行、相距 --zero-inset。
+  - id: textarea
+    title: Textarea
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 与 Input 同一口井;高度随内容长,所以按「高度不定 = 直角矩形」的规则做成矩形;在 Field 里就是 Field 的控件。
+  - id: slider
+    title: Slider
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 细的斜切轨道,已选段强调色,每个拇指一块 slab,拖动时转强调色;一个值或两个值的区间。
   # ── 注册表、站点与工作台(第二阶段)──────────────────────────────────
   - id: registry
     title: shadcn registry(shadcn add 一行装上)

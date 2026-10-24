@@ -289,6 +289,37 @@ const registry = {
       [dep("icon-chevron-down")],
     ),
     component(
+      "textarea",
+      "Textarea",
+      "Several lines in the same sunken well as Input; it grows with what is typed.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "checkbox",
+      "Checkbox",
+      "A slanted well that fills with the accent, with an indeterminate state.",
+      ["@base-ui/react"],
+      [dep("icon-check"), dep("icon-minus")],
+    ),
+    component(
+      "radio-group",
+      "Radio group",
+      "Slanted wells; the chosen one holds a slab of the accent.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "switch",
+      "Switch",
+      "A slanted track and a slab that springs across to the other end.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "slider",
+      "Slider",
+      "A slanted track, an accent fill and slab thumbs; one value or a range.",
+      ["@base-ui/react"],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

@@ -23,6 +23,31 @@ const entries = [
     line: "A popup lifted by outline; the row lights up.",
   },
   {
+    href: "/docs/textarea",
+    name: "Textarea",
+    line: "The same well, for several lines; it grows.",
+  },
+  {
+    href: "/docs/checkbox",
+    name: "Checkbox",
+    line: "A slanted well that fills with the accent.",
+  },
+  {
+    href: "/docs/radio-group",
+    name: "Radio group",
+    line: "The chosen one holds a slab.",
+  },
+  {
+    href: "/docs/switch",
+    name: "Switch",
+    line: "A slab that springs to the other end.",
+  },
+  {
+    href: "/docs/slider",
+    name: "Slider",
+    line: "Slab thumbs on a slanted track; one or two.",
+  },
+  {
     href: "/docs/tabs",
     name: "Tabs",
     line: "A slab that springs along a slanted track.",

@@ -74,11 +74,51 @@ export const PAGES = [
     group: "components",
   },
   {
+    path: "/docs/textarea",
+    title: "Textarea",
+    description:
+      "A dark multi-line text area for shadcn that grows with what is typed, in the same sunken well as Input.",
+    crumb: "Textarea",
+    group: "components",
+  },
+  {
     path: "/docs/select",
     title: "Select",
     description:
       "A Base UI select for shadcn: a dark inset trigger, a popup lifted by outline, and a highlighted row in the accent.",
     crumb: "Select",
+    group: "components",
+  },
+  {
+    path: "/docs/checkbox",
+    title: "Checkbox",
+    description:
+      "A slanted checkbox for shadcn on Base UI: a sunken well that fills with the accent, with an indeterminate state.",
+    crumb: "Checkbox",
+    group: "components",
+  },
+  {
+    path: "/docs/radio-group",
+    title: "Radio group",
+    description:
+      "A radio group for shadcn on Base UI: slanted wells, the chosen one holding a slab of the accent.",
+    crumb: "Radio group",
+    group: "components",
+  },
+  {
+    path: "/docs/switch",
+    title: "Switch",
+    description:
+      "A slanted toggle switch for React: an accent track and a slab that springs across to the other end.",
+    crumb: "Switch",
+    group: "components",
+  },
+  {
+    path: "/docs/slider",
+    title: "Slider",
+    description:
+      "A range slider for shadcn on Base UI: a slanted track, an accent fill, slab thumbs; one value or two.",
+    crumb: "Slider",
     group: "components",
   },
   {

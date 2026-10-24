@@ -169,7 +169,7 @@ complete.**
 **Exit:** the four components are done, and building the third and fourth changed no token and no
 motion function. If they still change, the foundation is not settled yet.
 
-### Phase 2 — registry and site
+### Phase 2 — registry and site (2026-10-24, done: v0.1.0)
 
 Progress: the registry is done and installs into a fresh shadcn project (2026-10-24). The docs
 are done (2026-10-24): getting started, a page per component and one for the icons, each with the
@@ -191,6 +191,11 @@ project works. A docs page per component and the showcase. Deployed on Cloudflar
 (`zeroui.catforest.dev` until it earns its own domain). First release v0.1.0.
 
 ### Phase 3 onward — the rest of shadcn, by family
+
+Progress: forms done (2026-10-24) — Checkbox, Radio group, Switch, Textarea, Slider. No token or
+motion function changed: the small controls reuse the slab, the Tabs nesting geometry
+(`--zero-inset` all round, parallel at both ends) and the release timing, and are sized in em so
+they follow their label. Textarea is a square box, like popups, since its height is not known.
 
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
