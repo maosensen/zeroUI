@@ -8,7 +8,7 @@ import {
   FieldError,
   FieldLabel,
 } from "@/zero/components/field";
-import { Input } from "@/zero/components/input";
+import { Input, InputAction } from "@/zero/components/input";
 import {
   Select,
   SelectContent,
@@ -20,6 +20,15 @@ import {
   SelectValue,
 } from "@/zero/components/select";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/zero/components/tabs";
+import {
+  ArrowRightIcon,
+  ClearIcon,
+  EyeIcon,
+  EyeOffIcon,
+  LockIcon,
+  SearchIcon,
+} from "@/zero/icons";
+import { IconSheet } from "./icon-sheet";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
 const sizes = ["sm", "md", "lg"] as const;
@@ -39,15 +48,6 @@ const shifts = Object.fromEntries(
     `${String(hour).padStart(2, "0")}:00 shift`,
   ]),
 );
-
-/** A placeholder glyph for checking how a button holds an icon, until the icon set exists. */
-function Chevron() {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
-      <path d="M4 2h4l5 6-5 6H4l5-6z" />
-    </svg>
-  );
-}
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
@@ -111,6 +111,8 @@ function Dial({
 export function Workbench() {
   const [slant, setSlant] = useState(14);
   const [stroke, setStroke] = useState(3);
+  const [query, setQuery] = useState("rail yards");
+  const [showKey, setShowKey] = useState(false);
   const tuned = {
     "--zero-slant": `${slant}deg`,
     "--zero-stroke": `${stroke}px`,
@@ -146,6 +148,10 @@ export function Workbench() {
       </header>
 
       <main style={tuned} className="mx-auto grid max-w-6xl gap-14 px-8 py-12">
+        <Section title="Icons">
+          <IconSheet />
+        </Section>
+
         <Section title="Button">
           {variants.map((variant) => (
             <Row key={variant} label={variant}>
@@ -156,7 +162,7 @@ export function Workbench() {
               ))}
               <Button variant={variant}>
                 Next
-                <Chevron />
+                <ArrowRightIcon />
               </Button>
               <Button variant={variant} disabled>
                 Claimed
@@ -211,6 +217,37 @@ export function Workbench() {
               />
             </Row>
           ))}
+          <Row label="slots">
+            <Input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search the board"
+              aria-label="Search the board"
+              start={<SearchIcon />}
+              end={
+                query ? (
+                  <InputAction aria-label="Clear" onClick={() => setQuery("")}>
+                    <ClearIcon />
+                  </InputAction>
+                ) : null
+              }
+              className="max-w-xs"
+            />
+            <Input
+              type={showKey ? "text" : "password"}
+              defaultValue="lantern-42"
+              aria-label="Access key"
+              end={
+                <InputAction
+                  aria-label={showKey ? "Hide the key" : "Show the key"}
+                  onClick={() => setShowKey((shown) => !shown)}
+                >
+                  {showKey ? <EyeOffIcon /> : <EyeIcon />}
+                </InputAction>
+              }
+              className="max-w-xs"
+            />
+          </Row>
           <Row label="states">
             <Input placeholder="Disabled" disabled className="max-w-56" />
             <Input
@@ -354,9 +391,10 @@ export function Workbench() {
                 <TabsTab value="me">Me</TabsTab>
                 <TabsTab value="archive">
                   Archive
-                  <Chevron />
+                  <ArrowRightIcon />
                 </TabsTab>
                 <TabsTab value="locked" disabled>
+                  <LockIcon />
                   Locked
                 </TabsTab>
               </TabsList>

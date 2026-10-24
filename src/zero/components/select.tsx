@@ -2,6 +2,7 @@
 
 import { Select as SelectPrimitive } from "@base-ui/react/select";
 import { cva, type VariantProps } from "class-variance-authority";
+import { ChevronDownIcon } from "@/zero/icons/chevron-down";
 import { cn } from "@/zero/lib/utils";
 
 /*
@@ -18,20 +19,6 @@ import { cn } from "@/zero/lib/utils";
  * Rows are slabs cut at the end. The highlighted row fills with the accent; the chosen one carries
  * a small slanted mark before its label.
  */
-
-/** The trigger's chevron, drawn on the slant. Newly made. */
-function Chevron({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      aria-hidden="true"
-      fill="currentColor"
-      className={cn("size-4 shrink-0", className)}
-    >
-      <path d="M2 5h4l3 4 3-4h3l-6 7z" />
-    </svg>
-  );
-}
 
 const Select = SelectPrimitive.Root;
 
@@ -86,7 +73,7 @@ function SelectTrigger({
       {children}
       <SelectPrimitive.Icon
         render={
-          <Chevron className="text-zero-text-2 transition-[rotate] duration-(--zero-dur-base) ease-(--zero-ease-spring) group-data-popup-open/trigger:rotate-180 group-data-popup-open/trigger:text-zero-focus" />
+          <ChevronDownIcon className="text-zero-text-2 transition-[rotate] duration-(--zero-dur-base) ease-(--zero-ease-spring) group-data-popup-open/trigger:rotate-180 group-data-popup-open/trigger:text-zero-focus" />
         }
       />
     </SelectPrimitive.Trigger>

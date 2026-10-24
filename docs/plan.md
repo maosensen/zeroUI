@@ -62,6 +62,17 @@ Decisions land here with their date, in the commit that acts on them.
   it, the surface with the hatching. They grow from their trigger on the reveal timing and leave on
   the dismiss timing.
 
+- **2026-10-24 — icons: solid, drawn in code, by the spec in [icons.md](icons.md).** Filled
+  shapes on a 24-unit grid; horizontal strokes end in the 1 : 4 slant, diagonals are 45°, corners
+  are cut, curves only for things round by nature. Nineteen icons cover what the four components
+  and their next uses need. zeroUI draws its own interface icons; yIcon (the matrix's icon
+  producer) stays with logos and illustration, because a 16 px glyph has to sit on the pixel grid
+  and on the exact slant, which generated images do not control.
+- **2026-10-24 — Input holds things beside its text.** `start` and `end` take an icon or an
+  `InputAction` (clear, show the password). The input now stretches across the slab and carries
+  the padding instead of lying over it, so the slots have room; a click almost anywhere on the
+  slab still lands in it.
+
 ## Phases
 
 Each phase has an exit test; the next one does not start until it passes.
@@ -71,7 +82,7 @@ Each phase has an exit test; the next one does not start until it passes.
 Next 16, React 19, Tailwind v4, Biome, React Compiler, pnpm; shadcn on Base UI with every
 component pulled in as a starting point; dark only; port 4374; registered in the matrix (yPulse).
 
-### Phase 1 — the foundation: tokens, motion, icons
+### Phase 1 — the foundation: tokens, motion, icons (2026-10-24, done)
 
 Build four components and distil the foundation out of them, rather than designing the
 foundation in the abstract and fitting components to it:
@@ -103,9 +114,9 @@ foundation could still move: it made slab inputs non-inheriting and added `--zer
 and Select are the exit test: they must change no token and no motion function. Input done
 (2026-10-24) with no change to tokens, motion or the slab — the first half of the exit test
 passed. It brought the Field parts with it (label, description, error) to show its error state.
-Select done (2026-10-24), again with no foundation change: **the exit test passed.** What is left
-of phase 1 is the icon specification and the icons these four components need (today the
-chevrons are one-off drawings inside the components).
+Select done (2026-10-24), again with no foundation change: **the exit test passed.** Icons done
+(2026-10-24): the specification and nineteen icons, replacing the one-off chevrons. **Phase 1 is
+complete.**
 
 **Exit:** the four components are done, and building the third and fourth changed no token and no
 motion function. If they still change, the foundation is not settled yet.

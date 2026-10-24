@@ -44,7 +44,9 @@ features:
   - id: icon-spec
     title: 图标规范与第一批图标
     area: 地基
-    status: todo
+    status: done
+    completedAt: 2026-10-24
+    note: 规范在 docs/icons.md:24 格网格、实心填充、横向笔画以 1:4 斜切收尾、斜线 45°、切角不倒圆、只有天生是圆的才用曲线;可选墨色描边。十九个图标(方向 6、状态 5、操作 7、加载 1),每个一个文件,替换掉组件里的一次性箭头;工作台顶部有图标表。界面图标在代码里手画,yIcon 管 logo 与插画。
   # ── 组件(第一阶段)──────────────────────────────────────────────────
   - id: button
     title: Button
@@ -57,7 +59,7 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-24
-    note: 内凹的井(void 填充、安静的描边),整个 slab 都能点进输入;焦点是黄框,出错描边转红,出错且聚焦时是亮红框;光标是强调色。顺带 Field 的标签、说明、错误三件(错误前一枚斜块,滑入、退得更快)。没有改动任何 token、动效与 slab —— 退出检验过了一半。
+    note: 内凹的井(void 填充、安静的描边),整个 slab 都能点进输入;焦点是黄框,出错描边转红,出错且聚焦时是亮红框;光标是强调色。顺带 Field 的标签、说明、错误三件(错误前一枚斜块,滑入、退得更快)。没有改动任何 token、动效与 slab —— 退出检验过了一半。之后加了前后槽位(start / end:图标或 InputAction,清空、显示密码)。
   - id: select
     title: Select
     area: 组件

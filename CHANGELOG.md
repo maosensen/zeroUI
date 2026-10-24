@@ -8,6 +8,13 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ### Added
 
+- Icons: nineteen solid icons drawn for zeroUI on one grid — chevrons and
+  arrows, check, close, alert, info, lock, plus, minus, search, clear, eye,
+  eye-off, external and a spinner. Strokes end on the same slant as the slabs.
+  They size with the text beside them, take its colour, and can wear an ink
+  outline on the accent.
+- Input holds an icon or a small action at either end: a search glass, a clear
+  button, a show-password toggle.
 - Select: the trigger is the same sunken well as Input, its chevron flipping
   when open; the list drops from it in a square box lifted by a double outline,
   grows in and folds away faster. The highlighted row fills with the accent and
@@ -29,7 +36,7 @@ All notable changes to zeroUI are documented here. The format is based on
 - The foundation: colour, type, control heights, outline weights and one slant
   angle as tokens; named durations, easings and transitions; the slab, the cut
   block every component is drawn from. One typeface, Montserrat.
-- The studio (local only): every button, input, select and tab state, with dials for the slant and the
+- The studio (local only): the icon sheet and every button, input, select and tab state, with dials for the slant and the
   outline weight.
 
 - The project: a clean shadcn app on Base UI, dark only, with every shadcn
