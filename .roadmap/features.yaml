@@ -177,6 +177,30 @@ features:
     status: done
     completedAt: 2026-10-24
     note: Alert 的样子加浮起轮廓;从右滑入右下角,最新的贴角;右滑或关闭按钮提前关掉,其余收拢;最多同时三条,可带一个动作按钮。
+  - id: card
+    title: Card
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 直角方框(墨色边框 + 表面 + 斜纹);标题在黑色条上,尾端放 CardAction;页脚细线分隔;interactive 悬停时轮廓变强调色。
+  - id: table
+    title: Table
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 表头黑条 + 小号斜体大写;单元格用正文字体;悬停行变亮,选中行保持并在起始边加强调色;过宽时横向滚动。
+  - id: badge
+    title: Badge
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 两侧斜切的小 slab,四种(强调色、灰、黑色凹槽描边、危险红);可带图标,render 可变成链接。
+  - id: avatar
+    title: Avatar
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 圆形(按 tokens 的约定,天生圆的东西才用圆角),墨色圈加细线轮廓;三种尺寸对齐控件高度;首字母兜底、状态圆点、重叠的头像组与计数。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

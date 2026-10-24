@@ -379,6 +379,30 @@ const registry = {
       [dep("alert"), dep("button"), dep("icon-close")],
     ),
     component(
+      "card",
+      "Card",
+      "A square-cornered box with a black header bar, content and a footer.",
+      [],
+    ),
+    component(
+      "table",
+      "Table",
+      "Rows of data: heads on a black bar, quiet lines, a lit and a selected row.",
+      [],
+    ),
+    component(
+      "badge",
+      "Badge",
+      "A small slab cut on both sides, in four variants.",
+      ["@base-ui/react", "class-variance-authority"],
+    ),
+    component(
+      "avatar",
+      "Avatar",
+      "A round picture or initials in an ink ring, with a status dot and groups.",
+      ["@base-ui/react"],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

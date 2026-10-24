@@ -98,6 +98,26 @@ const entries = [
     line: "Messages that slide in and leave.",
   },
   {
+    href: "/docs/card",
+    name: "Card",
+    line: "A box with a black header bar.",
+  },
+  {
+    href: "/docs/table",
+    name: "Table",
+    line: "Rows on a hatched surface.",
+  },
+  {
+    href: "/docs/badge",
+    name: "Badge",
+    line: "A small slanted label.",
+  },
+  {
+    href: "/docs/avatar",
+    name: "Avatar",
+    line: "A face or initials in an ink ring.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

@@ -214,6 +214,14 @@ badge. No new colours: the tones are text-2, the accent, the focus yellow and da
 is `glint`, not `shimmer`: shadcn's stylesheet already has a `shimmer` (a text effect with
 `background-clip: text`) that would blank a placeholder in any shadcn project.
 
+Data display done (2026-10-24) — Card, Table, Badge, Avatar (Progress went with feedback). No
+foundation change. Card and Table are square-cornered boxes with Alert's border and surface, their
+headers on the Dialog's black bar; Badge is the one slab of the family. A slab cannot be hollow
+(its outline is painted under the fill), so Badge's `outline` variant is a black well with a quiet
+outline, like Input's. Avatar is round, the radius tokens.css keeps for things round by nature,
+sized to the three control heights. The docs' sample portraits (`public/samples/`) are drawn for
+zeroUI.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

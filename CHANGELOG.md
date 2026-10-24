@@ -42,6 +42,16 @@ All notable changes to zeroUI are documented here. The format is based on
   tones, stack three high, swipe away to the right and leave on their own,
   with an optional action button.
 - **Done icon** — a check knocked out of the badge, beside alert and info.
+- **Card** — a square-cornered box with a black header bar for the title and
+  an action, the content and a footer; an interactive card lights its outline
+  in the accent when pointed at.
+- **Table** — column heads on a black bar in small leaning capitals, quiet
+  lines between rows, a row that lights under the pointer and a selected row
+  with the accent on its edge.
+- **Badge** — a small slab cut on both sides in four variants, with an icon or
+  as a link.
+- **Avatar** — a round picture or initials in an ink ring, in the three
+  control heights, with a status dot and overlapping groups.
 
 ### Changed
 

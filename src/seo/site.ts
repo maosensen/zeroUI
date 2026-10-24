@@ -34,6 +34,7 @@ export type Page = {
     | "components"
     | "overlays"
     | "feedback"
+    | "data"
     | "foundation";
 };
 
@@ -206,6 +207,38 @@ export const PAGES = [
       "Toast notifications for React on Base UI: they slide into the corner, stack, swipe away and leave on their own.",
     crumb: "Toast",
     group: "feedback",
+  },
+  {
+    path: "/docs/card",
+    title: "Card",
+    description:
+      "A card component for shadcn: a square-cornered box with a black header bar, content and a footer.",
+    crumb: "Card",
+    group: "data",
+  },
+  {
+    path: "/docs/table",
+    title: "Table",
+    description:
+      "A data table for React: column heads on a black bar, quiet row lines, a lit row and a selected one.",
+    crumb: "Table",
+    group: "data",
+  },
+  {
+    path: "/docs/badge",
+    title: "Badge",
+    description:
+      "A badge component for React: a small slanted slab in four variants, with an icon or as a link.",
+    crumb: "Badge",
+    group: "data",
+  },
+  {
+    path: "/docs/avatar",
+    title: "Avatar",
+    description:
+      "A Base UI avatar for shadcn: a round picture or initials, a status dot, and overlapping groups.",
+    crumb: "Avatar",
+    group: "data",
   },
   {
     path: "/docs/icons",

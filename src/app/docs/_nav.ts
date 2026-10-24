@@ -39,6 +39,15 @@ export const docsNav = [
     ],
   },
   {
+    group: "Data display",
+    pages: [
+      { href: "/docs/card", title: "Card" },
+      { href: "/docs/table", title: "Table" },
+      { href: "/docs/badge", title: "Badge" },
+      { href: "/docs/avatar", title: "Avatar" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

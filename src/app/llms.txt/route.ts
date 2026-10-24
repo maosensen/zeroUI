@@ -30,6 +30,7 @@ export function GET() {
       { heading: "Components", links: section("components") },
       { heading: "Overlays", links: section("overlays") },
       { heading: "Feedback", links: section("feedback") },
+      { heading: "Data display", links: section("data") },
       { heading: "Foundation", links: section("foundation") },
       {
         heading: "Registry",

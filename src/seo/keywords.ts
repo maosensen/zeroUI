@@ -96,6 +96,22 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["react toast notifications", "base ui toast"],
       where: "description and behaviour",
     },
+    "/docs/card": {
+      phrases: ["shadcn card component", "react card with header"],
+      where: "description and lead",
+    },
+    "/docs/table": {
+      phrases: ["react data table", "shadcn table dark"],
+      where: "description and lead",
+    },
+    "/docs/badge": {
+      phrases: ["react badge component", "status badge shadcn"],
+      where: "description and lead",
+    },
+    "/docs/avatar": {
+      phrases: ["base ui avatar", "avatar group react"],
+      where: "description and behaviour",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",
