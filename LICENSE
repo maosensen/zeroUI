@@ -20,32 +20,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
 
-## Third-party artwork — NOT covered by the MIT license above
-
-The MIT license covers the source code of this repository only.
-
-The image files under `public/geshin-pics/` are artwork from Genshin Impact,
-© miHoYo / HoYoverse. They are included as compressed WebP references for
-color extraction — not as downloadable originals or wallpapers. They are NOT
-licensed under MIT, and are NOT yours to redistribute under these terms.
-
-Before you fork this repository, remove `public/geshin-pics/`. `pnpm
-assets:fetch` re-fetches the three fixed asset families from the public Fandom
-API on demand.
-
-Palettes, gradients and the color math derived from that artwork are original
-output of this project's code and carry no such restriction.
-
-## Vendored components
-
-`src/components/studio/backgrounds/vendor/` holds background components adapted
-from React Bits (MIT). `@paper-design/shaders-react` is Apache-2.0. Both keep
-their own licenses; adapted files carry a `[local]` note on the edits.
-
-No file is copied from React Bits' Magic Bento or Aceternity UI's Glowing
-Effect; the landing page's bento (`src/components/landing/magic-bento.tsx`) is a
-rewrite that keeps their techniques — the spotlight and proximity falloff from
-the former, the conic-arc border mask from the latter — and credits both in
-place.
