@@ -38,4 +38,4 @@
 ## 本项目特有注意事项
 
 - 部署前后 Turbopack 的 dev 缓存偶尔供出旧 CSS(AGENTS.md / docs/plan.md 有记录);发版只看生产构建,不受影响。
-- 开源许可证在台账里是 required、尚未定(2026-10-24 首发时没有 LICENSE),由作者决定。
+- 许可证 MIT(2026-10-25 定,`LICENSE`;v0.1.1 及以前的 tag 里没有它)。

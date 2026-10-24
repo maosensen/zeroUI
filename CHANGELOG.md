@@ -6,6 +6,11 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **MIT license** — zeroUI can be used, changed and shared freely, with the
+  copyright notice kept.
+
 ## [0.1.1] - 2026-10-24
 
 Twenty-one more components, in five families: forms, overlays, feedback, data

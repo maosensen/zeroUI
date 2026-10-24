@@ -111,6 +111,9 @@ Decisions land here with their date, in the commit that acts on them.
   L1 21/21 against zeroui.catforest.dev, the sitemap pushed to IndexNow (202), and yPulse switched
   to `seo: public`. Submitting the sitemap in Search Console and Bing is the author's step.
 
+- **2026-10-25 — MIT license.** The author chose MIT, the same text as yGenshinColor, copyright
+  maosensen. Tags up to v0.1.1 were cut before `LICENSE` existed.
+
 - **2026-10-24 — two faces** (amends "one typeface: Montserrat"). The author likes Outfit's
   compact, orderly letters, but Outfit has no italic, and zeroUI's labels are 800–900 italics. So
   each face sets what it is good at: Montserrat (`--font-zero`, the display face) everything that

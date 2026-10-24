@@ -5,9 +5,17 @@ a fluorescent lime accent, slabs cut on the slant, thick black outlines — buil
 [shadcn](https://ui.shadcn.com) and [Base UI](https://base-ui.com), and installed
 the shadcn way, from a registry.
 
-**Status: phase 1 of [the plan](docs/plan.md)** — settling the tokens, motion and
-icons through the first four components (Button, Input, Select, Tabs). Nothing is
-installable yet.
+Twenty-six components, their icons and the theme, with a live demo, the props and
+the install command for each at **https://zeroui.catforest.dev**. Add the
+`@zeroui` namespace to a shadcn project and install any of them:
+
+```sh
+pnpm dlx shadcn@latest add @zeroui/button
+```
+
+The plan, the phases and every decision: [docs/plan.md](docs/plan.md).
+
+## Develop
 
 ```sh
 pnpm install
@@ -15,3 +23,7 @@ pnpm dev        # http://localhost:4374
 pnpm build
 pnpm exec biome check
 ```
+
+## License
+
+[MIT](LICENSE)

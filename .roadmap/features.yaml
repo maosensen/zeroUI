@@ -12,7 +12,9 @@ modules:
   - id: license
     title: 开源许可证
     tier: required
-    status: todo
+    status: done
+    completedAt: 2026-10-25
+    note: MIT(作者 2026-10-25 定),与 yGenshinColor 同文;版权人 maosensen。
   - id: install-works
     title: 在一个全新的 shadcn 项目里装得上、跑得起来
     tier: required
