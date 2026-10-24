@@ -1,0 +1,77 @@
+# .roadmap/features.yaml — 功能台账
+# 本文件是该项目功能状态的唯一事实源;yPulse 采集(schema v1,见 yPulse 仓库 docs/feature-ledger.md)。
+# 约定:完成一个功能 = 同一次提交里更新对应条目(置 done + completedAt)。
+# 阶段与每阶段的完成标准在 docs/plan.md。
+
+project: maosensen/zeroUI
+track: oss
+launchedAt: null
+areas: [地基, 组件, 注册表, 站点与文档, 工作台, 工程与基建]
+
+modules:
+  - id: license
+    title: 开源许可证
+    tier: required
+    status: todo
+  - id: install-works
+    title: 在一个全新的 shadcn 项目里装得上、跑得起来
+    tier: required
+    status: todo
+
+features:
+  # ── 工程与基建 ────────────────────────────────────────────────────────
+  - id: scaffold
+    title: 干净的 shadcn 工程(Base UI、只有暗色)
+    area: 工程与基建
+    status: done
+    completedAt: 2026-10-24
+    note: |
+      Next 16、React 19、Tailwind v4、Biome、React Compiler、pnpm;shadcn base-maia 风格,底层 Base UI,
+      全部组件拉进来作起点;主题强制 dark;端口 4374。不从 yTemplate 起,理由见 docs/plan.md。
+  # ── 地基(第一阶段)──────────────────────────────────────────────────
+  - id: tokens
+    title: 设计 token(颜色、字号、描边、斜切角、间距、层级)
+    area: 地基
+    status: todo
+  - id: motion
+    title: 动效函数(时长、缓动、按下、滑块、展开、切入、故障)
+    area: 地基
+    status: todo
+  - id: icon-spec
+    title: 图标规范与第一批图标
+    area: 地基
+    status: todo
+  # ── 组件(第一阶段)──────────────────────────────────────────────────
+  - id: button
+    title: Button
+    area: 组件
+    status: todo
+  - id: input
+    title: Input
+    area: 组件
+    status: todo
+  - id: select
+    title: Select
+    area: 组件
+    status: todo
+  - id: tabs
+    title: Tabs(斜切滑块)
+    area: 组件
+    status: todo
+  # ── 注册表、站点与工作台(第二阶段)──────────────────────────────────
+  - id: registry
+    title: shadcn registry(shadcn add 一行装上)
+    area: 注册表
+    status: todo
+  - id: docs
+    title: 文档页(每个组件的演示、属性、安装命令)
+    area: 站点与文档
+    status: todo
+  - id: showcase
+    title: 对外展示页
+    area: 站点与文档
+    status: todo
+  - id: studio
+    title: 工作台(调 token 与动效,只在本机)
+    area: 工作台
+    status: todo
