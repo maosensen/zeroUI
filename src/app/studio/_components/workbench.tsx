@@ -2,6 +2,13 @@
 
 import { type CSSProperties, type ReactNode, useState } from "react";
 import { Button } from "@/zero/components/button";
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldLabel,
+} from "@/zero/components/field";
+import { Input } from "@/zero/components/input";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/zero/components/tabs";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
@@ -160,6 +167,59 @@ export function Workbench() {
               >
                 Schedule
               </Button>
+            </div>
+          </Row>
+        </Section>
+
+        <Section title="Input">
+          {sizes.map((size) => (
+            <Row key={size} label={size}>
+              <Input
+                size={size}
+                placeholder="Search the board"
+                className="max-w-xs"
+              />
+              <Input
+                size={size}
+                defaultValue="Courier, east district"
+                className="max-w-xs"
+              />
+            </Row>
+          ))}
+          <Row label="states">
+            <Input placeholder="Disabled" disabled className="max-w-56" />
+            <Input
+              defaultValue="no@"
+              aria-invalid
+              className="max-w-56"
+              aria-label="Invalid"
+            />
+            <Input placeholder="Cut both" cut="both" className="max-w-56" />
+          </Row>
+          <Row label="field">
+            <div className="grid w-full max-w-sm gap-6">
+              <Field
+                validationMode="onChange"
+                validate={(value) =>
+                  typeof value === "string" &&
+                  value.length > 0 &&
+                  value.length < 3
+                    ? "At least three characters."
+                    : null
+                }
+              >
+                <FieldLabel>Callsign</FieldLabel>
+                <Input placeholder="Three or more characters" />
+                <FieldDescription>
+                  Shown on every job you take.
+                </FieldDescription>
+                <FieldError />
+              </Field>
+              <Field invalid>
+                <FieldLabel>Drop point</FieldLabel>
+                <Input defaultValue="Pier 0" />
+                <FieldError match>That pier closed last season.</FieldError>
+              </Field>
             </div>
           </Row>
         </Section>

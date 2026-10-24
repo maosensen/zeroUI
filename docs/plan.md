@@ -89,7 +89,9 @@ screenshots with everything newly drawn.
 Progress: Button done (2026-10-24): four variants, three sizes, four cuts; tokens, motion and
 the slab came out of it, plus the workbench at `/studio`. Tabs done (2026-10-24), second, so the
 foundation could still move: it made slab inputs non-inheriting and added `--zero-inset`. Input
-and Select are the exit test: they must change no token and no motion function.
+and Select are the exit test: they must change no token and no motion function. Input done
+(2026-10-24) with no change to tokens, motion or the slab — the first half of the exit test
+passed. It brought the Field parts with it (label, description, error) to show its error state.
 
 **Exit:** the four components are done, and building the third and fourth changed no token and no
 motion function. If they still change, the foundation is not settled yet.
