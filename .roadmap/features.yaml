@@ -18,6 +18,7 @@ modules:
     tier: required
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: shadcn init -d -b base 新建的 Next 项目,@zeroui 指向本机 registry,五个组件 + theme + icons 一条命令装上;import 全部落对、带类型检查的生产构建通过、页面与工作台一致。部署后要对线上地址再装一次。
 
 features:
@@ -27,6 +28,7 @@ features:
     area: 工程与基建
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: |
       Next 16、React 19、Tailwind v4、Biome、React Compiler、pnpm;shadcn base-maia 风格,底层 Base UI,
       全部组件拉进来作起点;主题强制 dark;端口 4374。不从 yTemplate 起,理由见 docs/plan.md。
@@ -36,18 +38,21 @@ features:
     area: 地基
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 颜色、字号、控件高度、描边、斜切角、层级、轨道内距(src/zero/foundation/tokens.css)。第三、四个组件(Input、Select)一处未改,第一阶段的退出检验通过。
   - id: motion
     title: 动效函数(时长、缓动、按下、滑块、展开、切入、故障)
     area: 地基
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 时长、缓动、按下 / 回弹、滑块、展开、收起、扫光(motion.css + motion.ts),四个组件全部只用这些。切入与故障四个组件都没用到,留给第一个需要它们的组件族再定(docs/plan.md 2026-10-24)。
   - id: icon-spec
     title: 图标规范与第一批图标
     area: 地基
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 规范在 docs/icons.md:24 格网格、实心填充、横向笔画以 1:4 斜切收尾、斜线 45°、切角不倒圆、只有天生是圆的才用曲线;可选墨色描边。十九个图标(方向 6、状态 5、操作 7、加载 1),每个一个文件,替换掉组件里的一次性箭头;工作台顶部有图标表。界面图标在代码里手画,yIcon 管 logo 与插画。
   # ── 组件(第一阶段)──────────────────────────────────────────────────
   - id: button
@@ -55,24 +60,35 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 四种(primary / secondary / danger / ghost)× 三档 × 四种切边;按下回弹、扫光、选中框(黄框 + 墨色间隙)。
   - id: input
     title: Input
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 内凹的井(void 填充、安静的描边),整个 slab 都能点进输入;焦点是黄框,出错描边转红,出错且聚焦时是亮红框;光标是强调色。顺带 Field 的标签、说明、错误三件(错误前一枚斜块,滑入、退得更快)。没有改动任何 token、动效与 slab —— 退出检验过了一半。之后加了前后槽位(start / end:图标或 InputAction,清空、显示密码)。
+  - id: field
+    title: Field(标签、说明、错误)
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    shippedIn: v0.1.0
+    note: 包着 Base UI 的 Field;错误前一枚斜块,滑入、退得更快。随 Input 一起做,发版时按可单独宣布的能力拆出。
   - id: select
     title: Select
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 触发器是和 Input 同样的内凹井,箭头打开时翻转;弹出层是靠描边抬起的直角方框(粗墨色边 + 外圈细线),从触发器往下展开、收起更快;高亮行是尾端斜切的强调色 slab,已选项前一枚斜块。分组、分隔线、禁用项、长列表滚动。没有改动地基 —— 退出检验通过。
   - id: tabs
     title: Tabs(斜切滑块)
     area: 组件
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 两侧斜切的轨道 + 两侧斜切的强调色滑块,弹簧滑到当前页签,两端都与轨道切边平行、相距 --zero-inset;每个页签带一份裁到滑块位置的墨色标签,滑动中标签压在滑块上的部分变黑。三档尺寸。
   # ── 注册表、站点与工作台(第二阶段)──────────────────────────────────
   - id: registry
@@ -80,24 +96,35 @@ features:
     area: 注册表
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: '@zeroui 命名空间:registry add 一次,之后 shadcn add @zeroui/button。29 项:font、foundation、theme、icon、19 个图标 + icons、五个组件。scripts/build-registry.mts 把 src/styles/zero 的 CSS 转成条目的 css 与 cssVars,再 shadcn build 出 public/r。'
+  - id: theme
+    title: 一条命令变暗(@zeroui/theme)
+    area: 注册表
+    status: done
+    completedAt: 2026-10-24
+    shippedIn: v0.1.0
+    note: registry:theme 条目,把宿主项目的 shadcn 变量(含 sidebar、chart)指向 zeroUI 的颜色,亮暗两套一样。
   - id: docs
     title: 文档页(每个组件的演示、属性、安装命令)
     area: 站点与文档
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: /docs:上手页、五个组件各一页、图标页。每页有分包管理器的安装命令、活的演示(展示的代码就是演示文件本身)、行为说明、每个部件一张属性表并链到底层的 Base UI 部件;代码在服务端用 zeroUI 自己的配色高亮。手机宽度下导航变成横向一行,宽的演示在自己的框里横向滚动。
   - id: seo
     title: SEO / GEO(分级契约 L0 与 L1)
     area: 站点与文档
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 经 yPulse matrix:seo 接入模块;src/seo 一份页面清单供 metadata、sitemap、llms.txt、JSON-LD;robots 全放行并逐个列出 AI 爬虫;分享图用组件画、og:capture 截;pnpm seo:audit 为门禁。线上体检 L0 10/10、L1 21/21,IndexNow 202;yPulse 里转为 seo:public。Search Console / Bing 的 sitemap 提交由作者做。
   - id: showcase
     title: 对外展示页
     area: 站点与文档
     status: done
     completedAt: 2026-10-24
+    shippedIn: v0.1.0
     note: 首页:大号倾斜字的首屏 + 安装命令;一块能用的「委托板」(Tabs 切开放 / 已接 / 完成,搜索、按街区筛选、接单、交付);一个转 --zero-slant 的旋钮,按钮、页签、输入框一起重新切角;组件索引。文档与首页共用顶栏。手机宽度下委托板的标题折成两行。
   - id: studio
     title: 工作台(调 token 与动效,只在本机)

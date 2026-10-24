@@ -6,53 +6,48 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-24
+
+The first release: a dark-only component library with a game-UI look, built on
+shadcn and Base UI, at https://zeroui.catforest.dev.
+
 ### Added
 
-- Search and AI visibility: every page has its own title, description,
-  canonical address and share card; the site publishes a sitemap, robots.txt
-  that welcomes search and AI crawlers, llms.txt, and structured data naming
-  catforest as the maker.
-- The showcase: a home page that puts the components to work — a job board you
-  can search, filter, take jobs from and hand them in, a dial that turns the
-  slant under a button, tabs and a field, and an index of every component.
-- Docs: a getting-started page, a page for each component and one for the
-  icons — install commands for pnpm, npm, yarn and bun, live demos with their
-  code, how each behaves, and every prop.
-- The registry: add the `@zeroui` namespace once, then install any component
-  with `shadcn add @zeroui/<name>`. It brings the foundation (tokens, motion,
-  the slab) into your stylesheet, Montserrat into your layout, and on request
-  a theme that turns your shadcn variables dark to match.
-- Icons: nineteen solid icons drawn for zeroUI on one grid — chevrons and
-  arrows, check, close, alert, info, lock, plus, minus, search, clear, eye,
-  eye-off, external and a spinner. Strokes end on the same slant as the slabs.
-  They size with the text beside them, take its colour, and can wear an ink
-  outline on the accent.
-- Input holds an icon or a small action at either end: a search glass, a clear
-  button, a show-password toggle.
-- Select: the trigger is the same sunken well as Input, its chevron flipping
-  when open; the list drops from it in a square box lifted by a double outline,
-  grows in and folds away faster. The highlighted row fills with the accent and
-  the chosen one carries a small slanted mark. Groups, separators, disabled
-  rows, and long lists that scroll.
-- Input: a sunken well with a quiet outline; the whole slab takes the click.
-  Focus draws the yellow frame, an invalid value turns the outline red, and the
-  caret is the accent. Three sizes and the four cuts.
-- Field: label, description and error around a control, with Base UI's
-  validation. The error slides in under a small slanted mark and leaves faster.
-- Tabs: a track cut on the slant at both ends and an accent slab that springs
-  to the active tab, sitting parallel to the track's cut at either end. While
-  it slides, the part of each label over the slab turns dark and the rest stays
-  light. Three sizes; keyboard focus draws the yellow frame.
-- Button: primary, secondary, danger and ghost; three sizes; the slanted cut on
-  the end, the start, both sides or neither. It shrinks fast when pressed and
-  springs back past its rest; pointing at it sends a band of light across.
-  Keyboard focus draws a yellow frame with a dark gap inside it.
-- The foundation: colour, type, control heights, outline weights and one slant
-  angle as tokens; named durations, easings and transitions; the slab, the cut
-  block every component is drawn from. One typeface, Montserrat.
-- The studio (local only): the icon sheet and every button, input, select and tab state, with dials for the slant and the
-  outline weight.
+- **Install from a shadcn registry** — add the `@zeroui` namespace to a shadcn
+  project once, then `shadcn add @zeroui/button` (or input, field, select,
+  tabs, icons). The code lands in your project, yours to change; the first
+  component also writes the foundation into your stylesheet and loads
+  Montserrat in your layout.
+- **Go dark in one command** — `@zeroui/theme` points your project's shadcn
+  variables at zeroUI's colours, so the rest of the page matches.
+- **Button** — a slab cut on the slant and outlined in ink: primary, secondary,
+  danger and ghost; three sizes; the cut on the end, the start, both sides or
+  neither. It drops when pressed, springs back past its rest, and sends a band
+  of light across when pointed at.
+- **Input** — a sunken well with an accent caret, an icon or an action at
+  either end (a search glass, a clear button, a show-password toggle), and a
+  red outline when the value is invalid.
+- **Field** — label, help text and an error that slides in under a small
+  slanted mark, with Base UI's validation.
+- **Select** — the same sunken well as a trigger, and a list that grows out of
+  it in a box lifted by a double outline; the highlighted row fills with the
+  accent and the chosen one carries a slanted mark.
+- **Tabs** — an accent slab that springs along a slanted track to the active
+  tab; while it slides, the part of each label over it turns dark.
+- **Nineteen icons** — solid glyphs drawn for zeroUI on one grid, their strokes
+  ending on the same slant as the slabs: chevrons and arrows, check, close,
+  alert, info, lock, plus, minus, search, clear, eye, eye-off, external and a
+  spinner. They size with the text beside them and take its colour.
+- **One foundation under everything** — colours, type, control heights,
+  outline weights and a single slant angle as tokens; named timings for every
+  motion; the slab, the cut block every component is drawn from. Keyboard focus
+  is a yellow frame everywhere, and motion holds still when the system asks for
+  reduced motion.
+- **Docs for every component** — install commands for pnpm, npm, yarn and bun,
+  live demos with their code, how each component behaves, and every prop.
+- **A showcase** — the home page puts the components to work in a job board you
+  can search, filter, take jobs from and hand them in, and a dial that turns
+  the slant under a button, tabs and a field.
 
-- The project: a clean shadcn app on Base UI, dark only, with every shadcn
-  component pulled in as a starting point, and the plan for building zeroUI's
-  tokens, motion and icons from its first four components.
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/maosensen/zeroUI/releases/tag/v0.1.0
