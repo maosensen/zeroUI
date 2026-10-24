@@ -53,6 +53,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "pino-pretty": "^13.2.0",
     "postcss": "^8.5.31",
+    "schema-dts": "1.1.5",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.152.0"
