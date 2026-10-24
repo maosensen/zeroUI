@@ -112,6 +112,18 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["base ui avatar", "avatar group react"],
       where: "description and behaviour",
     },
+    "/docs/breadcrumb": {
+      phrases: ["react breadcrumb component", "shadcn breadcrumb"],
+      where: "description and lead",
+    },
+    "/docs/pagination": {
+      phrases: ["react pagination component", "shadcn pagination"],
+      where: "description and lead",
+    },
+    "/docs/sidebar": {
+      phrases: ["collapsible sidebar react", "shadcn sidebar icon mode"],
+      where: "description and behaviour",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

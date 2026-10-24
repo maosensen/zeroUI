@@ -118,6 +118,21 @@ const entries = [
     line: "A face or initials in an ink ring.",
   },
   {
+    href: "/docs/breadcrumb",
+    name: "Breadcrumb",
+    line: "The way here, between slanted bars.",
+  },
+  {
+    href: "/docs/pagination",
+    name: "Pagination",
+    line: "Pages as small slabs.",
+  },
+  {
+    href: "/docs/sidebar",
+    name: "Sidebar",
+    line: "A black strip that folds to icons.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

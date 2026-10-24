@@ -32,6 +32,7 @@ import { DataSection } from "./data-section";
 import { FeedbackSection } from "./feedback-section";
 import { FormsSection } from "./forms-section";
 import { IconSheet } from "./icon-sheet";
+import { NavigationSection } from "./navigation-section";
 import { OverlaysSection } from "./overlays-section";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
@@ -382,6 +383,8 @@ export function Workbench() {
         <FeedbackSection />
 
         <DataSection />
+
+        <NavigationSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

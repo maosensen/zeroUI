@@ -52,6 +52,15 @@ All notable changes to zeroUI are documented here. The format is based on
   as a link.
 - **Avatar** — a round picture or initials in an ink ring, in the three
   control heights, with a status dot and overlapping groups.
+- **Breadcrumb** — the pages above this one in leaning type, set apart by
+  short slanted bars; the current page is the brightest.
+- **Pagination** — pages as small slabs cut on both sides, nesting like the
+  tabs, the current one filled with the accent.
+- **Sidebar** — a black, hatched strip of rows for an app's side, the current
+  page in the accent; it folds away or down to an icon rail with tooltips,
+  opens as a sheet on phones, and toggles with ⌘B / Ctrl+B.
+- **More and sidebar icons** — three small leaning slabs for what is left
+  out, and a frame with its side column filled.
 
 ### Changed
 

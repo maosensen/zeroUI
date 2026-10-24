@@ -18,6 +18,8 @@ export { createIcon, type IconProps } from "./icon";
 export { InfoIcon } from "./info";
 export { LockIcon } from "./lock";
 export { MinusIcon } from "./minus";
+export { MoreIcon } from "./more";
 export { PlusIcon } from "./plus";
 export { SearchIcon } from "./search";
+export { SidebarIcon } from "./sidebar";
 export { SpinnerIcon } from "./spinner";

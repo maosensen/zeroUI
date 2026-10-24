@@ -403,6 +403,32 @@ const registry = {
       ["@base-ui/react"],
     ),
     component(
+      "breadcrumb",
+      "Breadcrumb",
+      "The pages above this one in leaning type, between slanted bars.",
+      ["@base-ui/react"],
+      [dep("icon-more")],
+    ),
+    component(
+      "pagination",
+      "Pagination",
+      "Pages as small slabs cut on both sides; the current one in the accent.",
+      ["@base-ui/react"],
+      [
+        dep("button"),
+        dep("icon-chevron-left"),
+        dep("icon-chevron-right"),
+        dep("icon-more"),
+      ],
+    ),
+    component(
+      "sidebar",
+      "Sidebar",
+      "A black strip of rows that folds to an icon rail, and opens as a sheet on phones.",
+      ["@base-ui/react"],
+      [dep("button"), dep("sheet"), dep("tooltip"), dep("icon-sidebar")],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

@@ -31,6 +31,7 @@ export function GET() {
       { heading: "Overlays", links: section("overlays") },
       { heading: "Feedback", links: section("feedback") },
       { heading: "Data display", links: section("data") },
+      { heading: "Navigation", links: section("navigation") },
       { heading: "Foundation", links: section("foundation") },
       {
         heading: "Registry",

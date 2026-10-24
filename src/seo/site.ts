@@ -35,6 +35,7 @@ export type Page = {
     | "overlays"
     | "feedback"
     | "data"
+    | "navigation"
     | "foundation";
 };
 
@@ -239,6 +240,30 @@ export const PAGES = [
       "A Base UI avatar for shadcn: a round picture or initials, a status dot, and overlapping groups.",
     crumb: "Avatar",
     group: "data",
+  },
+  {
+    path: "/docs/breadcrumb",
+    title: "Breadcrumb",
+    description:
+      "A breadcrumb component for React: the pages above this one in leaning type, set apart by slanted bars.",
+    crumb: "Breadcrumb",
+    group: "navigation",
+  },
+  {
+    path: "/docs/pagination",
+    title: "Pagination",
+    description:
+      "A pagination component for shadcn: pages as small slanted slabs, the current one filled with the accent.",
+    crumb: "Pagination",
+    group: "navigation",
+  },
+  {
+    path: "/docs/sidebar",
+    title: "Sidebar",
+    description:
+      "A collapsible sidebar for React on Base UI: folds to an icon rail with tooltips, and opens as a sheet on phones.",
+    crumb: "Sidebar",
+    group: "navigation",
   },
   {
     path: "/docs/icons",

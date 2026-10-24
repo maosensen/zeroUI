@@ -48,6 +48,14 @@ export const docsNav = [
     ],
   },
   {
+    group: "Navigation",
+    pages: [
+      { href: "/docs/breadcrumb", title: "Breadcrumb" },
+      { href: "/docs/pagination", title: "Pagination" },
+      { href: "/docs/sidebar", title: "Sidebar" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

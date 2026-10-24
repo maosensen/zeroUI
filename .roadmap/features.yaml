@@ -201,6 +201,24 @@ features:
     status: done
     completedAt: 2026-10-24
     note: 圆形(按 tokens 的约定,天生圆的东西才用圆角),墨色圈加细线轮廓;三种尺寸对齐控件高度;首字母兜底、状态圆点、重叠的头像组与计数。
+  - id: breadcrumb
+    title: Breadcrumb
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 斜体路径,用斜切短条分隔;上级页面安静、悬停变亮,当前页最亮最粗;省略号用新的 more 图标;render 接路由链接。
+  - id: pagination
+    title: Pagination
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 每页是两侧斜切的小 Button slab,像 tabs 一样嵌套;当前页填强调色;上一页/下一页带箭头,手机上只留箭头。
+  - id: sidebar
+    title: Sidebar
+    area: 组件
+    status: done
+    completedAt: 2026-10-24
+    note: 黑色斜纹侧栏,行用 Dropdown menu 的行,当前页填强调色;可整个收起或折成图标栏(折叠时 tooltip 显示名称),手机上是 Sheet;⌘B / Ctrl+B 切换;子菜单、计数。暂无 floating/inset 变体、拖拽条、记住状态的 cookie。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

@@ -222,6 +222,15 @@ outline, like Input's. Avatar is round, the radius tokens.css keeps for things r
 sized to the three control heights. The docs' sample portraits (`public/samples/`) are drawn for
 zeroUI.
 
+Navigation done (2026-10-24) — Breadcrumb, Pagination, Sidebar. No foundation change; two icons,
+`more` (three small leaning slabs, for ellipses) and `sidebar`. Breadcrumb's separator is the
+slab's slanted edge on its own. Pagination's pages are Button slabs cut on both sides, so they nest
+like the tabs. Sidebar keeps shadcn's parts and behaviour (offcanvas or icon rail on wide screens,
+a Sheet below 768 px, ⌘B) on a black hatched strip with the Dropdown menu's rows; left out for now:
+the floating and inset variants, the drag rail, menu actions and skeletons, and the cookie that
+remembers the state (a host can control `open` itself). With navigation, the families planned for
+phase 3 are all in.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not
