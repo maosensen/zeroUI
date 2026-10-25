@@ -8,9 +8,9 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [0.1.2] - 2026-10-25
 
-Twenty-eight more components, which completes shadcn's set: disclosure and
-toggles, commands, more inputs and overlays, layout pieces, and the calendar,
-carousel, chart and resizable panels. zeroUI is now MIT-licensed.
+Twenty-eight more components: disclosure and toggles, commands, more inputs
+and overlays, layout pieces, and the calendar, carousel, chart and resizable
+panels. zeroUI is now MIT-licensed.
 
 ### Added
 
