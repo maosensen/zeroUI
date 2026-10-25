@@ -626,24 +626,28 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.7
     note: 帖子卡:封面通栏、角上浏览数、作者头像压在封面下沿、带类型小 slab 的倾斜标题、一行摘要;标题里的链接或按钮撑满整张卡,指上去浮起并描强调色框,聚焦为黄框。Masonry 用 CSS 多栏,服务端给的就是最终排布、不跳动,阅读顺序按列。界面模式取自 yLookbook 的绳网复刻,名字、画风与封面都是 zeroUI 自己的。
   - id: profile-chip
     title: Profile chip(玩家资料胶囊)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.7
     note: 两边斜切的 slab 里放头像、名字、写着点数的稀有蓝经验条、倾斜大号等级;读屏只读一句「名字、等级、经验」。
   - id: reward-track
     title: Reward track(等级奖励轨道)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.7
     note: 一级一行:斜井里的大号等级数、中间是奖励格(InventorySlot)、右边按状态显示领取按钮 / 已领取 / 锁与条件;ready 点亮等级数并加强调色边,current 标出当前等级;每行开头有给读屏的等级与状态。
   - id: tabs-hotkeys
     title: Tabs 全局热键
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.7
     note: TabsList 的 hotkeys(两个键)在页面任意处(文本框外)切到上一个/下一个页签并循环,像游戏用肩键翻页;键显示在轨道两端,并写进 aria-keyshortcuts。
   - id: blocks
     title: 区块(五个整屏)
@@ -664,13 +668,22 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.7
     note: 社区帖子流(按类型筛选的瀑布流,帖子在 Sheet 里打开、带回复与接委托,关闭时内容留到滑出、焦点回到帖子)、等级奖励(资料胶囊 + 奖励轨道、单领与全部领取、礼貌播报待领数量,header 可关以便嵌进应用)、今日日程(四个时段按容器宽度四列/两列/单列,当前时段黄框加 NOW、已过时段压暗,差事用 Objectives);区块共十一个。
   - id: example-board
     title: 示例应用:委托板(/examples/board)
     area: 站点与文档
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.7
     note: 用区块原样拼成的整页应用:黑顶栏(返回、资料胶囊、Q/E 热键页签),下面是帖子板、今日、等级三页。/examples 是示例总览,顶栏加了 Examples。界面模式取自 yLookbook 的绳网复刻,名字、画风、封面全部是 zeroUI 自己的;lookbook 那件原样保留。
+  - id: tilt
+    title: tilt 倾斜大字(地基)
+    area: 地基
+    status: done
+    completedAt: 2026-10-25
+    shippedIn: v0.1.7
+    note: 作者发现委托板 Sheet 里的长标题右端抬出了 Sheet 顶边。原因是以左端为轴旋转,右端抬高「宽度×sin(倾斜角)」。新 tilt 工具类:旋转、宽度收成文字宽、在 ::before 里预留同样高度(块级百分比 padding 按宽度算,向上取整到整像素,免得下方内容落在半像素上);作者随后定:旋转只留给长度可控的短展示字(logo、首页自己的标题、分享卡、标题画面的游戏名、cut-in),装内容的标题(对话框、Sheet、确认框、文档与指南页、区块)一律不旋转,只保留粗斜体;规则写进 AGENTS.md。
   - id: item-icons
     title: 物品图标(六个)
     area: 地基

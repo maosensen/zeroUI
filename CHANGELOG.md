@@ -6,6 +6,13 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.7] - 2026-10-25
+
+Pieces for a game's community screens (a post card and a masonry wall, a
+profile chip, a reward track, tab hotkeys), three blocks built from them, and
+a new Examples section whose first app, the Courier board, puts the blocks
+together under one top bar.
+
 ### Added
 
 - **Post card** and **Masonry** — a community post with its cover, view count,
@@ -20,6 +27,14 @@ All notable changes to zeroUI are documented here. The format is based on
   with claim and claim all, and a daily schedule of shifts.
 - **Examples** — a new section of the site with whole apps; the first is the
   Courier board, built from the blocks under one top bar.
+
+### Fixed
+
+- A long title in a Dialog, Sheet or Alert dialog, rotated by the tilt, could
+  rise out of the top of its panel. Titles that carry content (dialogs, sheets,
+  docs pages, blocks) are now level, black and italic; rotation is kept for
+  short display lettering, through the new `tilt` utility, which keeps room
+  above for the rise.
 
 ## [0.1.6] - 2026-10-25
 
@@ -321,7 +336,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.6...HEAD
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.7...HEAD
+[0.1.7]: https://github.com/maosensen/zeroUI/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/maosensen/zeroUI/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/maosensen/zeroUI/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/maosensen/zeroUI/compare/v0.1.3...v0.1.4
