@@ -1,9 +1,15 @@
+import CompassHeading from "@/app/docs/_demos/compass-heading";
 import CounterCredits from "@/app/docs/_demos/counter-credits";
+import DialogueTalk from "@/app/docs/_demos/dialogue-talk";
+import FeedEvents from "@/app/docs/_demos/feed-events";
+import FloatingTextHits from "@/app/docs/_demos/floating-text-hits";
 import GaugeHit from "@/app/docs/_demos/gauge-hit";
 import GaugeKinds from "@/app/docs/_demos/gauge-kinds";
 import HoldButtonScrap from "@/app/docs/_demos/hold-button-scrap";
 import InventoryHold from "@/app/docs/_demos/inventory-hold";
 import ObjectivesShift from "@/app/docs/_demos/objectives-shift";
+import RadialMenuQuick from "@/app/docs/_demos/radial-menu-quick";
+import StatsCompare from "@/app/docs/_demos/stats-compare";
 
 function Row({
   label,
@@ -43,6 +49,24 @@ export function GameSection() {
         </Row>
         <Row label="objectives">
           <ObjectivesShift />
+        </Row>
+        <Row label="dialogue">
+          <DialogueTalk />
+        </Row>
+        <Row label="compass">
+          <CompassHeading />
+        </Row>
+        <Row label="floating text">
+          <FloatingTextHits />
+        </Row>
+        <Row label="feed">
+          <FeedEvents />
+        </Row>
+        <Row label="stats">
+          <StatsCompare />
+        </Row>
+        <Row label="radial menu">
+          <RadialMenuQuick />
         </Row>
       </div>
     </section>
