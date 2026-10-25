@@ -309,6 +309,12 @@ provider, which a host can take from Base UI directly.
   - Missing names: Select triggers and sliders in demos, the first OTP cell (Base UI hands it the
     Field's label, so an OTP is named through a Field), a native select in a Field (now the Field's
     Control), the calendar's days (read by their number first) and its two navs on one page.
+- **Screenshot regression.** `pnpm snapshots` photographs every docs demo (`[data-demo]`) with
+  motion held still and compares it, pixel by pixel, with its baseline in `tests/snapshots/`
+  (0.1% tolerance for anti-aliasing); `--update` rewrites the baselines after a change that was
+  meant. A token change shows up as the demos it moved: changing the accent marks the primary
+  button. Two demos move by themselves and are left out (the timed progress bar, the calendar that
+  marks today). It is a release gate beside `pnpm a11y`.
 
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,

@@ -23,7 +23,10 @@ export function Demo({
   return (
     <section className="grid min-w-0 gap-3">
       <h3 className="font-black font-zero text-zero-lg italic">{title}</h3>
-      <div className="flex min-h-40 flex-wrap items-center justify-center-safe gap-4 overflow-x-auto border-(length:--zero-stroke-thin) border-zero-line bg-zero-ground bg-(image:--zero-hatch) p-4 sm:p-8">
+      <div
+        data-demo={file}
+        className="flex min-h-40 flex-wrap items-center justify-center-safe gap-4 overflow-x-auto border-(length:--zero-stroke-thin) border-zero-line bg-zero-ground bg-(image:--zero-hatch) p-4 sm:p-8"
+      >
         {children}
       </div>
       <CodeBlock code={source} title={`${file}.tsx`} />

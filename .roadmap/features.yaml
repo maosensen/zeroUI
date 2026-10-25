@@ -529,6 +529,12 @@ features:
     status: done
     completedAt: 2026-10-25
     note: pnpm a11y:无头 Chrome 打开 sitemap 每一页跑 axe-core,--focus 时用真实 Tab 逐个检查焦点是否有黄色焦点框。首轮修掉:text-3 与 danger 两个 token 对比度不足(调亮)、Slider 焦点框落在不会获焦的外壳上、勾选后的 Checkbox/Radio/Switch 焦点被墨线盖掉、outline-none 让 outline 焦点框不出现、几个示例缺控件名称。现为发版门禁。
+  - id: snapshots
+    title: 截图回归(每个文档示例一张基准图)
+    area: 质量
+    status: done
+    completedAt: 2026-10-25
+    note: pnpm snapshots:无头 Chrome 在减弱动态、关过渡与动画的条件下拍每个 [data-demo],与 tests/snapshots/ 逐像素比对(pixelmatch,容差 0.1%),--update 重写基准;按名字只跑相关页面。会自己变的两个示例(定时进度条、标今天的日历)不拍。改 token 时能直接看到哪些组件变了。
   - id: seo
     title: SEO / GEO(分级契约 L0 与 L1)
     area: 站点与文档
