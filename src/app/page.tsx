@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Hud } from "@/components/blocks/hud";
 import { Button } from "@/components/zero/button";
 import { ArrowRightIcon } from "@/components/zero/icons";
 import { JsonLd } from "@/lib/seo/json-ld";
@@ -48,6 +49,13 @@ const rules = [
     text: "A fast press and a springing release, a slab that slides, popups that grow and fold. All of it holds still for reduced motion.",
   },
 ];
+
+const blocks = [
+  ["/docs/blocks/settings-menu", "Settings menu"],
+  ["/docs/blocks/mission-briefing", "Mission briefing"],
+  ["/docs/blocks/loadout", "Loadout"],
+  ["/docs/blocks/leaderboard", "Leaderboard"],
+] as const;
 
 export default function Home() {
   return (
@@ -152,6 +160,30 @@ pnpm dlx shadcn@latest add @zeroui/button`}
             </p>
           </div>
           <Console />
+        </section>
+
+        <section className="grid gap-8">
+          <div className="grid gap-4">
+            <Heading eyebrow="In the game">A HUD that works</Heading>
+            <p className="max-w-xl font-medium text-zero-md text-zero-text-2 leading-relaxed">
+              Gauges that leave a trail, a hotbar with cooldowns, objectives
+              that strike through. Use the hotbar: the kit patches the hull, the
+              flare and the key finish the shift.
+            </p>
+          </div>
+          <Hud />
+          <p className="flex flex-wrap items-center gap-x-5 gap-y-2 font-bold font-zero text-zero-sm italic">
+            <span className="text-zero-text-3">More blocks:</span>
+            {blocks.map(([href, name]) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-zero-text-2 underline decoration-zero-line decoration-2 underline-offset-4 outline-none transition-colors hover:text-zero-accent focus-visible:text-zero-focus"
+              >
+                {name}
+              </Link>
+            ))}
+          </p>
         </section>
 
         <section className="grid gap-8">

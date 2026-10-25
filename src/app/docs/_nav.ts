@@ -5,6 +5,17 @@ export const docsNav = [
     pages: [{ href: "/docs", title: "Getting started" }],
   },
   {
+    group: "Blocks",
+    pages: [
+      { href: "/docs/blocks", title: "Overview" },
+      { href: "/docs/blocks/settings-menu", title: "Settings menu" },
+      { href: "/docs/blocks/mission-briefing", title: "Mission briefing" },
+      { href: "/docs/blocks/loadout", title: "Loadout" },
+      { href: "/docs/blocks/leaderboard", title: "Leaderboard" },
+      { href: "/docs/blocks/hud", title: "HUD" },
+    ],
+  },
+  {
     group: "Components",
     pages: [
       { href: "/docs/button", title: "Button" },

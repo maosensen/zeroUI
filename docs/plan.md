@@ -367,6 +367,25 @@ own in the docs ("Game"), the nav and llms.txt.
 - **Objectives.** A mark per state, a strike drawn with a background line growing from the start.
 - **Item icons.** crate, cell, flare, key, chip, kit, to the icon spec: thirty icons in all.
 
+### Blocks (2026-10-25)
+
+Whole screens built from the components, for what a game needs most often: a settings menu, a
+mission briefing, a loadout, a leaderboard, a HUD.
+
+- **Registry shape.** `registry:block` items, each one file, `src/components/blocks/<name>.tsx`,
+  installed to `@components/blocks/`. Its registry dependencies are read from its imports, so
+  installing a block brings exactly the components and icons it uses; blocks import icons file by
+  file for that reason. The state is written out in the file (local state, made-up data) so the
+  wiring between pieces is visible and easy to replace.
+- **Layout follows the block's own box** (container queries, `@container` / `@3xl:` / `@4xl:`),
+  not the viewport: the same block sits in a narrow docs column and a wide app.
+- **Docs.** `/docs/blocks` lists them; each has its page with the install command, the block live
+  (`Block`, which reads the block file like `Demo` reads a demo and marks its box
+  `data-demo="block-<name>"` for the screenshot gate) and what it is built from. The breadcrumb
+  goes through Blocks. The header links to them, and the home page runs the HUD.
+- **A HUD's key numbers** are drawn from `data-key` in CSS and given as `aria-keyshortcuts`, so
+  they are announced as shortcuts and do not clash with the slot's name.
+
 ## The look is ours
 
 zeroUI takes its mood from a game UI; it takes nothing else. No logos, fonts, icons, character art

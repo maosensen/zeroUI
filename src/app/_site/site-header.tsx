@@ -21,6 +21,9 @@ export function SiteHeader({ end }: { end?: ReactNode }) {
         <Link href="/docs/button" className={navLink}>
           Components
         </Link>
+        <Link href="/docs/blocks" className={navLink}>
+          Blocks
+        </Link>
         <Link href="/docs/icons" className={`${navLink} max-sm:hidden`}>
           Icons
         </Link>

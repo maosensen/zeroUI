@@ -31,6 +31,7 @@ export type Page = {
   group:
     | "home"
     | "start"
+    | "blocks"
     | "components"
     | "overlays"
     | "feedback"
@@ -62,6 +63,54 @@ export const PAGES = [
       "Install zeroUI into a shadcn project: add the @zeroui registry namespace once, then any component, the theme and the icons.",
     crumb: "Getting started",
     group: "start",
+  },
+  {
+    path: "/docs/blocks",
+    title: "Blocks",
+    description:
+      "Game UI blocks for React and shadcn: a settings menu, a mission briefing, a loadout, a leaderboard and a HUD, each installed with one command.",
+    crumb: "Blocks",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/settings-menu",
+    title: "Settings menu",
+    description:
+      "A game settings menu block for React: display, audio, controls and gameplay tabs, built from zeroUI's Select, Slider, Switch and Hold button.",
+    crumb: "Settings menu",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/mission-briefing",
+    title: "Mission briefing",
+    description:
+      "A game mission briefing block for React: a route map, objectives, a threat gauge, the reward, and hold-to-accept with a cut-in.",
+    crumb: "Mission briefing",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/loadout",
+    title: "Loadout",
+    description:
+      "A game loadout and inventory screen block for React: a slot grid, item details with gauges, a belt to equip, and hold-to-scrap that pays credits.",
+    crumb: "Loadout",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/leaderboard",
+    title: "Leaderboard",
+    description:
+      "A game leaderboard block for React: periods as tabs, the top three marked legendary, epic and rare, and the player's own row pinned.",
+    crumb: "Leaderboard",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/hud",
+    title: "HUD",
+    description:
+      "A game HUD block for React: health and shield gauges, a credit counter, objectives and a working hotbar with cooldowns, over a scene.",
+    crumb: "HUD",
+    group: "blocks",
   },
   {
     path: "/docs/button",

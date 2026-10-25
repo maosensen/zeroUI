@@ -120,6 +120,27 @@ const component = (
   ],
 });
 
+/** A whole screen built from the components: one file in components/blocks/. */
+const block = (
+  name: string,
+  title: string,
+  description: string,
+  registryDependencies: string[],
+) => ({
+  name,
+  type: "registry:block",
+  title,
+  description,
+  registryDependencies: [dep("foundation"), ...registryDependencies],
+  files: [
+    {
+      path: `src/components/blocks/${name}.tsx`,
+      type: "registry:component",
+      target: `@components/blocks/${name}.tsx`,
+    },
+  ],
+});
+
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "zeroui",
@@ -705,6 +726,81 @@ const registry = {
       "An objective tracker: slanted marks per state and a strike through what is done.",
       [],
       [dep("icon-check"), dep("icon-close")],
+    ),
+    block(
+      "settings-menu",
+      "Settings menu",
+      "A game settings menu block for React: display, audio, controls and gameplay tabs, built from zeroUI's Select, Slider, Switch and Hold button.",
+      [
+        dep("button"),
+        dep("hold-button"),
+        dep("kbd"),
+        dep("radio-group"),
+        dep("select"),
+        dep("slider"),
+        dep("switch"),
+        dep("tabs"),
+      ],
+    ),
+    block(
+      "mission-briefing",
+      "Mission briefing",
+      "A game mission briefing block for React: a route map, objectives, a threat gauge, the reward, and hold-to-accept with a cut-in.",
+      [
+        dep("badge"),
+        dep("button"),
+        dep("counter"),
+        dep("cut-in"),
+        dep("gauge"),
+        dep("hold-button"),
+        dep("icon-crate"),
+        dep("icon-key"),
+        dep("icon-kit"),
+        dep("inventory"),
+        dep("kbd"),
+        dep("objectives"),
+      ],
+    ),
+    block(
+      "loadout",
+      "Loadout",
+      "A game loadout and inventory screen block for React: a slot grid, item details with gauges, a belt to equip, and hold-to-scrap that pays credits.",
+      [
+        dep("badge"),
+        dep("button"),
+        dep("counter"),
+        dep("gauge"),
+        dep("hold-button"),
+        dep("icon-cell"),
+        dep("icon-chip"),
+        dep("icon-crate"),
+        dep("icon-flare"),
+        dep("icon-key"),
+        dep("icon-kit"),
+        dep("inventory"),
+      ],
+    ),
+    block(
+      "leaderboard",
+      "Leaderboard",
+      "A game leaderboard block for React: periods as tabs, the top three marked legendary, epic and rare, and the player's own row pinned.",
+      [dep("avatar"), dep("badge"), dep("table"), dep("tabs")],
+    ),
+    block(
+      "hud",
+      "HUD",
+      "A game HUD block for React: health and shield gauges, a credit counter, objectives and a working hotbar with cooldowns, over a scene.",
+      [
+        dep("counter"),
+        dep("cut-in"),
+        dep("gauge"),
+        dep("icon-cell"),
+        dep("icon-flare"),
+        dep("icon-key"),
+        dep("icon-kit"),
+        dep("inventory"),
+        dep("objectives"),
+      ],
     ),
     component(
       "tabs",

@@ -23,10 +23,11 @@ export function GET() {
     summary: home.description,
     details: [
       `Made by ${IDENTITY.name}. zeroUI is installed the shadcn way: once per project, \`shadcn registry add @zeroui=${REGISTRY_URL}\`, then \`shadcn add @zeroui/<component>\` copies the component into the project, along with its foundation (tokens, motion and the slab shape, written into the project's stylesheet).`,
-      "Dark only: there is no light theme. Sixty-eight components (forms, overlays, feedback, data display, navigation, disclosure, commands, chat, layout, and game pieces: gauges, inventory, objectives) and thirty icons, each listed below. Requires Tailwind CSS v4 and React 19; built on Base UI, not Radix.",
+      "Dark only: there is no light theme. Sixty-eight components (forms, overlays, feedback, data display, navigation, disclosure, commands, chat, layout, and game pieces: gauges, inventory, objectives), five blocks (whole game screens) and thirty icons, each listed below. Requires Tailwind CSS v4 and React 19; built on Base UI, not Radix.",
     ],
     sections: [
       { heading: "Start", links: section("start") },
+      { heading: "Blocks", links: section("blocks") },
       { heading: "Components", links: section("components") },
       { heading: "Overlays", links: section("overlays") },
       { heading: "Feedback", links: section("feedback") },

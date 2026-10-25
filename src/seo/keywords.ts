@@ -304,6 +304,30 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["quest tracker ui", "objective tracker react"],
       where: "description and lead",
     },
+    "/docs/blocks": {
+      phrases: ["game ui blocks", "shadcn blocks game"],
+      where: "description and lead",
+    },
+    "/docs/blocks/settings-menu": {
+      phrases: ["game settings menu ui", "react settings screen"],
+      where: "description and lead",
+    },
+    "/docs/blocks/mission-briefing": {
+      phrases: ["game mission briefing ui", "quest screen react"],
+      where: "description and lead",
+    },
+    "/docs/blocks/loadout": {
+      phrases: ["game inventory screen react", "loadout ui"],
+      where: "description and lead",
+    },
+    "/docs/blocks/leaderboard": {
+      phrases: ["game leaderboard ui react", "leaderboard table"],
+      where: "description and lead",
+    },
+    "/docs/blocks/hud": {
+      phrases: ["game hud react", "hud overlay ui"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

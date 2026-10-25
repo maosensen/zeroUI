@@ -22,6 +22,10 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Objectives** — an objective tracker with a slanted mark per state and a
   strike drawn through what is done.
 - **Six item icons** — crate, cell, flare, key, chip and kit, for slots.
+- **Blocks** — whole game screens installed with one command, each one file
+  in `components/blocks/` that brings the components it uses: a settings menu,
+  a mission briefing, a loadout, a leaderboard and a HUD. The home page now
+  has a working HUD.
 - Foundation: `--zero-dur-hold`, the `pulse` animation, `--zero-slot`, and the
   `roll` and `float` transitions in `motion.ts`.
 

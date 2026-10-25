@@ -77,6 +77,10 @@ export function docGraph(path: Exclude<PagePath, "/">) {
     ...(path === "/docs"
       ? []
       : [{ name: page("/docs").crumb, url: pageUrl("/docs") }]),
+    // a block sits under the blocks overview
+    ...(path.startsWith("/docs/blocks/")
+      ? [{ name: page("/docs/blocks").crumb, url: pageUrl("/docs/blocks") }]
+      : []),
     { name: p.crumb, url },
   ];
   return graph([
