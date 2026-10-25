@@ -323,9 +323,34 @@ const entries = [
     line: "A band thrown across the screen.",
   },
   {
+    href: "/docs/gauge",
+    name: "Gauge",
+    line: "A bar that leaves a trail when it drops.",
+  },
+  {
+    href: "/docs/inventory",
+    name: "Inventory",
+    line: "Slots with a rarity glow and a cooldown.",
+  },
+  {
+    href: "/docs/hold-button",
+    name: "Hold button",
+    line: "Hold it until the fill runs across.",
+  },
+  {
+    href: "/docs/counter",
+    name: "Counter",
+    line: "A number that rolls and throws its change.",
+  },
+  {
+    href: "/docs/objectives",
+    name: "Objectives",
+    line: "Marks and a strike through what is done.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
-    line: "Nineteen solid glyphs on the same slant.",
+    line: "Thirty solid glyphs on the same slant.",
   },
 ];
 

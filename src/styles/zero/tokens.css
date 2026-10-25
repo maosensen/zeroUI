@@ -96,6 +96,9 @@
   /* The space between a track and the slab that moves inside it (tabs, segmented controls). */
   --zero-inset: 3px;
 
+  /* One inventory slot, square. */
+  --zero-slot: 4rem;
+
   /* ── The slant ────────────────────────────────────────────────────────
    * One angle for every slanted cut: slab edges and the slanted marks. Set to sit with
    * Montserrat's italic, which keeps its own angle; icons draw it into their paths at 1 : 4.

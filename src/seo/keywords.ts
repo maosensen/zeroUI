@@ -284,6 +284,26 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["rtl react components", "direction provider base ui"],
       where: "description and lead",
     },
+    "/docs/gauge": {
+      phrases: ["react health bar component", "game hp bar"],
+      where: "description and lead",
+    },
+    "/docs/inventory": {
+      phrases: ["react inventory grid", "game inventory ui"],
+      where: "description and lead",
+    },
+    "/docs/hold-button": {
+      phrases: ["hold to confirm button react"],
+      where: "description and lead",
+    },
+    "/docs/counter": {
+      phrases: ["animated number counter react"],
+      where: "description and lead",
+    },
+    "/docs/objectives": {
+      phrases: ["quest tracker ui", "objective tracker react"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

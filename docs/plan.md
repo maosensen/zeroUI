@@ -341,6 +341,32 @@ dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not
 change the ones phase 1 settled without a dated decision here.
 
+### Game pieces (2026-10-25)
+
+What shadcn has no counterpart for, and the reason to pick zeroUI over a re-skin: a group of its
+own in the docs ("Game"), the nav and llms.txt.
+
+- **Gauge** (Base UI Meter). A drop leaves a pale trail where the fill was, which waits and then
+  catches up; a rise sends a faint trail ahead and the fill climbs after. Which layer waits is
+  decided by the direction of the last change (React's previous-render pattern). Added to the
+  foundation: `--zero-dur-hold` (480 ms, `duration.hold`), the wait, zero under reduced motion;
+  the `pulse` animation (opacity dips once a loop) for a gauge under its `low` mark.
+- **Inventory.** Slots are square boxes, not slabs: item art needs a square, and a cut corner
+  would lose its line on the diagonal. The size is `--zero-slot` (4 rem, new); in the grid the
+  columns are `minmax(0, --zero-slot)` so a bag narrows on a phone. One Tab stop with roving focus
+  written in the component (Base UI's composite is not public): arrows move in two dimensions,
+  Home and End within the row, with Ctrl to the ends. Selected is the accent frame; focus replaces
+  it with the yellow.
+- **Hold button.** The fill is the slab's hatch layer, a gradient whose stop is `--hold-p`, a
+  registered percentage (slab.css) so it can animate. It is run with the Web Animations API, not a
+  transition, because Button's press transitions own `transition-duration`. Its pace does not
+  change under reduced motion: it says how long to hold.
+- **Counter.** Rolls on the new `roll` transition and throws its change on `float` (motion.ts).
+  It writes the new value in render and puts the old one back in a layout effect before paint,
+  then rolls, so there is no flash of the end value. Numbers default to `en-US`.
+- **Objectives.** A mark per state, a strike drawn with a background line growing from the start.
+- **Item icons.** crate, cell, flare, key, chip, kit, to the icon spec: thirty icons in all.
+
 ## The look is ours
 
 zeroUI takes its mood from a game UI; it takes nothing else. No logos, fonts, icons, character art

@@ -11,6 +11,7 @@
   --zero-dur-loop: 1600ms; /* one pass of anything that repeats while waiting: a sweep, a glint */
   --zero-dur-glitch: 320ms; /* the glitch: a few hard jumps, once */
   --zero-dur-cut: var(--zero-dur-slow); /* a cut-in's wipe: a long throw */
+  --zero-dur-hold: 480ms; /* how long a gauge's trail waits before it catches up */
 
   --zero-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1); /* things arriving */
   --zero-ease-in: cubic-bezier(0.5, 0, 0.75, 0); /* things leaving */
@@ -98,6 +99,21 @@
     }
     to {
       background-position: 0 0;
+    }
+  }
+}
+
+/*
+ * The pulse: something running low breathes, its opacity dipping and coming back, one loop a
+ * breath, for as long as it stays low (a gauge under its `low` mark). Still under reduced motion.
+ */
+@theme {
+  --animate-zero-pulse: zero-pulse var(--zero-dur-loop) var(--zero-ease-in-out)
+    infinite;
+
+  @keyframes zero-pulse {
+    50% {
+      opacity: 0.55;
     }
   }
 }
@@ -255,6 +271,7 @@
     --zero-dur-loop: 0s;
     --zero-dur-glitch: 0s;
     --zero-dur-cut: 0s;
+    --zero-dur-hold: 0s;
     --zero-pop-from: 1;
     --zero-pop-to: 1;
   }

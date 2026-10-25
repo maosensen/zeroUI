@@ -119,6 +119,16 @@ export const docsNav = [
     ],
   },
   {
+    group: "Game",
+    pages: [
+      { href: "/docs/gauge", title: "Gauge" },
+      { href: "/docs/inventory", title: "Inventory" },
+      { href: "/docs/hold-button", title: "Hold button" },
+      { href: "/docs/counter", title: "Counter" },
+      { href: "/docs/objectives", title: "Objectives" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [
       { href: "/docs/icons", title: "Icons" },

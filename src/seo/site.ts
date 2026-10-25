@@ -41,6 +41,7 @@ export type Page = {
     | "inputs"
     | "layout"
     | "chat"
+    | "game"
     | "foundation";
 };
 
@@ -591,10 +592,50 @@ export const PAGES = [
     group: "foundation",
   },
   {
+    path: "/docs/gauge",
+    title: "Gauge",
+    description:
+      "A game health bar for React: a reading on a slanted well that leaves a trail when it drops, in segments or tones.",
+    crumb: "Gauge",
+    group: "game",
+  },
+  {
+    path: "/docs/inventory",
+    title: "Inventory",
+    description:
+      "A game inventory grid for React: square slots with a rarity glow, counts, a cooldown sweep and arrow-key movement.",
+    crumb: "Inventory",
+    group: "game",
+  },
+  {
+    path: "/docs/hold-button",
+    title: "Hold button",
+    description:
+      "A hold-to-confirm button for React: a fill runs along the slant while held; let go early and it drains.",
+    crumb: "Hold button",
+    group: "game",
+  },
+  {
+    path: "/docs/counter",
+    title: "Counter",
+    description:
+      "An animated number counter for React that rolls to each new value and throws the change off it.",
+    crumb: "Counter",
+    group: "game",
+  },
+  {
+    path: "/docs/objectives",
+    title: "Objectives",
+    description:
+      "A game quest and objective tracker for React: slanted marks, a strike drawn through what is done.",
+    crumb: "Objectives",
+    group: "game",
+  },
+  {
     path: "/docs/icons",
     title: "Icons",
     description:
-      "Nineteen solid React SVG icons drawn on one grid, their strokes ending on the same slant as zeroUI's slabs.",
+      "Thirty solid React SVG icons drawn on one grid, their strokes ending on the same slant as zeroUI's slabs.",
     crumb: "Icons",
     group: "foundation",
   },

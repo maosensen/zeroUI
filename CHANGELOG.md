@@ -6,6 +6,25 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Gauge** — a health bar on the slanted well: when it drops, a pale trail
+  stays where it was and catches up after a beat, so the size of a hit stays
+  readable. Segments, tones, and a `low` mark under which it turns red and
+  breathes.
+- **Inventory** — square slots with a rarity glow, a count in the corner, a
+  cooldown sweep and the hatching when empty; the grid is one Tab stop and the
+  arrow keys move through it.
+- **Hold button** — a button that has to be held until a fill runs across it,
+  with an optional hotkey, for what should not happen by accident.
+- **Counter** — a number that rolls to each new value and throws the change
+  off it.
+- **Objectives** — an objective tracker with a slanted mark per state and a
+  strike drawn through what is done.
+- **Six item icons** — crate, cell, flare, key, chip and kit, for slots.
+- Foundation: `--zero-dur-hold`, the `pulse` animation, `--zero-slot`, and the
+  `roll` and `float` transitions in `motion.ts`.
+
 ## [0.1.4] - 2026-10-25
 
 Rarity tiers, the Cut-in with the glitch and cut-in motions, right-to-left

@@ -51,6 +51,7 @@ with that title.
 | State | check, close, alert, info, done, lock |
 | Action | plus, minus, search, clear, eye, eye-off, external, more, sidebar, copy |
 | Activity | spinner (static; whatever spins it supplies the motion) |
+| Items | crate, cell, flare, key, chip, kit (things to carry, for inventory slots) |
 
 Each icon is its own file in `src/components/zero/icons/`, built with `createIcon` from `icon.tsx`, so the
 registry can ship them one at a time. A shape is a path `d` with its fill rule; when an opening

@@ -675,6 +675,38 @@ const registry = {
       ["@base-ui/react"],
     ),
     component(
+      "gauge",
+      "Gauge",
+      "A reading on a slanted well that leaves a trail when it drops: health, shields, fuel.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "inventory",
+      "Inventory",
+      "Square slots with a rarity glow, a count and a cooldown sweep, moved through with the arrow keys.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "hold-button",
+      "Hold button",
+      "A button held until a fill runs across it, for what should not happen by accident.",
+      [],
+      [dep("button")],
+    ),
+    component(
+      "counter",
+      "Counter",
+      "A number that rolls to each new value and throws the change off it.",
+      ["motion"],
+    ),
+    component(
+      "objectives",
+      "Objectives",
+      "An objective tracker: slanted marks per state and a strike through what is done.",
+      [],
+      [dep("icon-check"), dep("icon-close")],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

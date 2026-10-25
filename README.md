@@ -5,8 +5,9 @@ a fluorescent lime accent, slabs cut on the slant, thick black outlines — buil
 [shadcn](https://ui.shadcn.com) and [Base UI](https://base-ui.com), and installed
 the shadcn way, from a registry.
 
-Sixty-three components (forms, overlays, feedback, data display, navigation,
-commands, chat and more), twenty-four icons and the theme, with a live demo, the
+Sixty-eight components (forms, overlays, feedback, data display, navigation,
+commands, chat, and game pieces such as gauges, an inventory and objectives), thirty
+icons and the theme, with a live demo, the
 props and the install command for each at **https://zeroui.catforest.dev**. Add the
 `@zeroui` namespace to a shadcn project and install any of them:
 

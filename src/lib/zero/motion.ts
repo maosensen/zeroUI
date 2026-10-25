@@ -16,6 +16,8 @@ export const duration = {
   loop: 1.6,
   /** The glitch: a few hard jumps, once. */
   glitch: 0.32,
+  /** How long a gauge's trail waits before it catches up. */
+  hold: 0.48,
 } as const;
 
 export const ease = {
@@ -40,4 +42,8 @@ export const transition = {
   reveal: { duration: duration.base, ease: ease.out },
   /** Something leaving. Faster than it came. */
   dismiss: { duration: duration.fast, ease: ease.in },
+  /** A number rolling to its new value (Counter). */
+  roll: { duration: duration.slow, ease: ease.out },
+  /** A number thrown off something (a counter's change) rising and fading. */
+  float: { duration: duration.slow * 2, ease: ease.out },
 } as const satisfies Record<string, Transition>;

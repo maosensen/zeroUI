@@ -25,7 +25,7 @@ export default function IconsPage() {
       <JsonLd data={docGraph("/docs/icons")} />
       <DocHeader
         title="Icons"
-        lead="Nineteen solid icons drawn for zeroUI on a 24-unit grid. Strokes end on the same slant as the slabs, corners are cut, and only things round by nature are curved."
+        lead="Thirty solid icons drawn for zeroUI on a 24-unit grid, interface glyphs and a few things to carry. Strokes end on the same slant as the slabs, corners are cut, and only things round by nature are curved."
       />
       <DocSection id="install" title="Install">
         <Prose>

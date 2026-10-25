@@ -36,6 +36,7 @@ import { DataSection } from "./data-section";
 import { DisclosureSection } from "./disclosure-section";
 import { FeedbackSection } from "./feedback-section";
 import { FormsSection } from "./forms-section";
+import { GameSection } from "./game-section";
 import { IconSheet } from "./icon-sheet";
 import { InputsSection } from "./inputs-section";
 import { LayoutSection } from "./layout-section";
@@ -138,6 +139,7 @@ const timings = {
   "--zero-dur-slow": 420,
   "--zero-dur-loop": 1600,
   "--zero-dur-glitch": 320,
+  "--zero-dur-hold": 480,
 } as const;
 
 /** The token values the dials set, only where they differ from the defaults. */
@@ -503,6 +505,7 @@ export function Workbench() {
         <RemainderSection />
 
         <ChatSection />
+        <GameSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

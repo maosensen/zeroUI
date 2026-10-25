@@ -79,6 +79,13 @@
   inherits: false;
 }
 
+/* How far a hold has got (HoldButton): a fill drawn in the hatch layer, animated, so registered. */
+@property --hold-p {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -10%;
+}
+
 @utility slab {
   --_h: var(--slab-h);
   --_fill: var(--slab-fill, var(--color-zero-raised));
