@@ -28,7 +28,11 @@ export async function CodeBlock({
         </span>
         <CopyButton text={code.replace(/\n$/, "")} />
       </figcaption>
-      <pre className="max-h-[28rem] overflow-auto p-4 font-mono text-[0.8125rem] leading-6">
+      {/* biome-ignore lint/a11y/noNoninteractiveTabindex: a scrolling region must be reachable from the keyboard */}
+      <pre
+        tabIndex={0}
+        className="max-h-[28rem] overflow-auto p-4 font-mono text-[0.8125rem] leading-6 outline-none focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2"
+      >
         <code>
           {lines.map((line, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: lines are fixed for a given block

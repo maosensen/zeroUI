@@ -92,7 +92,7 @@ export default function SidebarApp() {
           </SidebarMenu>
         </SidebarFooter>
       </Sidebar>
-      <SidebarInset className="gap-4 p-4">
+      <SidebarInset render={<div />} className="gap-4 p-4">
         <div className="flex items-center gap-3">
           <SidebarTrigger />
           <span className="font-black font-zero text-zero-lg italic">

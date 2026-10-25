@@ -107,7 +107,7 @@ function TraceCollapsibleTrigger({
       className={cn(
         "group/trace-trigger flex w-fit max-w-full min-w-0 cursor-pointer items-center gap-1 text-left outline-none",
         "[&:hover_[data-slot=trace-line]:not([data-status])]:text-zero-text",
-        "focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
+        "focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
         className,
       )}
       {...props}

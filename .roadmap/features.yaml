@@ -6,7 +6,7 @@
 project: maosensen/zeroUI
 track: oss
 launchedAt: 2026-10-24
-areas: [地基, 组件, 注册表, 站点与文档, 工作台, 工程与基建]
+areas: [地基, 组件, 注册表, 站点与文档, 工作台, 工程与基建, 质量]
 
 modules:
   - id: license
@@ -523,6 +523,12 @@ features:
     completedAt: 2026-10-24
     shippedIn: v0.1.0
     note: /docs:上手页、五个组件各一页、图标页。每页有分包管理器的安装命令、活的演示(展示的代码就是演示文件本身)、行为说明、每个部件一张属性表并链到底层的 Base UI 部件;代码在服务端用 zeroUI 自己的配色高亮。手机宽度下导航变成横向一行,宽的演示在自己的框里横向滚动。
+  - id: a11y-check
+    title: 可访问性检查(axe 全站 + 键盘焦点走查)
+    area: 质量
+    status: done
+    completedAt: 2026-10-25
+    note: pnpm a11y:无头 Chrome 打开 sitemap 每一页跑 axe-core,--focus 时用真实 Tab 逐个检查焦点是否有黄色焦点框。首轮修掉:text-3 与 danger 两个 token 对比度不足(调亮)、Slider 焦点框落在不会获焦的外壳上、勾选后的 Checkbox/Radio/Switch 焦点被墨线盖掉、outline-none 让 outline 焦点框不出现、几个示例缺控件名称。现为发版门禁。
   - id: seo
     title: SEO / GEO(分级契约 L0 与 L1)
     area: 站点与文档

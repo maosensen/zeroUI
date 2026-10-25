@@ -59,7 +59,7 @@ function CommandInput({
   return (
     <AutocompletePrimitive.InputGroup
       data-slot="command-input"
-      className="flex shrink-0 items-center gap-3 bg-zero-void px-4 text-zero-text-3 has-focus-visible:text-zero-accent"
+      className="flex shrink-0 items-center gap-3 border-transparent border-b-(length:--zero-stroke-thin) bg-zero-void px-4 text-zero-text-3 has-focus-visible:border-zero-focus has-focus-visible:text-zero-accent"
     >
       <SearchIcon className="size-[1.1em]" />
       <AutocompletePrimitive.Input

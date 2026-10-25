@@ -17,7 +17,7 @@ const zero = {
     { settings: { foreground: "#f5f5f0" } },
     {
       scope: ["comment", "punctuation.definition.comment"],
-      settings: { foreground: "#707070", fontStyle: "italic" },
+      settings: { foreground: "#8c8c8c", fontStyle: "italic" },
     },
     {
       scope: [

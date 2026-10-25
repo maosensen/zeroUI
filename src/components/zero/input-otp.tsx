@@ -28,9 +28,7 @@ function InputOTP({
           <InputOTPSlot
             // biome-ignore lint/suspicious/noArrayIndexKey: one cell per character, in order
             key={index}
-            aria-label={
-              index === 0 ? undefined : `Character ${index + 1} of ${length}`
-            }
+            aria-label={`Character ${index + 1} of ${length}`}
           />
         ))}
     </OTPFieldPrimitive.Root>

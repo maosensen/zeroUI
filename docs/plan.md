@@ -291,6 +291,25 @@ border. Message scroller and Questionnaire sit on @shadcn/react, as shadcn's own
 uses the host's monospace face, not Martian Mono, which is the docs' choice. Left: the Direction
 provider, which a host can take from Base UI directly.
 
+### Quality (2026-10-25)
+
+- **Accessibility gate.** `pnpm a11y` opens every page in the sitemap in headless Chrome and runs
+  axe-core; `--focus` also Tabs through each page and lists any stop that shows no yellow frame.
+  It is a release gate (against the Workers preview). The first run found, and these were fixed:
+  - `--color-zero-text-3` was #707070, 3.7 : 1 on the ground, under WCAG AA for the small text it
+    sets (labels, times, captions). Now #8c8c8c: 5.4 : 1 on the ground, 4.9 : 1 on a panel, still a
+    step below text-2. `--color-zero-danger` #e5432c was 4.05 : 1 on a panel; now #f2543a (4.8 : 1,
+    and ink on it 5.8 : 1). Both are foundation changes, recorded here.
+  - In Tailwind v4, `outline-none` sets the outline style to none, and `focus-visible:outline-(…)`
+    only sets the width: such frames never showed. Every outline frame now also says
+    `focus-visible:outline-solid`.
+  - The Slider styled `focus-visible` on the thumb, but the range input inside it takes focus:
+    now `has-focus-visible`. Checked Checkbox, Radio and Switch set their line to ink after the
+    focus rule set it to yellow: a checked control now keeps the yellow while focused.
+  - Missing names: Select triggers and sliders in demos, the first OTP cell (Base UI hands it the
+    Field's label, so an OTP is named through a Field), a native select in a Field (now the Field's
+    Control), the calendar's days (read by their number first) and its two navs on one page.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

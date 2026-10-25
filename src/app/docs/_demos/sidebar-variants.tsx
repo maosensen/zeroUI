@@ -61,7 +61,7 @@ export default function SidebarVariants() {
             </SidebarGroup>
           </SidebarContent>
         </Sidebar>
-        <SidebarInset className="gap-3 p-4">
+        <SidebarInset render={<div />} className="gap-3 p-4">
           <div className="flex items-center gap-3">
             <SidebarTrigger />
             <span className="font-black font-zero text-zero-lg italic">

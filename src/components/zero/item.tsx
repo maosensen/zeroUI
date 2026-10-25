@@ -15,7 +15,7 @@ const itemVariants = cva(
   [
     "group/item flex flex-wrap items-center gap-4 outline-none",
     "transition-colors duration-(--zero-dur-fast) ease-(--zero-ease-out)",
-    "[a]:hover:bg-zero-raised focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2",
+    "[a]:hover:bg-zero-raised focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2",
   ],
   {
     variants: {

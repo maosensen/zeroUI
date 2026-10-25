@@ -31,7 +31,7 @@ function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
         "w-(--rd-w) [--slab-h:var(--rd-h)] [--slab-o:var(--zero-stroke-thin)] [--slab-px:0px]",
         "[--slab-fill:var(--color-zero-void)] [--slab-line:var(--color-zero-line)]",
         "hover:[--slab-line:var(--color-zero-text-3)] data-checked:[--slab-line:var(--color-zero-accent)]",
-        "focus-visible:[--slab-line:var(--color-zero-focus)]",
+        "focus-visible:[--slab-line:var(--color-zero-focus)] data-checked:focus-visible:[--slab-line:var(--color-zero-focus)]",
         "aria-invalid:[--slab-line:var(--color-zero-danger)] data-invalid:[--slab-line:var(--color-zero-danger)]",
         "data-disabled:pointer-events-none data-disabled:[--slab-fill:var(--color-zero-raised)] data-disabled:[--slab-line:var(--color-zero-ink)]",
         className,

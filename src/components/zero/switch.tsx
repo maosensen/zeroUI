@@ -28,7 +28,7 @@ function Switch({ className, ...props }: SwitchPrimitive.Root.Props) {
         "[--slab-fill:var(--color-zero-void)] [--slab-line:var(--color-zero-line)]",
         "hover:[--slab-line:var(--color-zero-text-3)]",
         "data-checked:[--slab-fill:var(--color-zero-accent)] data-checked:[--slab-line:var(--color-zero-ink)]",
-        "focus-visible:[--slab-line:var(--color-zero-focus)]",
+        "focus-visible:[--slab-line:var(--color-zero-focus)] data-checked:focus-visible:[--slab-line:var(--color-zero-focus)]",
         "aria-invalid:[--slab-line:var(--color-zero-danger)] data-invalid:[--slab-line:var(--color-zero-danger)]",
         "data-disabled:pointer-events-none data-disabled:[--slab-fill:var(--color-zero-raised)] data-disabled:[--slab-line:var(--color-zero-ink)]",
         className,

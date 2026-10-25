@@ -15,6 +15,7 @@
     "cf:preview": "pnpm cf:build && opennextjs-cloudflare preview --port 4378",
     "cf:deploy": "pnpm cf:build && wrangler deploy",
     "og:capture": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/capture-og.mts",
+    "a11y": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/a11y.mts",
     "seo:audit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/seo/audit.mjs",
     "seo:indexnow": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/seo/indexnow.mjs"
   },
@@ -54,6 +55,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "axe-core": "^4.14.0",
     "babel-plugin-react-compiler": "1.0.0",
     "pino-pretty": "^13.2.0",
     "postcss": "^8.5.31",

@@ -20,7 +20,7 @@ const districts = {
 export default function SelectGroups() {
   return (
     <Select items={districts} defaultValue="market">
-      <SelectTrigger className="max-w-64">
+      <SelectTrigger className="max-w-64" aria-label="District">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

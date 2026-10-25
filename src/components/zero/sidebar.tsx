@@ -306,21 +306,26 @@ function SidebarTrigger({
   );
 }
 
-/** The page beside the sidebar. */
-function SidebarInset({ className, ...props }: ComponentProps<"main">) {
-  return (
-    <main
-      data-slot="sidebar-inset"
-      className={cn(
+/** The page beside the sidebar: a <main>, or what `render` gives when the page already has one. */
+function SidebarInset({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"main">) {
+  return useRender({
+    defaultTagName: "main",
+    render,
+    state: { slot: "sidebar-inset" },
+    props: mergeProps<"main">(props, {
+      className: cn(
         "relative flex min-w-0 flex-1 flex-col",
         // beside an inset sidebar the page is a panel set into the black ground
         "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:border-(length:--zero-stroke) md:peer-data-[variant=inset]:border-zero-ink md:peer-data-[variant=inset]:bg-zero-ground md:peer-data-[variant=inset]:outline-(length:--zero-stroke-thin) md:peer-data-[variant=inset]:outline-zero-line",
         "md:peer-data-[variant=inset]:peer-data-[side=left]:ms-0 md:peer-data-[variant=inset]:peer-data-[side=right]:me-0",
         className,
-      )}
-      {...props}
-    />
-  );
+      ),
+    }),
+  });
 }
 
 function SidebarHeader({ className, ...props }: ComponentProps<"div">) {

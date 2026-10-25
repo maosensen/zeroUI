@@ -47,7 +47,7 @@ function AccordionTrigger({
           "group flex flex-1 items-center gap-3 py-4 text-left outline-none",
           "font-bold font-zero text-zero-md text-zero-text-2 italic",
           "transition-colors duration-(--zero-dur-fast) ease-(--zero-ease-out) hover:text-zero-text data-panel-open:text-zero-text",
-          "focus-visible:text-zero-text focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
+          "focus-visible:text-zero-text focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
           "data-disabled:pointer-events-none data-disabled:text-zero-text-3",
           className,
         )}

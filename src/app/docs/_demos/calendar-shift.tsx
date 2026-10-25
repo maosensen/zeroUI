@@ -24,6 +24,7 @@ function Calendars() {
       <div className="panel">
         <Calendar
           mode="range"
+          labels={{ labelNav: () => "Range calendar" }}
           selected={range}
           onSelect={setRange}
           defaultMonth={new Date(2026, 9)}

@@ -37,7 +37,7 @@ export function DocSection({
 
 export function Prose({ children }: { children: ReactNode }) {
   return (
-    <div className="grid max-w-2xl gap-3 font-medium text-zero-md text-zero-text-2 leading-relaxed [&_code]:bg-zero-raised [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[0.85em] [&_code]:text-zero-text [&_strong]:text-zero-text [&_a]:font-bold [&_a]:text-zero-accent [&_a]:underline-offset-4 [&_a:hover]:underline">
+    <div className="grid max-w-2xl gap-3 font-medium text-zero-md text-zero-text-2 leading-relaxed [&_code]:bg-zero-raised [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[0.85em] [&_code]:text-zero-text [&_strong]:text-zero-text [&_a]:font-bold [&_a]:text-zero-accent [&_a]:underline-offset-4 [&_a]:outline-none [&_a:hover]:underline [&_a:focus-visible]:underline [&_a:focus-visible]:outline-solid [&_a:focus-visible]:outline-(length:--zero-stroke-thin) [&_a:focus-visible]:outline-zero-focus [&_a:focus-visible]:outline-offset-2">
       {children}
     </div>
   );
@@ -55,7 +55,7 @@ export function ExternalLink({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-1 font-bold text-zero-accent underline-offset-4 hover:underline"
+      className="inline-flex items-center gap-1 font-bold text-zero-accent underline-offset-4 outline-none hover:underline focus-visible:underline focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2"
     >
       {children}
       <ExternalIcon className="size-[1em]" />

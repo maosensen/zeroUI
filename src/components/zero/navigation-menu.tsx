@@ -118,7 +118,7 @@ function NavigationMenuLink({
       className={cn(
         "block p-3 font-medium font-zero-text text-zero-sm text-zero-text-2 outline-none",
         "transition-colors duration-(--zero-dur-fast) ease-(--zero-ease-out) hover:bg-zero-raised hover:text-zero-text",
-        "focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2",
+        "focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2",
         "aria-[current=page]:shadow-[inset_var(--zero-stroke-thick)_0_0_var(--color-zero-accent)]",
         "[&>strong]:mb-1 [&>strong]:block [&>strong]:font-black [&>strong]:font-zero [&>strong]:text-zero-md [&>strong]:text-zero-text [&>strong]:italic",
         className,

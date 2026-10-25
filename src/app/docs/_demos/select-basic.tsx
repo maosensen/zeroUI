@@ -16,7 +16,7 @@ const districts = {
 export default function SelectBasic() {
   return (
     <Select items={districts}>
-      <SelectTrigger className="max-w-64">
+      <SelectTrigger className="max-w-64" aria-label="District">
         <SelectValue placeholder="Pick a district" />
       </SelectTrigger>
       <SelectContent>

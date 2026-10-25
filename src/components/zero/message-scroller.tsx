@@ -49,7 +49,7 @@ function MessageScrollerViewport({
       className={cn(
         "size-full min-h-0 min-w-0 overflow-y-auto overscroll-contain contain-content",
         "[scrollbar-color:var(--color-zero-text-3)_transparent] [scrollbar-gutter:stable] [scrollbar-width:thin]",
-        "data-pending-scroll:invisible",
+        "data-pending-scroll:invisible outline-none focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2",
         className,
       )}
       {...props}

@@ -56,7 +56,7 @@ function BreadcrumbLink({
       {
         className: cn(
           "outline-none transition-colors duration-(--zero-dur-fast) ease-(--zero-ease-out) hover:text-zero-text",
-          "focus-visible:text-zero-text focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
+          "focus-visible:text-zero-text focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
           className,
         ),
       },

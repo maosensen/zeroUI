@@ -11,6 +11,21 @@ All notable changes to zeroUI are documented here. The format is based on
 - **The home page puts the later components to work** — a dispatch console
   with a command palette that raises toasts, a channel you can type into, and
   the week in a chart. The share card and the README count all 63 components.
+- **Quiet text and red are brighter** — `--color-zero-text-3` is now #8c8c8c
+  and `--color-zero-danger` #f2543a, so small labels and error text pass WCAG AA
+  contrast on the ground and on panels.
+- **Slider names its thumbs** — an `aria-label` on the Slider reaches each
+  thumb's input (with "from" and "to" on a range).
+- **SidebarInset takes `render`**, for a page that already has a `<main>`.
+- **Calendar reads days by their number first** ("27 October 2026, Tuesday").
+
+### Fixed
+
+- **Focus frames that never showed** — a focused Slider thumb, a checked
+  Checkbox, Radio or Switch, and every outline frame (links, accordion
+  headings, bubbles, items, the calendar's menus) now show the yellow frame
+  when reached from the keyboard.
+- **Native select inside a Field** is named by its FieldLabel.
 
 ## [0.1.3] - 2026-10-25
 

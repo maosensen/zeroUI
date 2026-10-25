@@ -71,7 +71,7 @@ function BubbleContent({
           "not-in-data-[variant=outline]:not-in-data-[variant=danger]:not-in-data-[variant=ghost]:in-data-[align=end]:[clip-path:polygon(0_0,100%_0,100%_calc(100%-var(--bubble-cut)),calc(100%-var(--bubble-cut))_100%,0_100%)]",
           "in-data-[variant=ghost]:p-0 group-data-[align=end]/bubble:self-end",
           "[button]:text-left [a,button]:outline-none [a,button]:transition-colors [a,button]:hover:brightness-110",
-          "[a,button]:focus-visible:outline-(length:--zero-stroke-thin) [a,button]:focus-visible:outline-zero-focus [a,button]:focus-visible:outline-offset-2",
+          "[a,button]:focus-visible:outline-solid [a,button]:focus-visible:outline-(length:--zero-stroke-thin) [a,button]:focus-visible:outline-zero-focus [a,button]:focus-visible:outline-offset-2",
           className,
         ),
       },

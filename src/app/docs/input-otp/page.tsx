@@ -38,6 +38,9 @@ export default function InputOTPPage() {
           <p>
             Without children, InputOTP draws <code>length</code> cells; with
             InputOTPSlot and InputOTPSeparator you can split them into runs.
+            Name it with a FieldLabel inside a Field (or a label pointing at its
+            id): the first cell takes that name, the others say which character
+            they hold.
           </p>
         </Prose>
       </DocSection>

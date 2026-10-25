@@ -10,6 +10,8 @@
 
 - `pnpm lint`(biome check) + `pnpm exec tsc --noEmit` + `pnpm build`(先跑 `registry:build`,再 next build,
   所有路由静态预渲染,等价一次冒烟) + `pnpm cf:build`(Workers 产物)。四条都要全绿。
+- `pnpm a11y --focus --base http://localhost:4378`(对 `cf:preview`):axe 全站零问题,键盘逐页 Tab 无漏焦点框
+  (2026-10-25 起;脚本 `scripts/a11y.mts`,本地 dev 上直接 `pnpm a11y --focus`)。
 - 发版内容碰了 registry(组件、地基 CSS、`scripts/build-registry.mts`)时,再做一次安装实测:
   全新 `shadcn init -d -b base` 项目里把 `@zeroui` 指向 `pnpm cf:preview`(:4378)的 `/r/{name}.json`,
   装上并 `pnpm build`(做法见 docs/deploy.md 与 docs/plan.md 的 2026-10-24 记录)。

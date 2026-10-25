@@ -4,6 +4,7 @@ import { type CSSProperties, useState } from "react";
 import { Button } from "@/components/zero/button";
 import { SearchIcon } from "@/components/zero/icons";
 import { Input } from "@/components/zero/input";
+import { Slider } from "@/components/zero/slider";
 import { Tabs, TabsList, TabsTab } from "@/components/zero/tabs";
 
 /** One slider on --zero-slant, and the components beside it all re-cut to follow. */
@@ -11,22 +12,21 @@ export function SlantDial() {
   const [slant, setSlant] = useState(14);
   return (
     <div className="grid min-w-0 gap-6 border-(length:--zero-stroke-thin) border-zero-line bg-zero-void p-5 sm:p-8">
-      <label className="grid gap-2">
+      <div className="grid gap-2">
         <span className="flex items-baseline justify-between font-bold font-zero text-zero-sm text-zero-text-2 italic">
           --zero-slant
           <span className="font-black text-zero-accent text-zero-xl tabular-nums">
             {slant}°
           </span>
         </span>
-        <input
-          type="range"
+        <Slider
           min={0}
           max={30}
           value={slant}
-          onChange={(event) => setSlant(Number(event.target.value))}
-          className="w-full accent-zero-accent"
+          onValueChange={(value) => setSlant(value as number)}
+          aria-label="Slant, in degrees"
         />
-      </label>
+      </div>
       <div
         style={{ "--zero-slant": `${slant}deg` } as CSSProperties}
         className="grid justify-items-start gap-4"

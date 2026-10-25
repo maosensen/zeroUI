@@ -31,7 +31,7 @@ export function DocsNav() {
                       "hover:text-zero-text focus-visible:text-zero-focus focus-visible:underline",
                       // the chosen page wears the same slanted mark as a chosen select row
                       "before:h-[0.9em] before:w-[0.4em] before:-skew-x-(--zero-slant) before:bg-transparent",
-                      "aria-[current=page]:text-zero-accent aria-[current=page]:before:bg-zero-accent",
+                      "aria-[current=page]:text-zero-accent aria-[current=page]:before:bg-zero-accent aria-[current=page]:focus-visible:text-zero-focus",
                     )}
                   >
                     {title}

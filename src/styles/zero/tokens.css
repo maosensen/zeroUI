@@ -22,14 +22,15 @@
 
   --color-zero-text: #f5f5f0; /* 16.7 : 1 on ground */
   --color-zero-text-2: #a6a6a6; /* 7.5 : 1 on ground, 6.8 : 1 on surface */
-  --color-zero-text-3: #707070; /* disabled and incidental; 3.7 : 1 on ground */
+  --color-zero-text-3: #8c8c8c; /* quiet: labels, times, incidental text; 5.4 : 1 on ground,
+                                   4.9 : 1 on surface (WCAG AA for small text) */
 
   --color-zero-accent: #cde31c; /* 13.8 : 1 against ink */
   --color-zero-accent-hi: #def44a; /* hover */
   --color-zero-accent-lo: #a8bd0c; /* pressed */
   --color-zero-focus: #f2e74b; /* the selection frame: focus, the chosen row. 1.1 : 1 against the
                                    accent, so a frame always has an ink gap inside it */
-  --color-zero-danger: #e5432c; /* 4.5 : 1 on ground, 5.2 : 1 on void */
+  --color-zero-danger: #f2543a; /* 5.3 : 1 on ground, 4.8 : 1 on surface; ink on it 5.8 : 1 */
   --color-zero-danger-hi: #ff6a4f;
 
   /* ── Type ───────────────────────────────────────────────────────────────

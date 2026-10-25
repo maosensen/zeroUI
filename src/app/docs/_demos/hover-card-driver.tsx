@@ -12,7 +12,7 @@ export default function HoverCardDriver() {
       <HoverCard>
         <HoverCardTrigger
           href="#mara"
-          className="font-bold text-zero-text underline decoration-zero-accent decoration-2 underline-offset-4 outline-none focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus"
+          className="font-bold text-zero-text underline decoration-zero-accent decoration-2 underline-offset-4 outline-none focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus"
         >
           Mara K.
         </HoverCardTrigger>

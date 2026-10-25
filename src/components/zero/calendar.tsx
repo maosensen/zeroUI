@@ -32,6 +32,7 @@ function Calendar({
   locale,
   formatters,
   components,
+  labels,
   ...props
 }: ComponentProps<typeof DayPicker>) {
   const defaults = getDefaultClassNames();
@@ -45,6 +46,18 @@ function Calendar({
       captionLayout={captionLayout}
       locale={locale}
       className={cn("w-fit p-3 [--cell:2.25rem]", className)}
+      labels={{
+        // the day's number first, so what is read out starts with what is seen
+        labelDayButton: (date, modifiers) =>
+          [
+            modifiers.today ? "Today" : "",
+            `${date.getDate()} ${date.toLocaleDateString(locale?.code ?? "en-US", { month: "long", year: "numeric" })}, ${date.toLocaleDateString(locale?.code ?? "en-US", { weekday: "long" })}`,
+            modifiers.selected ? "selected" : "",
+          ]
+            .filter(Boolean)
+            .join(", "),
+        ...labels,
+      }}
       formatters={{
         // the same language as the rest of the calendar (en-US unless a locale is given), so the
         // server and the browser write the month the same way
@@ -73,7 +86,11 @@ function Calendar({
           defaults.caption_label,
         ),
         dropdowns: cn("flex items-center gap-3", defaults.dropdowns),
-        dropdown_root: cn("relative", defaults.dropdown_root),
+        // the select itself is invisible over the label, so the label shows its focus
+        dropdown_root: cn(
+          "relative has-focus-visible:outline-solid has-focus-visible:outline-(length:--zero-stroke-thin) has-focus-visible:outline-zero-focus has-focus-visible:outline-offset-2",
+          defaults.dropdown_root,
+        ),
         dropdown: cn(
           "absolute inset-0 cursor-pointer bg-zero-surface opacity-0",
           defaults.dropdown,

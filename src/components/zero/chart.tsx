@@ -71,6 +71,8 @@ function ChartContainer({
           "[&_.recharts-curve.recharts-tooltip-cursor]:stroke-zero-text-3 [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-zero-raised/60",
           "[&_.recharts-dot[stroke='#fff']]:stroke-zero-ink [&_.recharts-sector[stroke='#fff']]:stroke-zero-ink [&_.recharts-radial-bar-background-sector]:fill-zero-raised",
           "[&_.recharts-layer]:outline-none [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
+          // the surface takes keyboard focus (accessibilityLayer): frame it then
+          "[&_.recharts-surface:focus-visible]:outline-solid [&_.recharts-surface:focus-visible]:outline-(length:--zero-stroke-thin) [&_.recharts-surface:focus-visible]:outline-zero-focus",
           className,
         )}
         {...props}

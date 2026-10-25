@@ -8,9 +8,16 @@ import { cn } from "@/lib/zero/cn";
  * thumb: light, outlined in ink, lifting to the accent while it is dragged. Horizontal only; one
  * value, or two for a range (pass an array). Sized in em.
  */
-function Slider({ className, ...props }: SliderPrimitive.Root.Props) {
+function Slider({
+  className,
+  "aria-label": label,
+  ...props
+}: SliderPrimitive.Root.Props) {
   const initial = props.value ?? props.defaultValue;
   const values = Array.isArray(initial) ? initial.length : 1;
+  // a thumb is the control a screen reader lands on, so the slider's name goes there
+  const thumbLabel = (index: number) =>
+    label && values > 1 ? `${label}, ${index === 0 ? "from" : "to"}` : label;
   return (
     <SliderPrimitive.Root
       data-slot="slider"
@@ -35,13 +42,15 @@ function Slider({ className, ...props }: SliderPrimitive.Root.Props) {
           <SliderPrimitive.Thumb
             // biome-ignore lint/suspicious/noArrayIndexKey: one thumb per value, in order
             key={index}
+            getAriaLabel={label ? () => thumbLabel(index) ?? "" : undefined}
             data-slot="slider-thumb"
             className={cn(
               "slab slab-cut-both block w-[calc(1.5em*(0.85+tan(var(--zero-slant))))] outline-none",
               "[--slab-h:1.5em] [--slab-o:var(--zero-stroke-thin)] [--slab-px:0px]",
               "[--slab-fill:var(--color-zero-text)] [--slab-line:var(--color-zero-ink)]",
               "hover:[--slab-fill:var(--color-zero-accent-hi)] data-dragging:[--slab-fill:var(--color-zero-accent)]",
-              "focus-visible:[--slab-line:var(--color-zero-focus)] focus-visible:[--slab-gap:var(--zero-stroke-thin)] focus-visible:[--slab-gap-fill:var(--color-zero-ink)]",
+              // the range input inside the thumb takes focus, so the frame follows it
+              "has-focus-visible:[--slab-line:var(--color-zero-focus)] has-focus-visible:[--slab-gap:var(--zero-stroke-thin)] has-focus-visible:[--slab-gap-fill:var(--color-zero-ink)]",
               "data-disabled:[--slab-fill:var(--color-zero-lifted)]",
               "transition-[scale] duration-(--zero-dur-base) ease-(--zero-ease-spring) data-dragging:scale-(--zero-press-scale) data-dragging:duration-(--zero-dur-instant)",
             )}

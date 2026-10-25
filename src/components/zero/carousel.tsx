@@ -264,7 +264,7 @@ function CarouselDots({ className, ...props }: ComponentProps<"div">) {
             "h-2 w-5 -skew-x-(--zero-slant) bg-zero-line outline-none",
             "transition-[background-color,width] duration-(--zero-dur-base) ease-(--zero-ease-out)",
             "hover:bg-zero-text-3 aria-current:w-8 aria-current:bg-zero-accent",
-            "focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
+            "focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:outline-offset-2",
           )}
         />
       ))}
