@@ -6,6 +6,12 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-25
+
+Twenty-eight more components, which completes shadcn's set: disclosure and
+toggles, commands, more inputs and overlays, layout pieces, and the calendar,
+carousel, chart and resizable panels. zeroUI is now MIT-licensed.
+
 ### Added
 
 - **MIT license** — zeroUI can be used, changed and shared freely, with the
@@ -173,6 +179,7 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/maosensen/zeroUI/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/maosensen/zeroUI/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/maosensen/zeroUI/releases/tag/v0.1.0

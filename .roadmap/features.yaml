@@ -14,6 +14,7 @@ modules:
     tier: required
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: MIT(作者 2026-10-25 定),GitHub 的标准 MIT 正文;版权人 maosensen。
   - id: install-works
     title: 在一个全新的 shadcn 项目里装得上、跑得起来
@@ -247,168 +248,196 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 细线分隔的分节,一次开一节(multiple 可多开);斜体标题前一道斜条,展开时亮强调色,尾端箭头翻转;按自身高度展开,减弱动态时直接出现。
   - id: collapsible
     title: Collapsible
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 原地展开的面板,按揭示时长展开、更快收起;触发器不带样式,用 render 接 Button。
   - id: toggle
     title: Toggle
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 会保持按下的 Button:关时 ghost 或灰色 slab,开时填强调色(aria-pressed);尺寸与切角同 Button。
   - id: toggle-group
     title: Toggle group
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 两侧斜切的 Toggle 排成一行、像 tabs 一样嵌套;单选或 multiple 多选;方向键移动;样式在组上统一设定。
   - id: separator
     title: Separator
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 安静的细线,横向或竖向。
   - id: command
     title: Command
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 建在 Base UI Autocomplete 上(不引入 cmdk):常开的搜索 + 动作列表,第一项始终高亮、Enter 执行;搜索在黑条上,行用 Dropdown menu 的行;CommandDialog 做 ⌘K 面板。
   - id: combobox
     title: Combobox
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: Input 的凹槽 + 清除与箭头,下面是 Select 的面板和行;输入即过滤,高亮行填强调色、选中行带斜块。暂无多选 chips。
   - id: context-menu
     title: Context menu
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 右键或长按打开的 Dropdown menu,行、子菜单、勾选与单选都复用 Dropdown menu 的部件。
   - id: menubar
     title: Menubar
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 黑条上一排安静的 slab,菜单打开时填强调色;打开一个后沿条移动会依次打开;菜单是 Dropdown menu。
   - id: hover-card
     title: Hover card
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 指向或聚焦链接时打开的预览,用 Popover 的面板。
   - id: input-otp
     title: Input OTP
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 建在 Base UI OTPField 上;每格是 Input 的凹槽、两侧斜切、放一个高大的斜体字符;输入前进、退格后退、粘贴填满;正在输入的格子显示选中框,无效时描红;可分段。
   - id: input-group
     title: Input group
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 拆开的 Input 凹槽:两端可放任意数量的文字、图标、按键或小按钮;焦点框、无效、禁用同 Input。
   - id: button-group
     title: Button group
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 一组按钮靠近排列、组内一律两侧斜切以嵌合;ButtonGroupText 是同高的黑色凹槽标签。
   - id: native-select
     title: Native select
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 浏览器原生 select 放进 Input 的凹槽,配 zeroUI 的箭头;列表由浏览器绘制。
   - id: kbd
     title: Kbd
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 两侧斜切的小号灰色 slab 按键帽,正文字体;按 em 跟随周围文字;KbdGroup 组合键。
   - id: label
     title: Label
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: Field 之外的控件名称,Field 标签的斜体;内含禁用控件时变暗。
   - id: alert-dialog
     title: Alert dialog
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 不可撤销操作前的确认:没有角落关闭按钮、点遮罩不关闭;复用 Dialog 的标题栏与页脚;Cancel 灰色、Action 强调色或危险红。
   - id: drawer
     title: Drawer
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 建在 Base UI Drawer 上:从底部升起、顶部一道斜切拉手,手指拖动跟随、背景随之变亮,拖远或拖快即关闭;side 可从其他边进入;减弱动态时只淡入淡出。
   - id: navigation-menu
     title: Navigation menu
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 一排安静的 slab,部分打开下方的链接面板;面板共用,切换时改变尺寸、内容按方向滑动;面板内链接是带斜体标题的块;当前页填强调色。
   - id: item
     title: Item
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 列表中的一项:图标或图片、斜体标题与一行说明、末尾操作;普通、描边、灰底三种;作为链接时悬停变亮并有焦点框。
   - id: empty
     title: Empty
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 空状态:斜切黑色凹槽里的图标、斜体标题、一行说明、填满它的操作。
   - id: scroll-area
     title: Scroll area
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 自绘滚动条:细轨道 + 像 slab 一样倾斜的拇指,指向或滚动时出现,按住时变强调色。
   - id: aspect-ratio
     title: Aspect ratio
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 按宽高比保持形状的盒子,图片铺满裁切。
   - id: spinner
     title: Spinner
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: 旋转的 spinner 图标,半个等待循环转一圈;跟随文字大小与颜色;减弱动态时静止;默认读作 Loading。
   - id: calendar
     title: Calendar
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: react-day-picker 上的月历,每天是两侧斜切的小 slab、一周是一排嵌合的平行四边形;选中填强调色,区间两端强调色、中间灰色成一条斜带,今天强调色下划线;月份/年份下拉。
   - id: carousel
     title: Carousel
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: Embla 上的轮播:拖动、滑动、方向键与两侧灰色 slab 按钮;CarouselDots 每页一个斜块,当前页更长、强调色。
   - id: chart
     title: Chart
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: Recharts 用 zeroUI 的颜色:安静的坐标轴与网格,面板式 tooltip,斜块色标;五个系列色全部映射到已有 token。
   - id: resizable
     title: Resizable
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.2
     note: react-resizable-panels 上的可拖动分隔:细线 + 更宽的抓取区,指向或拖动时强调色,键盘可移;withHandle 加斜切抓手。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
