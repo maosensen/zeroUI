@@ -90,6 +90,16 @@ export const docsNav = [
     ],
   },
   {
+    group: "Layout and the rest",
+    pages: [
+      { href: "/docs/item", title: "Item" },
+      { href: "/docs/empty", title: "Empty" },
+      { href: "/docs/scroll-area", title: "Scroll area" },
+      { href: "/docs/aspect-ratio", title: "Aspect ratio" },
+      { href: "/docs/spinner", title: "Spinner" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

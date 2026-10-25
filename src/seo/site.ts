@@ -39,6 +39,7 @@ export type Page = {
     | "disclosure"
     | "commands"
     | "inputs"
+    | "layout"
     | "foundation";
 };
 
@@ -419,6 +420,46 @@ export const PAGES = [
       "A navigation menu for shadcn on Base UI: a row of menus sharing one panel that resizes and slides between them.",
     crumb: "Navigation menu",
     group: "navigation",
+  },
+  {
+    path: "/docs/item",
+    title: "Item",
+    description:
+      "An item component for React lists: a mark, a leaning title, a line of text and actions, plain or as a link.",
+    crumb: "Item",
+    group: "layout",
+  },
+  {
+    path: "/docs/empty",
+    title: "Empty",
+    description:
+      "An empty state component for React: a mark in a slanted well, a title, a line of explanation and the action.",
+    crumb: "Empty",
+    group: "layout",
+  },
+  {
+    path: "/docs/scroll-area",
+    title: "Scroll area",
+    description:
+      "A Base UI scroll area for shadcn: custom scrollbars with a slanted thumb that appear on hover and scroll.",
+    crumb: "Scroll area",
+    group: "layout",
+  },
+  {
+    path: "/docs/aspect-ratio",
+    title: "Aspect ratio",
+    description:
+      "An aspect ratio box for React that keeps pictures, video and maps from jumping while they load.",
+    crumb: "Aspect ratio",
+    group: "layout",
+  },
+  {
+    path: "/docs/spinner",
+    title: "Spinner",
+    description:
+      "A loading spinner for React that follows the text's size and colour and holds still under reduced motion.",
+    crumb: "Spinner",
+    group: "layout",
   },
   {
     path: "/docs/icons",

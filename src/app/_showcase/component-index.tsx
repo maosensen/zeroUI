@@ -228,6 +228,31 @@ const entries = [
     line: "Menus sharing one sliding panel.",
   },
   {
+    href: "/docs/item",
+    name: "Item",
+    line: "One thing in a list.",
+  },
+  {
+    href: "/docs/empty",
+    name: "Empty",
+    line: "What shows when there is nothing.",
+  },
+  {
+    href: "/docs/scroll-area",
+    name: "Scroll area",
+    line: "Scrollbars with a slanted thumb.",
+  },
+  {
+    href: "/docs/aspect-ratio",
+    name: "Aspect ratio",
+    line: "A box that keeps its shape.",
+  },
+  {
+    href: "/docs/spinner",
+    name: "Spinner",
+    line: "Something is loading.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

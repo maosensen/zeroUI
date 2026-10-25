@@ -541,6 +541,37 @@ const registry = {
       [dep("icon-chevron-down")],
     ),
     component(
+      "item",
+      "Item",
+      "One thing in a list: a mark, a leaning title, a line of text, actions.",
+      ["@base-ui/react", "class-variance-authority"],
+    ),
+    component(
+      "empty",
+      "Empty",
+      "An empty state: a mark in a slanted well, a title, a line and the action.",
+      [],
+    ),
+    component(
+      "scroll-area",
+      "Scroll area",
+      "Scrollbars with a thin track and a slanted thumb.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "aspect-ratio",
+      "Aspect ratio",
+      "A box that keeps a ratio of width to height.",
+      [],
+    ),
+    component(
+      "spinner",
+      "Spinner",
+      "The spinner icon, turning; still under reduced motion.",
+      [],
+      [dep("icon-spinner")],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

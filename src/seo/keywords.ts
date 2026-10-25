@@ -200,6 +200,26 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["react navigation menu", "mega menu base ui"],
       where: "description and lead",
     },
+    "/docs/item": {
+      phrases: ["react list item component", "shadcn item"],
+      where: "description and lead",
+    },
+    "/docs/empty": {
+      phrases: ["empty state component react", "shadcn empty"],
+      where: "description and lead",
+    },
+    "/docs/scroll-area": {
+      phrases: ["custom scrollbar react", "base ui scroll area"],
+      where: "description and lead",
+    },
+    "/docs/aspect-ratio": {
+      phrases: ["aspect ratio component react", "responsive image ratio"],
+      where: "description and lead",
+    },
+    "/docs/spinner": {
+      phrases: ["react loading spinner", "spinner component"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

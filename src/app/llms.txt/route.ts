@@ -35,6 +35,7 @@ export function GET() {
       { heading: "Disclosure and toggles", links: section("disclosure") },
       { heading: "Commands", links: section("commands") },
       { heading: "More inputs", links: section("inputs") },
+      { heading: "Layout and the rest", links: section("layout") },
       { heading: "Foundation", links: section("foundation") },
       {
         heading: "Registry",

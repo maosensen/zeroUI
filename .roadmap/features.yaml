@@ -356,6 +356,36 @@ features:
     status: done
     completedAt: 2026-10-25
     note: 一排安静的 slab,部分打开下方的链接面板;面板共用,切换时改变尺寸、内容按方向滑动;面板内链接是带斜体标题的块;当前页填强调色。
+  - id: item
+    title: Item
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 列表中的一项:图标或图片、斜体标题与一行说明、末尾操作;普通、描边、灰底三种;作为链接时悬停变亮并有焦点框。
+  - id: empty
+    title: Empty
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 空状态:斜切黑色凹槽里的图标、斜体标题、一行说明、填满它的操作。
+  - id: scroll-area
+    title: Scroll area
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 自绘滚动条:细轨道 + 像 slab 一样倾斜的拇指,指向或滚动时出现,按住时变强调色。
+  - id: aspect-ratio
+    title: Aspect ratio
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 按宽高比保持形状的盒子,图片铺满裁切。
+  - id: spinner
+    title: Spinner
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 旋转的 spinner 图标,半个等待循环转一圈;跟随文字大小与颜色;减弱动态时静止;默认读作 Loading。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

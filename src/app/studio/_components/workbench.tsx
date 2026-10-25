@@ -35,6 +35,7 @@ import { FeedbackSection } from "./feedback-section";
 import { FormsSection } from "./forms-section";
 import { IconSheet } from "./icon-sheet";
 import { InputsSection } from "./inputs-section";
+import { LayoutSection } from "./layout-section";
 import { MoreOverlaysSection } from "./more-overlays-section";
 import { NavigationSection } from "./navigation-section";
 import { OverlaysSection } from "./overlays-section";
@@ -397,6 +398,8 @@ export function Workbench() {
         <InputsSection />
 
         <MoreOverlaysSection />
+
+        <LayoutSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

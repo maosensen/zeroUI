@@ -40,6 +40,12 @@ All notable changes to zeroUI are documented here. The format is based on
   follows the finger and swipes away.
 - **Navigation menu** — a row of menus sharing one panel of links that
   resizes and slides between them.
+- **Item** — one thing in a list: a mark, a leaning title with a line
+  beneath it, and actions.
+- **Empty** — what a place shows when it has nothing in it yet.
+- **Scroll area** — scrollbars with a thin track and a slanted thumb.
+- **Aspect ratio** — a box that keeps a ratio of width to height.
+- **Spinner** — the spinner icon, turning, still under reduced motion.
 
 ## [0.1.1] - 2026-10-24
 

@@ -262,6 +262,14 @@ swipeable drawer in the Sheet's look, with a slanted grip; it moves on the slow 
 throw than a popup) and returns on the base one. Navigation menu's shared panel resizes on the base
 timing and its contents slide in the direction of travel.
 
+Layout and the rest done (2026-10-25) — Item, Empty, Scroll area, Aspect ratio, Spinner. No
+foundation change. The scroll thumb leans like a slab; the spinner turns once per half waiting loop
+and so stops with the loop under reduced motion. Left out of shadcn's set, each needing a new
+dependency the author has not approved: Calendar (react-day-picker), Carousel (embla), Chart
+(recharts) and Resizable (react-resizable-panels). Also left: Combobox chips, the Sidebar's
+floating and inset variants, and the Form helpers (Field already carries label, description and
+error).
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not
