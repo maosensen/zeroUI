@@ -7,7 +7,8 @@ import {
   useMotionValue,
   useReducedMotion,
 } from "motion/react";
-import { type CSSProperties, useEffect, useRef } from "react";
+import { type CSSProperties, type RefObject, useEffect, useRef } from "react";
+import { Kbd } from "@/components/zero/kbd";
 import { cn } from "@/lib/zero/cn";
 import { transition } from "@/lib/zero/motion";
 
@@ -19,6 +20,9 @@ import { transition } from "@/lib/zero/motion";
  * Each tab carries its label twice: once in the text colour, and once in ink, clipped to where
  * the slab is right now. While the slab slides, whatever part of a label lies over it is ink and
  * the rest is not, so no label is ever ink on the dark track.
+ *
+ * TabsList can take two `hotkeys` that step back and forth from anywhere on the page, the way a
+ * game pages with its shoulder buttons; the keys are shown at the track's ends.
  *
  * Geometry the parts share, as custom properties on the root and the track:
  *   --tabs-h          a tab's (and the slab's) height, from the size
@@ -97,8 +101,53 @@ function TabsSlab({ left, width }: { left: number; width: number }) {
   );
 }
 
-function TabsList({ className, children, ...props }: TabsPrimitive.List.Props) {
+/** Pressed anywhere outside a text field, `hotkeys` step to the previous and next tab. */
+function useTabHotkeys(
+  track: RefObject<HTMLDivElement | null>,
+  hotkeys?: readonly [string, string],
+) {
+  useEffect(() => {
+    if (!hotkeys) return;
+    const [back, forward] = hotkeys.map((key) => key.toLowerCase());
+    const down = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (
+        event.repeat ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        target?.isContentEditable ||
+        ["INPUT", "TEXTAREA", "SELECT"].includes(target?.tagName ?? "")
+      )
+        return;
+      const key = event.key.toLowerCase();
+      const step = key === back ? -1 : key === forward ? 1 : 0;
+      if (!step || !track.current) return;
+      const tabs = [
+        ...track.current.querySelectorAll<HTMLElement>(
+          "[data-slot=tabs-tab]:not([data-disabled])",
+        ),
+      ];
+      const at = tabs.findIndex((tab) => tab.hasAttribute("data-active"));
+      tabs[(at + step + tabs.length) % tabs.length]?.click();
+    };
+    window.addEventListener("keydown", down);
+    return () => window.removeEventListener("keydown", down);
+  }, [track, hotkeys]);
+}
+
+function TabsList({
+  className,
+  children,
+  hotkeys,
+  ...props
+}: TabsPrimitive.List.Props & {
+  /** Two keys that step to the previous and next tab from anywhere, as a game's L1 and R1;
+   * shown at either end of the track. */
+  hotkeys?: readonly [string, string];
+}) {
   const ref = useRef<HTMLDivElement>(null);
+  useTabHotkeys(ref, hotkeys);
 
   // Each tab's left in the track, for clipping its ink label to the slab.
   useEffect(() => {
@@ -118,10 +167,11 @@ function TabsList({ className, children, ...props }: TabsPrimitive.List.Props) {
     return () => observer.disconnect();
   }, []);
 
-  return (
+  const list = (
     <TabsPrimitive.List
       ref={ref}
       data-slot="tabs-list"
+      aria-keyshortcuts={hotkeys?.join(" ")}
       className={cn(
         "slab slab-cut-both inline-flex w-fit max-w-full items-center",
         "[--slab-o:var(--zero-stroke-thin)] [--slab-line:var(--color-zero-line)] [--slab-fill:var(--color-zero-void)] [--slab-hatch:var(--zero-hatch)]",
@@ -147,6 +197,14 @@ function TabsList({ className, children, ...props }: TabsPrimitive.List.Props) {
       />
       {children}
     </TabsPrimitive.List>
+  );
+  if (!hotkeys) return list;
+  return (
+    <span className="inline-flex max-w-full items-center gap-2">
+      <Kbd aria-hidden>{hotkeys[0].toUpperCase()}</Kbd>
+      {list}
+      <Kbd aria-hidden>{hotkeys[1].toUpperCase()}</Kbd>
+    </span>
   );
 }
 

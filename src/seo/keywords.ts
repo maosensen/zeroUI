@@ -340,6 +340,26 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["character select screen react", "game character picker ui"],
       where: "description and lead",
     },
+    "/docs/blocks/community-feed": {
+      phrases: ["community feed ui react", "game forum ui"],
+      where: "description and lead",
+    },
+    "/docs/blocks/level-rewards": {
+      phrases: ["season pass ui react", "level rewards screen"],
+      where: "description and lead",
+    },
+    "/docs/blocks/daily-schedule": {
+      phrases: ["daily schedule ui", "game day planner react"],
+      where: "description and lead",
+    },
+    "/examples": {
+      phrases: ["shadcn example app", "game ui example react"],
+      where: "description and lead",
+    },
+    "/examples/board": {
+      phrases: ["game community app ui", "react game forum example"],
+      where: "description and lead",
+    },
     "/docs/guides": {
       phrases: ["zeroui guides", "game ui react tutorial"],
       where: "description and lead",
@@ -378,6 +398,22 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
     },
     "/docs/radial-menu": {
       phrases: ["radial menu react", "weapon wheel ui"],
+      where: "description and lead",
+    },
+    "/docs/post-card": {
+      phrases: ["post card component react", "community feed ui"],
+      where: "description and lead",
+    },
+    "/docs/profile-chip": {
+      phrases: ["player profile card ui", "xp bar react"],
+      where: "description and lead",
+    },
+    "/docs/reward-track": {
+      phrases: ["battle pass ui react", "season pass rewards ui"],
+      where: "description and lead",
+    },
+    "/docs/masonry": {
+      phrases: ["masonry layout react", "css columns masonry"],
       where: "description and lead",
     },
     "/docs/icons": {

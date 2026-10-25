@@ -99,6 +99,33 @@ export function docGraph(path: Exclude<PagePath, "/">) {
   ]);
 }
 
+/** An example app: a page about the library, its trail through Examples. */
+export function exampleGraph(path: "/examples" | "/examples/board") {
+  const p = page(path);
+  const url = pageUrl(path);
+  const trail = [
+    { name: home.crumb, url: pageUrl("/") },
+    ...(path === "/examples"
+      ? []
+      : [{ name: page("/examples").crumb, url: pageUrl("/examples") }]),
+    { name: p.crumb, url },
+  ];
+  return graph([
+    ...shell(),
+    library,
+    webPage({
+      siteUrl: SITE_URL,
+      url,
+      name: `${p.title} · zeroUI`,
+      description: p.description,
+      inLanguage: LANG,
+      about: LIBRARY_ID,
+      breadcrumb: true,
+    }),
+    breadcrumbs(url, trail),
+  ]);
+}
+
 /** Every page, for the sitemap and llms.txt. */
 export const publicPaths = () => PAGES.map((p) => p.path);
 

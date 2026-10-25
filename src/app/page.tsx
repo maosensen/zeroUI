@@ -58,6 +58,9 @@ const blocks = [
   ["/docs/blocks/title-screen", "Title screen"],
   ["/docs/blocks/pause-menu", "Pause menu"],
   ["/docs/blocks/character-select", "Character select"],
+  ["/docs/blocks/community-feed", "Community feed"],
+  ["/docs/blocks/level-rewards", "Level rewards"],
+  ["/docs/blocks/daily-schedule", "Daily schedule"],
 ] as const;
 
 export default function Home() {

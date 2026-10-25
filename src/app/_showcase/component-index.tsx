@@ -378,6 +378,26 @@ const entries = [
     line: "A wheel picked by direction.",
   },
   {
+    href: "/docs/post-card",
+    name: "Post card",
+    line: "A post with its cover and its author.",
+  },
+  {
+    href: "/docs/profile-chip",
+    name: "Profile chip",
+    line: "Avatar, name, experience, level.",
+  },
+  {
+    href: "/docs/reward-track",
+    name: "Reward track",
+    line: "Rewards per level, to claim.",
+  },
+  {
+    href: "/docs/masonry",
+    name: "Masonry",
+    line: "Cards of any height in columns.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Thirty solid glyphs on the same slant.",

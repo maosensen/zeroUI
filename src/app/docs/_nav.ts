@@ -16,6 +16,9 @@ export const docsNav = [
       { href: "/docs/blocks/title-screen", title: "Title screen" },
       { href: "/docs/blocks/pause-menu", title: "Pause menu" },
       { href: "/docs/blocks/character-select", title: "Character select" },
+      { href: "/docs/blocks/community-feed", title: "Community feed" },
+      { href: "/docs/blocks/level-rewards", title: "Level rewards" },
+      { href: "/docs/blocks/daily-schedule", title: "Daily schedule" },
     ],
   },
   {
@@ -129,6 +132,7 @@ export const docsNav = [
       { href: "/docs/aspect-ratio", title: "Aspect ratio" },
       { href: "/docs/spinner", title: "Spinner" },
       { href: "/docs/resizable", title: "Resizable" },
+      { href: "/docs/masonry", title: "Masonry" },
     ],
   },
   {
@@ -158,6 +162,9 @@ export const docsNav = [
       { href: "/docs/feed", title: "Feed" },
       { href: "/docs/stats", title: "Stats" },
       { href: "/docs/radial-menu", title: "Radial menu" },
+      { href: "/docs/post-card", title: "Post card" },
+      { href: "/docs/profile-chip", title: "Profile chip" },
+      { href: "/docs/reward-track", title: "Reward track" },
     ],
   },
   {

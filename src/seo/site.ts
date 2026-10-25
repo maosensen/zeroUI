@@ -33,6 +33,7 @@ export type Page = {
     | "start"
     | "blocks"
     | "guides"
+    | "examples"
     | "components"
     | "overlays"
     | "feedback"
@@ -69,7 +70,7 @@ export const PAGES = [
     path: "/docs/blocks",
     title: "Blocks",
     description:
-      "Game UI blocks for React and shadcn: a title screen, settings, a pause menu, a mission briefing, a character select, a loadout, a leaderboard and a HUD.",
+      "Game UI blocks for React and shadcn: a title screen, settings, a pause menu, a mission briefing, a character select, a loadout, a leaderboard, a HUD, a feed, level rewards and a schedule.",
     crumb: "Blocks",
     group: "blocks",
   },
@@ -136,6 +137,46 @@ export const PAGES = [
       "A game character select block for React: a roster of cards, ratings as segmented gauges, a perk, locked characters, and hold-to-deploy.",
     crumb: "Character select",
     group: "blocks",
+  },
+  {
+    path: "/docs/blocks/community-feed",
+    title: "Community feed",
+    description:
+      "A game community feed block for React: a masonry board of post cards, a filter, and a post sheet with replies and actions.",
+    crumb: "Community feed",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/level-rewards",
+    title: "Level rewards",
+    description:
+      "A season pass block for React: a profile chip with experience, a reward track per level, claim and claim all.",
+    crumb: "Level rewards",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/daily-schedule",
+    title: "Daily schedule",
+    description:
+      "A game daily schedule block for React: shifts with errands as objectives, the current one framed and marked now.",
+    crumb: "Daily schedule",
+    group: "blocks",
+  },
+  {
+    path: "/examples",
+    title: "Examples",
+    description:
+      "Example apps built with zeroUI: whole game screens put together from its blocks and components, every part installable from the shadcn registry.",
+    crumb: "Examples",
+    group: "examples",
+  },
+  {
+    path: "/examples/board",
+    title: "Courier board",
+    description:
+      "A game community app built with zeroUI and shadcn: a post board, today's shifts and a rank page with rewards, under tabs paged with Q and E.",
+    crumb: "Courier board",
+    group: "examples",
   },
   {
     path: "/docs/guides",
@@ -784,6 +825,38 @@ export const PAGES = [
       "A radial weapon wheel menu for React, picked by pointer direction or arrow keys, accessible to screen readers.",
     crumb: "Radial menu",
     group: "game",
+  },
+  {
+    path: "/docs/post-card",
+    title: "Post card",
+    description:
+      "A post card for React community feeds: a cover with its view count, the author on the cover's edge, a leaning title.",
+    crumb: "Post card",
+    group: "game",
+  },
+  {
+    path: "/docs/profile-chip",
+    title: "Profile chip",
+    description:
+      "A player profile chip for React: avatar, name, an experience bar and the level on one slanted slab.",
+    crumb: "Profile chip",
+    group: "game",
+  },
+  {
+    path: "/docs/reward-track",
+    title: "Reward track",
+    description:
+      "A level reward track for React, like a season pass: rewards per level, claimed, ready or locked.",
+    crumb: "Reward track",
+    group: "game",
+  },
+  {
+    path: "/docs/masonry",
+    title: "Masonry",
+    description:
+      "A masonry layout for React with CSS columns: cards of different heights in as many columns as fit, no layout shift.",
+    crumb: "Masonry",
+    group: "layout",
   },
   {
     path: "/docs/icons",

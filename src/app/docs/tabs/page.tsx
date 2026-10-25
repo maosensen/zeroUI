@@ -5,6 +5,7 @@ import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
 import TabsBasic from "../_demos/tabs-basic";
+import TabsHotkeys from "../_demos/tabs-hotkeys";
 import TabsIcons from "../_demos/tabs-icons";
 import TabsSizes from "../_demos/tabs-sizes";
 
@@ -33,6 +34,9 @@ export default function TabsPage() {
         <Demo file="tabs-icons" title="Icons, long labels, a disabled tab">
           <TabsIcons />
         </Demo>
+        <Demo file="tabs-hotkeys" title="Hotkeys, as a game's shoulder buttons">
+          <TabsHotkeys />
+        </Demo>
       </DocSection>
       <DocSection id="behaviour" title="Behaviour">
         <Prose>
@@ -45,7 +49,9 @@ export default function TabsPage() {
           <p>
             Arrow keys move focus along the tabs; Enter or Space activates the
             focused one, which then fills itself straight away inside the
-            selection frame. Tabs are horizontal only.
+            selection frame. Tabs are horizontal only. With <code>hotkeys</code>
+            , two keys step back and forth from anywhere on the page, the way a
+            game pages with its shoulder buttons.
           </p>
         </Prose>
       </DocSection>
@@ -66,7 +72,14 @@ export default function TabsPage() {
         <PropsTable
           part="TabsList"
           base={{ name: "Tabs.List", ...tabs }}
-          rows={[]}
+          rows={[
+            {
+              name: "hotkeys",
+              type: "[string, string]",
+              description:
+                "Two keys that step to the previous and next tab from anywhere outside a text field; shown at the track's ends.",
+            },
+          ]}
         />
         <PropsTable
           part="TabsTab"

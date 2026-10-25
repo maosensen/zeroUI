@@ -63,7 +63,7 @@ export default function OgCard() {
             <TabsTab value="tabs">Tabs</TabsTab>
           </TabsList>
         </Tabs>
-        <Badge className="text-[1rem]">74 components</Badge>
+        <Badge className="text-[1rem]">78 components</Badge>
         <span className="ms-auto font-bold font-zero text-[1.35rem] text-zero-text-3 italic">
           zeroui.catforest.dev
         </span>

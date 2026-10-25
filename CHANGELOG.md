@@ -6,6 +6,21 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Post card** and **Masonry** — a community post with its cover, view count,
+  author and a leaning title, packed into a wall of columns.
+- **Profile chip** — avatar, name, an experience bar and the level on one
+  slanted slab.
+- **Reward track** — a season-pass page: rewards per level, claimed, ready or
+  locked.
+- **Tab hotkeys** — `TabsList` takes two keys that step through the tabs from
+  anywhere, like a game's shoulder buttons.
+- **Three more blocks** — a community feed with a post sheet, level rewards
+  with claim and claim all, and a daily schedule of shifts.
+- **Examples** — a new section of the site with whole apps; the first is the
+  Courier board, built from the blocks under one top bar.
+
 ## [0.1.6] - 2026-10-25
 
 Six more game pieces (a dialogue box, a compass, floating damage numbers, an

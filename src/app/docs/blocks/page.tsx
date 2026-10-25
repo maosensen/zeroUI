@@ -48,6 +48,21 @@ const blocks = [
     title: "Character select",
     line: "A roster, ratings, a perk.",
   },
+  {
+    href: "/docs/blocks/community-feed",
+    title: "Community feed",
+    line: "A board of posts, a post in a sheet.",
+  },
+  {
+    href: "/docs/blocks/level-rewards",
+    title: "Level rewards",
+    line: "Rank, experience, rewards to claim.",
+  },
+  {
+    href: "/docs/blocks/daily-schedule",
+    title: "Daily schedule",
+    line: "Four shifts, the current one framed.",
+  },
 ];
 
 export default function BlocksPage() {
@@ -56,7 +71,7 @@ export default function BlocksPage() {
       <JsonLd data={docGraph("/docs/blocks")} />
       <DocHeader
         title="Blocks"
-        lead="Whole game screens built from zeroUI's components, installed with one command: a title screen, a settings menu, a pause menu, a mission briefing, a character select, a loadout, a leaderboard and a HUD."
+        lead="Whole game screens built from zeroUI's components, installed with one command: a title screen, a settings menu, a pause menu, a mission briefing, a character select, a loadout, a leaderboard, a HUD, a community feed, level rewards and a daily schedule."
       />
       <DocSection id="about" title="About blocks">
         <Prose>

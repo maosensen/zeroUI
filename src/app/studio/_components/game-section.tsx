@@ -8,7 +8,10 @@ import GaugeKinds from "@/app/docs/_demos/gauge-kinds";
 import HoldButtonScrap from "@/app/docs/_demos/hold-button-scrap";
 import InventoryHold from "@/app/docs/_demos/inventory-hold";
 import ObjectivesShift from "@/app/docs/_demos/objectives-shift";
+import PostCardFeed from "@/app/docs/_demos/post-card-feed";
+import ProfileChipBasic from "@/app/docs/_demos/profile-chip-basic";
 import RadialMenuQuick from "@/app/docs/_demos/radial-menu-quick";
+import RewardTrackLevels from "@/app/docs/_demos/reward-track-levels";
 import StatsCompare from "@/app/docs/_demos/stats-compare";
 
 function Row({
@@ -67,6 +70,15 @@ export function GameSection() {
         </Row>
         <Row label="radial menu">
           <RadialMenuQuick />
+        </Row>
+        <Row label="post card">
+          <PostCardFeed />
+        </Row>
+        <Row label="profile chip">
+          <ProfileChipBasic />
+        </Row>
+        <Row label="reward track">
+          <RewardTrackLevels />
         </Row>
       </div>
     </section>

@@ -404,6 +404,32 @@ own in the docs ("Game"), the nav and llms.txt.
   on the wheel with the picked item as its active descendant. The wheel is round (things round by
   nature may be), its items are slanted squares.
 
+### The board pieces (2026-10-25)
+
+The author asked whether yLookbook's Inter-Knot replica could come in. Not as it is: it is a
+replica of the game's forum, measured from screenshots, with the game's name and a logo after
+the game's, which "the look is ours" rules out. Its patterns are generic and zeroUI lacked them,
+so they are rebuilt here in zeroUI's own language, names and art: components first, then blocks,
+then an example app. The lookbook replica stays as it is.
+
+- **Post card.** A square-cornered card (its height is the picture's plus the text's). The title
+  holds the one link or button, stretched over the card, so the card is one Tab stop named by its
+  title. Covers in the docs are posters made from tokens, item icons and leaning type.
+- **Masonry.** CSS columns, not measured in the browser: no layout shift. Reading order is down
+  each column, which is stated in the docs.
+- **Profile chip.** Fixed height, so a slab; one hidden sentence instead of its parts.
+- **Reward track.** Rows with a hidden lead-in ("Level 5, ready to claim") rather than an
+  `aria-label` on the list item, which some readers would read instead of its contents.
+- **Blocks.** A community feed (the post opens in a Sheet that keeps its content while it
+  leaves, and focus returns to the post), level rewards (a `header` switch so an app can show the
+  profile once, and a milestone `note` on RewardTier that is never dimmed, after a locked note
+  failed contrast at 40% opacity), a daily schedule (the current shift is the list's current item).
+- **The example app.** `/examples/board`: the three blocks, unchanged, under one app bar (back,
+  profile chip, tabs paged with Q and E). The bar sticks only from `sm` up: on a phone it would
+  take a quarter of the screen. `/examples` lists apps; the site header links to it.
+- **Tab hotkeys.** On TabsList: two keys that step through the tabs from anywhere outside a
+  text field, shown at the track's ends; Tabs now depends on Kbd.
+
 ### Blocks (2026-10-25)
 
 Whole screens built from the components, for what a game needs most often: a settings menu, a
