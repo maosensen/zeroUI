@@ -6,6 +6,12 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Changed
+
+- **The home page puts the later components to work** — a dispatch console
+  with a command palette that raises toasts, a channel you can type into, and
+  the week in a chart. The share card and the README count all 63 components.
+
 ## [0.1.3] - 2026-10-25
 
 The chat pieces (messages, bubbles, attachments, code blocks, agent traces, a

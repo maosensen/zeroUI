@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Badge } from "@/components/zero/badge";
+import { Bubble, BubbleContent } from "@/components/zero/bubble";
 import { Button } from "@/components/zero/button";
 import { ArrowRightIcon } from "@/components/zero/icons";
 import { Tabs, TabsList, TabsTab } from "@/components/zero/tabs";
@@ -25,6 +27,18 @@ export default function OgCard() {
       >
         ZERO
       </p>
+      <div className="absolute top-20 right-20 grid w-[22rem] gap-3 text-[1.35rem]">
+        <Bubble variant="secondary">
+          <BubbleContent className="text-[1.25rem]">
+            Gate 4 is shut tonight.
+          </BubbleContent>
+        </Bubble>
+        <Bubble align="end">
+          <BubbleContent className="text-[1.25rem]">
+            Take the canal then.
+          </BubbleContent>
+        </Bubble>
+      </div>
       <div className="relative grid gap-6">
         <p className="font-bold font-zero text-[1.35rem] text-zero-text-2 uppercase italic tracking-[0.12em]">
           Components for shadcn, on Base UI
@@ -49,6 +63,7 @@ export default function OgCard() {
             <TabsTab value="tabs">Tabs</TabsTab>
           </TabsList>
         </Tabs>
+        <Badge className="text-[1rem]">63 components</Badge>
         <span className="ms-auto font-bold font-zero text-[1.35rem] text-zero-text-3 italic">
           zeroui.catforest.dev
         </span>

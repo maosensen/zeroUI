@@ -7,6 +7,7 @@ import { REGISTRY_URL } from "@/lib/site";
 import { homeGraph } from "@/seo/graph";
 import { pageMetadata } from "@/seo/site";
 import { ComponentIndex } from "./_showcase/component-index";
+import { Console } from "./_showcase/console";
 import { JobBoard } from "./_showcase/job-board";
 import { SlantDial } from "./_showcase/slant-dial";
 import { SiteHeader } from "./_site/site-header";
@@ -140,6 +141,17 @@ pnpm dlx shadcn@latest add @zeroui/button`}
             </ul>
           </div>
           <SlantDial />
+        </section>
+
+        <section className="grid gap-8">
+          <div className="grid gap-4">
+            <Heading eyebrow="At work">A dispatch console</Heading>
+            <p className="max-w-xl font-medium text-zero-md text-zero-text-2 leading-relaxed">
+              A command palette, a channel and a chart, built from the same
+              slabs. Run a command, or say something to the district.
+            </p>
+          </div>
+          <Console />
         </section>
 
         <section className="grid gap-8">
