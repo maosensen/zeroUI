@@ -33,6 +33,7 @@ export function GET() {
       { heading: "Data display", links: section("data") },
       { heading: "Navigation", links: section("navigation") },
       { heading: "Disclosure and toggles", links: section("disclosure") },
+      { heading: "Commands", links: section("commands") },
       { heading: "Foundation", links: section("foundation") },
       {
         heading: "Registry",

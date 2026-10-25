@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/zero/select";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
+import { CommandsSection } from "./commands-section";
 import { DataSection } from "./data-section";
 import { DisclosureSection } from "./disclosure-section";
 import { FeedbackSection } from "./feedback-section";
@@ -388,6 +389,8 @@ export function Workbench() {
         <NavigationSection />
 
         <DisclosureSection />
+
+        <CommandsSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

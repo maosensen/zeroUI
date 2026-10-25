@@ -66,6 +66,16 @@ export const docsNav = [
     ],
   },
   {
+    group: "Commands",
+    pages: [
+      { href: "/docs/command", title: "Command" },
+      { href: "/docs/combobox", title: "Combobox" },
+      { href: "/docs/context-menu", title: "Context menu" },
+      { href: "/docs/menubar", title: "Menubar" },
+      { href: "/docs/hover-card", title: "Hover card" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

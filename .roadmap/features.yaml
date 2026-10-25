@@ -164,7 +164,7 @@ features:
     status: done
     completedAt: 2026-10-24
     shippedIn: v0.1.1
-    note: 行用 Select 的行(尾端斜切、高亮填强调色);图标、快捷键、勾选行、单选行(斜块)、危险行;暂无子菜单。
+    note: 行用 Select 的行(尾端斜切、高亮填强调色);图标、快捷键、勾选行、单选行(斜块)、危险行;子菜单(2026-10-25 加)。
   - id: alert
     title: Alert
     area: 组件
@@ -272,6 +272,36 @@ features:
     status: done
     completedAt: 2026-10-25
     note: 安静的细线,横向或竖向。
+  - id: command
+    title: Command
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 建在 Base UI Autocomplete 上(不引入 cmdk):常开的搜索 + 动作列表,第一项始终高亮、Enter 执行;搜索在黑条上,行用 Dropdown menu 的行;CommandDialog 做 ⌘K 面板。
+  - id: combobox
+    title: Combobox
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: Input 的凹槽 + 清除与箭头,下面是 Select 的面板和行;输入即过滤,高亮行填强调色、选中行带斜块。暂无多选 chips。
+  - id: context-menu
+    title: Context menu
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 右键或长按打开的 Dropdown menu,行、子菜单、勾选与单选都复用 Dropdown menu 的部件。
+  - id: menubar
+    title: Menubar
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 黑条上一排安静的 slab,菜单打开时填强调色;打开一个后沿条移动会依次打开;菜单是 Dropdown menu。
+  - id: hover-card
+    title: Hover card
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 指向或聚焦链接时打开的预览,用 Popover 的面板。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

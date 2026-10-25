@@ -37,6 +37,7 @@ export type Page = {
     | "data"
     | "navigation"
     | "disclosure"
+    | "commands"
     | "foundation";
 };
 
@@ -305,6 +306,46 @@ export const PAGES = [
       "A separator component for React: a quiet line across or upright between two things.",
     crumb: "Separator",
     group: "disclosure",
+  },
+  {
+    path: "/docs/command",
+    title: "Command",
+    description:
+      "A command palette for React on Base UI: type to filter actions, run with Enter, open with ⌘K.",
+    crumb: "Command",
+    group: "commands",
+  },
+  {
+    path: "/docs/combobox",
+    title: "Combobox",
+    description:
+      "A Base UI combobox for shadcn: a text field that suggests as you type, over a panel of slanted rows.",
+    crumb: "Combobox",
+    group: "commands",
+  },
+  {
+    path: "/docs/context-menu",
+    title: "Context menu",
+    description:
+      "A right-click context menu for React with submenus, shortcuts and checkbox rows, highlighted in the accent.",
+    crumb: "Context menu",
+    group: "commands",
+  },
+  {
+    path: "/docs/menubar",
+    title: "Menubar",
+    description:
+      "A menubar for shadcn on Base UI: a black bar of menus that open one after another.",
+    crumb: "Menubar",
+    group: "commands",
+  },
+  {
+    path: "/docs/hover-card",
+    title: "Hover card",
+    description:
+      "A hover card for React: a preview panel that opens while a link is pointed at or focused.",
+    crumb: "Hover card",
+    group: "commands",
   },
   {
     path: "/docs/icons",

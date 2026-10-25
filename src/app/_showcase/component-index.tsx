@@ -158,6 +158,31 @@ const entries = [
     line: "A quiet line.",
   },
   {
+    href: "/docs/command",
+    name: "Command",
+    line: "Type to find an action.",
+  },
+  {
+    href: "/docs/combobox",
+    name: "Combobox",
+    line: "A field that suggests as you type.",
+  },
+  {
+    href: "/docs/context-menu",
+    name: "Context menu",
+    line: "The menu where you right-click.",
+  },
+  {
+    href: "/docs/menubar",
+    name: "Menubar",
+    line: "Menus on a black bar.",
+  },
+  {
+    href: "/docs/hover-card",
+    name: "Hover card",
+    line: "A preview behind a link.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

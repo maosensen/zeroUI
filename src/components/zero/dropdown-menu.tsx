@@ -3,18 +3,24 @@
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
 import type { ComponentProps } from "react";
 import { CheckIcon } from "@/components/zero/icons/check";
+import { ChevronRightIcon } from "@/components/zero/icons/chevron-right";
 import { cn } from "@/lib/zero/cn";
 
 /*
  * A list of actions in a panel that drops from its trigger. The rows are Select's: slabs cut at
  * the end, filled with the accent while highlighted. A row can carry an icon and a shortcut; a
- * checkbox row shows a check, a radio row the small slanted mark of a chosen Select row.
+ * checkbox row shows a check, a radio row the small slanted mark of a chosen Select row. A
+ * submenu opens beside its row, which stays raised while it is open.
  */
 
 const DropdownMenu = MenuPrimitive.Root;
 const DropdownMenuTrigger = MenuPrimitive.Trigger;
 const DropdownMenuGroup = MenuPrimitive.Group;
 const DropdownMenuRadioGroup = MenuPrimitive.RadioGroup;
+
+/** The panel every menu shares: dropdown, context menu, menubar. */
+const popup =
+  "panel pop max-h-(--available-height) min-w-48 overflow-y-auto overscroll-contain p-(--zero-inset) outline-none";
 
 type DropdownMenuContentProps = MenuPrimitive.Popup.Props &
   Pick<MenuPrimitive.Positioner.Props, "side" | "align">;
@@ -35,7 +41,7 @@ function DropdownMenuContent({
         <MenuPrimitive.Popup
           data-slot="dropdown-menu-content"
           className={cn(
-            "panel pop max-h-(--available-height) min-w-48 overflow-y-auto overscroll-contain p-(--zero-inset)",
+            popup,
             "data-[side=bottom]:mt-2 data-[side=top]:mb-2 data-[side=left]:me-2 data-[side=right]:ms-2",
             className,
           )}
@@ -55,6 +61,38 @@ const row = cn(
   "data-disabled:pointer-events-none data-disabled:[--slab-ink:var(--color-zero-text-3)]",
   "[&_svg]:pointer-events-none [&_svg]:shrink-0",
 );
+
+const DropdownMenuSub = MenuPrimitive.SubmenuRoot;
+
+function DropdownMenuSubTrigger({
+  className,
+  children,
+  ...props
+}: MenuPrimitive.SubmenuTrigger.Props) {
+  return (
+    <MenuPrimitive.SubmenuTrigger
+      data-slot="dropdown-menu-sub-trigger"
+      className={cn(
+        row,
+        "data-popup-open:[--slab-fill:var(--color-zero-raised)] data-popup-open:data-highlighted:[--slab-fill:var(--color-zero-accent)]",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <ChevronRightIcon className="ms-auto size-[1.1em]" />
+    </MenuPrimitive.SubmenuTrigger>
+  );
+}
+
+/** A submenu's panel: the menu's own, opening beside its row. */
+function DropdownMenuSubContent({
+  side = "right",
+  align = "start",
+  ...props
+}: DropdownMenuContentProps) {
+  return <DropdownMenuContent side={side} align={align} {...props} />;
+}
 
 function DropdownMenuItem({
   className,
@@ -170,5 +208,10 @@ export {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
+  popup as menuPopup,
+  row as menuRow,
 };

@@ -33,7 +33,9 @@ export default function DropdownMenuPage() {
           </p>
           <p>
             Arrow keys move the highlight, typing jumps to a row, Enter
-            activates it. Submenus are not part of this release.
+            activates it. A submenu (DropdownMenuSub, with its SubTrigger and
+            SubContent) opens beside its row, which stays raised while it is
+            open.
           </p>
         </Prose>
       </DocSection>
@@ -76,7 +78,7 @@ export default function DropdownMenuPage() {
           ]}
         />
         <PropsTable
-          part="DropdownMenuCheckboxItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut"
+          part="DropdownMenuCheckboxItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuSubContent"
           base={{
             name: "Menu.CheckboxItem",
             href: "https://base-ui.com/react/components/menu",

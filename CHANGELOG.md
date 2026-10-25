@@ -18,6 +18,14 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Toggle group** — toggles cut on both sides, nesting in a row, for one value
   or several.
 - **Separator** — a quiet line, across or upright.
+- **Command** — a search over a list of actions, always open: type to narrow
+  it, Enter to run the highlighted one; inline, or floating as a ⌘K palette.
+- **Combobox** — Input's well that suggests as you type, over Select's panel
+  and rows.
+- **Context menu** — the Dropdown menu, opened where you right-click.
+- **Menubar** — a black bar of menus that open one after another.
+- **Hover card** — a preview panel that opens while a link is pointed at.
+- **Submenus in the Dropdown menu** — a row that opens another menu beside it.
 
 ## [0.1.1] - 2026-10-24
 

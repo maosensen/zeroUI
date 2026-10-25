@@ -244,6 +244,12 @@ unfolding (`unfold` in collapsible.tsx): Base UI's measured panel height on the 
 timings, instant under reduced motion. Accordion's headings lean, led by a slanted sliver that
 lights with the accent while open.
 
+Commands done (2026-10-25) — Command, Combobox, Context menu, Menubar, Hover card. No foundation
+change. Command is built on Base UI's Autocomplete (inline, always open, the first match always
+highlighted), not on cmdk as shadcn's is: no new dependency, and its items are data, filtered by
+their `label`. Combobox is Input's well over Select's panel and rows; chips for several values are
+left for later. Context menu and Menubar reuse the Dropdown menu's parts, which gained submenus.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

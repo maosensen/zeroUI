@@ -144,6 +144,26 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["react separator component", "divider line component"],
       where: "description and lead",
     },
+    "/docs/command": {
+      phrases: ["react command palette", "cmd k menu base ui"],
+      where: "description and lead",
+    },
+    "/docs/combobox": {
+      phrases: ["base ui combobox", "react autocomplete input"],
+      where: "description and lead",
+    },
+    "/docs/context-menu": {
+      phrases: ["react context menu", "right click menu shadcn"],
+      where: "description and lead",
+    },
+    "/docs/menubar": {
+      phrases: ["react menubar component", "application menu bar"],
+      where: "description and lead",
+    },
+    "/docs/hover-card": {
+      phrases: ["react hover card", "link preview card"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

@@ -348,9 +348,9 @@ const registry = {
     component(
       "dropdown-menu",
       "Dropdown menu",
-      "Actions, checkbox and radio rows in a panel that drops from its trigger.",
+      "Actions, checkbox and radio rows and submenus in a panel that drops from its trigger.",
       ["@base-ui/react"],
-      [dep("icon-check")],
+      [dep("icon-check"), dep("icon-chevron-right")],
     ),
     component(
       "alert",
@@ -457,6 +457,40 @@ const registry = {
       "Sections that open one at a time, with leaning headings and an accent mark.",
       ["@base-ui/react"],
       [dep("collapsible"), dep("icon-chevron-down")],
+    ),
+    component(
+      "context-menu",
+      "Context menu",
+      "The Dropdown menu, opened where you right-click.",
+      ["@base-ui/react"],
+      [dep("dropdown-menu")],
+    ),
+    component(
+      "menubar",
+      "Menubar",
+      "A black bar of menus that open one after another.",
+      ["@base-ui/react"],
+      [dep("dropdown-menu")],
+    ),
+    component(
+      "hover-card",
+      "Hover card",
+      "A preview panel that opens while a link is pointed at.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "combobox",
+      "Combobox",
+      "Input's well that suggests as you type, over Select's panel and rows.",
+      ["@base-ui/react", "class-variance-authority"],
+      [dep("input"), dep("icon-chevron-down"), dep("icon-close")],
+    ),
+    component(
+      "command",
+      "Command",
+      "A search over a list of actions, inline or as a ⌘K palette.",
+      ["@base-ui/react"],
+      [dep("dialog"), dep("icon-search")],
     ),
     component(
       "tabs",
