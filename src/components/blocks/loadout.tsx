@@ -138,7 +138,7 @@ export function Loadout() {
         <header className="flex flex-wrap items-end justify-between gap-4 bg-zero-void px-6 pt-6 pb-5">
           <h2
             id="loadout-title"
-            className="tilt font-black font-zero text-zero-2xl italic"
+            className="font-black font-zero text-zero-2xl italic"
           >
             Loadout
           </h2>

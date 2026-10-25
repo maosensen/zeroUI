@@ -52,7 +52,7 @@ export function MissionBriefing() {
             </p>
             <h2
               id="briefing-title"
-              className="glitch tilt font-black font-zero text-zero-2xl italic"
+              className="glitch font-black font-zero text-zero-2xl italic"
             >
               Sealed crate run
             </h2>

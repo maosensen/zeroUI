@@ -8,8 +8,9 @@ import { cn } from "@/lib/zero/cn";
 
 /*
  * A panel over a dimmed page. The panel (panel.css) opens out of its centre and folds back faster
- * (`pop`); the page behind it goes dark (`fade`). The header is a black bar holding a tilted
- * title, like the bars across the top of a screen; the close button sits in its corner.
+ * (`pop`); the page behind it goes dark (`fade`). The header is a black bar holding the title,
+ * black and italic and level (a title carries content of any length, so it is not rotated), like
+ * the bars across the top of a screen; the close button sits in its corner.
  *
  *   <Dialog>
  *     <DialogTrigger render={<Button />}>Open</DialogTrigger>
@@ -98,7 +99,7 @@ function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn("tilt font-black font-zero text-zero-xl italic", className)}
+      className={cn("font-black font-zero text-zero-xl italic", className)}
       {...props}
     />
   );

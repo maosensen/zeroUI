@@ -15,6 +15,9 @@ Rules that hold on every change:
 - **`src/components/ui/` is shadcn's neutral set, a starting point, not the product.** zeroUI's
   own components, tokens, motion and icons are what the registry ships; they never import from
   the neutral set once forked.
+- **Rotate only short display lettering.** `tilt` (rotation by `--zero-tilt`) is for lettering
+  whose length is known (a logo, a hero line, a game's name, a cut-in). Any heading that carries
+  content (dialog, sheet, page, block titles) stays level: black italic, no rotation.
 - **Foundation first.** Colours, sizes, outlines, the slant, durations and easings come from the
   token and motion modules; a component that needs a value they lack adds it there, never inline.
 - **The look is ours.** Nothing from the game it takes its mood from or its publisher: no logos,

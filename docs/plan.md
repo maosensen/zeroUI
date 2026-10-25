@@ -119,6 +119,12 @@ Decisions land here with their date, in the commit that acts on them.
   up to whole pixels so what follows does not land between pixels. Dialog, Sheet and Alert dialog
   titles, the docs' page headings and every block's title use it; the nine block baselines grew
   by their title's room.
+- **2026-10-25 — rotation only for short display lettering** (the author: leaning a heading is
+  risky, a long one makes the page unpredictable; amends "display lettering is also rotated by
+  `--zero-tilt`"). `tilt` stays for lettering whose length is known: the logo, the home page's
+  own headings, the share card, a game's name on the title screen, the cut-in. Headings that
+  carry content are level, black and italic: Dialog, Sheet and Alert dialog titles, docs and
+  guide headings, the examples page, every block's title. The lean of the italic stays.
 
 - **2026-10-25 — SEO level 2: guides.** The docs leads already put the conclusion first and
   `src/seo/keywords.ts` is the keyword map; what level 2 lacked was deep content at its own

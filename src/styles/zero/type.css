@@ -5,6 +5,10 @@
  * the lettering (a block's percentage padding is a share of its width), so the right end rises
  * into the room and never past the heading's own top. The heading is as wide as its text, so the
  * room follows the text, not the box.
+ *
+ * Only for short display lettering whose length is known: a logo, a hero line, a game's name, a
+ * cut-in. A heading that carries content (a dialog's title, a page's, a block's) stays level:
+ * however much room is kept, a long title that wraps and leans reads as a mess.
  */
 @utility tilt {
   width: fit-content;

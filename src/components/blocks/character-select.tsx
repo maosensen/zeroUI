@@ -88,7 +88,7 @@ export function CharacterSelect() {
         <header className="bg-zero-void px-6 pt-6 pb-5">
           <h2
             id="select-title"
-            className="tilt font-black font-zero text-zero-2xl italic"
+            className="font-black font-zero text-zero-2xl italic"
           >
             Choose your courier
           </h2>

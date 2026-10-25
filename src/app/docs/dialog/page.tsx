@@ -14,7 +14,7 @@ export default function DialogPage() {
       <JsonLd data={docGraph("/docs/dialog")} />
       <DocHeader
         title="Dialog"
-        lead="A panel over a dimmed page: a black header bar with a tilted title, a body, and the actions. It opens out of its centre and folds back faster."
+        lead="A panel over a dimmed page: a black header bar with the title, a body, and the actions. It opens out of its centre and folds back faster."
       />
       <DocSection id="install" title="Install">
         <Install item="dialog" />
