@@ -445,6 +445,54 @@ features:
     status: done
     completedAt: 2026-10-25
     note: Base UI 的 Form:提交时校验所有 Field,服务端错误按字段名显示在 FieldError;Fieldset 带斜条引导的斜体图例;文档给出 react-hook-form + zod 的接法。
+  - id: message
+    title: Message
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 对话中的一轮:头像、斜体说话人与时间、内容、底部一行;align=end 放到另一侧。
+  - id: bubble
+    title: Bubble
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 说的话:直角方框,靠近说话人的那个角 45° 切掉;强调色(自己)、灰、表面、黑色描边凹槽、危险、无框六种;反应贴在边上的小 slab。
+  - id: marker
+    title: Marker
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 对话里没人说的话(某人加入、日期):小号斜体;separator 两侧细线,border 下方细线。
+  - id: attachment
+    title: Attachment
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 文件卡:斜切黑色凹槽里的图标或带墨框的图片、斜体文件名;idle 虚线、上传中变暗、错误描红。
+  - id: code-block
+    title: Code block
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 黑色凹槽里的代码,宿主的等宽字体;可编号、复制按钮;新增/删除/高亮行用起始边色条和 +/−。
+  - id: trace
+    title: Trace
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: Agent 的步骤一行一条:运行中强调色、失败红、未开始变暗;可展开显示细节。
+  - id: message-scroller
+    title: Message scroller
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: "@shadcn/react 的对话滚动列:停在最新一条、往回读时不动,离开底部时出现回到最新的 slab 按钮。"
+  - id: questionnaire
+    title: Questionnaire
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: "@shadcn/react 的逐题问卷:斜体问题、选项行(斜切凹槽填强调色)、快捷键、输入框、上一题/跳过/下一题。"
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

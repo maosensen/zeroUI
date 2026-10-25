@@ -14,6 +14,11 @@ All notable changes to zeroUI are documented here. The format is based on
   field as small slabs, each with a button that takes it out.
 - **Floating and inset sidebars** — the Sidebar as a panel standing off the
   edge, or on the black ground with the page set in beside it.
+- **Chat pieces** — Message, Bubble (a square box with the corner toward the
+  speaker cut off), Marker, Attachment, Code block (line numbers, copy, added
+  and removed lines), Trace (an agent's steps), Message scroller (keeps to the
+  newest turn) and Questionnaire (one question at a time).
+- **Arrow down and copy icons.**
 
 ## [0.1.2] - 2026-10-25
 

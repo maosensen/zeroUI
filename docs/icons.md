@@ -47,9 +47,9 @@ with that title.
 
 | Group | Icons |
 |---|---|
-| Direction | chevron up / down / left / right, arrow left / right |
+| Direction | chevron up / down / left / right, arrow left / right / down |
 | State | check, close, alert, info, done, lock |
-| Action | plus, minus, search, clear, eye, eye-off, external, more, sidebar |
+| Action | plus, minus, search, clear, eye, eye-off, external, more, sidebar, copy |
 | Activity | spinner (static; whatever spins it supplies the motion) |
 
 Each icon is its own file in `src/components/zero/icons/`, built with `createIcon` from `icon.tsx`, so the

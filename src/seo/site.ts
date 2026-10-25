@@ -40,6 +40,7 @@ export type Page = {
     | "commands"
     | "inputs"
     | "layout"
+    | "chat"
     | "foundation";
 };
 
@@ -500,6 +501,70 @@ export const PAGES = [
       "A form for React on Base UI: validation on submit, server errors in each field, fieldsets, and react-hook-form with zod.",
     crumb: "Form",
     group: "inputs",
+  },
+  {
+    path: "/docs/message",
+    title: "Message",
+    description:
+      "A chat message component for React: the speaker in leaning type, the time, the turn, a line under it.",
+    crumb: "Message",
+    group: "chat",
+  },
+  {
+    path: "/docs/bubble",
+    title: "Bubble",
+    description:
+      "Chat bubbles for React: square boxes with one corner cut toward the speaker, in six kinds.",
+    crumb: "Bubble",
+    group: "chat",
+  },
+  {
+    path: "/docs/marker",
+    title: "Marker",
+    description:
+      "Chat markers for React: quiet leaning notes for dates, joins and events in a conversation.",
+    crumb: "Marker",
+    group: "chat",
+  },
+  {
+    path: "/docs/attachment",
+    title: "Attachment",
+    description:
+      "File attachments for a chat UI: icon or picture, name, size, and upload and error states.",
+    crumb: "Attachment",
+    group: "chat",
+  },
+  {
+    path: "/docs/code-block",
+    title: "Code block",
+    description:
+      "A code block for React with line numbers, a copy button and added, removed and highlighted lines.",
+    crumb: "Code block",
+    group: "chat",
+  },
+  {
+    path: "/docs/trace",
+    title: "Trace",
+    description:
+      "An agent trace for React: each step on a line, running, failed or pending, that can open to show more.",
+    crumb: "Trace",
+    group: "chat",
+  },
+  {
+    path: "/docs/message-scroller",
+    title: "Message scroller",
+    description:
+      "A chat scroll area for React that keeps to the newest message and offers a way back down.",
+    crumb: "Message scroller",
+    group: "chat",
+  },
+  {
+    path: "/docs/questionnaire",
+    title: "Questionnaire",
+    description:
+      "A conversational questionnaire for React: one question at a time, choices with keys, then next.",
+    crumb: "Questionnaire",
+    group: "chat",
   },
   {
     path: "/docs/icons",

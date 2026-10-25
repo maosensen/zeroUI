@@ -278,6 +278,46 @@ const entries = [
     line: "Fields, fieldsets and server errors.",
   },
   {
+    href: "/docs/message",
+    name: "Message",
+    line: "A turn in a conversation.",
+  },
+  {
+    href: "/docs/bubble",
+    name: "Bubble",
+    line: "What was said, a corner cut.",
+  },
+  {
+    href: "/docs/marker",
+    name: "Marker",
+    line: "A note nobody said.",
+  },
+  {
+    href: "/docs/attachment",
+    name: "Attachment",
+    line: "A file, sent or sending.",
+  },
+  {
+    href: "/docs/code-block",
+    name: "Code block",
+    line: "Code in a black well.",
+  },
+  {
+    href: "/docs/trace",
+    name: "Trace",
+    line: "An agent's steps.",
+  },
+  {
+    href: "/docs/message-scroller",
+    name: "Message scroller",
+    line: "Keeps to the newest turn.",
+  },
+  {
+    href: "/docs/questionnaire",
+    name: "Questionnaire",
+    line: "One question at a time.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

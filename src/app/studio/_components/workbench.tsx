@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/zero/select";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
+import { ChatSection } from "./chat-section";
 import { CommandsSection } from "./commands-section";
 import { DataSection } from "./data-section";
 import { DisclosureSection } from "./disclosure-section";
@@ -406,6 +407,8 @@ export function Workbench() {
         <RichSection />
 
         <RemainderSection />
+
+        <ChatSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

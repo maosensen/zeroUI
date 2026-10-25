@@ -281,8 +281,15 @@ The remainder (2026-10-25): Form (Base UI's Form and Fieldset; server errors sho
 FieldError, and a Field's own `validate` gives its message, rather than the browser's), Combobox
 chips (the field wraps, so it is Textarea's square well, the chips small raised slabs), and the
 Sidebar's floating (the strip as a panel) and inset (the strip on the void, SidebarInset a panel)
-variants. With these, shadcn's core set has zeroUI counterparts. Not done: its newer chat pieces
-(attachment, bubble, code block, marker, message, message scroller, questionnaire, trace).
+variants. With these, shadcn's core set has zeroUI counterparts.
+
+Chat done (2026-10-25) — Message, Bubble, Marker, Attachment, Code block, Trace, Message scroller,
+Questionnaire. No foundation change; two icons, `arrow-down` and `copy`. A bubble is a
+square box (its height is its text) with the one corner toward the speaker cut off at 45°, the
+corner rule the icons follow; outlined bubbles keep their corners, since the cut would take the
+border. Message scroller and Questionnaire sit on @shadcn/react, as shadcn's own do. Code block
+uses the host's monospace face, not Martian Mono, which is the docs' choice. Left: the Direction
+provider, which a host can take from Base UI directly.
 
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,

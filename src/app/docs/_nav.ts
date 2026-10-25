@@ -105,6 +105,19 @@ export const docsNav = [
     ],
   },
   {
+    group: "Chat",
+    pages: [
+      { href: "/docs/message", title: "Message" },
+      { href: "/docs/bubble", title: "Bubble" },
+      { href: "/docs/marker", title: "Marker" },
+      { href: "/docs/attachment", title: "Attachment" },
+      { href: "/docs/code-block", title: "Code block" },
+      { href: "/docs/trace", title: "Trace" },
+      { href: "/docs/message-scroller", title: "Message scroller" },
+      { href: "/docs/questionnaire", title: "Questionnaire" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

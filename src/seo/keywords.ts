@@ -240,6 +240,38 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["react form validation base ui", "react hook form zod shadcn"],
       where: "description and behaviour",
     },
+    "/docs/message": {
+      phrases: ["chat message component react", "ai chat ui shadcn"],
+      where: "description and lead",
+    },
+    "/docs/bubble": {
+      phrases: ["chat bubble react", "message bubble component"],
+      where: "description and lead",
+    },
+    "/docs/marker": {
+      phrases: ["chat date separator", "chat system message"],
+      where: "description and lead",
+    },
+    "/docs/attachment": {
+      phrases: ["file attachment chat ui", "upload chip react"],
+      where: "description and lead",
+    },
+    "/docs/code-block": {
+      phrases: ["code block component react", "copy code button"],
+      where: "description and lead",
+    },
+    "/docs/trace": {
+      phrases: ["agent trace ui", "tool call steps react"],
+      where: "description and lead",
+    },
+    "/docs/message-scroller": {
+      phrases: ["chat scroll to bottom", "stick to bottom react"],
+      where: "description and lead",
+    },
+    "/docs/questionnaire": {
+      phrases: ["conversational form react", "multiple choice questions ui"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",
