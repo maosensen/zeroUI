@@ -528,30 +528,35 @@ features:
     area: 地基
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.4
     note: 普通/优秀/稀有/史诗/传说五档颜色 token,色相避开强调色、焦点黄与危险红,各档在底色上 ≥6.3:1、凸起色上 ≥5:1;Badge(填充)、Card(顶边)、Item(标题与起始边)接受 rarity;Foundation 下有一页。
   - id: cut-in
     title: Cut-in 与故障/切入动效
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.4
     note: 地基新增 glitch(阶跃抖动 + 红蓝分离残影,--zero-dur-glitch)与 cut-in(沿斜角擦入、更快擦出,--zero-dur-cut);CutIn 组件:横跨屏幕的黑色宽条,强调色/危险/传说三种色调,标题落地时故障一下,定时自动消失,不抢焦点、礼貌播报;减弱动态时直接出现消失。
   - id: direction
     title: Direction(右到左)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.4
     note: Base UI 的 DirectionProvider 以 zeroUI 名义导出;方向键与弹出层随方向;斜切方向不镜像(属于外观,如同斜体)。
   - id: a11y-check
     title: 可访问性检查(axe 全站 + 键盘焦点走查)
     area: 质量
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.4
     note: pnpm a11y:无头 Chrome 打开 sitemap 每一页跑 axe-core,--focus 时用真实 Tab 逐个检查焦点是否有黄色焦点框。首轮修掉:text-3 与 danger 两个 token 对比度不足(调亮)、Slider 焦点框落在不会获焦的外壳上、勾选后的 Checkbox/Radio/Switch 焦点被墨线盖掉、outline-none 让 outline 焦点框不出现、几个示例缺控件名称。现为发版门禁。
   - id: snapshots
     title: 截图回归(每个文档示例一张基准图)
     area: 质量
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.4
     note: pnpm snapshots:无头 Chrome 在减弱动态、关过渡与动画的条件下拍每个 [data-demo],与 tests/snapshots/ 逐像素比对(pixelmatch,容差 0.1%),--update 重写基准;按名字只跑相关页面。会自己变的两个示例(定时进度条、标今天的日历)不拍。改 token 时能直接看到哪些组件变了。
   - id: seo
     title: SEO / GEO(分级契约 L0 与 L1)
@@ -572,4 +577,5 @@ features:
     area: 工作台
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.4
     note: /studio(仅本地,生产构建里 404):每个组件的各种状态、图标表、分享卡;顶栏旋钮调斜切角度、轮廓粗细、动效速度(整体缩放所有时长)、四种强调色预设,值写在根元素上(弹出层也生效),「Copy CSS」导出改过的 token 为一段 :root 覆盖。

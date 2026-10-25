@@ -6,6 +6,12 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-10-25
+
+Rarity tiers, the Cut-in with the glitch and cut-in motions, right-to-left
+support, and a pass for accessibility: brighter quiet text and red, and focus
+frames that now always show. The home page puts the later components to work.
+
 ### Added
 
 - **Rarity** — five tiers of worth, common to legendary, as colour tokens and as
@@ -234,7 +240,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.4...HEAD
+[0.1.4]: https://github.com/maosensen/zeroUI/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/maosensen/zeroUI/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/maosensen/zeroUI/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/maosensen/zeroUI/compare/v0.1.0...v0.1.1
