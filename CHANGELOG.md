@@ -6,6 +6,12 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-10-25
+
+The chat pieces (messages, bubbles, attachments, code blocks, agent traces, a
+message scroller and a questionnaire), a Form, several values in the Combobox,
+and floating and inset sidebars.
+
 ### Added
 
 - **Form** — Base UI's form around Fields: validation on submit, a server's
@@ -193,7 +199,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/maosensen/zeroUI/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/maosensen/zeroUI/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/maosensen/zeroUI/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/maosensen/zeroUI/releases/tag/v0.1.0
