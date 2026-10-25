@@ -329,6 +329,12 @@ provider, which a host can take from Base UI directly.
   still; stepped so it reads as a signal breaking up. `cut-in`: a wipe whose edge leans on the
   slant, in on `--zero-dur-cut` (the slow timing) and out at 0.6 of it. Both drop to nothing under
   reduced motion; `--zero-dur-cut` is its own token so that does not also stop what uses slow.
+- **The studio** (done): dials for the slant, the outline, motion speed (every timing scaled) and
+  four accent presets (hover and pressed shades mixed from the accent), written on the root so
+  portalled popups follow; "Copy CSS" exports what changed as a `:root` override to paste into a
+  project. Its dials are the zeroUI Slider.
+- **Direction**: Base UI's provider re-exported. The slant does not mirror in right-to-left: the
+  lean is part of the look, like the italic.
 
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,

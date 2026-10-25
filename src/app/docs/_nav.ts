@@ -123,6 +123,7 @@ export const docsNav = [
     pages: [
       { href: "/docs/icons", title: "Icons" },
       { href: "/docs/rarity", title: "Rarity" },
+      { href: "/docs/direction", title: "Direction" },
     ],
   },
 ] as const;

@@ -669,6 +669,12 @@ const registry = {
       ["@base-ui/react"],
     ),
     component(
+      "direction",
+      "Direction",
+      "Base UI's direction provider, for right-to-left pages.",
+      ["@base-ui/react"],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

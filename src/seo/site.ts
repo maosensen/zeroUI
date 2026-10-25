@@ -583,6 +583,14 @@ export const PAGES = [
     group: "foundation",
   },
   {
+    path: "/docs/direction",
+    title: "Direction",
+    description:
+      "Right-to-left support for zeroUI: Base UI's direction provider, so keys and popups follow the text.",
+    crumb: "Direction",
+    group: "foundation",
+  },
+  {
     path: "/docs/icons",
     title: "Icons",
     description:

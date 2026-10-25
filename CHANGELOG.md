@@ -17,6 +17,8 @@ All notable changes to zeroUI are documented here. The format is based on
   with a red and a blue ghost) and the `cut-in` wipe, on two new timings,
   `--zero-dur-glitch` and `--zero-dur-cut`; both are still under reduced
   motion.
+- **Direction** — Base UI's direction provider under zeroUI's name, for
+  right-to-left pages. The slant does not mirror.
 
 ### Changed
 
