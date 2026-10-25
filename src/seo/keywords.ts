@@ -328,6 +328,18 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["game hud react", "hud overlay ui"],
       where: "description and lead",
     },
+    "/docs/blocks/title-screen": {
+      phrases: ["game title screen ui", "main menu react"],
+      where: "description and lead",
+    },
+    "/docs/blocks/pause-menu": {
+      phrases: ["game pause menu ui", "pause screen react"],
+      where: "description and lead",
+    },
+    "/docs/blocks/character-select": {
+      phrases: ["character select screen react", "game character picker ui"],
+      where: "description and lead",
+    },
     "/docs/guides": {
       phrases: ["zeroui guides", "game ui react tutorial"],
       where: "description and lead",
@@ -343,6 +355,30 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
     "/docs/guides/theme-tokens": {
       phrases: ["shadcn dark theme tokens", "customize zeroui theme"],
       where: "title, description and lead",
+    },
+    "/docs/dialogue": {
+      phrases: ["game dialogue box react", "typewriter text react"],
+      where: "description and lead",
+    },
+    "/docs/compass": {
+      phrases: ["game compass ui", "hud compass react"],
+      where: "description and lead",
+    },
+    "/docs/floating-text": {
+      phrases: ["floating damage numbers", "damage popup react"],
+      where: "description and lead",
+    },
+    "/docs/feed": {
+      phrases: ["kill feed ui", "game event feed react"],
+      where: "description and lead",
+    },
+    "/docs/stats": {
+      phrases: ["item stat comparison ui", "game tooltip stats"],
+      where: "description and lead",
+    },
+    "/docs/radial-menu": {
+      phrases: ["radial menu react", "weapon wheel ui"],
+      where: "description and lead",
     },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],

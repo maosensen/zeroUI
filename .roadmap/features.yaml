@@ -579,6 +579,42 @@ features:
     completedAt: 2026-10-25
     shippedIn: v0.1.5
     note: 向右淡出的暗底上一列目标,每条一个斜的标记:等待为空框、进行中为强调色框、完成为填满加勾、失败为红加叉;完成或失败的标题从头画一道删除线;状态同时以文字告诉读屏。
+  - id: dialogue
+    title: Dialogue(对话框)
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 黑底带、说话人名字的 slab 压在上沿,台词逐字打出(speed 字/秒),点台词、点继续或在框内按 Enter/Space 都能直接显示全句,回复等整句出来才出现,框内数字键选回复;整句通过框上常驻的礼貌 live region 读一次,不读打字过程;减弱动态时整句直接出现。
+  - id: compass
+    title: Compass(指南针条)
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 两边斜切的 slab 里每 15° 一格刻度、八个方位字母(北为强调色)、中间缺口与下方读数;标记按方位角挂在条上,视野外的停在近侧边缘并用箭头指向;只负责画,heading 由游戏每帧喂;读屏得到朝向与每个标记在左/右多少度。
+  - id: floating-text
+    title: Floating text(伤害数字)
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: useFloatingText().spawn 在某点抛出文字,弹出、上升、淡出后自行移除;damage 普通、crit 更大传说橙且弹得更狠、heal 绿、info 强调色;纯装饰,对读屏隐藏;减弱动态时原地淡出。
+  - id: feed
+    title: Feed(事件播报)
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 每条事件是向左淡出的暗底带、色调色的边,从右滑入,最新在下;duration 到时调 onExpire,移出后折叠、其余补位;列表是礼貌 live region;FeedActor/FeedTarget 两种强调;减弱动态时不滑。
+  - id: stats
+    title: Stats(属性对比)
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 描述列表,每项名称、数值,给了 compare 就显示差值:更好为强调色加上箭头,更差为红加下箭头,better 决定哪个方向算好(重量越低越好);差值同时以文字告诉读屏。
+  - id: radial-menu
+    title: Radial menu(轮盘)
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 最多八项绕环、第一项在正上方顺时针;指针在任意位置都按方向选中(不必够到),亮色扇区转过去、中心显示名称,点击或 Enter 选定;方向键绕圈;焦点留在轮盘上,选中项是 active descendant,读屏逐个读到;只是轮盘本身,何时显示由使用方决定。
   - id: blocks
     title: 区块(五个整屏)
     area: 组件
@@ -586,6 +622,12 @@ features:
     completedAt: 2026-10-25
     shippedIn: v0.1.5
     note: registry:block,各是 components/blocks/ 下一个文件,装区块即连带装上它用到的组件:设置菜单(分页、行式设置、按住恢复默认)、任务简报(就地画的路线图、目标、威胁、报酬、按住接单后 cut-in)、装备栏(背包、详情的耐久与重量、腰带三格、按住拆解换钱)、排行榜(按期分页、前三按稀有度、自己那行固定在底)、HUD(血条护盾、积分、目标、可用的快捷栏与冷却,完成后 cut-in);两栏布局用容器查询。文档有总览页与每个区块一页;首页放了能玩的 HUD,顶栏加了 Blocks。
+  - id: blocks-2
+    title: 区块第二批(标题画面、暂停菜单、角色选择)
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 标题画面(大号倾斜标题故障登场、方向键移动焦点的菜单、新闻角、底部按键提示,标题按容器宽度缩放)、暂停菜单(Esc 切换、场景压暗模糊、本局数据用 Stats、按住放弃本局)、角色选择(卡片名册为切换按钮、锁定角色留在名册里并写明解锁条件、四项评分为五格 Gauge、特技、按住出发);区块共八个。
   - id: item-icons
     title: 物品图标(六个)
     area: 地基

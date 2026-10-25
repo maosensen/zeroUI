@@ -69,7 +69,7 @@ export const PAGES = [
     path: "/docs/blocks",
     title: "Blocks",
     description:
-      "Game UI blocks for React and shadcn: a settings menu, a mission briefing, a loadout, a leaderboard and a HUD, each installed with one command.",
+      "Game UI blocks for React and shadcn: a title screen, settings, a pause menu, a mission briefing, a character select, a loadout, a leaderboard and a HUD.",
     crumb: "Blocks",
     group: "blocks",
   },
@@ -111,6 +111,30 @@ export const PAGES = [
     description:
       "A game HUD block for React: health and shield gauges, a credit counter, objectives and a working hotbar with cooldowns, over a scene.",
     crumb: "HUD",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/title-screen",
+    title: "Title screen",
+    description:
+      "A game title screen and main menu block for React: a glitching title, an arrow-key menu, a news panel and key hints.",
+    crumb: "Title screen",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/pause-menu",
+    title: "Pause menu",
+    description:
+      "A game pause menu block for React: the run's stats, resume, settings and map, and hold-to-abandon, toggled with Escape.",
+    crumb: "Pause menu",
+    group: "blocks",
+  },
+  {
+    path: "/docs/blocks/character-select",
+    title: "Character select",
+    description:
+      "A game character select block for React: a roster of cards, ratings as segmented gauges, a perk, locked characters, and hold-to-deploy.",
+    crumb: "Character select",
     group: "blocks",
   },
   {
@@ -711,6 +735,54 @@ export const PAGES = [
     description:
       "A game quest and objective tracker for React: slanted marks, a strike drawn through what is done.",
     crumb: "Objectives",
+    group: "game",
+  },
+  {
+    path: "/docs/dialogue",
+    title: "Dialogue",
+    description:
+      "A game dialogue box for React with a typewriter line, a speaker slab and numbered replies picked by the number keys.",
+    crumb: "Dialogue",
+    group: "game",
+  },
+  {
+    path: "/docs/compass",
+    title: "Compass",
+    description:
+      "A game compass strip for React: a heading with the eight points, and markers for objectives at their bearings.",
+    crumb: "Compass",
+    group: "game",
+  },
+  {
+    path: "/docs/floating-text",
+    title: "Floating text",
+    description:
+      "Floating damage numbers for React: hits, crits and heals that pop, rise and fade over what was hit.",
+    crumb: "Floating text",
+    group: "game",
+  },
+  {
+    path: "/docs/feed",
+    title: "Feed",
+    description:
+      "A game event feed for React: kill-feed style bands that slide in at the screen edge and fold away.",
+    crumb: "Feed",
+    group: "game",
+  },
+  {
+    path: "/docs/stats",
+    title: "Stats",
+    description:
+      "Item stat comparison for React: values with the difference from what you have, better or worse at a glance.",
+    crumb: "Stats",
+    group: "game",
+  },
+  {
+    path: "/docs/radial-menu",
+    title: "Radial menu",
+    description:
+      "A radial weapon wheel menu for React, picked by pointer direction or arrow keys, accessible to screen readers.",
+    crumb: "Radial menu",
     group: "game",
   },
   {

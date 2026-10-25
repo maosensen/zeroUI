@@ -348,6 +348,36 @@ const entries = [
     line: "Marks and a strike through what is done.",
   },
   {
+    href: "/docs/dialogue",
+    name: "Dialogue",
+    line: "A typed line, a speaker, numbered replies.",
+  },
+  {
+    href: "/docs/compass",
+    name: "Compass",
+    line: "A heading strip with markers.",
+  },
+  {
+    href: "/docs/floating-text",
+    name: "Floating text",
+    line: "Hits and heals that pop and rise.",
+  },
+  {
+    href: "/docs/feed",
+    name: "Feed",
+    line: "What just happened, at the edge.",
+  },
+  {
+    href: "/docs/stats",
+    name: "Stats",
+    line: "Better or worse than what you have.",
+  },
+  {
+    href: "/docs/radial-menu",
+    name: "Radial menu",
+    line: "A wheel picked by direction.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Thirty solid glyphs on the same slant.",

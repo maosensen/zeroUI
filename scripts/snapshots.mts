@@ -120,14 +120,19 @@ try {
     features: [{ name: "prefers-reduced-motion", value: "reduce" }],
   });
 
-  // with names given, only the pages they can be on: a demo is named after its page ("button-variants")
-  const pages = (await docsPages()).filter(
-    (path) =>
+  // with names given, only the pages they can be on: a demo is named after its page
+  // ("button-variants"), a block after its block ("block-hud" on /docs/blocks/hud)
+  const pages = (await docsPages()).filter((path) => {
+    const slug = path.slice("/docs/".length);
+    return (
       only.size === 0 ||
-      [...only].some((name) =>
-        name.startsWith(`${path.slice("/docs/".length)}-`),
-      ),
-  );
+      [...only].some(
+        (name) =>
+          name.startsWith(`${slug}-`) ||
+          name === `block-${slug.replace(/^blocks\//, "")}`,
+      )
+    );
+  });
   for (const path of pages) {
     await send("Page.navigate", { url: `${BASE}${path}` });
     await wait(2500);

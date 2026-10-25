@@ -55,6 +55,9 @@ const blocks = [
   ["/docs/blocks/mission-briefing", "Mission briefing"],
   ["/docs/blocks/loadout", "Loadout"],
   ["/docs/blocks/leaderboard", "Leaderboard"],
+  ["/docs/blocks/title-screen", "Title screen"],
+  ["/docs/blocks/pause-menu", "Pause menu"],
+  ["/docs/blocks/character-select", "Character select"],
 ] as const;
 
 export default function Home() {

@@ -5,9 +5,10 @@ a fluorescent lime accent, slabs cut on the slant, thick black outlines — buil
 [shadcn](https://ui.shadcn.com) and [Base UI](https://base-ui.com), and installed
 the shadcn way, from a registry.
 
-Sixty-eight components (forms, overlays, feedback, data display, navigation,
-commands, chat, and game pieces such as gauges, an inventory and objectives), five
-blocks (whole game screens: settings, a briefing, a loadout, a leaderboard, a HUD),
+Seventy-four components (forms, overlays, feedback, data display, navigation,
+commands, chat, and game pieces such as gauges, an inventory and objectives), eight
+blocks (whole game screens: a title screen, settings, a pause menu, a briefing, a
+character select, a loadout, a leaderboard, a HUD),
 thirty icons and the theme, with a live demo, the
 props and the install command for each at **https://zeroui.catforest.dev**. Add the
 `@zeroui` namespace to a shadcn project and install any of them:

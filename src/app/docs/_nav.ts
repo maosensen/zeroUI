@@ -13,6 +13,9 @@ export const docsNav = [
       { href: "/docs/blocks/loadout", title: "Loadout" },
       { href: "/docs/blocks/leaderboard", title: "Leaderboard" },
       { href: "/docs/blocks/hud", title: "HUD" },
+      { href: "/docs/blocks/title-screen", title: "Title screen" },
+      { href: "/docs/blocks/pause-menu", title: "Pause menu" },
+      { href: "/docs/blocks/character-select", title: "Character select" },
     ],
   },
   {
@@ -149,6 +152,12 @@ export const docsNav = [
       { href: "/docs/hold-button", title: "Hold button" },
       { href: "/docs/counter", title: "Counter" },
       { href: "/docs/objectives", title: "Objectives" },
+      { href: "/docs/dialogue", title: "Dialogue" },
+      { href: "/docs/compass", title: "Compass" },
+      { href: "/docs/floating-text", title: "Floating text" },
+      { href: "/docs/feed", title: "Feed" },
+      { href: "/docs/stats", title: "Stats" },
+      { href: "/docs/radial-menu", title: "Radial menu" },
     ],
   },
   {

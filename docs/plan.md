@@ -383,6 +383,27 @@ own in the docs ("Game"), the nav and llms.txt.
 - **Objectives.** A mark per state, a strike drawn with a background line growing from the start.
 - **Item icons.** crate, cell, flare, key, chip, kit, to the icon spec: thirty icons in all.
 
+### Game pieces, second batch (2026-10-25)
+
+- **Dialogue.** The typing is a reveal of a string (`DialogueText` takes a string, a new `key`
+  per line); the box holds a polite live region with the whole current line, since a region that
+  remounts with each line may not be announced. Enter or Space anywhere in the box, a click on the
+  line, or Continue shows the rest; replies are hidden until the line is whole, and the number
+  keys pick them.
+- **Compass.** It draws, it does not animate: the game feeds `heading` every frame. Ticks are keyed
+  by their unwrapped bearing so they slide instead of jumping at north. Off-view markers wait at
+  the nearer edge with zeroUI's chevrons. Its name for screen readers is the heading and each
+  marker's turn in words.
+- **Floating text.** A hook keeps the list, a layer draws it; each removes itself when its
+  animation ends. Decoration, hidden from screen readers. Uses the `float` and `release`
+  transitions.
+- **Feed.** motion's presence and layout animations: in on `reveal`, out on `dismiss`, the rest
+  closing up. Expiry is the caller's (`onExpire`), so the list stays theirs.
+- **Stats.** A description list; better or worse depends on `better`, and is said in words.
+- **Radial menu.** Pointer direction, not reach, picks an item; arrow keys go round; focus stays
+  on the wheel with the picked item as its active descendant. The wheel is round (things round by
+  nature may be), its items are slanted squares.
+
 ### Blocks (2026-10-25)
 
 Whole screens built from the components, for what a game needs most often: a settings menu, a
@@ -399,6 +420,12 @@ mission briefing, a loadout, a leaderboard, a HUD.
   (`Block`, which reads the block file like `Demo` reads a demo and marks its box
   `data-demo="block-<name>"` for the screenshot gate) and what it is built from. The breadcrumb
   goes through Blocks. The header links to them, and the home page runs the HUD.
+- **Second batch** (same day): a title screen, a pause menu and a character select. The title
+  screen's menu is buttons with the arrow keys moving focus between them (not an active
+  descendant), so mouse, Tab and keys agree; its title sizes by container units. The pause panel
+  is a labelled section, not a dialog, since it is drawn inline and does not manage focus; in a
+  game, put it in a Dialog. The roster's cards are toggle buttons with the focus frame on the
+  button itself.
 - **A HUD's key numbers** are drawn from `data-key` in CSS and given as `aria-keyshortcuts`, so
   they are announced as shortcuts and do not clash with the slot's name.
 

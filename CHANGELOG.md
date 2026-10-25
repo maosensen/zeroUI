@@ -6,6 +6,23 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Dialogue** — a speaker on a slab, a line typed out, a blinking mark to
+  continue, and replies picked with the number keys.
+- **Compass** — a heading strip with the eight points, and markers for
+  objectives at their bearings that wait at the edge when out of view.
+- **Floating text** — damage numbers, crits and heals that pop, rise and fade
+  where something happened.
+- **Feed** — what just happened, as bands sliding in at the edge of the
+  screen.
+- **Stats** — an item's numbers and how they compare with what you have.
+- **Radial menu** — a wheel of choices picked by the pointer's direction or
+  the arrow keys.
+- **Three more blocks** — a title screen with an arrow-key menu, a pause menu
+  toggled with Escape, and a character select with a roster, ratings and a
+  held deploy.
+
 ## [0.1.5] - 2026-10-25
 
 Game pieces and whole game screens: a health bar with a damage trail, an
