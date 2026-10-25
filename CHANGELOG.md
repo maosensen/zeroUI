@@ -6,6 +6,13 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-10-25
+
+Game pieces and whole game screens: a health bar with a damage trail, an
+inventory, a hold-to-confirm button, a rolling counter, an objective tracker,
+and five blocks (settings, a mission briefing, a loadout, a leaderboard, a HUD)
+installed with one command. Guides, and checks at phone width.
+
 ### Added
 
 - **Gauge** — a health bar on the slanted well: when it drops, a pale trail
@@ -276,7 +283,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.4...HEAD
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.5...HEAD
+[0.1.5]: https://github.com/maosensen/zeroUI/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/maosensen/zeroUI/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/maosensen/zeroUI/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/maosensen/zeroUI/compare/v0.1.1...v0.1.2

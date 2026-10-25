@@ -549,42 +549,49 @@ features:
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: Base UI Meter;数值下降时填充立刻落下、原位置留一截淡色残影,等 --zero-dur-hold(地基新增,480ms)后追上;上升时残影先走、填充随后。segments 分段、tone 取强调色/危险/稀有度色,low 以下转红并呼吸(地基新增 pulse 动效);减弱动态时残影不等。
   - id: inventory
     title: Inventory(背包格子)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: 方格(--zero-slot,地基新增)带稀有度底边与上升的光、角标数量、按剩余比例扫过的冷却遮罩、空格显示斜纹;整个网格在 Tab 上只占一站,方向键二维移动、Home/End 到行首行尾(Ctrl 到两端),回来时停在上次的格子;窄屏时格子随列缩小。
   - id: hold-button
     title: Hold button(长按确认)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: 按住(指针、Enter/Space,或 hotkey 在页面任意处)时一层填充沿斜角走满,松早了退回,走满触发 onConfirm 并闪一下强调色;填充是 slab 的纹理层,进度 --hold-p 注册为可动画属性,用 Web Animations 驱动(避开 Button 自身的按压过渡);减弱动态时节奏不变(它表示要按多久)。
   - id: counter
     title: Counter(数字滚动)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: 数字滚到新值(motion.ts 新增 roll),等宽数字不抖;delta 时把变化量甩出来、上升淡出(新增 float),增为强调色、减为红;读屏只读最终值;默认 en-US 写法以免服务端与浏览器不一致;减弱动态时直接跳。
   - id: objectives
     title: Objectives(任务追踪)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: 向右淡出的暗底上一列目标,每条一个斜的标记:等待为空框、进行中为强调色框、完成为填满加勾、失败为红加叉;完成或失败的标题从头画一道删除线;状态同时以文字告诉读屏。
   - id: blocks
     title: 区块(五个整屏)
     area: 组件
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: registry:block,各是 components/blocks/ 下一个文件,装区块即连带装上它用到的组件:设置菜单(分页、行式设置、按住恢复默认)、任务简报(就地画的路线图、目标、威胁、报酬、按住接单后 cut-in)、装备栏(背包、详情的耐久与重量、腰带三格、按住拆解换钱)、排行榜(按期分页、前三按稀有度、自己那行固定在底)、HUD(血条护盾、积分、目标、可用的快捷栏与冷却,完成后 cut-in);两栏布局用容器查询。文档有总览页与每个区块一页;首页放了能玩的 HUD,顶栏加了 Blocks。
   - id: item-icons
     title: 物品图标(六个)
     area: 地基
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: crate、cell、flare、key、chip、kit,按 docs/icons.md 的规矩画(实心、1:4 斜切、45° 斜线、倒角),给背包格子用;图标共三十个。
   - id: a11y-check
     title: 可访问性检查(axe 全站 + 键盘焦点走查)
@@ -605,6 +612,7 @@ features:
     area: 质量
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: pnpm a11y --mobile 在 375×812(移动端模拟)跑同样的检查,并查页面不得横向滚动(列出伸出去的元素,跳过自身会滚动或裁切的盒子);pnpm snapshots --mobile 另存一套 375px 基准(tests/snapshots/375/)。首轮:没有页面超宽;props 表格在手机上于盒内横滑却无法用键盘到达,改为带名称、可获焦并有焦点框的区域。已写进发版卡。
   - id: seo
     title: SEO / GEO(分级契约 L0 与 L1)
@@ -618,6 +626,7 @@ features:
     area: 站点与文档
     status: done
     completedAt: 2026-10-25
+    shippedIn: v0.1.5
     note: /docs/guides 总览与三篇:用 React 搭游戏设置菜单、会留伤害残影的血条(含不用 zeroUI 的从零写法)、用 token 改主题(说明宿主项目里要覆盖的是 --zero-* 原名而非 --color-zero-*);每篇开头先给结论,标题与开头段落含关键词地图里的长尾词,JSON-LD 为 Article(作者与发布者都是品牌),面包屑经过 Guides,站内互链到组件、区块与其他指南。L2 的验收是人审,待作者过目。
   - id: showcase
     title: 对外展示页
