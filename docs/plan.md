@@ -264,11 +264,20 @@ timing and its contents slide in the direction of travel.
 
 Layout and the rest done (2026-10-25) — Item, Empty, Scroll area, Aspect ratio, Spinner. No
 foundation change. The scroll thumb leans like a slab; the spinner turns once per half waiting loop
-and so stops with the loop under reduced motion. Left out of shadcn's set, each needing a new
-dependency the author has not approved: Calendar (react-day-picker), Carousel (embla), Chart
-(recharts) and Resizable (react-resizable-panels). Also left: Combobox chips, the Sidebar's
-floating and inset variants, and the Form helpers (Field already carries label, description and
-error).
+and so stops with the loop under reduced motion. Also left for later: Combobox chips, the
+Sidebar's floating and inset variants, and the Form helpers (Field already carries label,
+description and error).
+
+The last four (2026-10-25), on the libraries shadcn's own use, which the author approved:
+Calendar (react-day-picker), Carousel (Embla), Chart (Recharts), Resizable
+(react-resizable-panels); the app already had them, the registry items now depend on them. No
+foundation change. Calendar's days are slabs cut on both sides, so a week nests and a range is one
+slanted band; it reads today's date, so under cacheComponents it renders inside Suspense. Chart's
+five series colours are aliases of tokens (`--zero-chart-1…5`), set on the container, not new
+colours. A slab cannot be hollow, so today is marked by its number (accent, underlined), not by an
+outline. Two names to avoid in data attributes: shadcn's stylesheet defines `data-selected`,
+`data-open` and others as custom variants, so an attribute such as `data-selected-single` is never
+generated; the calendar uses `data-single`.
 
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,

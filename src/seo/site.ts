@@ -462,6 +462,38 @@ export const PAGES = [
     group: "layout",
   },
   {
+    path: "/docs/calendar",
+    title: "Calendar",
+    description:
+      "A date picker calendar for React: slanted day cells, single days and ranges, built on react-day-picker.",
+    crumb: "Calendar",
+    group: "inputs",
+  },
+  {
+    path: "/docs/carousel",
+    title: "Carousel",
+    description:
+      "A carousel for React on Embla: slides to drag or swipe, slab arrows and slanted pips for each slide.",
+    crumb: "Carousel",
+    group: "data",
+  },
+  {
+    path: "/docs/chart",
+    title: "Chart",
+    description:
+      "Charts for shadcn with Recharts in a dark game-UI style: quiet axes, slanted swatches, a panel tooltip.",
+    crumb: "Chart",
+    group: "data",
+  },
+  {
+    path: "/docs/resizable",
+    title: "Resizable",
+    description:
+      "Resizable panels for React: drag the shared edge, or move it from the keyboard, with a slanted grip.",
+    crumb: "Resizable",
+    group: "layout",
+  },
+  {
     path: "/docs/icons",
     title: "Icons",
     description:

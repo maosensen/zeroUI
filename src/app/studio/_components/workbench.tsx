@@ -39,6 +39,7 @@ import { LayoutSection } from "./layout-section";
 import { MoreOverlaysSection } from "./more-overlays-section";
 import { NavigationSection } from "./navigation-section";
 import { OverlaysSection } from "./overlays-section";
+import { RichSection } from "./rich-section";
 
 const variants = ["primary", "secondary", "danger", "ghost"] as const;
 const sizes = ["sm", "md", "lg"] as const;
@@ -400,6 +401,8 @@ export function Workbench() {
         <MoreOverlaysSection />
 
         <LayoutSection />
+
+        <RichSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

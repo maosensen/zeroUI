@@ -46,6 +46,13 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Scroll area** — scrollbars with a thin track and a slanted thumb.
 - **Aspect ratio** — a box that keeps a ratio of width to height.
 - **Spinner** — the spinner icon, turning, still under reduced motion.
+- **Calendar** — a month of slanted day cells for one day or a range, with
+  month and year menus.
+- **Carousel** — slides to drag or swipe, raised slab arrows, and a row of
+  slanted pips.
+- **Chart** — Recharts in zeroUI's colours: quiet axes, slanted swatches and a
+  panel tooltip, with five series colours taken from the tokens.
+- **Resizable** — panels with a draggable edge and a slanted grip.
 
 ## [0.1.1] - 2026-10-24
 

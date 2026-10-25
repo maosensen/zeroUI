@@ -253,6 +253,26 @@ const entries = [
     line: "Something is loading.",
   },
   {
+    href: "/docs/calendar",
+    name: "Calendar",
+    line: "Days as nesting slabs.",
+  },
+  {
+    href: "/docs/carousel",
+    name: "Carousel",
+    line: "Slides to swipe through.",
+  },
+  {
+    href: "/docs/chart",
+    name: "Chart",
+    line: "Recharts in zeroUI's colours.",
+  },
+  {
+    href: "/docs/resizable",
+    name: "Resizable",
+    line: "Panels with a draggable edge.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

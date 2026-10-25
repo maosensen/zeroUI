@@ -220,6 +220,22 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["react loading spinner", "spinner component"],
       where: "description and lead",
     },
+    "/docs/calendar": {
+      phrases: ["react date picker calendar", "date range picker dark"],
+      where: "description and lead",
+    },
+    "/docs/carousel": {
+      phrases: ["react carousel component", "embla carousel shadcn"],
+      where: "description and lead",
+    },
+    "/docs/chart": {
+      phrases: ["shadcn chart dark", "recharts styled components"],
+      where: "description and lead",
+    },
+    "/docs/resizable": {
+      phrases: ["resizable panels react", "split pane component"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

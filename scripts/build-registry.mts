@@ -572,6 +572,37 @@ const registry = {
       [dep("icon-spinner")],
     ),
     component(
+      "calendar",
+      "Calendar",
+      "A month of slanted day cells for one day or a range (react-day-picker).",
+      ["react-day-picker"],
+      [
+        dep("button"),
+        dep("icon-chevron-left"),
+        dep("icon-chevron-right"),
+        dep("icon-chevron-down"),
+      ],
+    ),
+    component(
+      "carousel",
+      "Carousel",
+      "Slides to drag or swipe, slab arrows and slanted pips (Embla).",
+      ["embla-carousel-react"],
+      [dep("button"), dep("icon-chevron-left"), dep("icon-chevron-right")],
+    ),
+    component(
+      "chart",
+      "Chart",
+      "Recharts in zeroUI's colours: quiet axes, slanted swatches, a panel tooltip.",
+      ["recharts"],
+    ),
+    component(
+      "resizable",
+      "Resizable",
+      "Panels with a draggable edge and a slanted grip (react-resizable-panels).",
+      ["react-resizable-panels"],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

@@ -47,6 +47,8 @@ export const docsNav = [
       { href: "/docs/table", title: "Table" },
       { href: "/docs/badge", title: "Badge" },
       { href: "/docs/avatar", title: "Avatar" },
+      { href: "/docs/chart", title: "Chart" },
+      { href: "/docs/carousel", title: "Carousel" },
     ],
   },
   {
@@ -87,6 +89,7 @@ export const docsNav = [
       { href: "/docs/native-select", title: "Native select" },
       { href: "/docs/kbd", title: "Kbd" },
       { href: "/docs/label", title: "Label" },
+      { href: "/docs/calendar", title: "Calendar" },
     ],
   },
   {
@@ -97,6 +100,7 @@ export const docsNav = [
       { href: "/docs/scroll-area", title: "Scroll area" },
       { href: "/docs/aspect-ratio", title: "Aspect ratio" },
       { href: "/docs/spinner", title: "Spinner" },
+      { href: "/docs/resizable", title: "Resizable" },
     ],
   },
   {

@@ -386,6 +386,30 @@ features:
     status: done
     completedAt: 2026-10-25
     note: 旋转的 spinner 图标,半个等待循环转一圈;跟随文字大小与颜色;减弱动态时静止;默认读作 Loading。
+  - id: calendar
+    title: Calendar
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: react-day-picker 上的月历,每天是两侧斜切的小 slab、一周是一排嵌合的平行四边形;选中填强调色,区间两端强调色、中间灰色成一条斜带,今天强调色下划线;月份/年份下拉。
+  - id: carousel
+    title: Carousel
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: Embla 上的轮播:拖动、滑动、方向键与两侧灰色 slab 按钮;CarouselDots 每页一个斜块,当前页更长、强调色。
+  - id: chart
+    title: Chart
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: Recharts 用 zeroUI 的颜色:安静的坐标轴与网格,面板式 tooltip,斜块色标;五个系列色全部映射到已有 token。
+  - id: resizable
+    title: Resizable
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: react-resizable-panels 上的可拖动分隔:细线 + 更宽的抓取区,指向或拖动时强调色,键盘可移;withHandle 加斜切抓手。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表
