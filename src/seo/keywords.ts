@@ -188,6 +188,18 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["react label component", "shadcn label"],
       where: "description and lead",
     },
+    "/docs/alert-dialog": {
+      phrases: ["react alert dialog", "confirm dialog base ui"],
+      where: "description and lead",
+    },
+    "/docs/drawer": {
+      phrases: ["react drawer component", "swipeable bottom sheet"],
+      where: "description and lead",
+    },
+    "/docs/navigation-menu": {
+      phrases: ["react navigation menu", "mega menu base ui"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

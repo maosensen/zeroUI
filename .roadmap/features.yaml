@@ -338,6 +338,24 @@ features:
     status: done
     completedAt: 2026-10-25
     note: Field 之外的控件名称,Field 标签的斜体;内含禁用控件时变暗。
+  - id: alert-dialog
+    title: Alert dialog
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 不可撤销操作前的确认:没有角落关闭按钮、点遮罩不关闭;复用 Dialog 的标题栏与页脚;Cancel 灰色、Action 强调色或危险红。
+  - id: drawer
+    title: Drawer
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 建在 Base UI Drawer 上:从底部升起、顶部一道斜切拉手,手指拖动跟随、背景随之变亮,拖远或拖快即关闭;side 可从其他边进入;减弱动态时只淡入淡出。
+  - id: navigation-menu
+    title: Navigation menu
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 一排安静的 slab,部分打开下方的链接面板;面板共用,切换时改变尺寸、内容按方向滑动;面板内链接是带斜体标题的块;当前页填强调色。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

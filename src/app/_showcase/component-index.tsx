@@ -213,6 +213,21 @@ const entries = [
     line: "A control's name.",
   },
   {
+    href: "/docs/alert-dialog",
+    name: "Alert dialog",
+    line: "Asks before what cannot be undone.",
+  },
+  {
+    href: "/docs/drawer",
+    name: "Drawer",
+    line: "A sheet you can swipe away.",
+  },
+  {
+    href: "/docs/navigation-menu",
+    name: "Navigation menu",
+    line: "Menus sharing one sliding panel.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

@@ -256,6 +256,12 @@ each input wrapped in a slab frame through `render`, since an input cannot carry
 layers), Input group (the well with any number of addons), Native select. Button group forces the
 both-sides cut on whatever slabs it holds, so the row nests. Kbd is a small raised slab sized in em.
 
+More overlays done (2026-10-25) — Alert dialog, Drawer, Navigation menu. No foundation change.
+Alert dialog is the Dialog without its corner close and outside dismissal. Drawer is Base UI's
+swipeable drawer in the Sheet's look, with a slanted grip; it moves on the slow timing (a longer
+throw than a popup) and returns on the base one. Navigation menu's shared panel resizes on the base
+timing and its contents slide in the direction of travel.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

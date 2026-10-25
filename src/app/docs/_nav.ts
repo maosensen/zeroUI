@@ -23,7 +23,9 @@ export const docsNav = [
     group: "Overlays",
     pages: [
       { href: "/docs/dialog", title: "Dialog" },
+      { href: "/docs/alert-dialog", title: "Alert dialog" },
       { href: "/docs/sheet", title: "Sheet" },
+      { href: "/docs/drawer", title: "Drawer" },
       { href: "/docs/popover", title: "Popover" },
       { href: "/docs/tooltip", title: "Tooltip" },
       { href: "/docs/dropdown-menu", title: "Dropdown menu" },
@@ -53,6 +55,7 @@ export const docsNav = [
       { href: "/docs/breadcrumb", title: "Breadcrumb" },
       { href: "/docs/pagination", title: "Pagination" },
       { href: "/docs/sidebar", title: "Sidebar" },
+      { href: "/docs/navigation-menu", title: "Navigation menu" },
     ],
   },
   {

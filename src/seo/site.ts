@@ -157,6 +157,22 @@ export const PAGES = [
     group: "overlays",
   },
   {
+    path: "/docs/alert-dialog",
+    title: "Alert dialog",
+    description:
+      "An alert dialog for React on Base UI: asks before an action that cannot be undone, and waits for an answer.",
+    crumb: "Alert dialog",
+    group: "overlays",
+  },
+  {
+    path: "/docs/drawer",
+    title: "Drawer",
+    description:
+      "A swipeable drawer for React: a bottom sheet with a slanted grip that follows the finger and closes on a swipe.",
+    crumb: "Drawer",
+    group: "overlays",
+  },
+  {
     path: "/docs/popover",
     title: "Popover",
     description:
@@ -395,6 +411,14 @@ export const PAGES = [
       "A label component for React in leaning type, for checkboxes, switches and other controls.",
     crumb: "Label",
     group: "inputs",
+  },
+  {
+    path: "/docs/navigation-menu",
+    title: "Navigation menu",
+    description:
+      "A navigation menu for shadcn on Base UI: a row of menus sharing one panel that resizes and slides between them.",
+    crumb: "Navigation menu",
+    group: "navigation",
   },
   {
     path: "/docs/icons",

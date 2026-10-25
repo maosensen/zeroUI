@@ -34,6 +34,12 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Native select** — the browser's own select in Input's well.
 - **Kbd** — a key to press, as a small raised slab.
 - **Label** — a control's name in leaning type, outside a Field.
+- **Alert dialog** — a Dialog that asks before something that cannot be
+  undone and waits for an answer.
+- **Drawer** — a panel that comes up from the bottom with a slanted grip,
+  follows the finger and swipes away.
+- **Navigation menu** — a row of menus sharing one panel of links that
+  resizes and slides between them.
 
 ## [0.1.1] - 2026-10-24
 

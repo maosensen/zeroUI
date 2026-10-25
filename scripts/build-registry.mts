@@ -521,6 +521,26 @@ const registry = {
     component("kbd", "Kbd", "A key to press: a small raised slab.", []),
     component("label", "Label", "A control's name in leaning type.", []),
     component(
+      "alert-dialog",
+      "Alert dialog",
+      "A Dialog that asks before what cannot be undone, and waits for an answer.",
+      ["@base-ui/react"],
+      [dep("dialog"), dep("button")],
+    ),
+    component(
+      "drawer",
+      "Drawer",
+      "A panel from the bottom (or any edge) that follows the finger and swipes away.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "navigation-menu",
+      "Navigation menu",
+      "A row of menus sharing one panel that resizes and slides between them.",
+      ["@base-ui/react"],
+      [dep("icon-chevron-down")],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",
