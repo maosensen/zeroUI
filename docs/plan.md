@@ -111,6 +111,15 @@ Decisions land here with their date, in the commit that acts on them.
   L1 21/21 against zeroui.catforest.dev, the sitemap pushed to IndexNow (202), and yPulse switched
   to `seo: public`. Submitting the sitemap in Search Console and Bing is the author's step.
 
+- **2026-10-25 — `tilt`, the foundation's way to lean big lettering** (found by the author: a
+  long post title in the board's sheet rose out of the sheet's top). Rotating on the left end
+  lifts the right end by width × sin(tilt), so a wide or wrapping heading leaves its box. The
+  `tilt` utility (type.css) rotates, makes the heading as wide as its text, and keeps that much
+  room above it in a `::before` (a block's percentage padding is a share of its width), rounded
+  up to whole pixels so what follows does not land between pixels. Dialog, Sheet and Alert dialog
+  titles, the docs' page headings and every block's title use it; the nine block baselines grew
+  by their title's room.
+
 - **2026-10-25 — SEO level 2: guides.** The docs leads already put the conclusion first and
   `src/seo/keywords.ts` is the keyword map; what level 2 lacked was deep content at its own
   address. Three guides under `/docs/guides` (a settings menu, the damage trail, theming), each an

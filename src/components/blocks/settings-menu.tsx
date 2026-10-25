@@ -112,7 +112,7 @@ export function SettingsMenu() {
     >
       <Tabs defaultValue="display" className="gap-0">
         <header className="grid gap-5 bg-zero-void px-6 pt-6 pb-5">
-          <h2 className="origin-left rotate-(--zero-tilt) w-fit font-black font-zero text-zero-2xl italic">
+          <h2 className="tilt font-black font-zero text-zero-2xl italic">
             Settings
           </h2>
           <TabsList>

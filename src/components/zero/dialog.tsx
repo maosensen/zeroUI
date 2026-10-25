@@ -98,10 +98,7 @@ function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn(
-        "origin-left rotate-(--zero-tilt) font-black font-zero text-zero-xl italic",
-        className,
-      )}
+      className={cn("tilt font-black font-zero text-zero-xl italic", className)}
       {...props}
     />
   );

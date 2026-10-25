@@ -52,7 +52,7 @@ export function PauseMenu() {
           >
             <h2
               id="pause-title"
-              className="origin-left rotate-(--zero-tilt) font-black font-zero text-zero-2xl uppercase italic"
+              className="tilt font-black font-zero text-zero-2xl uppercase italic"
             >
               Paused
             </h2>

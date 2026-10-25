@@ -69,7 +69,7 @@ export function DailySchedule() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <h2
           id="today-title"
-          className="origin-left rotate-(--zero-tilt) font-black font-zero text-zero-2xl italic"
+          className="tilt font-black font-zero text-zero-2xl italic"
         >
           Today
         </h2>

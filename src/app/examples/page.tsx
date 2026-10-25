@@ -22,7 +22,7 @@ export default function Examples() {
       <SiteHeader />
       <main className="mx-auto grid max-w-4xl gap-8 px-4 py-14 sm:px-8">
         <header className="grid gap-4">
-          <h1 className="origin-left rotate-(--zero-tilt) font-black font-zero text-zero-2xl italic">
+          <h1 className="tilt font-black font-zero text-zero-2xl italic">
             Examples
           </h1>
           <p className="max-w-2xl font-medium text-zero-md text-zero-text-2 leading-relaxed">

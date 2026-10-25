@@ -6,7 +6,7 @@ import { ExternalIcon } from "@/components/zero/icons";
 export function DocHeader({ title, lead }: { title: string; lead: string }) {
   return (
     <header className="grid gap-4">
-      <h1 className="origin-left rotate-(--zero-tilt) font-black font-zero text-zero-2xl italic">
+      <h1 className="tilt font-black font-zero text-zero-2xl italic">
         {title}
       </h1>
       <p className="max-w-2xl font-medium text-zero-lg text-zero-text-2">

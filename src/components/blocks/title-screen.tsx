@@ -49,11 +49,11 @@ export function TitleScreen({ onChoose }: { onChoose?: (id: string) => void }) {
     >
       <div className="grid content-center gap-10 p-6 sm:p-10 @3xl:grid-cols-[1fr_18rem] @3xl:items-end">
         <div className="grid gap-8">
-          <div className="grid gap-6">
+          <div className="grid gap-2">
             <p className="font-black font-zero text-zero-accent text-zero-sm uppercase italic tracking-[0.2em]">
               A courier's night
             </p>
-            <h2 className="glitch origin-left rotate-(--zero-tilt) font-black font-zero text-[clamp(3rem,10cqi,6.5rem)] uppercase italic leading-[0.9]">
+            <h2 className="glitch tilt font-black font-zero text-[clamp(3rem,10cqi,6.5rem)] uppercase italic leading-[0.9]">
               Night
               <br />
               shift

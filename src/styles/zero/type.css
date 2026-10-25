@@ -1,0 +1,21 @@
+/*
+ * Tilt: big display lettering rotated by --zero-tilt, turning on its left end. A wide heading
+ * lifts its right end by its width × sin(tilt), out of whatever holds it (a sheet's top, a bar),
+ * and a long title that wraps is as wide as its box. ::before keeps exactly that much room above
+ * the lettering (a block's percentage padding is a share of its width), so the right end rises
+ * into the room and never past the heading's own top. The heading is as wide as its text, so the
+ * room follows the text, not the box.
+ */
+@utility tilt {
+  width: fit-content;
+  max-width: 100%;
+  rotate: var(--zero-tilt);
+  transform-origin: left center;
+
+  &::before {
+    content: "";
+    display: block;
+    /* whole pixels, so what follows the heading does not land between them */
+    padding-top: round(up, calc(100% * sin(-1 * var(--zero-tilt))), 1px);
+  }
+}
