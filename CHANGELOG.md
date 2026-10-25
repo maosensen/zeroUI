@@ -6,6 +6,12 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.1.6] - 2026-10-25
+
+Six more game pieces (a dialogue box, a compass, floating damage numbers, an
+event feed, stat comparison and a radial menu) and three more blocks: a title
+screen, a pause menu and a character select.
+
 ### Added
 
 - **Dialogue** — a speaker on a slab, a line typed out, a blinking mark to
@@ -300,7 +306,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.6...HEAD
+[0.1.6]: https://github.com/maosensen/zeroUI/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/maosensen/zeroUI/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/maosensen/zeroUI/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/maosensen/zeroUI/compare/v0.1.2...v0.1.3
