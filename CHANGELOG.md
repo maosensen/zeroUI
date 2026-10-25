@@ -6,6 +6,12 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Rarity** — five tiers of worth, common to legendary, as colour tokens and as
+  a `rarity` on Badge (its fill), Card (a top edge) and Item (its title and
+  start edge), the way a game grades its loot.
+
 ### Changed
 
 - **The home page puts the later components to work** — a dispatch console

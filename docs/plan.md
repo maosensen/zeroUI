@@ -316,6 +316,14 @@ provider, which a host can take from Base UI directly.
   button. Two demos move by themselves and are left out (the timed progress bar, the calendar that
   marks today). It is a release gate beside `pnpm a11y`.
 
+### zeroUI's own (2026-10-25)
+
+- **Rarity** (the phase 1 token list named it; now built). Five tiers, common `#a6a6a6`, uncommon
+  `#4fcf6a`, rare `#4a9eff`, epic `#b67cff`, legendary `#ff9b2f`: hues kept clear of the accent,
+  the focus yellow and danger, each at least 6.3 : 1 on the ground and 5 : 1 on raised, ink on each
+  at least 6.9 : 1. Badge takes a `rarity` fill, Card a top edge, Item a title colour and start
+  edge. Card and Item spell the tier type out themselves, so neither depends on Badge.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

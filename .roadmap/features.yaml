@@ -523,6 +523,12 @@ features:
     completedAt: 2026-10-24
     shippedIn: v0.1.0
     note: /docs:上手页、五个组件各一页、图标页。每页有分包管理器的安装命令、活的演示(展示的代码就是演示文件本身)、行为说明、每个部件一张属性表并链到底层的 Base UI 部件;代码在服务端用 zeroUI 自己的配色高亮。手机宽度下导航变成横向一行,宽的演示在自己的框里横向滚动。
+  - id: rarity
+    title: 稀有度(五档品质色)
+    area: 地基
+    status: done
+    completedAt: 2026-10-25
+    note: 普通/优秀/稀有/史诗/传说五档颜色 token,色相避开强调色、焦点黄与危险红,各档在底色上 ≥6.3:1、凸起色上 ≥5:1;Badge(填充)、Card(顶边)、Item(标题与起始边)接受 rarity;Foundation 下有一页。
   - id: a11y-check
     title: 可访问性检查(axe 全站 + 键盘焦点走查)
     area: 质量

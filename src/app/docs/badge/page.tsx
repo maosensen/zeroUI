@@ -42,6 +42,11 @@ export default function BadgePage() {
           part="Badge"
           rows={[
             {
+              name: "rarity",
+              type: '"common" | "uncommon" | "rare" | "epic" | "legendary"',
+              description: "Colours it by tier (see Rarity).",
+            },
+            {
               name: "variant",
               type: '"default" | "secondary" | "outline" | "danger"',
               default: '"default"',

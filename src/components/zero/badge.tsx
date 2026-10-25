@@ -7,7 +7,8 @@ import { cn } from "@/lib/zero/cn";
  * A short label stuck on something: a small slab cut on both sides, in small leaning capitals.
  * One line, so it is a slab, 1.75em tall on the smallest type size. The accent for what matters,
  * the raised grey for the ordinary, a black well outlined in the quiet line for the quiet (a
- * slab cannot be hollow: its outline is painted under the fill), red for danger.
+ * slab cannot be hollow: its outline is painted under the fill), red for danger. `rarity` colours
+ * it by tier instead (common to legendary, tokens.css).
  * `render` makes it a link (<Badge render={<a href="…" />}>).
  */
 
@@ -36,24 +37,49 @@ const badgeVariants = cva(
   },
 );
 
+/** A tier's fill, over the variant's: the tier's colour with ink on it. */
+const rarities = {
+  common: "[--slab-fill:var(--color-zero-rarity-common)]",
+  uncommon: "[--slab-fill:var(--color-zero-rarity-uncommon)]",
+  rare: "[--slab-fill:var(--color-zero-rarity-rare)]",
+  epic: "[--slab-fill:var(--color-zero-rarity-epic)]",
+  legendary: "[--slab-fill:var(--color-zero-rarity-legendary)]",
+} as const;
+
+type Rarity = keyof typeof rarities;
+
 type BadgeProps = useRender.ComponentProps<"span"> &
-  VariantProps<typeof badgeVariants>;
+  VariantProps<typeof badgeVariants> & {
+    /** Colours it by tier, over the variant. */
+    rarity?: Rarity;
+  };
 
 function Badge({
   className,
   variant = "default",
+  rarity,
   render,
   ...props
 }: BadgeProps) {
   return useRender({
     defaultTagName: "span",
     props: mergeProps<"span">(
-      { className: cn(badgeVariants({ variant }), className) },
+      {
+        className: cn(
+          badgeVariants({ variant }),
+          rarity &&
+            cn(
+              rarities[rarity],
+              "[--slab-ink:var(--color-zero-ink)] [--slab-line:var(--color-zero-ink)]",
+            ),
+          className,
+        ),
+      },
       props,
     ),
     render,
-    state: { slot: "badge", variant },
+    state: { slot: "badge", variant, rarity },
   });
 }
 
-export { Badge, type BadgeProps, badgeVariants };
+export { Badge, type BadgeProps, badgeVariants, type Rarity };

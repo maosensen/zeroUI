@@ -567,6 +567,14 @@ export const PAGES = [
     group: "chat",
   },
   {
+    path: "/docs/rarity",
+    title: "Rarity",
+    description:
+      "Rarity colours for a game UI in React: five tiers, common to legendary, for badges, card edges and item names.",
+    crumb: "Rarity",
+    group: "foundation",
+  },
+  {
     path: "/docs/icons",
     title: "Icons",
     description:

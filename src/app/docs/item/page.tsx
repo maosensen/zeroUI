@@ -40,6 +40,11 @@ export default function ItemPage() {
           part="Item"
           rows={[
             {
+              name: "rarity",
+              type: '"common" | "uncommon" | "rare" | "epic" | "legendary"',
+              description: "Colours it by tier (see Rarity).",
+            },
+            {
               name: "variant",
               type: '"default" | "outline" | "muted"',
               default: '"default"',

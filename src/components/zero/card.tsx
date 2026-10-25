@@ -6,7 +6,8 @@ import { cn } from "@/lib/zero/cn";
  * square-cornered like Alert: an ink border, the surface with the hatching. The header is a black
  * bar, the Dialog's, holding the title and, at its end, an action. A picture as the first child
  * runs edge to edge under the border. A card that is a link or holds the one control that opens
- * it can pass `interactive`: pointing at it lifts the border to the accent.
+ * it can pass `interactive`: pointing at it lifts the border to the accent. `rarity` gives it a top
+ * edge in the tier's colour, the way loot is graded.
  *
  *   <Card>
  *     <CardHeader><CardTitle /><CardDescription /><CardAction /></CardHeader>
@@ -15,17 +16,30 @@ import { cn } from "@/lib/zero/cn";
  *   </Card>
  */
 
+type Rarity = "common" | "uncommon" | "rare" | "epic" | "legendary";
+
+const rarities: Record<Rarity, string> = {
+  common: "border-t-zero-rarity-common",
+  uncommon: "border-t-zero-rarity-uncommon",
+  rare: "border-t-zero-rarity-rare",
+  epic: "border-t-zero-rarity-epic",
+  legendary: "border-t-zero-rarity-legendary",
+};
+
 function Card({
   className,
   interactive,
+  rarity,
   ...props
-}: ComponentProps<"div"> & { interactive?: boolean }) {
+}: ComponentProps<"div"> & { interactive?: boolean; rarity?: Rarity }) {
   return (
     <div
       data-slot="card"
+      data-rarity={rarity}
       className={cn(
         "flex flex-col overflow-hidden border-(length:--zero-stroke) border-zero-ink bg-zero-surface bg-(image:--zero-hatch) text-zero-text",
         "[&>img:first-child]:w-full [&>img:first-child]:object-cover",
+        rarity && cn("border-t-(length:--zero-stroke-thick)", rarities[rarity]),
         interactive &&
           "outline-(length:--zero-stroke-thin) outline-transparent transition-[outline-color] duration-(--zero-dur-fast) ease-(--zero-ease-out) hover:outline-zero-accent has-focus-visible:outline-zero-focus",
         className,

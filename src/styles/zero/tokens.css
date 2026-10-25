@@ -33,6 +33,15 @@
   --color-zero-danger: #f2543a; /* 5.3 : 1 on ground, 4.8 : 1 on surface; ink on it 5.8 : 1 */
   --color-zero-danger-hi: #ff6a4f;
 
+  /* Rarity: five tiers of worth, the way a game sorts its loot, for badges, card edges and list
+   * marks. Hues kept clear of the accent, the focus yellow and danger; each is at least
+   * 6.3 : 1 on the ground, 5 : 1 on raised, and ink on it at least 6.9 : 1. */
+  --color-zero-rarity-common: #a6a6a6;
+  --color-zero-rarity-uncommon: #4fcf6a;
+  --color-zero-rarity-rare: #4a9eff;
+  --color-zero-rarity-epic: #b67cff;
+  --color-zero-rarity-legendary: #ff9b2f;
+
   /* ── Type ───────────────────────────────────────────────────────────────
    * Two faces. The display face, a heavy geometric sans with a true italic, sets everything that
    * leans: labels, buttons, tabs, headings, 800–900 italic. The text face, compact and orderly,

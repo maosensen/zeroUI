@@ -272,6 +272,10 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["conversational form react", "multiple choice questions ui"],
       where: "description and lead",
     },
+    "/docs/rarity": {
+      phrases: ["game ui rarity colors", "loot rarity tiers ui"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

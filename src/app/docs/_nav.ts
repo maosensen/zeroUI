@@ -119,6 +119,9 @@ export const docsNav = [
   },
   {
     group: "Foundation",
-    pages: [{ href: "/docs/icons", title: "Icons" }],
+    pages: [
+      { href: "/docs/icons", title: "Icons" },
+      { href: "/docs/rarity", title: "Rarity" },
+    ],
   },
 ] as const;

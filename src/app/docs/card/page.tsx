@@ -43,6 +43,11 @@ export default function CardPage() {
           part="Card"
           rows={[
             {
+              name: "rarity",
+              type: '"common" | "uncommon" | "rare" | "epic" | "legendary"',
+              description: "Colours it by tier (see Rarity).",
+            },
+            {
               name: "interactive",
               type: "boolean",
               default: "false",

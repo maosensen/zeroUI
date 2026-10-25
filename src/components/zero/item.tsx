@@ -8,7 +8,7 @@ import { cn } from "@/lib/zero/cn";
  * One thing in a list: a mark, a leaning title with a line beneath it, and actions at the end.
  * Plain, outlined in the quiet line, or on the raised grey. As a link (`render`), it lights to the
  * raised grey when pointed at and takes the focus frame. ItemGroup stacks them; ItemSeparator
- * divides them.
+ * divides them. `rarity` colours the title by tier and marks the start edge, as an inventory does.
  */
 
 const itemVariants = cva(
@@ -34,14 +34,46 @@ const itemVariants = cva(
   },
 );
 
-type ItemProps = useRender.ComponentProps<"div"> &
-  VariantProps<typeof itemVariants>;
+type Rarity = "common" | "uncommon" | "rare" | "epic" | "legendary";
 
-function Item({ className, variant, size, render, ...props }: ItemProps) {
+/** A tier's edge, and its colour for the title (ItemTitle reads --item-rarity). */
+const rarities: Record<Rarity, string> = {
+  common: "[--item-rarity:var(--color-zero-rarity-common)]",
+  uncommon: "[--item-rarity:var(--color-zero-rarity-uncommon)]",
+  rare: "[--item-rarity:var(--color-zero-rarity-rare)]",
+  epic: "[--item-rarity:var(--color-zero-rarity-epic)]",
+  legendary: "[--item-rarity:var(--color-zero-rarity-legendary)]",
+};
+
+type ItemProps = useRender.ComponentProps<"div"> &
+  VariantProps<typeof itemVariants> & {
+    /** Colours the title by tier and marks the start edge. */
+    rarity?: Rarity;
+  };
+
+function Item({
+  className,
+  variant,
+  size,
+  rarity,
+  render,
+  ...props
+}: ItemProps) {
   return useRender({
     defaultTagName: "div",
     props: mergeProps<"div">(
-      { className: cn(itemVariants({ variant, size }), className) },
+      {
+        "data-rarity": rarity,
+        className: cn(
+          itemVariants({ variant, size }),
+          rarity &&
+            cn(
+              rarities[rarity],
+              "shadow-[inset_var(--zero-stroke-thick)_0_0_var(--item-rarity)]",
+            ),
+          className,
+        ),
+      } as ComponentProps<"div">,
       props,
     ),
     render,
@@ -117,7 +149,7 @@ function ItemTitle({ className, ...props }: ComponentProps<"div">) {
     <div
       data-slot="item-title"
       className={cn(
-        "flex items-center gap-2 font-black font-zero text-zero-md italic",
+        "flex items-center gap-2 font-black font-zero text-zero-md italic in-data-rarity:text-(--item-rarity)",
         className,
       )}
       {...props}
