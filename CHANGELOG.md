@@ -26,8 +26,21 @@ All notable changes to zeroUI are documented here. The format is based on
   in `components/blocks/` that brings the components it uses: a settings menu,
   a mission briefing, a loadout, a leaderboard and a HUD. The home page now
   has a working HUD.
+- **Guides** — longer reads in the docs: building a game settings menu, a
+  health bar with a damage trail (with the Gauge or from scratch), and theming
+  zeroUI with its tokens.
+- **Phone-width checks** — the accessibility check and the screenshot
+  regression also run at 375 px, and a page that scrolls sideways fails.
 - Foundation: `--zero-dur-hold`, the `pulse` animation, `--zero-slot`, and the
   `roll` and `float` transitions in `motion.ts`.
+
+### Fixed
+
+- On a phone, the docs' props tables scroll inside their box; they can now be
+  reached and scrolled from the keyboard too.
+- The studio's "Copy CSS" wrote colours under their theme names
+  (`--color-zero-accent`), which a host project's Tailwind utilities do not
+  read; it now writes the names the registry declares (`--zero-accent`).
 
 ## [0.1.4] - 2026-10-25
 

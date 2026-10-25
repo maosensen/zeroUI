@@ -33,10 +33,10 @@ export default function MissionBriefingPage() {
             in slots.
           </p>
           <p>
-            Accepting is held (or hold <b>E</b>), so it is never taken by a
-            stray click; once taken, a cut-in announces the job and the first
-            objective becomes the current one. It lays out in two columns once
-            its own box is wide enough (a container query), wherever it is
+            Accepting is held (or hold <strong>E</strong>), so it is never taken
+            by a stray click; once taken, a cut-in announces the job and the
+            first objective becomes the current one. It lays out in two columns
+            once its own box is wide enough (a container query), wherever it is
             placed.
           </p>
           <p>

@@ -328,6 +328,22 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["game hud react", "hud overlay ui"],
       where: "description and lead",
     },
+    "/docs/guides": {
+      phrases: ["zeroui guides", "game ui react tutorial"],
+      where: "description and lead",
+    },
+    "/docs/guides/game-settings-menu": {
+      phrases: ["game settings menu react", "settings screen ui"],
+      where: "title, description and lead",
+    },
+    "/docs/guides/health-bar-damage-trail": {
+      phrases: ["health bar damage trail", "react health bar animation"],
+      where: "title, description and lead",
+    },
+    "/docs/guides/theme-tokens": {
+      phrases: ["shadcn dark theme tokens", "customize zeroui theme"],
+      where: "title, description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

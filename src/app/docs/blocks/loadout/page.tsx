@@ -29,9 +29,9 @@ export default function LoadoutPage() {
           <p>
             Pick a slot to see the item: its tier as a badge, what it is, its
             durability and weight as gauges, what it is worth.{" "}
-            <b>Put on the belt</b> moves it to one of three belt slots;{" "}
-            <b>Hold to scrap</b> takes one away and pays its worth into the
-            credits, which count up.
+            <strong>Put on the belt</strong> moves it to one of three belt
+            slots; <strong>Hold to scrap</strong> takes one away and pays its
+            worth into the credits, which count up.
           </p>
           <p>
             Both grids move with the arrow keys. Two columns once its box is

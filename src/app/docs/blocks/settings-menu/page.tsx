@@ -32,10 +32,10 @@ export default function SettingsMenuPage() {
             stacking on a phone. Controls lists the bindings as keys.
           </p>
           <p>
-            <b>Apply</b> stays disabled until something changed.{" "}
-            <b>Hold to restore defaults</b> has to be held, so a stray click
-            never wipes a player's settings. Every value is local state: wire
-            them to your own store.
+            <strong>Apply</strong> stays disabled until something changed.{" "}
+            <strong>Hold to restore defaults</strong> has to be held, so a stray
+            click never wipes a player's settings. Every value is local state:
+            wire them to your own store.
           </p>
           <p>
             Built from <a href="/docs/tabs">Tabs</a>,{" "}

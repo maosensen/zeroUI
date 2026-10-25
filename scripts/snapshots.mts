@@ -7,6 +7,7 @@
  *   pnpm snapshots --update             write the baselines (after a change you meant)
  *   pnpm snapshots button-variants      only these demos
  *   pnpm snapshots --base http://localhost:4378
+ *   pnpm snapshots --mobile             at a phone's width (375), against tests/snapshots/375/
  *
  * Motion is held still (reduced motion, no transitions or animations) so a photo is the same each
  * time. A few demos change by themselves (a progress bar on a timer, a calendar that marks today)
@@ -28,14 +29,16 @@ import { PNG } from "pngjs";
 
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const PORT = 9336;
-const DIR = "tests/snapshots";
+const args = process.argv.slice(2);
+const MOBILE = args.includes("--mobile");
+const WIDTH = MOBILE ? 375 : 1280;
+const DIR = MOBILE ? "tests/snapshots/375" : "tests/snapshots";
 const DIFFS = join(tmpdir(), "zeroui-snapshots");
 /** Demos that move by themselves. */
 const SKIP = new Set(["progress-kinds", "calendar-shift"]);
 /** Share of a demo's pixels that may differ (anti-aliasing) before it counts as changed. */
 const TOLERANCE = 0.001;
 
-const args = process.argv.slice(2);
 const UPDATE = args.includes("--update");
 const baseFlag = args.indexOf("--base");
 const BASE = baseFlag >= 0 ? args[baseFlag + 1] : "http://localhost:4374";
@@ -63,7 +66,7 @@ const chrome = spawn(
     `--user-data-dir=${profile}`,
     "--hide-scrollbars",
     "--force-color-profile=srgb",
-    "--window-size=1280,900",
+    `--window-size=${WIDTH},900`,
     "about:blank",
   ],
   { stdio: "ignore" },
@@ -108,10 +111,10 @@ try {
     ).result.value;
 
   await send("Emulation.setDeviceMetricsOverride", {
-    width: 1280,
+    width: WIDTH,
     height: 900,
     deviceScaleFactor: 1,
-    mobile: false,
+    mobile: MOBILE,
   });
   await send("Emulation.setEmulatedMedia", {
     features: [{ name: "prefers-reduced-motion", value: "reduce" }],

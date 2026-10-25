@@ -6,7 +6,7 @@
  * it costs nothing), created by the brand. Every docs page is a `WebPage` about that same
  * library, with its breadcrumb trail.
  */
-import type { SoftwareApplication } from "schema-dts";
+import type { Article, SoftwareApplication } from "schema-dts";
 import { ORG_ID } from "@/lib/seo/identity";
 import {
   breadcrumbs,
@@ -101,3 +101,44 @@ export function docGraph(path: Exclude<PagePath, "/">) {
 
 /** Every page, for the sitemap and llms.txt. */
 export const publicPaths = () => PAGES.map((p) => p.path);
+
+/** A guide: a docs page that is also an `Article` by the brand, about the library. */
+export function guideGraph(path: Exclude<PagePath, "/">, published: string) {
+  const p = page(path);
+  const url = pageUrl(path);
+  const article: Article = {
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline: p.title,
+    description: p.description,
+    url,
+    inLanguage: LANG,
+    datePublished: published,
+    author: ref(ORG_ID),
+    publisher: ref(ORG_ID),
+    about: ref(LIBRARY_ID),
+    mainEntityOfPage: ref(`${url}#webpage`),
+    image: `${SITE_URL}${OG_IMAGE.url}`,
+  };
+  const trail = [
+    { name: home.crumb, url: pageUrl("/") },
+    { name: page("/docs").crumb, url: pageUrl("/docs") },
+    { name: page("/docs/guides").crumb, url: pageUrl("/docs/guides") },
+    { name: p.crumb, url },
+  ];
+  return graph([
+    ...shell(),
+    library,
+    webPage({
+      siteUrl: SITE_URL,
+      url,
+      name: `${p.title} · zeroUI`,
+      description: p.description,
+      inLanguage: LANG,
+      about: LIBRARY_ID,
+      breadcrumb: true,
+    }),
+    article,
+    breadcrumbs(url, trail),
+  ]);
+}

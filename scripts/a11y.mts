@@ -8,6 +8,8 @@
  *   pnpm a11y /docs/button /docs/select         only these paths
  *   pnpm a11y --focus                           also Tab through each page and list every stop
  *                                               that shows no focus frame (the yellow, --color-zero-focus)
+ *   pnpm a11y --mobile                          at a phone's width (375 × 812), and also list any
+ *                                               page that scrolls sideways, with what sticks out
  *
  * Exits 1 when anything fails. Like og:capture, it drives Chrome over the DevTools protocol with a
  * throwaway profile, so it stays off the user's own Chrome.
@@ -24,6 +26,8 @@ const args = process.argv.slice(2);
 const baseFlag = args.indexOf("--base");
 const BASE = baseFlag >= 0 ? args[baseFlag + 1] : "http://localhost:4374";
 const FOCUS = args.includes("--focus");
+const MOBILE = args.includes("--mobile");
+const [WIDTH, HEIGHT] = MOBILE ? [375, 812] : [1280, 900];
 const only = args.filter(
   (arg, i) => !arg.startsWith("--") && args[i - 1] !== "--base",
 );
@@ -53,7 +57,7 @@ const chrome = spawn(
     "--headless",
     `--remote-debugging-port=${PORT}`,
     `--user-data-dir=${profile}`,
-    "--window-size=1280,900",
+    `--window-size=${WIDTH},${HEIGHT}`,
     "about:blank",
   ],
   { stdio: "ignore" },
@@ -96,10 +100,10 @@ try {
     ).result.value;
 
   await send("Emulation.setDeviceMetricsOverride", {
-    width: 1280,
-    height: 900,
+    width: WIDTH,
+    height: HEIGHT,
     deviceScaleFactor: 1,
-    mobile: false,
+    mobile: MOBILE,
   });
 
   const byRule = new Map<
@@ -128,6 +132,36 @@ try {
           pairs.set(node.colours, (pairs.get(node.colours) ?? 0) + 1);
       }
       byRule.set(v.id, entry);
+    }
+    if (MOBILE) {
+      // a page wider than the phone: name what sticks out past its edge, outside any box that
+      // scrolls or clips it (a code block or a table scrolling inside itself is fine)
+      const out = await evaluate<string[]>(`(() => {
+        const w = document.documentElement.clientWidth;
+        if (document.documentElement.scrollWidth <= w) return [];
+        const found = [];
+        for (const el of document.querySelectorAll("body *")) {
+          const r = el.getBoundingClientRect();
+          if (r.width === 0 || r.right <= w + 1) continue;
+          let p = el.parentElement, clipped = false;
+          while (p && p !== document.body) {
+            if (getComputedStyle(p).overflowX !== "visible") { clipped = true; break; }
+            p = p.parentElement;
+          }
+          if (clipped) continue;
+          found.push((el.getAttribute("data-slot") || el.getAttribute("data-demo") || el.tagName.toLowerCase()) + " " + Math.round(r.right - w) + "px over");
+        }
+        return found.slice(0, 4);
+      })()`);
+      if (out.length > 0) {
+        const entry = byRule.get("page-overflow") ?? {
+          impact: "serious",
+          help: "The page scrolls sideways at a phone's width",
+          where: new Set<string>(),
+        };
+        entry.where.add(`${path}  ${out.join(", ")}`);
+        byRule.set("page-overflow", entry);
+      }
     }
     if (FOCUS) {
       // real Tab presses, so focus-visible applies; a stop counts as framed when the yellow shows
@@ -192,10 +226,10 @@ try {
     failed = true;
     for (const [id, { impact, help, where }] of byRule) {
       console.log(`\n${impact ?? "?"}  ${id}: ${help} (${where.size})`);
-      for (const line of [...where].slice(0, id === "focus-frame" ? 200 : 8))
+      const all = id === "focus-frame" || id === "page-overflow";
+      for (const line of [...where].slice(0, all ? 200 : 8))
         console.log(`  ${line}`);
-      if (id !== "focus-frame" && where.size > 8)
-        console.log(`  … ${where.size - 8} more`);
+      if (!all && where.size > 8) console.log(`  … ${where.size - 8} more`);
     }
     if (pairs.size > 0) {
       console.log("\ncontrast, by colour pair:");

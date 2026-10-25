@@ -111,6 +111,15 @@ Decisions land here with their date, in the commit that acts on them.
   L1 21/21 against zeroui.catforest.dev, the sitemap pushed to IndexNow (202), and yPulse switched
   to `seo: public`. Submitting the sitemap in Search Console and Bing is the author's step.
 
+- **2026-10-25 — SEO level 2: guides.** The docs leads already put the conclusion first and
+  `src/seo/keywords.ts` is the keyword map; what level 2 lacked was deep content at its own
+  address. Three guides under `/docs/guides` (a settings menu, the damage trail, theming), each an
+  `Article` by the brand about the library, breadcrumb through Guides, linking to the components
+  and blocks they use. Writing the theming guide showed that the studio's "Copy CSS" exported
+  `--color-zero-*`, which a host's Tailwind utilities never read (its theme is `inline` and
+  points at the raw `--zero-*`); it now exports the raw names. Level 2 is accepted by the author's
+  review.
+
 - **2026-10-25 — MIT license.** The author chose MIT: GitHub's standard text, copyright
   maosensen. Tags up to v0.1.1 were cut before `LICENSE` existed.
 
@@ -315,6 +324,13 @@ provider, which a host can take from Base UI directly.
   meant. A token change shows up as the demos it moved: changing the accent marks the primary
   button. Two demos move by themselves and are left out (the timed progress bar, the calendar that
   marks today). It is a release gate beside `pnpm a11y`.
+
+- **Phone width** (2026-10-25). `pnpm a11y --mobile` runs the same checks at 375 × 812 with
+  mobile emulation, and adds one: a page must not scroll sideways (it names what sticks out, past
+  any box that scrolls or clips it). `pnpm snapshots --mobile` keeps a second set of baselines at
+  375 px in `tests/snapshots/375/`. The first run found no page wider than the phone, but the
+  props tables, which scroll inside their box there, could not be reached from the keyboard: they
+  are now a named, focusable region with the focus frame. Both are release gates.
 
 ### zeroUI's own (2026-10-25)
 

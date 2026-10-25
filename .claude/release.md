@@ -14,6 +14,8 @@
   (2026-10-25 起;脚本 `scripts/a11y.mts`,本地 dev 上直接 `pnpm a11y --focus`)。
 - `pnpm snapshots`:每个文档示例的截图与 `tests/snapshots/` 基准逐像素对比。改了外观且确是有意的,
   `pnpm snapshots --update` 重写基准并随本次提交;无意的差异先查清再发。差异图在 `$TMPDIR/zeroui-snapshots/`。
+- 手机宽度(2026-10-25 起):`pnpm a11y --mobile --focus --base http://localhost:4378`(375×812,另查页面不得横向滚动,
+  列出伸出去的元素)与 `pnpm snapshots --mobile`(基准在 `tests/snapshots/375/`)。
 - 发版内容碰了 registry(组件、地基 CSS、`scripts/build-registry.mts`)时,再做一次安装实测:
   全新 `shadcn init -d -b base` 项目里把 `@zeroui` 指向 `pnpm cf:preview`(:4378)的 `/r/{name}.json`,
   装上并 `pnpm build`(做法见 docs/deploy.md 与 docs/plan.md 的 2026-10-24 记录)。

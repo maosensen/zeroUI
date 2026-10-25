@@ -600,6 +600,12 @@ features:
     completedAt: 2026-10-25
     shippedIn: v0.1.4
     note: pnpm snapshots:无头 Chrome 在减弱动态、关过渡与动画的条件下拍每个 [data-demo],与 tests/snapshots/ 逐像素比对(pixelmatch,容差 0.1%),--update 重写基准;按名字只跑相关页面。会自己变的两个示例(定时进度条、标今天的日历)不拍。改 token 时能直接看到哪些组件变了。
+  - id: mobile-check
+    title: 手机宽度的门禁(375px)
+    area: 质量
+    status: done
+    completedAt: 2026-10-25
+    note: pnpm a11y --mobile 在 375×812(移动端模拟)跑同样的检查,并查页面不得横向滚动(列出伸出去的元素,跳过自身会滚动或裁切的盒子);pnpm snapshots --mobile 另存一套 375px 基准(tests/snapshots/375/)。首轮:没有页面超宽;props 表格在手机上于盒内横滑却无法用键盘到达,改为带名称、可获焦并有焦点框的区域。已写进发版卡。
   - id: seo
     title: SEO / GEO(分级契约 L0 与 L1)
     area: 站点与文档
@@ -607,6 +613,12 @@ features:
     completedAt: 2026-10-24
     shippedIn: v0.1.0
     note: 经 yPulse matrix:seo 接入模块;src/seo 一份页面清单供 metadata、sitemap、llms.txt、JSON-LD;robots 全放行并逐个列出 AI 爬虫;分享图用组件画、og:capture 截;pnpm seo:audit 为门禁。线上体检 L0 10/10、L1 21/21,IndexNow 202;yPulse 里转为 seo:public。Search Console / Bing 的 sitemap 提交由作者做。
+  - id: guides
+    title: 指南(SEO L2 的深内容)
+    area: 站点与文档
+    status: done
+    completedAt: 2026-10-25
+    note: /docs/guides 总览与三篇:用 React 搭游戏设置菜单、会留伤害残影的血条(含不用 zeroUI 的从零写法)、用 token 改主题(说明宿主项目里要覆盖的是 --zero-* 原名而非 --color-zero-*);每篇开头先给结论,标题与开头段落含关键词地图里的长尾词,JSON-LD 为 Article(作者与发布者都是品牌),面包屑经过 Guides,站内互链到组件、区块与其他指南。L2 的验收是人审,待作者过目。
   - id: showcase
     title: 对外展示页
     area: 站点与文档

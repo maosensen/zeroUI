@@ -172,8 +172,13 @@ export function Workbench() {
   const [accent, setAccent] = useState<keyof typeof accents>("lime");
   const [copied, setCopied] = useState(false);
   const tuned = tokens(slant, stroke, speed, accent);
+  // the export is for a host project, where the registry declares each colour once as a raw
+  // --zero-* on :root and the theme points at it inline: the raw name is the one to override
   const css = `:root {\n${Object.entries(tuned)
-    .map(([name, value]) => `  ${name}: ${value};`)
+    .map(
+      ([name, value]) =>
+        `  ${name.replace(/^--color-zero-/, "--zero-")}: ${value};`,
+    )
     .join("\n")}\n}\n`;
   // on the root, so popups (portalled to the body) are tuned too
   useEffect(() => {

@@ -32,6 +32,7 @@ export type Page = {
     | "home"
     | "start"
     | "blocks"
+    | "guides"
     | "components"
     | "overlays"
     | "feedback"
@@ -111,6 +112,38 @@ export const PAGES = [
       "A game HUD block for React: health and shield gauges, a credit counter, objectives and a working hotbar with cooldowns, over a scene.",
     crumb: "HUD",
     group: "blocks",
+  },
+  {
+    path: "/docs/guides",
+    title: "Guides",
+    description:
+      "Guides to building game UI in React with zeroUI and shadcn: a settings menu, a health bar with a damage trail, and theming with tokens.",
+    crumb: "Guides",
+    group: "guides",
+  },
+  {
+    path: "/docs/guides/game-settings-menu",
+    title: "Build a game settings menu in React",
+    description:
+      "How to build a game settings menu in React with shadcn and zeroUI: tabs, one setting a row, apply what changed, hold to restore defaults.",
+    crumb: "Settings menu",
+    group: "guides",
+  },
+  {
+    path: "/docs/guides/health-bar-damage-trail",
+    title: "A health bar that shows the size of a hit",
+    description:
+      "How to build a React health bar with a damage trail: the old fill lingers as a pale band, then catches up. With zeroUI's Gauge or from scratch.",
+    crumb: "Health bar trail",
+    group: "guides",
+  },
+  {
+    path: "/docs/guides/theme-tokens",
+    title: "Theme zeroUI with its tokens",
+    description:
+      "How to theme zeroUI: override the slant, outline weights, accent colour and motion timings on :root, and every component follows.",
+    crumb: "Theming",
+    group: "guides",
   },
   {
     path: "/docs/button",

@@ -16,6 +16,18 @@ export const docsNav = [
     ],
   },
   {
+    group: "Guides",
+    pages: [
+      { href: "/docs/guides", title: "Overview" },
+      { href: "/docs/guides/game-settings-menu", title: "Settings menu" },
+      {
+        href: "/docs/guides/health-bar-damage-trail",
+        title: "Health bar trail",
+      },
+      { href: "/docs/guides/theme-tokens", title: "Theming" },
+    ],
+  },
+  {
     group: "Components",
     pages: [
       { href: "/docs/button", title: "Button" },

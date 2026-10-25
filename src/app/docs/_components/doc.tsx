@@ -84,7 +84,13 @@ export function PropsTable({
     <div className="grid min-w-0 gap-3">
       <h3 className="font-black font-zero text-zero-lg italic">{part}</h3>
       {rows.length > 0 ? (
-        <div className="overflow-x-auto border-(length:--zero-stroke-thin) border-zero-line">
+        // scrolls sideways on a phone, so it can be reached and scrolled from the keyboard
+        <section
+          aria-label={`${part} props`}
+          // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrolling region must be reachable from the keyboard
+          tabIndex={0}
+          className="overflow-x-auto border-(length:--zero-stroke-thin) border-zero-line outline-none focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2"
+        >
           <table className="w-full min-w-[36rem] border-collapse text-left text-zero-sm">
             <thead className="bg-zero-void font-bold font-zero text-zero-text-3 text-zero-xs uppercase italic tracking-[0.08em]">
               <tr>
@@ -116,7 +122,7 @@ export function PropsTable({
               ))}
             </tbody>
           </table>
-        </div>
+        </section>
       ) : null}
       {base ? (
         <p className="font-medium text-zero-sm text-zero-text-3">
