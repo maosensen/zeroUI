@@ -26,6 +26,14 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Menubar** — a black bar of menus that open one after another.
 - **Hover card** — a preview panel that opens while a link is pointed at.
 - **Submenus in the Dropdown menu** — a row that opens another menu beside it.
+- **Input OTP** — a one-time code in slanted cells, a tall leaning character
+  to each, filled by typing or pasting.
+- **Input group** — Input's well with text, icons, keys or small buttons at
+  either end.
+- **Button group** — buttons set close and cut on both sides so they nest.
+- **Native select** — the browser's own select in Input's well.
+- **Kbd** — a key to press, as a small raised slab.
+- **Label** — a control's name in leaning type, outside a Field.
 
 ## [0.1.1] - 2026-10-24
 

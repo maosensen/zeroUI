@@ -302,6 +302,42 @@ features:
     status: done
     completedAt: 2026-10-25
     note: 指向或聚焦链接时打开的预览,用 Popover 的面板。
+  - id: input-otp
+    title: Input OTP
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 建在 Base UI OTPField 上;每格是 Input 的凹槽、两侧斜切、放一个高大的斜体字符;输入前进、退格后退、粘贴填满;正在输入的格子显示选中框,无效时描红;可分段。
+  - id: input-group
+    title: Input group
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 拆开的 Input 凹槽:两端可放任意数量的文字、图标、按键或小按钮;焦点框、无效、禁用同 Input。
+  - id: button-group
+    title: Button group
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 一组按钮靠近排列、组内一律两侧斜切以嵌合;ButtonGroupText 是同高的黑色凹槽标签。
+  - id: native-select
+    title: Native select
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 浏览器原生 select 放进 Input 的凹槽,配 zeroUI 的箭头;列表由浏览器绘制。
+  - id: kbd
+    title: Kbd
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 两侧斜切的小号灰色 slab 按键帽,正文字体;按 em 跟随周围文字;KbdGroup 组合键。
+  - id: label
+    title: Label
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: Field 之外的控件名称,Field 标签的斜体;内含禁用控件时变暗。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

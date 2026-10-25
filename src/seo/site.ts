@@ -38,6 +38,7 @@ export type Page = {
     | "navigation"
     | "disclosure"
     | "commands"
+    | "inputs"
     | "foundation";
 };
 
@@ -346,6 +347,54 @@ export const PAGES = [
       "A hover card for React: a preview panel that opens while a link is pointed at or focused.",
     crumb: "Hover card",
     group: "commands",
+  },
+  {
+    path: "/docs/input-otp",
+    title: "Input OTP",
+    description:
+      "A one-time code input for React on Base UI: slanted cells, one character each, that fill as you type or paste.",
+    crumb: "Input OTP",
+    group: "inputs",
+  },
+  {
+    path: "/docs/input-group",
+    title: "Input group",
+    description:
+      "An input group for shadcn: a text field with units, icons, keys and small buttons at either end.",
+    crumb: "Input group",
+    group: "inputs",
+  },
+  {
+    path: "/docs/button-group",
+    title: "Button group",
+    description:
+      "A button group for React: slanted buttons set close so their edges nest.",
+    crumb: "Button group",
+    group: "inputs",
+  },
+  {
+    path: "/docs/native-select",
+    title: "Native select",
+    description:
+      "A styled native select for React: the browser's own picker in a dark slanted well.",
+    crumb: "Native select",
+    group: "inputs",
+  },
+  {
+    path: "/docs/kbd",
+    title: "Kbd",
+    description:
+      "A keyboard key component for React: small slanted key caps for shortcuts in text.",
+    crumb: "Kbd",
+    group: "inputs",
+  },
+  {
+    path: "/docs/label",
+    title: "Label",
+    description:
+      "A label component for React in leaning type, for checkboxes, switches and other controls.",
+    crumb: "Label",
+    group: "inputs",
   },
   {
     path: "/docs/icons",

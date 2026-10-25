@@ -164,6 +164,30 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["react hover card", "link preview card"],
       where: "description and lead",
     },
+    "/docs/input-otp": {
+      phrases: ["otp input react", "one time code input base ui"],
+      where: "description and lead",
+    },
+    "/docs/input-group": {
+      phrases: ["input group shadcn", "input with addon react"],
+      where: "description and lead",
+    },
+    "/docs/button-group": {
+      phrases: ["button group react", "shadcn button group"],
+      where: "description and lead",
+    },
+    "/docs/native-select": {
+      phrases: ["styled native select", "react select element dark"],
+      where: "description and lead",
+    },
+    "/docs/kbd": {
+      phrases: ["kbd component react", "keyboard shortcut key"],
+      where: "description and lead",
+    },
+    "/docs/label": {
+      phrases: ["react label component", "shadcn label"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

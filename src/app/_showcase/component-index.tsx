@@ -183,6 +183,36 @@ const entries = [
     line: "A preview behind a link.",
   },
   {
+    href: "/docs/input-otp",
+    name: "Input OTP",
+    line: "A code, a character to a cell.",
+  },
+  {
+    href: "/docs/input-group",
+    name: "Input group",
+    line: "A well with addons at either end.",
+  },
+  {
+    href: "/docs/button-group",
+    name: "Button group",
+    line: "Buttons that nest.",
+  },
+  {
+    href: "/docs/native-select",
+    name: "Native select",
+    line: "The browser's picker in a well.",
+  },
+  {
+    href: "/docs/kbd",
+    name: "Kbd",
+    line: "A key to press.",
+  },
+  {
+    href: "/docs/label",
+    name: "Label",
+    line: "A control's name.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

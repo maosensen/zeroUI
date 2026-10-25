@@ -1,0 +1,58 @@
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { pageMetadata } from "@/seo/site";
+import { Demo } from "../_components/demo";
+import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
+import { Install } from "../_components/install";
+import NativeSelectDistrict from "../_demos/native-select-district";
+
+export const metadata = pageMetadata("/docs/native-select");
+
+export default function NativeSelectPage() {
+  return (
+    <>
+      <JsonLd data={docGraph("/docs/native-select")} />
+      <DocHeader
+        title="Native select"
+        lead="The browser's own select in Input's well, with zeroUI's chevron."
+      />
+      <DocSection id="install" title="Install">
+        <Install item="native-select" />
+      </DocSection>
+      <DocSection id="examples" title="Examples">
+        <Demo file="native-select-district" title="Districts in two groups">
+          <NativeSelectDistrict />
+        </Demo>
+      </DocSection>
+      <DocSection id="behaviour" title="Behaviour">
+        <Prose>
+          <p>
+            Use it where a form must work without JavaScript or where the
+            phone's own picker is wanted. Its list is drawn by the browser, so
+            it does not take zeroUI's look; Select does.
+          </p>
+        </Prose>
+      </DocSection>
+      <DocSection id="props" title="Props">
+        <PropsTable
+          part="NativeSelect"
+          rows={[
+            {
+              name: "size",
+              type: '"sm" | "md" | "lg"',
+              default: '"md"',
+              description: "Input's heights.",
+            },
+            {
+              name: "cut",
+              type: '"end" | "start" | "both" | "none"',
+              default: '"end"',
+              description: "Which edges are cut on the slant.",
+            },
+          ]}
+        />
+        <PropsTable part="NativeSelectOption, NativeSelectOptGroup" rows={[]} />
+      </DocSection>
+    </>
+  );
+}

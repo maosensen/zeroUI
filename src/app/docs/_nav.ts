@@ -76,6 +76,17 @@ export const docsNav = [
     ],
   },
   {
+    group: "More inputs",
+    pages: [
+      { href: "/docs/input-otp", title: "Input OTP" },
+      { href: "/docs/input-group", title: "Input group" },
+      { href: "/docs/button-group", title: "Button group" },
+      { href: "/docs/native-select", title: "Native select" },
+      { href: "/docs/kbd", title: "Kbd" },
+      { href: "/docs/label", title: "Label" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

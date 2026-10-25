@@ -250,6 +250,12 @@ highlighted), not on cmdk as shadcn's is: no new dependency, and its items are d
 their `label`. Combobox is Input's well over Select's panel and rows; chips for several values are
 left for later. Context menu and Menubar reuse the Dropdown menu's parts, which gained submenus.
 
+More inputs done (2026-10-25) — Input OTP, Input group, Button group, Native select, Kbd, Label.
+No foundation change. Every field here is Input's well: Input OTP's cells (Base UI's OTPField,
+each input wrapped in a slab frame through `render`, since an input cannot carry the slab's
+layers), Input group (the well with any number of addons), Native select. Button group forces the
+both-sides cut on whatever slabs it holds, so the row nests. Kbd is a small raised slab sized in em.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not
