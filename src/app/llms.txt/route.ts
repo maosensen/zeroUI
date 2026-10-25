@@ -32,6 +32,7 @@ export function GET() {
       { heading: "Feedback", links: section("feedback") },
       { heading: "Data display", links: section("data") },
       { heading: "Navigation", links: section("navigation") },
+      { heading: "Disclosure and toggles", links: section("disclosure") },
       { heading: "Foundation", links: section("foundation") },
       {
         heading: "Registry",

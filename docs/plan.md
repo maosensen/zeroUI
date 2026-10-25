@@ -234,6 +234,16 @@ the floating and inset variants, the drag rail, menu actions and skeletons, and 
 remembers the state (a host can control `open` itself). With navigation, the families planned for
 phase 3 are all in.
 
+The rest of shadcn follows in the same way, family by family (2026-10-25): disclosure and
+toggles, then commands (Command, Combobox, Context menu, Menubar, Hover card), then what is left.
+
+Disclosure and toggles done (2026-10-25) — Accordion, Collapsible, Toggle, Toggle group,
+Separator. No foundation change. Toggle is a Button that stays down (the accent while pressed);
+Toggle group's items are cut on both sides so the row nests. Collapsible and Accordion share one
+unfolding (`unfold` in collapsible.tsx): Base UI's measured panel height on the reveal and dismiss
+timings, instant under reduced motion. Accordion's headings lean, led by a slanted sliver that
+lights with the accent while open.
+
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,
 avatar, progress), feedback (toast, alert, skeleton). Each family may add tokens; it does not

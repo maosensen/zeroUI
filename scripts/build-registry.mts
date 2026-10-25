@@ -428,6 +428,36 @@ const registry = {
       ["@base-ui/react"],
       [dep("button"), dep("sheet"), dep("tooltip"), dep("icon-sidebar")],
     ),
+    component("separator", "Separator", "A quiet line across or upright.", [
+      "@base-ui/react",
+    ]),
+    component(
+      "toggle",
+      "Toggle",
+      "A Button that stays down, filled with the accent while on.",
+      ["@base-ui/react", "class-variance-authority"],
+      [dep("button")],
+    ),
+    component(
+      "toggle-group",
+      "Toggle group",
+      "Toggles cut on both sides, nesting in a row; one value or several.",
+      ["@base-ui/react", "class-variance-authority"],
+      [dep("toggle")],
+    ),
+    component(
+      "collapsible",
+      "Collapsible",
+      "A panel that unfolds to its own height in place.",
+      ["@base-ui/react"],
+    ),
+    component(
+      "accordion",
+      "Accordion",
+      "Sections that open one at a time, with leaning headings and an accent mark.",
+      ["@base-ui/react"],
+      [dep("collapsible"), dep("icon-chevron-down")],
+    ),
     component(
       "tabs",
       "Tabs",

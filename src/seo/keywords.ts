@@ -124,6 +124,26 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["collapsible sidebar react", "shadcn sidebar icon mode"],
       where: "description and behaviour",
     },
+    "/docs/accordion": {
+      phrases: ["base ui accordion", "react accordion component"],
+      where: "description and lead",
+    },
+    "/docs/collapsible": {
+      phrases: ["react collapsible panel", "shadcn collapsible"],
+      where: "description and lead",
+    },
+    "/docs/toggle": {
+      phrases: ["react toggle button", "pressed state button"],
+      where: "description and lead",
+    },
+    "/docs/toggle-group": {
+      phrases: ["toggle group react", "segmented control shadcn"],
+      where: "description and lead",
+    },
+    "/docs/separator": {
+      phrases: ["react separator component", "divider line component"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

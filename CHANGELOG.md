@@ -10,6 +10,14 @@ All notable changes to zeroUI are documented here. The format is based on
 
 - **MIT license** — zeroUI can be used, changed and shared freely, with the
   copyright notice kept.
+- **Accordion** — sections that open one at a time, divided by quiet lines,
+  each heading led by a slanted sliver that lights with the accent while open.
+- **Collapsible** — a panel that unfolds to its own height in place and folds
+  back faster.
+- **Toggle** — a Button that stays down, filled with the accent while on.
+- **Toggle group** — toggles cut on both sides, nesting in a row, for one value
+  or several.
+- **Separator** — a quiet line, across or upright.
 
 ## [0.1.1] - 2026-10-24
 

@@ -29,6 +29,7 @@ import {
 } from "@/components/zero/select";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
 import { DataSection } from "./data-section";
+import { DisclosureSection } from "./disclosure-section";
 import { FeedbackSection } from "./feedback-section";
 import { FormsSection } from "./forms-section";
 import { IconSheet } from "./icon-sheet";
@@ -385,6 +386,8 @@ export function Workbench() {
         <DataSection />
 
         <NavigationSection />
+
+        <DisclosureSection />
 
         <Section title="Tabs">
           {sizes.map((size) => (

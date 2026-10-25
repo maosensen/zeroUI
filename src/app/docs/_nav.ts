@@ -56,6 +56,16 @@ export const docsNav = [
     ],
   },
   {
+    group: "Disclosure and toggles",
+    pages: [
+      { href: "/docs/accordion", title: "Accordion" },
+      { href: "/docs/collapsible", title: "Collapsible" },
+      { href: "/docs/toggle", title: "Toggle" },
+      { href: "/docs/toggle-group", title: "Toggle group" },
+      { href: "/docs/separator", title: "Separator" },
+    ],
+  },
+  {
     group: "Foundation",
     pages: [{ href: "/docs/icons", title: "Icons" }],
   },

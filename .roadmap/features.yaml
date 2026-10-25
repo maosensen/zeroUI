@@ -242,6 +242,36 @@ features:
     completedAt: 2026-10-24
     shippedIn: v0.1.1
     note: 黑色斜纹侧栏,行用 Dropdown menu 的行,当前页填强调色;可整个收起或折成图标栏(折叠时 tooltip 显示名称),手机上是 Sheet;⌘B / Ctrl+B 切换;子菜单、计数。暂无 floating/inset 变体、拖拽条、记住状态的 cookie。
+  - id: accordion
+    title: Accordion
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 细线分隔的分节,一次开一节(multiple 可多开);斜体标题前一道斜条,展开时亮强调色,尾端箭头翻转;按自身高度展开,减弱动态时直接出现。
+  - id: collapsible
+    title: Collapsible
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 原地展开的面板,按揭示时长展开、更快收起;触发器不带样式,用 render 接 Button。
+  - id: toggle
+    title: Toggle
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 会保持按下的 Button:关时 ghost 或灰色 slab,开时填强调色(aria-pressed);尺寸与切角同 Button。
+  - id: toggle-group
+    title: Toggle group
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 两侧斜切的 Toggle 排成一行、像 tabs 一样嵌套;单选或 multiple 多选;方向键移动;样式在组上统一设定。
+  - id: separator
+    title: Separator
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 安静的细线,横向或竖向。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

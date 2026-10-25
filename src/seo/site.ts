@@ -36,6 +36,7 @@ export type Page = {
     | "feedback"
     | "data"
     | "navigation"
+    | "disclosure"
     | "foundation";
 };
 
@@ -264,6 +265,46 @@ export const PAGES = [
       "A collapsible sidebar for React on Base UI: folds to an icon rail with tooltips, and opens as a sheet on phones.",
     crumb: "Sidebar",
     group: "navigation",
+  },
+  {
+    path: "/docs/accordion",
+    title: "Accordion",
+    description:
+      "A Base UI accordion for shadcn: sections that open one at a time, leaning headings, an accent mark when open.",
+    crumb: "Accordion",
+    group: "disclosure",
+  },
+  {
+    path: "/docs/collapsible",
+    title: "Collapsible",
+    description:
+      "A collapsible panel for React that unfolds to its own height and folds back faster.",
+    crumb: "Collapsible",
+    group: "disclosure",
+  },
+  {
+    path: "/docs/toggle",
+    title: "Toggle",
+    description:
+      "A toggle button for React: a slanted slab that stays down, filled with the accent while on.",
+    crumb: "Toggle",
+    group: "disclosure",
+  },
+  {
+    path: "/docs/toggle-group",
+    title: "Toggle group",
+    description:
+      "A toggle group for shadcn on Base UI: slanted slabs that nest in a row, one value or several.",
+    crumb: "Toggle group",
+    group: "disclosure",
+  },
+  {
+    path: "/docs/separator",
+    title: "Separator",
+    description:
+      "A separator component for React: a quiet line across or upright between two things.",
+    crumb: "Separator",
+    group: "disclosure",
   },
   {
     path: "/docs/icons",

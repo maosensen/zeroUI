@@ -133,6 +133,31 @@ const entries = [
     line: "A black strip that folds to icons.",
   },
   {
+    href: "/docs/accordion",
+    name: "Accordion",
+    line: "Sections that open one at a time.",
+  },
+  {
+    href: "/docs/collapsible",
+    name: "Collapsible",
+    line: "A panel that unfolds in place.",
+  },
+  {
+    href: "/docs/toggle",
+    name: "Toggle",
+    line: "A slab that stays down.",
+  },
+  {
+    href: "/docs/toggle-group",
+    name: "Toggle group",
+    line: "Toggles nesting in a row.",
+  },
+  {
+    href: "/docs/separator",
+    name: "Separator",
+    line: "A quiet line.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",
