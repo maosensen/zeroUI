@@ -529,6 +529,12 @@ features:
     status: done
     completedAt: 2026-10-25
     note: 普通/优秀/稀有/史诗/传说五档颜色 token,色相避开强调色、焦点黄与危险红,各档在底色上 ≥6.3:1、凸起色上 ≥5:1;Badge(填充)、Card(顶边)、Item(标题与起始边)接受 rarity;Foundation 下有一页。
+  - id: cut-in
+    title: Cut-in 与故障/切入动效
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: 地基新增 glitch(阶跃抖动 + 红蓝分离残影,--zero-dur-glitch)与 cut-in(沿斜角擦入、更快擦出,--zero-dur-cut);CutIn 组件:横跨屏幕的黑色宽条,强调色/危险/传说三种色调,标题落地时故障一下,定时自动消失,不抢焦点、礼貌播报;减弱动态时直接出现消失。
   - id: a11y-check
     title: 可访问性检查(axe 全站 + 键盘焦点走查)
     area: 质量

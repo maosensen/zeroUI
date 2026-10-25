@@ -663,6 +663,12 @@ const registry = {
       [dep("button"), dep("input"), dep("icon-check")],
     ),
     component(
+      "cut-in",
+      "Cut-in",
+      "A band that wipes across the screen on the slant, with a glitching title.",
+      ["@base-ui/react"],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

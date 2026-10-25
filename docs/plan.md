@@ -323,6 +323,12 @@ provider, which a host can take from Base UI directly.
   the focus yellow and danger, each at least 6.3 : 1 on the ground and 5 : 1 on raised, ink on each
   at least 6.9 : 1. Badge takes a `rarity` fill, Card a top edge, Item a title colour and start
   edge. Card and Item spell the tier type out themselves, so neither depends on Badge.
+- **The cut-in and the glitch** (phase 1 named both and waited for a component that needed them;
+  the Cut-in is that component). `glitch`: three stepped jumps over `--zero-dur-glitch` (320 ms),
+  the heading thrown sideways, sliced, and split into a danger-red and a rare-blue ghost, then
+  still; stepped so it reads as a signal breaking up. `cut-in`: a wipe whose edge leans on the
+  slant, in on `--zero-dur-cut` (the slow timing) and out at 0.6 of it. Both drop to nothing under
+  reduced motion; `--zero-dur-cut` is its own token so that does not also stop what uses slow.
 
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,

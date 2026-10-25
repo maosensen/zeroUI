@@ -14,6 +14,8 @@ export const duration = {
   slow: 0.42,
   /** One pass of a waiting loop (sweep, glint). */
   loop: 1.6,
+  /** The glitch: a few hard jumps, once. */
+  glitch: 0.32,
 } as const;
 
 export const ease = {

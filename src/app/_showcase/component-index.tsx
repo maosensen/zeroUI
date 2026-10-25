@@ -318,6 +318,11 @@ const entries = [
     line: "One question at a time.",
   },
   {
+    href: "/docs/cut-in",
+    name: "Cut-in",
+    line: "A band thrown across the screen.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

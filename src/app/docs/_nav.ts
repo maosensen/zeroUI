@@ -27,6 +27,7 @@ export const docsNav = [
       { href: "/docs/alert-dialog", title: "Alert dialog" },
       { href: "/docs/sheet", title: "Sheet" },
       { href: "/docs/drawer", title: "Drawer" },
+      { href: "/docs/cut-in", title: "Cut-in" },
       { href: "/docs/popover", title: "Popover" },
       { href: "/docs/tooltip", title: "Tooltip" },
       { href: "/docs/dropdown-menu", title: "Dropdown menu" },

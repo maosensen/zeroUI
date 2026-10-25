@@ -276,6 +276,10 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["game ui rarity colors", "loot rarity tiers ui"],
       where: "description and lead",
     },
+    "/docs/cut-in": {
+      phrases: ["game ui cut-in animation", "glitch text effect css"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

@@ -9,6 +9,8 @@
   --zero-dur-base: 240ms; /* release, small moves */
   --zero-dur-slow: 420ms; /* reveals, the sheen */
   --zero-dur-loop: 1600ms; /* one pass of anything that repeats while waiting: a sweep, a glint */
+  --zero-dur-glitch: 320ms; /* the glitch: a few hard jumps, once */
+  --zero-dur-cut: var(--zero-dur-slow); /* a cut-in's wipe: a long throw */
 
   --zero-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1); /* things arriving */
   --zero-ease-in: cubic-bezier(0.5, 0, 0.75, 0); /* things leaving */
@@ -114,6 +116,92 @@
 }
 
 /*
+ * The glitch: a few hard jumps of a heading as it arrives, its letters thrown sideways and split
+ * into a red and a blue ghost (danger and the rare tier), then still. Once, on stepped timing, so
+ * it reads as a signal breaking up rather than as easing. Gone under reduced motion.
+ */
+@theme {
+  --animate-zero-glitch: zero-glitch var(--zero-dur-glitch) steps(1, end) 1 both;
+
+  @keyframes zero-glitch {
+    0% {
+      translate: -0.06em 0;
+      text-shadow:
+        0.07em 0 var(--color-zero-danger),
+        -0.07em 0 var(--color-zero-rarity-rare);
+      clip-path: inset(0 0 55% 0);
+    }
+    25% {
+      translate: 0.05em 0;
+      text-shadow:
+        -0.05em 0 var(--color-zero-danger),
+        0.05em 0 var(--color-zero-rarity-rare);
+      clip-path: inset(45% 0 0 0);
+    }
+    50% {
+      translate: -0.03em 0;
+      text-shadow:
+        0.04em 0 var(--color-zero-danger),
+        -0.04em 0 var(--color-zero-rarity-rare);
+      clip-path: inset(20% 0 30% 0);
+    }
+    75% {
+      translate: 0.02em 0;
+      text-shadow: none;
+      clip-path: none;
+    }
+    100% {
+      translate: 0 0;
+      text-shadow: none;
+      clip-path: none;
+    }
+  }
+}
+
+@utility glitch {
+  animation: var(--animate-zero-glitch);
+}
+
+/*
+ * The cut-in: a band crossing the screen arrives by a wipe whose edge leans on the slant, from
+ * the left, on the reveal timing (slow, it is a long throw), and leaves the same way out to the
+ * right, faster. --cut-in-h is the band's height, for the lean. Driven by Base UI's
+ * data-starting-style and data-ending-style; under reduced motion the wipe takes no time.
+ */
+@utility cut-in {
+  --_cx: calc(var(--cut-in-h, 8rem) * tan(var(--zero-slant)));
+  clip-path: polygon(
+    0 0,
+    calc(100% + var(--_cx)) 0,
+    100% 100%,
+    calc(0% - var(--_cx)) 100%
+  );
+  transition-property: clip-path;
+  transition-duration: var(--zero-dur-cut);
+  transition-timing-function: var(--zero-ease-out);
+
+  &[data-starting-style] {
+    clip-path: polygon(
+      0 0,
+      0 0,
+      calc(0% - var(--_cx)) 100%,
+      calc(0% - var(--_cx)) 100%
+    );
+  }
+
+  &[data-ending-style] {
+    clip-path: polygon(
+      calc(100% + var(--_cx)) 0,
+      calc(100% + var(--_cx)) 0,
+      100% 100%,
+      100% 100%
+    );
+    transition-duration: calc(var(--zero-dur-cut) * 0.6);
+    transition-timing-function: var(--zero-ease-in);
+  }
+}
+
+/*
  * Opening and closing anything that floats (panel.css): reveal grows it out of its trigger
  * (Base UI sets --transform-origin) on the reveal timing; dismiss folds it back, faster. `fade`
  * is the same without the stretch, for backdrops. Driven by Base UI's data-starting-style and
@@ -165,6 +253,8 @@
     --zero-press-scale: 1;
     --zero-sheen-dur: 0s;
     --zero-dur-loop: 0s;
+    --zero-dur-glitch: 0s;
+    --zero-dur-cut: 0s;
     --zero-pop-from: 1;
     --zero-pop-to: 1;
   }

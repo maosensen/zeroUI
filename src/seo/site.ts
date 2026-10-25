@@ -175,6 +175,14 @@ export const PAGES = [
     group: "overlays",
   },
   {
+    path: "/docs/cut-in",
+    title: "Cut-in",
+    description:
+      "A game-style cut-in for React: a band that wipes across the screen on the slant, with a glitching title.",
+    crumb: "Cut-in",
+    group: "overlays",
+  },
+  {
     path: "/docs/popover",
     title: "Popover",
     description:

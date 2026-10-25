@@ -11,6 +11,12 @@ All notable changes to zeroUI are documented here. The format is based on
 - **Rarity** — five tiers of worth, common to legendary, as colour tokens and as
   a `rarity` on Badge (its fill), Card (a top edge) and Item (its title and
   start edge), the way a game grades its loot.
+- **Cut-in** — a band thrown across the screen for a moment that matters: it
+  wipes in on the slant, its title glitches as it lands, and it wipes out.
+- **Glitch and cut-in motion** — the `glitch` utility (a few stepped jumps
+  with a red and a blue ghost) and the `cut-in` wipe, on two new timings,
+  `--zero-dur-glitch` and `--zero-dur-cut`; both are still under reduced
+  motion.
 
 ### Changed
 
