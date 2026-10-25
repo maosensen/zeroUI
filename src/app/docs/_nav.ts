@@ -10,6 +10,7 @@ export const docsNav = [
       { href: "/docs/button", title: "Button" },
       { href: "/docs/input", title: "Input" },
       { href: "/docs/field", title: "Field" },
+      { href: "/docs/form", title: "Form" },
       { href: "/docs/textarea", title: "Textarea" },
       { href: "/docs/select", title: "Select" },
       { href: "/docs/checkbox", title: "Checkbox" },

@@ -236,6 +236,10 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["resizable panels react", "split pane component"],
       where: "description and lead",
     },
+    "/docs/form": {
+      phrases: ["react form validation base ui", "react hook form zod shadcn"],
+      where: "description and behaviour",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

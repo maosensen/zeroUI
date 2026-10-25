@@ -273,6 +273,11 @@ const entries = [
     line: "Panels with a draggable edge.",
   },
   {
+    href: "/docs/form",
+    name: "Form",
+    line: "Fields, fieldsets and server errors.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Nineteen solid glyphs on the same slant.",

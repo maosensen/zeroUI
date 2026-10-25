@@ -481,7 +481,7 @@ const registry = {
     component(
       "combobox",
       "Combobox",
-      "Input's well that suggests as you type, over Select's panel and rows.",
+      "Input's well that suggests as you type, over Select's panel and rows; chips for several.",
       ["@base-ui/react", "class-variance-authority"],
       [dep("input"), dep("icon-chevron-down"), dep("icon-close")],
     ),
@@ -601,6 +601,13 @@ const registry = {
       "Resizable",
       "Panels with a draggable edge and a slanted grip (react-resizable-panels).",
       ["react-resizable-panels"],
+    ),
+    component(
+      "form",
+      "Form",
+      "Base UI's form with fieldsets under leaning legends and a row of actions.",
+      ["@base-ui/react"],
+      [dep("field")],
     ),
     component(
       "tabs",

@@ -5,6 +5,7 @@ import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
 import SidebarApp from "../_demos/sidebar-app";
+import SidebarVariants from "../_demos/sidebar-variants";
 
 export const metadata = pageMetadata("/docs/sidebar");
 
@@ -23,6 +24,9 @@ export default function SidebarPage() {
         <Demo file="sidebar-app" title="An app's sidebar, folding to icons">
           <SidebarApp />
         </Demo>
+        <Demo file="sidebar-variants" title="Against the edge, floating, inset">
+          <SidebarVariants />
+        </Demo>
       </DocSection>
       <DocSection id="behaviour" title="Behaviour">
         <Prose>
@@ -38,6 +42,12 @@ export default function SidebarPage() {
             the example, give the provider a height and the sidebar{" "}
             <code>className="absolute h-full"</code>. useSidebar gives the open
             state to anything inside the provider.
+          </p>
+          <p>
+            <code>variant</code> sets it against the edge (
+            <code>"sidebar"</code>), as a panel standing a little off it (
+            <code>"floating"</code>), or on the black ground with the page set
+            in beside it as a panel (<code>"inset"</code>, with SidebarInset).
           </p>
         </Prose>
       </DocSection>
@@ -61,6 +71,13 @@ export default function SidebarPage() {
         <PropsTable
           part="Sidebar"
           rows={[
+            {
+              name: "variant",
+              type: '"sidebar" | "floating" | "inset"',
+              default: '"sidebar"',
+              description:
+                "Against the edge, a panel off the edge, or the page set in as a panel.",
+            },
             {
               name: "collapsible",
               type: '"offcanvas" | "icon" | "none"',

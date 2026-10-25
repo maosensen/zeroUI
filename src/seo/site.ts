@@ -494,6 +494,14 @@ export const PAGES = [
     group: "layout",
   },
   {
+    path: "/docs/form",
+    title: "Form",
+    description:
+      "A form for React on Base UI: validation on submit, server errors in each field, fieldsets, and react-hook-form with zod.",
+    crumb: "Form",
+    group: "inputs",
+  },
+  {
     path: "/docs/icons",
     title: "Icons",
     description:

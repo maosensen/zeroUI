@@ -28,7 +28,9 @@ import { cn } from "@/lib/zero/cn";
  * Its rows are the Dropdown menu's (slabs cut at the end); the page you are on is filled with the
  * accent. On a wide screen it can fold away entirely (`collapsible="offcanvas"`) or down to a rail
  * of icons (`"icon"`), where each row shows only its icon and names itself in a tooltip; on a
- * phone it is a Sheet. SidebarTrigger and ⌘B / Ctrl+B open and close it.
+ * phone it is a Sheet. SidebarTrigger and ⌘B / Ctrl+B open and close it. `variant` sets it against
+ * the edge (sidebar), as a panel standing off it (floating), or on the black ground with the page
+ * set in beside it as a panel (inset, with SidebarInset).
  *
  *   <SidebarProvider>
  *     <Sidebar collapsible="icon">
@@ -156,7 +158,10 @@ function SidebarProvider({
             ...style,
           } as CSSProperties
         }
-        className={cn("flex min-h-svh w-full", className)}
+        className={cn(
+          "flex min-h-svh w-full has-data-[variant=inset]:bg-zero-void",
+          className,
+        )}
         {...props}
       >
         {children}
@@ -170,12 +175,18 @@ const strip =
 
 function Sidebar({
   side = "left",
+  variant = "sidebar",
   collapsible = "offcanvas",
   className,
   children,
   ...props
 }: ComponentProps<"div"> & {
   side?: "left" | "right";
+  /**
+   * sidebar: a strip against the edge. floating: a panel standing a little off the edge.
+   * inset: the strip on the black ground, the page beside it set in as a panel (SidebarInset).
+   */
+  variant?: "sidebar" | "floating" | "inset";
   /** What closing does on a wide screen: slide away, fold to icons, or nothing. */
   collapsible?: "offcanvas" | "icon" | "none";
 }) {
@@ -221,6 +232,7 @@ function Sidebar({
       data-state={state}
       data-collapsible={state === "collapsed" ? collapsible : ""}
       data-side={side}
+      data-variant={variant}
       className="group/sidebar peer hidden md:block"
     >
       {/* holds the strip's place in the page */}
@@ -228,7 +240,10 @@ function Sidebar({
         data-slot="sidebar-gap"
         className={cn(
           "relative w-(--sidebar-width) transition-[width] duration-(--zero-dur-base) ease-(--zero-ease-out)",
-          "group-data-[collapsible=offcanvas]/sidebar:w-0 group-data-[collapsible=icon]/sidebar:w-(--sidebar-width-icon)",
+          "group-data-[collapsible=offcanvas]/sidebar:w-0",
+          variant === "sidebar"
+            ? "group-data-[collapsible=icon]/sidebar:w-(--sidebar-width-icon)"
+            : "group-data-[collapsible=icon]/sidebar:w-[calc(var(--sidebar-width-icon)+1rem)]",
         )}
       />
       <div
@@ -237,14 +252,28 @@ function Sidebar({
           "fixed inset-y-0 z-zero-sticky hidden h-svh w-(--sidebar-width) md:flex",
           "transition-[left,right,width] duration-(--zero-dur-base) ease-(--zero-ease-out)",
           side === "left"
-            ? "left-0 border-zero-line border-e-(length:--zero-stroke-thin) group-data-[collapsible=offcanvas]/sidebar:left-[calc(var(--sidebar-width)*-1)]"
-            : "right-0 border-zero-line border-s-(length:--zero-stroke-thin) group-data-[collapsible=offcanvas]/sidebar:right-[calc(var(--sidebar-width)*-1)]",
-          "group-data-[collapsible=icon]/sidebar:w-(--sidebar-width-icon)",
+            ? "left-0 group-data-[collapsible=offcanvas]/sidebar:left-[calc(var(--sidebar-width)*-1)]"
+            : "right-0 group-data-[collapsible=offcanvas]/sidebar:right-[calc(var(--sidebar-width)*-1)]",
+          variant === "sidebar"
+            ? cn(
+                "border-zero-line group-data-[collapsible=icon]/sidebar:w-(--sidebar-width-icon)",
+                side === "left"
+                  ? "border-e-(length:--zero-stroke-thin)"
+                  : "border-s-(length:--zero-stroke-thin)",
+              )
+            : "p-2 group-data-[collapsible=icon]/sidebar:w-[calc(var(--sidebar-width-icon)+1rem)]",
           className,
         )}
         {...props}
       >
-        <div data-slot="sidebar-inner" className={strip}>
+        <div
+          data-slot="sidebar-inner"
+          className={cn(
+            strip,
+            variant === "floating" && "panel",
+            variant === "inset" && "bg-transparent bg-none",
+          )}
+        >
           {children}
         </div>
       </div>
@@ -282,7 +311,13 @@ function SidebarInset({ className, ...props }: ComponentProps<"main">) {
   return (
     <main
       data-slot="sidebar-inset"
-      className={cn("relative flex min-w-0 flex-1 flex-col", className)}
+      className={cn(
+        "relative flex min-w-0 flex-1 flex-col",
+        // beside an inset sidebar the page is a panel set into the black ground
+        "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:border-(length:--zero-stroke) md:peer-data-[variant=inset]:border-zero-ink md:peer-data-[variant=inset]:bg-zero-ground md:peer-data-[variant=inset]:outline-(length:--zero-stroke-thin) md:peer-data-[variant=inset]:outline-zero-line",
+        "md:peer-data-[variant=inset]:peer-data-[side=left]:ms-0 md:peer-data-[variant=inset]:peer-data-[side=right]:me-0",
+        className,
+      )}
       {...props}
     />
   );

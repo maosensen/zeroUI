@@ -264,9 +264,7 @@ timing and its contents slide in the direction of travel.
 
 Layout and the rest done (2026-10-25) — Item, Empty, Scroll area, Aspect ratio, Spinner. No
 foundation change. The scroll thumb leans like a slab; the spinner turns once per half waiting loop
-and so stops with the loop under reduced motion. Also left for later: Combobox chips, the
-Sidebar's floating and inset variants, and the Form helpers (Field already carries label,
-description and error).
+and so stops with the loop under reduced motion.
 
 The last four (2026-10-25), on the libraries shadcn's own use, which the author approved:
 Calendar (react-day-picker), Carousel (Embla), Chart (Recharts), Resizable
@@ -278,6 +276,13 @@ colours. A slab cannot be hollow, so today is marked by its number (accent, unde
 outline. Two names to avoid in data attributes: shadcn's stylesheet defines `data-selected`,
 `data-open` and others as custom variants, so an attribute such as `data-selected-single` is never
 generated; the calendar uses `data-single`.
+
+The remainder (2026-10-25): Form (Base UI's Form and Fieldset; server errors show in a plain
+FieldError, and a Field's own `validate` gives its message, rather than the browser's), Combobox
+chips (the field wraps, so it is Textarea's square well, the chips small raised slabs), and the
+Sidebar's floating (the strip as a panel) and inset (the strip on the void, SidebarInset a panel)
+variants. With these, shadcn's core set has zeroUI counterparts. Not done: its newer chat pieces
+(attachment, bubble, code block, marker, message, message scroller, questionnaire, trace).
 
 Forms (checkbox, radio, switch, slider, textarea), overlays (dialog, sheet, popover, tooltip,
 dropdown menu), navigation (breadcrumb, pagination, sidebar), data display (card, table, badge,

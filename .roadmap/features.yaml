@@ -242,7 +242,7 @@ features:
     status: done
     completedAt: 2026-10-24
     shippedIn: v0.1.1
-    note: 黑色斜纹侧栏,行用 Dropdown menu 的行,当前页填强调色;可整个收起或折成图标栏(折叠时 tooltip 显示名称),手机上是 Sheet;⌘B / Ctrl+B 切换;子菜单、计数。暂无 floating/inset 变体、拖拽条、记住状态的 cookie。
+    note: 黑色斜纹侧栏,行用 Dropdown menu 的行,当前页填强调色;可整个收起或折成图标栏(折叠时 tooltip 显示名称),手机上是 Sheet;⌘B / Ctrl+B 切换;子菜单、计数。floating 与 inset 两种样式(2026-10-25 加);暂无拖拽条、记住状态的 cookie。
   - id: accordion
     title: Accordion
     area: 组件
@@ -291,7 +291,7 @@ features:
     status: done
     completedAt: 2026-10-25
     shippedIn: v0.1.2
-    note: Input 的凹槽 + 清除与箭头,下面是 Select 的面板和行;输入即过滤,高亮行填强调色、选中行带斜块。暂无多选 chips。
+    note: Input 的凹槽 + 清除与箭头,下面是 Select 的面板和行;输入即过滤,高亮行填强调色、选中行带斜块。multiple 时已选项是带移除按钮的小 slab(chips),字段换行所以用 Textarea 的直角凹槽(2026-10-25 加)。
   - id: context-menu
     title: Context menu
     area: 组件
@@ -439,6 +439,12 @@ features:
     completedAt: 2026-10-25
     shippedIn: v0.1.2
     note: react-resizable-panels 上的可拖动分隔:细线 + 更宽的抓取区,指向或拖动时强调色,键盘可移;withHandle 加斜切抓手。
+  - id: form
+    title: Form
+    area: 组件
+    status: done
+    completedAt: 2026-10-25
+    note: Base UI 的 Form:提交时校验所有 Field,服务端错误按字段名显示在 FieldError;Fieldset 带斜条引导的斜体图例;文档给出 react-hook-form + zod 的接法。
   - id: registry
     title: shadcn registry(shadcn add 一行装上)
     area: 注册表

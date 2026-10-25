@@ -6,6 +6,15 @@ All notable changes to zeroUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Form** — Base UI's form around Fields: validation on submit, a server's
+  errors shown in each field, and fieldsets under leaning legends.
+- **Several values in the Combobox** — with `multiple`, chosen items sit in the
+  field as small slabs, each with a button that takes it out.
+- **Floating and inset sidebars** — the Sidebar as a panel standing off the
+  edge, or on the black ground with the page set in beside it.
+
 ## [0.1.2] - 2026-10-25
 
 Twenty-eight more components: disclosure and toggles, commands, more inputs

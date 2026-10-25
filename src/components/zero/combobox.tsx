@@ -11,7 +11,11 @@ import { cn } from "@/lib/zero/cn";
  * A text field that suggests as you type: Input's well, with a clear button and a chevron at its
  * end, over Select's panel and rows. Typing filters the list; the highlighted row fills with the
  * accent and the chosen one carries the slanted mark. Pass the items to the root and render each
- * from ComboboxList's function child. One value; several (chips) are not part of this release.
+ * from ComboboxList's function child.
+ *
+ * With `multiple`, the chosen items sit in the field as small slabs (ComboboxChip), each with a
+ * button that takes it out; the field wraps them, so it is Textarea's square well rather than a
+ * slab. Backspace at the start of the text takes out the last one.
  *
  *   <Combobox items={districts}>
  *     <ComboboxInput placeholder="District" />
@@ -197,8 +201,83 @@ function ComboboxSeparator({
   );
 }
 
+/** The field for several values: Textarea's square well, wrapping the chips and the text. */
+function ComboboxChips({
+  className,
+  children,
+  ...props
+}: ComboboxPrimitive.Chips.Props) {
+  return (
+    <ComboboxPrimitive.InputGroup
+      data-slot="combobox-chips"
+      className={cn(
+        "flex min-h-(--height-zero-md) w-full min-w-0 cursor-text items-center border-(length:--zero-stroke) border-zero-line bg-zero-void p-1",
+        "hover:not-has-focus-visible:border-zero-text-3 has-focus-visible:border-zero-focus",
+        "has-aria-invalid:border-zero-danger has-disabled:pointer-events-none has-disabled:bg-zero-raised",
+        className,
+      )}
+    >
+      <ComboboxPrimitive.Chips
+        className="flex min-w-0 flex-1 flex-wrap items-center gap-1"
+        {...props}
+      >
+        {children}
+      </ComboboxPrimitive.Chips>
+    </ComboboxPrimitive.InputGroup>
+  );
+}
+
+/** A chosen item: a small raised slab with a button that takes it out. */
+function ComboboxChip({
+  className,
+  children,
+  ...props
+}: ComboboxPrimitive.Chip.Props) {
+  return (
+    <ComboboxPrimitive.Chip
+      data-slot="combobox-chip"
+      className={cn(
+        "slab slab-cut-both inline-flex items-center gap-1 outline-none",
+        "[--slab-h:calc(var(--height-zero-md)-0.75rem)] [--slab-o:var(--zero-stroke-thin)] [--slab-px:0.5rem] [--slab-fill:var(--color-zero-raised)]",
+        "font-bold font-zero text-zero-xs italic",
+        "data-highlighted:[--slab-line:var(--color-zero-focus)] focus-visible:[--slab-line:var(--color-zero-focus)]",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <ComboboxPrimitive.ChipRemove
+        aria-label="Remove"
+        className="-me-0.5 grid place-items-center text-zero-text-3 outline-none hover:text-zero-danger [&_svg]:size-[1.1em]"
+      >
+        <CloseIcon />
+      </ComboboxPrimitive.ChipRemove>
+    </ComboboxPrimitive.Chip>
+  );
+}
+
+/** The text inside ComboboxChips, after the chips. */
+function ComboboxChipsInput({
+  className,
+  ...props
+}: ComboboxPrimitive.Input.Props) {
+  return (
+    <ComboboxPrimitive.Input
+      data-slot="combobox-chips-input"
+      className={cn(
+        "h-[calc(var(--height-zero-md)-0.75rem)] min-w-24 flex-1 bg-transparent px-2 font-semibold font-zero-text text-zero-md text-zero-text outline-none caret-zero-accent placeholder:text-zero-text-3",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
 export {
   Combobox,
+  ComboboxChip,
+  ComboboxChips,
+  ComboboxChipsInput,
   ComboboxCollection,
   ComboboxContent,
   type ComboboxContentProps,

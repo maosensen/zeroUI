@@ -5,6 +5,7 @@ import { Demo } from "../_components/demo";
 import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
 import { Install } from "../_components/install";
 import ComboboxDistrict from "../_demos/combobox-district";
+import ComboboxDistricts from "../_demos/combobox-districts";
 
 export const metadata = pageMetadata("/docs/combobox");
 
@@ -23,6 +24,9 @@ export default function ComboboxPage() {
         <Demo file="combobox-district" title="Pick a district">
           <ComboboxDistrict />
         </Demo>
+        <Demo file="combobox-districts" title="Several districts, as chips">
+          <ComboboxDistricts />
+        </Demo>
       </DocSection>
       <DocSection id="behaviour" title="Behaviour">
         <Prose>
@@ -32,8 +36,11 @@ export default function ComboboxPage() {
             Combobox and render each from ComboboxList's function child.
           </p>
           <p>
-            One value at a time; choosing several (chips) is not part of this
-            release.
+            With <code>multiple</code>, the chosen items sit in the field as
+            small slabs (ComboboxChips, ComboboxChip, ComboboxChipsInput), each
+            with a button that takes it out; the field wraps them, so it is
+            Textarea's square well. Backspace at the start of the text takes out
+            the last one.
           </p>
         </Prose>
       </DocSection>
@@ -81,7 +88,7 @@ export default function ComboboxPage() {
           ]}
         />
         <PropsTable
-          part="ComboboxContent, ComboboxList, ComboboxItem, ComboboxEmpty, ComboboxGroup, ComboboxLabel, ComboboxSeparator"
+          part="ComboboxContent, ComboboxList, ComboboxItem, ComboboxEmpty, ComboboxGroup, ComboboxLabel, ComboboxSeparator, ComboboxChips, ComboboxChip, ComboboxChipsInput"
           base={{
             name: "Combobox.Popup",
             href: "https://base-ui.com/react/components/combobox",
