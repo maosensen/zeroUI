@@ -114,7 +114,7 @@ try {
     await wait(2500); // fonts, hydration, the first placements
     await evaluate(AXE);
     const violations = await evaluate<Violation[]>(
-      "axe.run(document, { resultTypes: ['violations'] }).then((r) => r.violations.map(({ id, impact, help, nodes }) => ({ id, impact, help, nodes: nodes.map(({ target, any }) => { const d = any?.[0]?.data; return { target, colours: d?.fgColor ? `${d.fgColor} on ${d.bgColor} (${d.contrastRatio}:1)` : undefined }; }) })))",
+      "axe.run(document, { resultTypes: ['violations'] }).then((r) => r.violations.map(({ id, impact, help, nodes }) => ({ id, impact, help, nodes: nodes.map(({ target, any }) => { const d = any?.[0]?.data; return { target, colours: d?.fgColor ? d.fgColor + ' on ' + d.bgColor + ' (' + d.contrastRatio + ':1)' : undefined }; }) })))",
     );
     for (const v of violations) {
       const entry = byRule.get(v.id) ?? {
