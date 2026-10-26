@@ -18,6 +18,11 @@ const examples = [
     title: "Signal board",
     line: "A news aggregator to scan, not read: a live ticker, readings, a heat-ranked board you walk with J and K beside a preview, topics, and stories in a sheet. Built from Ticker, Gauge, Sparkline, Table and Sheet.",
   },
+  {
+    href: "/examples/ops-console",
+    title: "Ops console",
+    line: "An afternoon on call: a live wall of services, an alert queue to acknowledge, and an incident whose war room and runbook you see through to resolved. Built from the chat components, Gauge, Feed, Table and HoldButton.",
+  },
 ];
 
 export default function Examples() {

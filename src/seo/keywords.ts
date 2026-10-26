@@ -368,6 +368,10 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["game community app ui", "react game forum example"],
       where: "description and lead",
     },
+    "/examples/ops-console": {
+      phrases: ["incident management ui react", "status dashboard example"],
+      where: "description and lead",
+    },
     "/examples/signal-board": {
       phrases: [
         "news aggregator ui react",

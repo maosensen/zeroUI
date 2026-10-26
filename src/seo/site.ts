@@ -187,6 +187,14 @@ export const PAGES = [
     group: "examples",
   },
   {
+    path: "/examples/ops-console",
+    title: "Ops console",
+    description:
+      "An on-call ops console built with zzzUI and shadcn: a live service status wall, an alert queue to acknowledge, and an incident war room with its runbook.",
+    crumb: "Ops console",
+    group: "examples",
+  },
+  {
     path: "/docs/guides",
     title: "Guides",
     description:

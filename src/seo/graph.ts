@@ -101,7 +101,11 @@ export function docGraph(path: Exclude<PagePath, "/">) {
 
 /** An example app: a page about the library, its trail through Examples. */
 export function exampleGraph(
-  path: "/examples" | "/examples/board" | "/examples/signal-board",
+  path:
+    | "/examples"
+    | "/examples/board"
+    | "/examples/signal-board"
+    | "/examples/ops-console",
 ) {
   const p = page(path);
   const url = pageUrl(path);

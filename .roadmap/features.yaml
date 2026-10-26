@@ -683,6 +683,12 @@ features:
     status: done
     completedAt: 2026-10-26
     note: '复合型示例:内容取自 yLookbook 的 signal-board(科技新闻聚合,同一份虚构数据),界面全部用组件重搭。顶上 Ticker 滚最新十条;顶栏有返回、倾斜字标、话题筛选、时钟和 AccentSwitch;读数面板(事件、来源、报道、评论、最热话题、24 小时 Sparkline);热度榜是 Table,热度用分段 Gauge,J / K 或方向键移动选中行、Enter 打开、/ 聚焦筛选,宽屏右侧有粘性预览;话题卡带各自的 Sparkline;Sheet 里是这件事的报道时间线与讨论。'
+  - id: example-ops-console
+    title: 示例应用:运维控制台(/examples/ops-console)
+    area: 站点与文档
+    status: done
+    completedAt: 2026-10-26
+    note: '复合型示例,值班一下午:黑顶栏下 Q / E 切三页。状态墙每个服务一块(错误预算用 quiet 色 Gauge、低于 25% 变红呼吸,p95 与 Sparkline,状态徽章),数字每 2.5 秒走一次;告警队列是 Table,可确认、可打开事件,确认后焦点移到下一个确认按钮;事件页左边是用聊天组件(Message、Bubble、Marker、Trace、CodeBlock、Attachment、MessageScroller)搭的作战室,带输入框,右边是 Objectives 写的处置手册、影响(Stats、Gauge)与值班人,手册走完后按住解决;发生的事由右下角 Feed 播报。手册的进度牵动路线规划服务的延迟、预算、状态、相关告警与时间线。做的过程中修了两个组件问题:InputGroup 里有禁用按钮时整个输入框被一并禁用;Tabs 的热键提示在触屏上撑出页面宽度,改为触屏上不显示。'
   - id: ticker
     title: Ticker(滚动新闻条)
     area: 组件

@@ -486,7 +486,23 @@ modelled on yLookbook's signal-board (a tech-news aggregator, its made-up data r
   focuses the filter; the keys are on the window and stand aside in text fields and in radio and
   toggle groups, where the arrows already mean something. Rows scroll into view only when keys
   moved them, never on a click.
-- **New pieces it needed.** Ticker (written twice and moved by half, the copy hidden and inert;
+- **Ops console.** `/examples/ops-console`: an afternoon on call under one bar, three tabs paged
+  with Q and E. The wall is a tile per service (error budget on a quiet Gauge that turns red and
+  breathes under a quarter, p95 with a Sparkline) that takes a reading every 2.5 s, from a
+  wobble that is the same on every load, started after hydration so the server's render and the
+  first client render agree. The alert queue acknowledges, and opens the incident. The incident is
+  the chat components put to work: a war room (markers for what happened, a runbook bot whose
+  Trace follows the incident, a diff, a log file and its lines) with a composer, beside the
+  runbook in Objectives, its impact in Stats and a Gauge, and a HoldButton to resolve. The
+  runbook is the thread: each step done moves the planner's latency, budget, status, alerts and
+  the timeline. Focus follows a control that goes away: an acknowledged alert's button to the
+  next one, the last step to the hold, the hold to the composer.
+- **What the examples found in the components.** A disabled Send button in an InputGroup
+  disabled the whole field (`has-disabled` matched any descendant; now only the input control).
+  Tabs' key hints pushed a phone page sideways; they are not shown on a coarse pointer. A grid
+  with one implicit column sizes it `auto`, which grows to the widest unbreakable child (a log
+  line, a long name): panels that hold such things get `grid-cols-1`.
+- **New pieces the signal board needed.** Ticker (written twice and moved by half, the copy hidden and inert;
   still under reduced motion) and Sparkline (sized in em, quiet unless `hot`, said in words to
   screen readers), each with a docs page; Gauge gained a `quiet` grey tone, since a board where
   every row wears the accent says nothing about which matter.

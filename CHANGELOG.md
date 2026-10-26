@@ -22,6 +22,22 @@ All notable changes to zzzUI are documented here. The format is based on
   from the components: a live ticker, readings, a heat-ranked board walked with
   J and K beside a preview, topics, and each story's coverage and thread in a
   sheet. It answers to the accent switch.
+- **Ops console example** (`/examples/ops-console`) — an afternoon on call: a
+  live wall of services (error-budget gauges, latency sparklines), an alert
+  queue to acknowledge, and an incident whose war room is built from the chat
+  components beside its runbook, resolved by holding. What happens is reported
+  in a Feed in the corner.
+
+### Changed
+
+- **Tabs' hotkey hints** are no longer shown on a touch screen, where there is
+  no keyboard to press them; the keys still work wherever there is one.
+
+### Fixed
+
+- **Input group with a disabled button** — a disabled button in the well (a
+  Send button, with nothing written yet) no longer disables the whole field: the
+  disabled look and the blocked pointer now follow the input alone.
 
 ## [0.2.0] - 2026-10-26
 
