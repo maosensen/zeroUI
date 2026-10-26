@@ -14,14 +14,14 @@ export default function GettingStartedPage() {
       <JsonLd data={docGraph("/docs")} />
       <DocHeader
         title="Getting started"
-        lead="zeroUI is a dark-only component library with a strong game-UI look. It installs the shadcn way: the code lands in your project, yours to change."
+        lead="zzzUI is a dark-only component library with a strong game-UI look. It installs the shadcn way: the code lands in your project, yours to change."
       />
 
       <DocSection id="requirements" title="Before you start">
         <Prose>
           <p>
             A project already set up for shadcn (<code>components.json</code>)
-            on Tailwind CSS v4 and React 19. zeroUI is built on{" "}
+            on Tailwind CSS v4 and React 19. zzzUI is built on{" "}
             <strong>Base UI</strong>, not Radix; the components bring it with
             them. It is tested on Next.js.
           </p>
@@ -31,14 +31,14 @@ export default function GettingStartedPage() {
       <DocSection id="namespace" title="1. Add the namespace">
         <Prose>
           <p>
-            Once per project, tell shadcn where <code>@zeroui</code> items come
+            Once per project, tell shadcn where <code>@zzzui</code> items come
             from:
           </p>
         </Prose>
         <CodeBlock
           lang="bash"
           title="terminal"
-          code={`pnpm dlx shadcn@latest registry add @zeroui=${REGISTRY_URL}`}
+          code={`pnpm dlx shadcn@latest registry add @zzzui=${REGISTRY_URL}`}
         />
       </DocSection>
 
@@ -46,7 +46,7 @@ export default function GettingStartedPage() {
         <CodeBlock
           lang="bash"
           title="terminal"
-          code="pnpm dlx shadcn@latest add @zeroui/button @zeroui/input @zeroui/select"
+          code="pnpm dlx shadcn@latest add @zzzui/button @zzzui/input @zzzui/select"
         />
         <Prose>
           <p>
@@ -63,22 +63,22 @@ export default function GettingStartedPage() {
       <DocSection id="theme" title="3. Go dark (optional)">
         <Prose>
           <p>
-            zeroUI has no light theme. If the rest of your project uses shadcn's
-            variables, this points them at zeroUI's colours, in light mode and
+            zzzUI has no light theme. If the rest of your project uses shadcn's
+            variables, this points them at zzzUI's colours, in light mode and
             dark alike, so the whole page matches:
           </p>
         </Prose>
         <CodeBlock
           lang="bash"
           title="terminal"
-          code="pnpm dlx shadcn@latest add @zeroui/theme"
+          code="pnpm dlx shadcn@latest add @zzzui/theme"
         />
       </DocSection>
 
       <DocSection id="italic" title="4. The true italic">
         <Prose>
           <p>
-            zeroUI's labels are heavy italics. shadcn loads Montserrat upright
+            zzzUI's labels are heavy italics. shadcn loads Montserrat upright
             only, so the italic is drawn by the browser until you ask for the
             real one where your layout loads the font:
           </p>

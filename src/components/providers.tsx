@@ -10,7 +10,7 @@ export function Providers({ children }: { children: ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* zeroUI is dark only: one set of tokens, no light theme to fall back to. */}
+      {/* zzzUI is dark only: one set of tokens, no light theme to fall back to. */}
       <ThemeProvider
         attribute="class"
         forcedTheme="dark"

@@ -265,7 +265,7 @@ const entries = [
   {
     href: "/docs/chart",
     name: "Chart",
-    line: "Recharts in zeroUI's colours.",
+    line: "Recharts in zzzUI's colours.",
   },
   {
     href: "/docs/resizable",

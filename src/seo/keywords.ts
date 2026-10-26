@@ -1,6 +1,6 @@
 /**
  * The keyword map (yPulse docs/seo-geo.md §9): each page, two or three phrases people really
- * search, and where on the page they belong. One phrase per page; "zeroUI" is the brand word and
+ * search, and where on the page they belong. One phrase per page; "zzzUI" is the brand word and
  * always travels with a describing word. Revise against Search Console's real queries.
  */
 import type { PagePath } from "./site";
@@ -361,7 +361,7 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       where: "description and lead",
     },
     "/docs/guides": {
-      phrases: ["zeroui guides", "game ui react tutorial"],
+      phrases: ["zzzui guides", "game ui react tutorial"],
       where: "description and lead",
     },
     "/docs/guides/game-settings-menu": {
@@ -373,7 +373,7 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       where: "title, description and lead",
     },
     "/docs/guides/theme-tokens": {
-      phrases: ["shadcn dark theme tokens", "customize zeroui theme"],
+      phrases: ["shadcn dark theme tokens", "customize zzzui theme"],
       where: "title, description and lead",
     },
     "/docs/dialogue": {

@@ -3,7 +3,7 @@ import { SiteHeader } from "../_site/site-header";
 import { DocsNav } from "./_components/nav";
 
 export const metadata: Metadata = {
-  title: { default: "Docs", template: "%s · zeroUI" },
+  title: { default: "Docs", template: "%s · zzzUI" },
 };
 
 export default function DocsLayout({ children }: LayoutProps<"/docs">) {

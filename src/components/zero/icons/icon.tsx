@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/zero/cn";
 
 /*
- * The shape every zeroUI icon shares: a 24-unit grid, filled in currentColor, 1.25em square so it
+ * The shape every zzzUI icon shares: a 24-unit grid, filled in currentColor, 1.25em square so it
  * follows the text beside it. The rules the paths follow are in docs/icons.md.
  */
 

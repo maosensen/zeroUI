@@ -25,13 +25,13 @@ export default function IconsPage() {
       <JsonLd data={docGraph("/docs/icons")} />
       <DocHeader
         title="Icons"
-        lead="Thirty solid icons drawn for zeroUI on a 24-unit grid, interface glyphs and a few things to carry. Strokes end on the same slant as the slabs, corners are cut, and only things round by nature are curved."
+        lead="Thirty solid icons drawn for zzzUI on a 24-unit grid, interface glyphs and a few things to carry. Strokes end on the same slant as the slabs, corners are cut, and only things round by nature are curved."
       />
       <DocSection id="install" title="Install">
         <Prose>
           <p>
             All of them, with an index to import from — or one at a time as{" "}
-            <code>@zeroui/icon-search</code>, <code>@zeroui/icon-check</code>…
+            <code>@zzzui/icon-search</code>, <code>@zzzui/icon-check</code>…
           </p>
         </Prose>
         <Install item="icons" />

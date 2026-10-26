@@ -25,10 +25,10 @@ export function Install({ item }: { item: string }) {
           <CodeBlock
             lang="bash"
             title="terminal"
-            code={`# once per project: where @zeroui items come from
-${run} shadcn@latest registry add @zeroui=${REGISTRY_URL}
+            code={`# once per project: where @zzzui items come from
+${run} shadcn@latest registry add @zzzui=${REGISTRY_URL}
 
-${run} shadcn@latest add @zeroui/${item}`}
+${run} shadcn@latest add @zzzui/${item}`}
           />
         </TabsPanel>
       ))}

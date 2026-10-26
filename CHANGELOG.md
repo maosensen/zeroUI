@@ -1,10 +1,22 @@
 # Changelog
 
-All notable changes to zeroUI are documented here. The format is based on
+All notable changes to zzzUI are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/); this project uses
 [semantic versioning](https://semver.org/).
 
 ## [Unreleased]
+
+### Changed
+
+- **zeroUI is now zzzUI**, a fan-made tribute to Zenless Zone Zero (unofficial,
+  not affiliated with HoYoverse or the game). The site moves to
+  https://zzzui.catforest.dev and the registry namespace to `@zzzui`:
+  `pnpm dlx shadcn@latest registry add @zzzui=https://zzzui.catforest.dev/r/{name}.json`.
+  Pages on the old domain redirect to the new one and its registry files still
+  answer; a project set up with `@zeroui` needs `@zzzui` added once, since items
+  now name their dependencies under it. The `zero` prefix in the code (tokens,
+  classes, `components/zero/`) is unchanged, so installed components keep
+  working.
 
 ## [0.1.7] - 2026-10-25
 

@@ -26,7 +26,7 @@ export default function Examples() {
             Examples
           </h1>
           <p className="max-w-2xl font-medium text-zero-md text-zero-text-2 leading-relaxed">
-            Whole apps put together from zeroUI's blocks and components, to show
+            Whole apps put together from zzzUI's blocks and components, to show
             how the pieces work side by side. Open one, then read its source:
             every part of it installs from the registry.
           </p>

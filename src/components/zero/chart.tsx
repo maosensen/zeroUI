@@ -15,7 +15,7 @@ import * as RechartsPrimitive from "recharts";
 import { cn } from "@/lib/zero/cn";
 
 /*
- * Charts drawn with Recharts in zeroUI's colours. ChartContainer names the series (`config`) and
+ * Charts drawn with Recharts in zzzUI's colours. ChartContainer names the series (`config`) and
  * gives each its colour as --color-<key>, so the chart's parts use var(--color-<key>). Five
  * series colours come with it, all from the tokens: --zero-chart-1 the accent, 2 the text white,
  * 3 the quiet grey, 4 the danger red, 5 the pressed accent. Axes and grid are the quiet line and

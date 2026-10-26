@@ -5,7 +5,7 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/zero/cn";
 
 /*
- * A face, or initials when there is no picture. Round, the one shape zeroUI allows a radius
+ * A face, or initials when there is no picture. Round, the one shape zzzUI allows a radius
  * (round by nature, tokens.css), lifted like a panel: an ink ring and a quiet line outside it.
  * Initials are set in the display face's leaning capitals. Three sizes, the control heights, so
  * an avatar lines up with a button beside it. AvatarBadge is a status dot on its edge;

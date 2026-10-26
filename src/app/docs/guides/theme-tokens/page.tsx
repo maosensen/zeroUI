@@ -34,14 +34,14 @@ export default function ThemeTokensGuide() {
     <>
       <JsonLd data={guideGraph("/docs/guides/theme-tokens", "2026-10-25")} />
       <DocHeader
-        title="Theme zeroUI with its tokens"
-        lead="zeroUI's look comes from a handful of tokens: one slant angle, three outline weights, one accent and a set of timings. Override them on :root in your own stylesheet and every component follows, with nothing else to edit."
+        title="Theme zzzUI with its tokens"
+        lead="zzzUI's look comes from a handful of tokens: one slant angle, three outline weights, one accent and a set of timings. Override them on :root in your own stylesheet and every component follows, with nothing else to edit."
       />
 
       <DocSection id="where" title="Where the tokens live">
         <Prose>
           <p>
-            Installing any zeroUI component writes the foundation into your
+            Installing any zzzUI component writes the foundation into your
             project's main stylesheet: each token is declared once on{" "}
             <code>:root</code> under a <code>--zero-</code> name, and Tailwind's
             theme points at it, so <code>bg-zero-accent</code> reads{" "}
@@ -115,7 +115,7 @@ export default function ThemeTokensGuide() {
           <p>
             The accent is the fill of primary buttons and selected tabs, with
             ink-black text on it, so pick a bright colour that keeps that text
-            readable (zeroUI's lime is 13.8 : 1 against ink). Keep it clear of
+            readable (zzzUI's lime is 13.8 : 1 against ink). Keep it clear of
             the focus yellow, or a focused primary button loses its frame, and
             of the red that means danger. Mix the hover and pressed shades from
             it:
@@ -129,7 +129,7 @@ export default function ThemeTokensGuide() {
           <p>
             Durations are tokens too, so scaling them changes the feel of the
             whole set: presses, popups, tabs sliding, a gauge's trail. Under
-            reduced motion zeroUI already drops the decorative ones (the sheen,
+            reduced motion zzzUI already drops the decorative ones (the sheen,
             the glitch, the waiting loops) to zero, whatever you set here.
           </p>
         </Prose>

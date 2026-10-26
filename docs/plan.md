@@ -1,4 +1,4 @@
-# zeroUI — product plan
+# zzzUI — product plan
 
 zeroUI is a public, dark-only component library with a strong game-UI look: black bars,
 charcoal ground, a fluorescent lime accent, slabs with one edge cut on the slant, thick black
@@ -134,6 +134,18 @@ Decisions land here with their date, in the commit that acts on them.
   `--color-zero-*`, which a host's Tailwind utilities never read (its theme is `inline` and
   points at the raw `--zero-*`); it now exports the raw names. Level 2 is accepted by the author's
   review.
+
+- **2026-10-26 — renamed zzzUI** (supersedes "public name zeroUI"). zeroUI was already taken
+  several times over. The author chose zzzUI, after Zenless Zone Zero, as an open-source fan work:
+  non-commercial, never registered as a trademark, and saying plainly that it is fan-made,
+  unofficial and not affiliated with HoYoverse or the game (README, the site's footer, llms.txt).
+  Still nothing from the game itself: no logos, fonts, icons, art, screenshots or text. The brand,
+  the registry namespace (`@zzzui`) and the domain (zzzui.catforest.dev; zeroui.catforest.dev
+  redirects to it, so installs set up with the old namespace keep working) change; the `zero`
+  prefix in the code (tokens, classes, `components/zero/`) does not, so installed components and
+  the classes written against them stay valid. Risk taken knowingly: the guideline relied on is
+  HoYoverse's fan-work guideline for another game; MIT lets others use zzzUI commercially; the
+  worst likely outcome is a request to rename. The GitHub repo and the local folder follow last.
 
 - **2026-10-25 — MIT license.** The author chose MIT: GitHub's standard text, copyright
   maosensen. Tags up to v0.1.1 were cut before `LICENSE` existed.
@@ -471,6 +483,9 @@ mission briefing, a loadout, a leaderboard, a HUD.
   they are announced as shortcuts and do not clash with the slot's name.
 
 ## The look is ours
+
+(Since 2026-10-26 the library is zzzUI, named in tribute to the game; see that decision. What
+follows still holds for everything but the name and the disclaimer.)
 
 zeroUI takes its mood from a game UI; it takes nothing else. No logos, fonts, icons, character art
 or screenshots from the game or its publisher, and no game name in the product, the package or

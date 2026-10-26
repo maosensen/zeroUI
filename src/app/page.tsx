@@ -14,7 +14,7 @@ import { SlantDial } from "./_showcase/slant-dial";
 import { SiteHeader } from "./_site/site-header";
 import { CodeBlock } from "./docs/_components/code-block";
 
-/** The showcase: what zeroUI looks like at work, and the way into the docs. */
+/** The showcase: what zzzUI looks like at work, and the way into the docs. */
 
 export const metadata = pageMetadata("/");
 
@@ -84,7 +84,7 @@ export default function Home() {
           CUT ON THE SLANT
         </p>
         <p className="absolute top-[30rem] left-[20%] rotate-(--zero-tilt) whitespace-nowrap font-black font-zero text-[clamp(5rem,12vw,10rem)] text-zero-surface italic leading-none">
-          ZERO
+          ZZZ
         </p>
       </div>
 
@@ -100,9 +100,9 @@ export default function Home() {
               <span className="text-zero-accent">the slant.</span>
             </h1>
             <p className="max-w-md font-medium text-zero-lg text-zero-text-2">
-              zeroUI is a dark-only component library with a strong game-UI
-              look: black bars, a charcoal ground, one fluorescent accent, slabs
-              with thick outlines.
+              zzzUI is a dark-only component library with a strong game-UI look:
+              black bars, a charcoal ground, one fluorescent accent, slabs with
+              thick outlines.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button
@@ -126,8 +126,8 @@ export default function Home() {
               lang="bash"
               title="terminal"
               className="w-full"
-              code={`pnpm dlx shadcn@latest registry add @zeroui=${REGISTRY_URL}
-pnpm dlx shadcn@latest add @zeroui/button`}
+              code={`pnpm dlx shadcn@latest registry add @zzzui=${REGISTRY_URL}
+pnpm dlx shadcn@latest add @zzzui/button`}
             />
           </div>
           <JobBoard />
@@ -201,10 +201,15 @@ pnpm dlx shadcn@latest add @zeroui/button`}
       <footer className="relative bg-zero-void">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 font-bold font-zero text-zero-sm text-zero-text-3 italic sm:px-8">
           <span>
-            zero<span className="text-zero-accent">UI</span> · built on shadcn
+            zzz<span className="text-zero-accent">UI</span> · built on shadcn
             and Base UI
           </span>
           <span>A catforest project</span>
+          <p className="basis-full font-medium font-zero-text text-zero-xs not-italic">
+            Fan-made and unofficial: the name is a tribute to Zenless Zone Zero.
+            zzzUI is not affiliated with HoYoverse or the game, and uses none of
+            its logos, fonts, art or text.
+          </p>
         </div>
       </footer>
     </div>

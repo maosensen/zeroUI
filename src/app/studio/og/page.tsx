@@ -25,7 +25,7 @@ export default function OgCard() {
         aria-hidden
         className="absolute -right-24 bottom-6 rotate-(--zero-tilt) whitespace-nowrap font-black font-zero text-[15rem] text-zero-surface italic leading-none"
       >
-        ZERO
+        ZZZ
       </p>
       <div className="absolute top-20 right-20 grid w-[22rem] gap-3 text-[1.35rem]">
         <Bubble variant="secondary">
@@ -44,7 +44,7 @@ export default function OgCard() {
           Components for shadcn, on Base UI
         </p>
         <h1 className="origin-left rotate-(--zero-tilt) font-black font-zero text-[7rem] italic leading-[0.95]">
-          zero<span className="text-zero-accent">UI</span>
+          zzz<span className="text-zero-accent">UI</span>
         </h1>
         <p className="max-w-[44rem] font-semibold text-[1.75rem] text-zero-text-2 leading-snug">
           A dark-only component library with a game-UI look. Slabs cut on the
@@ -65,7 +65,7 @@ export default function OgCard() {
         </Tabs>
         <Badge className="text-[1rem]">78 components</Badge>
         <span className="ms-auto font-bold font-zero text-[1.35rem] text-zero-text-3 italic">
-          zeroui.catforest.dev
+          zzzui.catforest.dev
         </span>
       </div>
     </div>

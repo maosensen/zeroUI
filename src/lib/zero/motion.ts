@@ -1,5 +1,5 @@
 /**
- * zeroUI motion, JS side: the named durations, easings and transitions every animated component
+ * zzzUI motion, JS side: the named durations, easings and transitions every animated component
  * uses with `motion`. The CSS twin is motion.css; the two files hold the same numbers.
  *
  * Nothing in a component picks its own timing. A move that has no name here gets one here first.

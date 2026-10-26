@@ -14,7 +14,7 @@ export default function DirectionPage() {
       <JsonLd data={docGraph("/docs/direction")} />
       <DocHeader
         title="Direction"
-        lead="Tells the components which way text runs, for right-to-left pages: Base UI's DirectionProvider, under zeroUI's name."
+        lead="Tells the components which way text runs, for right-to-left pages: Base UI's DirectionProvider, under zzzUI's name."
       />
       <DocSection id="install" title="Install">
         <Install item="direction" />

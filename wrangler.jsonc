@@ -11,8 +11,14 @@
   "workers_dev": true,
   "minify": true,
   // The public site and the registry (/r/*.json) both live here; the registry URL in
-  // scripts/build-registry.mts and the docs must match this domain.
+  // src/lib/site.ts and the docs must match the first domain. The second is the name the library
+  // had until 2026-10-26: its pages redirect to the first (next.config.ts), and its registry files
+  // are still served, so projects set up with it keep working.
   "routes": [
+    {
+      "pattern": "zzzui.catforest.dev",
+      "custom_domain": true
+    },
     {
       "pattern": "zeroui.catforest.dev",
       "custom_domain": true

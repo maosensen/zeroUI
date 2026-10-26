@@ -726,6 +726,12 @@ features:
     completedAt: 2026-10-25
     shippedIn: v0.1.5
     note: /docs/guides 总览与三篇:用 React 搭游戏设置菜单、会留伤害残影的血条(含不用 zeroUI 的从零写法)、用 token 改主题(说明宿主项目里要覆盖的是 --zero-* 原名而非 --color-zero-*);每篇开头先给结论,标题与开头段落含关键词地图里的长尾词,JSON-LD 为 Article(作者与发布者都是品牌),面包屑经过 Guides,站内互链到组件、区块与其他指南。L2 的验收是人审,待作者过目。
+  - id: rename-zzzui
+    title: 改名 zzzUI(品牌、命名空间、域名)
+    area: 站点与文档
+    status: done
+    completedAt: 2026-10-26
+    note: 作者 2026-10-26 定:zeroUI 已被多人使用,改名 zzzUI,作为《绝区零》的粉丝向开源二创;不盈利、不注册商标,README、首页页脚与 llms.txt 写明「粉丝自制、非官方、与 HoYoverse 及游戏无关」,AGENTS.md 的规矩随之改写(游戏的标志、字体、图标、美术、截图、文字仍一律不用)。品牌与包名改为 zzzUI / zzz-ui,registry 命名空间改为 @zzzui,域名改为 zzzui.catforest.dev(旧域名页面永久跳转、registry 文件照常可取);代码里的 zero 前缀不动。GitHub 仓库与本地目录最后改。
   - id: showcase
     title: 对外展示页
     area: 站点与文档

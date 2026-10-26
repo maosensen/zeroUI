@@ -12,7 +12,7 @@ export function SiteHeader({ end }: { end?: ReactNode }) {
         href="/"
         className="rotate-(--zero-tilt) font-black font-zero text-zero-xl italic outline-none focus-visible:text-zero-focus"
       >
-        zero<span className="text-zero-accent">UI</span>
+        zzz<span className="text-zero-accent">UI</span>
       </Link>
       <nav aria-label="Site" className="flex gap-5 sm:gap-6">
         <Link href="/docs" className={navLink}>

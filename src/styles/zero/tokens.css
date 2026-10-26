@@ -1,5 +1,5 @@
 /*
- * zeroUI tokens — the one place colours, type, sizes, outlines and the slant are defined.
+ * zzzUI tokens — the one place colours, type, sizes, outlines and the slant are defined.
  * Components read these and nothing else; a component that needs a value missing here adds it
  * here first. Dark only: there is a single set, no light counterpart.
  *

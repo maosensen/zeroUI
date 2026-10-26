@@ -1,5 +1,5 @@
 /*
- * The slab: zeroUI's basic shape. A flat block whose start and/or end edge is cut on the slant,
+ * The slab: zzzUI's basic shape. A flat block whose start and/or end edge is cut on the slant,
  * wearing a thick outline. Both cut edges lean the same way (/), so a slab cut on both sides is a
  * parallelogram, and slabs set side by side nest into each other.
  *

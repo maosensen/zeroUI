@@ -14,7 +14,7 @@ export default function NativeSelectPage() {
       <JsonLd data={docGraph("/docs/native-select")} />
       <DocHeader
         title="Native select"
-        lead="The browser's own select in Input's well, with zeroUI's chevron."
+        lead="The browser's own select in Input's well, with zzzUI's chevron."
       />
       <DocSection id="install" title="Install">
         <Install item="native-select" />
@@ -29,7 +29,7 @@ export default function NativeSelectPage() {
           <p>
             Use it where a form must work without JavaScript or where the
             phone's own picker is wanted. Its list is drawn by the browser, so
-            it does not take zeroUI's look; Select does.
+            it does not take zzzUI's look; Select does.
           </p>
         </Prose>
       </DocSection>

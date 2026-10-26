@@ -1,6 +1,6 @@
-# zeroUI icons — the specification
+# zzzUI icons — the specification
 
-zeroUI's icons are drawn for it, in code, on one grid and by one set of rules, so that they read
+zzzUI's icons are drawn for it, in code, on one grid and by one set of rules, so that they read
 as the same family as the slabs and the 900-weight italic lettering. Nothing is taken from an icon
 library or from the game the library takes its mood from.
 

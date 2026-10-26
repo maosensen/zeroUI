@@ -4,7 +4,7 @@ import { ScrollArea as ScrollAreaPrimitive } from "@base-ui/react/scroll-area";
 import { cn } from "@/lib/zero/cn";
 
 /*
- * A box that scrolls with zeroUI's own bars: a thin track and a slanted thumb that leans like a
+ * A box that scrolls with zzzUI's own bars: a thin track and a slanted thumb that leans like a
  * slab, quiet until the box is pointed at or scrolled, lighter while held. The native scrollbar is
  * hidden; the wheel, touch and keyboard scroll as usual.
  */

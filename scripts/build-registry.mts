@@ -21,7 +21,7 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import postcss, { type ChildNode, type Container } from "postcss";
 import { SITE_URL } from "../src/lib/site.ts";
 
-const NAMESPACE = "@zeroui";
+const NAMESPACE = "@zzzui";
 
 type CssObject = { [key: string]: string | CssObject };
 
@@ -143,7 +143,7 @@ const block = (
 
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
-  name: "zeroui",
+  name: "zzzui",
   homepage: SITE_URL,
   items: [
     {
@@ -151,7 +151,7 @@ const registry = {
       type: "registry:font",
       title: "Montserrat",
       description:
-        "zeroUI's display face (labels, buttons, tabs, headings), behind --font-montserrat.",
+        "zzzUI's display face (labels, buttons, tabs, headings), behind --font-montserrat.",
       font: {
         family: "Montserrat",
         provider: "google",
@@ -165,7 +165,7 @@ const registry = {
       type: "registry:font",
       title: "Outfit",
       description:
-        "zeroUI's text face (running text, typed values), behind --font-outfit.",
+        "zzzUI's text face (running text, typed values), behind --font-outfit.",
       font: {
         family: "Outfit",
         provider: "google",
@@ -179,7 +179,7 @@ const registry = {
       type: "registry:lib",
       title: "Foundation",
       description:
-        "Tokens, motion and the slab: everything zeroUI's components are drawn from.",
+        "Tokens, motion and the slab: everything zzzUI's components are drawn from.",
       dependencies: ["cn", "motion"],
       registryDependencies: [dep("font"), dep("font-text")],
       files: [
@@ -196,14 +196,14 @@ const registry = {
       ],
       cssVars: { theme: foundation.theme },
       css: foundation.css,
-      docs: 'zeroUI is dark only: put its components on a dark ground, or add @zeroui/theme to turn the project\'s shadcn variables to zeroUI\'s. For Montserrat\'s true italic, add style: ["normal", "italic"] where your layout loads it.',
+      docs: 'zzzUI is dark only: put its components on a dark ground, or add @zzzui/theme to turn the project\'s shadcn variables to zzzUI\'s. For Montserrat\'s true italic, add style: ["normal", "italic"] where your layout loads it.',
     },
     {
       name: "theme",
       type: "registry:theme",
       title: "Theme",
       description:
-        "shadcn's variables drawn from zeroUI's tokens, the same in light and dark: the host goes dark.",
+        "shadcn's variables drawn from zzzUI's tokens, the same in light and dark: the host goes dark.",
       registryDependencies: [dep("foundation")],
       cssVars: (() => {
         const vars = {
@@ -247,7 +247,7 @@ const registry = {
       name: "icon",
       type: "registry:lib",
       title: "Icon",
-      description: "The shape every zeroUI icon shares (createIcon).",
+      description: "The shape every zzzUI icon shares (createIcon).",
       registryDependencies: [dep("foundation")],
       files: [
         {
@@ -274,7 +274,7 @@ const registry = {
       name: "icons",
       type: "registry:component",
       title: "Icons",
-      description: "Every zeroUI icon, with an index to import them from.",
+      description: "Every zzzUI icon, with an index to import them from.",
       registryDependencies: icons.map((icon) => dep(`icon-${icon}`)),
       files: [
         {
@@ -614,7 +614,7 @@ const registry = {
     component(
       "chart",
       "Chart",
-      "Recharts in zeroUI's colours: quiet axes, slanted swatches, a panel tooltip.",
+      "Recharts in zzzUI's colours: quiet axes, slanted swatches, a panel tooltip.",
       ["recharts"],
     ),
     component(
@@ -730,7 +730,7 @@ const registry = {
     block(
       "settings-menu",
       "Settings menu",
-      "A game settings menu block for React: display, audio, controls and gameplay tabs, built from zeroUI's Select, Slider, Switch and Hold button.",
+      "A game settings menu block for React: display, audio, controls and gameplay tabs, built from zzzUI's Select, Slider, Switch and Hold button.",
       [
         dep("button"),
         dep("hold-button"),

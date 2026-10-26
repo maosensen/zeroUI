@@ -2,7 +2,7 @@ import { createHighlighterCore, type HighlighterCore } from "shiki/core";
 import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
 
 /*
- * Code highlighting for the docs, on the server only. The colours are zeroUI's (tokens.css); shiki
+ * Code highlighting for the docs, on the server only. The colours are zzzUI's (tokens.css); shiki
  * needs literal values, so they are repeated here: keywords in the accent, strings in the focus
  * yellow, comments and punctuation in the quiet greys.
  */

@@ -27,7 +27,7 @@ export default function AlertPage() {
       <DocSection id="behaviour" title="Behaviour">
         <Prose>
           <p>
-            The four tones reuse colours zeroUI already has: quiet grey for
+            The four tones reuse colours zzzUI already has: quiet grey for
             information, the accent for something done, the selection yellow for
             a warning, the danger red. Each has its own badge (info, done,
             alert), so the tone never rests on colour alone.

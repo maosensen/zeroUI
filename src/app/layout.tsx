@@ -6,14 +6,14 @@ import { SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { OG_IMAGE } from "@/seo/site";
 
-// zeroUI's one typeface (tokens.css: --font-zero). Variable weight, with a true italic.
+// zzzUI's one typeface (tokens.css: --font-zero). Variable weight, with a true italic.
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   style: ["normal", "italic"],
 });
 
-// zeroUI's text face (tokens.css: --font-zero-text): running text and typed values, always upright.
+// zzzUI's text face (tokens.css: --font-zero-text): running text and typed values, always upright.
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
-    siteName: "zeroUI",
+    siteName: "zzzUI",
     locale: "en",
     images: [OG_IMAGE],
   },
   twitter: { card: "summary_large_image", images: [OG_IMAGE.url] },
-  title: { default: "zeroUI", template: "%s · zeroUI" },
+  title: { default: "zzzUI", template: "%s · zzzUI" },
   description:
     "A dark-only component library built on shadcn: its own tokens, motion and icons, installed through a shadcn registry.",
 };

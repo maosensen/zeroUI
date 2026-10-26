@@ -1,4 +1,4 @@
-/* Every zeroUI icon. Each is also its own file, so the registry can ship them one at a time. */
+/* Every zzzUI icon. Each is also its own file, so the registry can ship them one at a time. */
 
 export { AlertIcon } from "./alert";
 export { ArrowDownIcon } from "./arrow-down";

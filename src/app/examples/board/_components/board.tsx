@@ -10,7 +10,7 @@ import { ProfileChip } from "@/components/zero/profile-chip";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
 
 /*
- * The courier board: an example app put together from zeroUI's blocks. A black top bar with a
+ * The courier board: an example app put together from zzzUI's blocks. A black top bar with a
  * way back, who you are, and three tabs that Q and E step through from anywhere, the way a game
  * pages with its shoulder buttons; under it the board, today's shifts, and your rank. Every piece
  * is a block or a component from the registry, unchanged.

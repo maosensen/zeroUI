@@ -27,7 +27,7 @@ export default function AvatarPage() {
       <DocSection id="behaviour" title="Behaviour">
         <Prose>
           <p>
-            Round is the one radius zeroUI allows, kept for things round by
+            Round is the one radius zzzUI allows, kept for things round by
             nature. Initials show while the picture loads and if it fails.
           </p>
           <p>

@@ -20,7 +20,7 @@ const guides = [
   },
   {
     href: "/docs/guides/theme-tokens",
-    title: "Theme zeroUI with its tokens",
+    title: "Theme zzzUI with its tokens",
     line: "One slant, one accent, the timings.",
   },
 ];
@@ -31,7 +31,7 @@ export default function GuidesPage() {
       <JsonLd data={docGraph("/docs/guides")} />
       <DocHeader
         title="Guides"
-        lead="How to build game screens with zeroUI and shadcn, how its effects work, and how to make it your own: longer reads that explain the why, with code you can lift."
+        lead="How to build game screens with zzzUI and shadcn, how its effects work, and how to make it your own: longer reads that explain the why, with code you can lift."
       />
       <DocSection id="list" title="The guides">
         <ul className="grid gap-3">

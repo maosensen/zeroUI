@@ -15,7 +15,7 @@ import {
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/zero/tabs";
 
 /*
- * A working screen built from zeroUI's components: a job board you can search, filter, take jobs
+ * A working screen built from zzzUI's components: a job board you can search, filter, take jobs
  * from and hand them in. Everything in it is invented for the showcase.
  */
 

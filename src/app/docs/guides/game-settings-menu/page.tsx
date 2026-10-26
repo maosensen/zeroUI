@@ -56,7 +56,7 @@ export default function GameSettingsMenuGuide() {
       />
       <DocHeader
         title="Build a game settings menu in React"
-        lead="A game settings menu is tabs of rows: a setting's name on the left, its control on the right, and a footer that applies the changes. This guide builds one with zeroUI on shadcn, or installs the finished block with one command."
+        lead="A game settings menu is tabs of rows: a setting's name on the left, its control on the right, and a footer that applies the changes. This guide builds one with zzzUI on shadcn, or installs the finished block with one command."
       />
 
       <DocSection id="install" title="Start from the block">
@@ -71,8 +71,8 @@ export default function GameSettingsMenuGuide() {
         <CodeBlock
           lang="bash"
           title="terminal"
-          code={`pnpm dlx shadcn@latest registry add @zeroui=${REGISTRY_URL}
-pnpm dlx shadcn@latest add @zeroui/settings-menu`}
+          code={`pnpm dlx shadcn@latest registry add @zzzui=${REGISTRY_URL}
+pnpm dlx shadcn@latest add @zzzui/settings-menu`}
         />
         <Prose>
           <p>
@@ -156,7 +156,7 @@ pnpm dlx shadcn@latest add @zeroui/settings-menu`}
             loadout, a leaderboard and a HUD. To change the look of all of them
             at once, read{" "}
             <Link href="/docs/guides/theme-tokens">
-              Theme zeroUI with its tokens
+              Theme zzzUI with its tokens
             </Link>
             .
           </p>

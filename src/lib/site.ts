@@ -4,7 +4,7 @@
  * layout's metadataBase, the registry URL in the docs, and scripts/build-registry.mts all read it;
  * wrangler.jsonc routes the same domain.
  */
-export const SITE_URL = "https://zeroui.catforest.dev";
+export const SITE_URL = "https://zzzui.catforest.dev";
 
-/** Where shadcn finds @zeroui items. */
+/** Where shadcn finds @zzzui items. */
 export const REGISTRY_URL = `${SITE_URL}/r/{name}.json`;

@@ -71,7 +71,7 @@ export default function BlocksPage() {
       <JsonLd data={docGraph("/docs/blocks")} />
       <DocHeader
         title="Blocks"
-        lead="Whole game screens built from zeroUI's components, installed with one command: a title screen, a settings menu, a pause menu, a mission briefing, a character select, a loadout, a leaderboard, a HUD, a community feed, level rewards and a daily schedule."
+        lead="Whole game screens built from zzzUI's components, installed with one command: a title screen, a settings menu, a pause menu, a mission briefing, a character select, a loadout, a leaderboard, a HUD, a community feed, level rewards and a daily schedule."
       />
       <DocSection id="about" title="About blocks">
         <Prose>

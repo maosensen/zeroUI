@@ -11,7 +11,7 @@
  *
  * Motion is held still (reduced motion, no transitions or animations) so a photo is the same each
  * time. A few demos change by themselves (a progress bar on a timer, a calendar that marks today)
- * and are left out. Differences are written as images to $TMPDIR/zeroui-snapshots/.
+ * and are left out. Differences are written as images to $TMPDIR/zzzui-snapshots/.
  */
 import { spawn } from "node:child_process";
 import {
@@ -33,7 +33,7 @@ const args = process.argv.slice(2);
 const MOBILE = args.includes("--mobile");
 const WIDTH = MOBILE ? 375 : 1280;
 const DIR = MOBILE ? "tests/snapshots/375" : "tests/snapshots";
-const DIFFS = join(tmpdir(), "zeroui-snapshots");
+const DIFFS = join(tmpdir(), "zzzui-snapshots");
 /** Demos that move by themselves. */
 const SKIP = new Set(["progress-kinds", "calendar-shift"]);
 /** Share of a demo's pixels that may differ (anti-aliasing) before it counts as changed. */
@@ -57,7 +57,7 @@ async function docsPages(): Promise<string[]> {
 
 mkdirSync(DIR, { recursive: true });
 mkdirSync(DIFFS, { recursive: true });
-const profile = mkdtempSync(join(tmpdir(), "zeroui-snap-"));
+const profile = mkdtempSync(join(tmpdir(), "zzzui-snap-"));
 const chrome = spawn(
   CHROME,
   [

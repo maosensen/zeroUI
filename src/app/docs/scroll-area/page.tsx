@@ -14,7 +14,7 @@ export default function ScrollAreaPage() {
       <JsonLd data={docGraph("/docs/scroll-area")} />
       <DocHeader
         title="Scroll area"
-        lead="A box that scrolls with zeroUI's own bars: a thin track and a slanted thumb that leans like a slab."
+        lead="A box that scrolls with zzzUI's own bars: a thin track and a slanted thumb that leans like a slab."
       />
       <DocSection id="install" title="Install">
         <Install item="scroll-area" />

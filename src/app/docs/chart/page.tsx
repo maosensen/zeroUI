@@ -14,7 +14,7 @@ export default function ChartPage() {
       <JsonLd data={docGraph("/docs/chart")} />
       <DocHeader
         title="Chart"
-        lead="Charts drawn with Recharts in zeroUI's colours: quiet axes and grid, a small panel for the tooltip, slanted blocks for every swatch."
+        lead="Charts drawn with Recharts in zzzUI's colours: quiet axes and grid, a small panel for the tooltip, slanted blocks for every swatch."
       />
       <DocSection id="install" title="Install">
         <Install item="chart" />
@@ -36,7 +36,7 @@ export default function ChartPage() {
           <p>
             Build the chart itself with Recharts' own parts (BarChart,
             LineChart, XAxis…); ChartTooltipContent and ChartLegendContent give
-            its tooltip and legend zeroUI's look.
+            its tooltip and legend zzzUI's look.
           </p>
         </Prose>
       </DocSection>

@@ -36,7 +36,7 @@ export default function LevelRewardsPage() {
           </p>
           <p>
             The rewards are <a href="/docs/inventory">InventorySlots</a> with
-            zeroUI's item icons.
+            zzzUI's item icons.
           </p>
           <p>
             Built from <a href="/docs/reward-track">Reward track</a>,{" "}

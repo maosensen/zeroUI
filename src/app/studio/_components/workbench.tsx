@@ -196,7 +196,7 @@ export function Workbench() {
     <div className="min-h-svh bg-zero-ground bg-(image:--zero-hatch)">
       <header className="sticky top-0 z-zero-sticky flex items-center gap-8 bg-zero-void px-8 py-4">
         <p className="rotate-(--zero-tilt) font-black text-zero-xl italic">
-          zero<span className="text-zero-accent">UI</span>
+          zzz<span className="text-zero-accent">UI</span>
           <span className="ml-3 text-zero-text-3">studio</span>
         </p>
         <div className="ml-auto flex flex-wrap items-center gap-6">

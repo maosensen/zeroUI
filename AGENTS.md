@@ -2,7 +2,7 @@
 
 ## What this project is
 
-**zeroUI** — a public, dark-only component library with a strong game-UI look, built on shadcn
+**zzzUI** — a public, dark-only component library with a strong game-UI look, built on shadcn
 and Base UI and installed from a shadcn registry. One Next app with three faces: `/` the
 showcase, `/docs` the documentation, `/studio` the local-only workbench. The plan, the phases and
 their exit tests, and every dated decision: **[docs/plan.md](docs/plan.md) — read it first.**
@@ -12,7 +12,7 @@ Rules that hold on every change:
 - **Dark only.** There is no light theme; the provider forces `dark`. Never add `dark:` variants
   or a theme toggle.
 - **Base UI underneath** (shadcn style `base-maia`). Do not add Radix.
-- **`src/components/ui/` is shadcn's neutral set, a starting point, not the product.** zeroUI's
+- **`src/components/ui/` is shadcn's neutral set, a starting point, not the product.** zzzUI's
   own components, tokens, motion and icons are what the registry ships; they never import from
   the neutral set once forked.
 - **Rotate only short display lettering.** `tilt` (rotation by `--zero-tilt`) is for lettering
@@ -20,11 +20,15 @@ Rules that hold on every change:
   content (dialog, sheet, page, block titles) stays level: black italic, no rotation.
 - **Foundation first.** Colours, sizes, outlines, the slant, durations and easings come from the
   token and motion modules; a component that needs a value they lack adds it there, never inline.
-- **The look is ours.** Nothing from the game it takes its mood from or its publisher: no logos,
-  fonts, icons, art, screenshots, and no game name in code, copy, package or site. Every glyph and
-  sample string is newly made.
+- **A fan work, and the look is ours.** zzzUI's name tips its hat to Zenless Zone Zero; that is
+  all it takes from it. No logos, fonts, icons, art, screenshots or text from the game or its
+  publisher (HoYoverse / miHoYo), and the game's name appears only in the disclaimer ("fan-made,
+  unofficial, not affiliated with HoYoverse or Zenless Zone Zero"), which stays in the README, the
+  site footer and llms.txt. Every glyph and sample string is newly made. The project stays
+  non-commercial, and the name is never registered as a trademark (decision of 2026-10-26 in
+  docs/plan.md).
 - Dev server on port **4374**, run through the workspace manager:
-  `~/github/catforest/dev start zeroUI` (never a second `pnpm dev`).
+  `~/github/catforest/dev start zzzUI` (never a second `pnpm dev`).
 - Feature ledger: `.roadmap/features.yaml` (yPulse `docs/feature-ledger.md`); finishing a feature
   marks it done in the same commit. `CHANGELOG.md` keeps an `[Unreleased]` section.
 - Workspace rules (commit by default, release only when asked, identity `maosensen`):
@@ -71,7 +75,7 @@ src/
 ├── app/                  # App Router routes, layouts, route handlers
 ├── components/
 │   ├── ui/               # shadcn's neutral set — a starting point, never imported by zero/
-│   ├── zero/             # zeroUI components (registry targets @components/zero/…)
+│   ├── zero/             # zzzUI components (registry targets @components/zero/…)
 │   │   └── icons/        # icon.tsx (createIcon) and one file per icon
 │   ├── providers.tsx     # Root provider stack (QueryClient + Theme)
 │   └── theme-provider.tsx
@@ -85,7 +89,7 @@ src/
 ```
 
 The paths are shadcn's on purpose: on install, shadcn rewrites `@/components/…` and `@/lib/…`
-imports to the host's aliases, so zeroUI files import each other only through
+imports to the host's aliases, so zzzUI files import each other only through
 `@/components/zero/…`, `@/lib/zero/…`, or `./` within a folder. Never `@/lib/utils` (it is swapped
 for the host's plain `cn`) and never a path ending in `/lib/utils`.
 
@@ -103,7 +107,7 @@ shared by the showcase and the docs. Everything written into the showcase is inv
 `/docs` (src/app/docs): one page per component — install commands, live demos, behaviour, a props
 table per part. A demo is its own file in `_demos/`; the page renders it and shows that same file's
 source, so demo and code cannot drift. Code is highlighted on the server (`_lib/highlight.ts`,
-cached with `"use cache"`) in zeroUI's own colours. A new component gets demos, a page, and an
+cached with `"use cache"`) in zzzUI's own colours. A new component gets demos, a page, and an
 entry in `_nav.ts`.
 
 ### Deploy
@@ -117,7 +121,7 @@ is going live — only when the user says so. Details and the first-launch check
 
 Rules: yPulse `docs/seo-geo.md` (the user-level `seo-geo` skill is the way in). `src/lib/seo/` is
 the matrix module, written by yPulse `pnpm matrix:seo --write` — never edit it here.
-zeroUI's own part is `src/seo/`: `site.ts` (every public page with its title and description:
+zzzUI's own part is `src/seo/`: `site.ts` (every public page with its title and description:
 metadata, sitemap, llms.txt and JSON-LD all read it), `graph.ts`, `keywords.ts`. A new public
 page gets an entry there, `metadata = pageMetadata(path)` and a `<JsonLd>`. The share card is
 `public/og.png`, remade from `/studio/og` with `pnpm og:capture`. Gate: `pnpm seo:audit`

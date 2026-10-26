@@ -1,5 +1,5 @@
 /**
- * zeroUI's own SEO / GEO config (yPulse docs/seo-geo.md §3: a site's own things live in `src/seo/`,
+ * zzzUI's own SEO / GEO config (yPulse docs/seo-geo.md §3: a site's own things live in `src/seo/`,
  * the shared module in `src/lib/seo/`). The pages, their titles and descriptions, the share card:
  * each page's metadata, the sitemap, llms.txt and the JSON-LD all read this one list.
  */
@@ -13,7 +13,7 @@ export const OG_IMAGE = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "zeroUI — a dark, game-UI component library for shadcn",
+  alt: "zzzUI — a dark, game-UI component library for shadcn",
 };
 
 /** IndexNow key (public, not a secret): public/<key>.txt holds the same string. */
@@ -21,7 +21,7 @@ export const INDEXNOW_KEY = "aebc74d868d931e341ced9e93a67694f";
 
 export type Page = {
   path: string;
-  /** The page's own title; the docs layout adds " · zeroUI". */
+  /** The page's own title; the docs layout adds " · zzzUI". */
   title: string;
   /** For the home page, a full title that replaces the template. */
   absoluteTitle?: string;
@@ -51,18 +51,18 @@ export type Page = {
 export const PAGES = [
   {
     path: "/",
-    title: "zeroUI",
-    absoluteTitle: "zeroUI — a dark, game-UI component library for shadcn",
+    title: "zzzUI",
+    absoluteTitle: "zzzUI — a dark, game-UI component library for shadcn",
     description:
-      "zeroUI is a dark-only React component library with a game-UI look: slabs cut on a slant, thick outlines and one fluorescent accent. Built on Base UI, installed from a shadcn registry.",
-    crumb: "zeroUI",
+      "zzzUI is a dark-only React component library with a game-UI look: slabs cut on a slant, thick outlines and one fluorescent accent. Built on Base UI, installed from a shadcn registry.",
+    crumb: "zzzUI",
     group: "home",
   },
   {
     path: "/docs",
     title: "Getting started",
     description:
-      "Install zeroUI into a shadcn project: add the @zeroui registry namespace once, then any component, the theme and the icons.",
+      "Install zzzUI into a shadcn project: add the @zzzui registry namespace once, then any component, the theme and the icons.",
     crumb: "Getting started",
     group: "start",
   },
@@ -78,7 +78,7 @@ export const PAGES = [
     path: "/docs/blocks/settings-menu",
     title: "Settings menu",
     description:
-      "A game settings menu block for React: display, audio, controls and gameplay tabs, built from zeroUI's Select, Slider, Switch and Hold button.",
+      "A game settings menu block for React: display, audio, controls and gameplay tabs, built from zzzUI's Select, Slider, Switch and Hold button.",
     crumb: "Settings menu",
     group: "blocks",
   },
@@ -166,7 +166,7 @@ export const PAGES = [
     path: "/examples",
     title: "Examples",
     description:
-      "Example apps built with zeroUI: whole game screens put together from its blocks and components, every part installable from the shadcn registry.",
+      "Example apps built with zzzUI: whole game screens put together from its blocks and components, every part installable from the shadcn registry.",
     crumb: "Examples",
     group: "examples",
   },
@@ -174,7 +174,7 @@ export const PAGES = [
     path: "/examples/board",
     title: "Courier board",
     description:
-      "A game community app built with zeroUI and shadcn: a post board, today's shifts and a rank page with rewards, under tabs paged with Q and E.",
+      "A game community app built with zzzUI and shadcn: a post board, today's shifts and a rank page with rewards, under tabs paged with Q and E.",
     crumb: "Courier board",
     group: "examples",
   },
@@ -182,7 +182,7 @@ export const PAGES = [
     path: "/docs/guides",
     title: "Guides",
     description:
-      "Guides to building game UI in React with zeroUI and shadcn: a settings menu, a health bar with a damage trail, and theming with tokens.",
+      "Guides to building game UI in React with zzzUI and shadcn: a settings menu, a health bar with a damage trail, and theming with tokens.",
     crumb: "Guides",
     group: "guides",
   },
@@ -190,7 +190,7 @@ export const PAGES = [
     path: "/docs/guides/game-settings-menu",
     title: "Build a game settings menu in React",
     description:
-      "How to build a game settings menu in React with shadcn and zeroUI: tabs, one setting a row, apply what changed, hold to restore defaults.",
+      "How to build a game settings menu in React with shadcn and zzzUI: tabs, one setting a row, apply what changed, hold to restore defaults.",
     crumb: "Settings menu",
     group: "guides",
   },
@@ -198,15 +198,15 @@ export const PAGES = [
     path: "/docs/guides/health-bar-damage-trail",
     title: "A health bar that shows the size of a hit",
     description:
-      "How to build a React health bar with a damage trail: the old fill lingers as a pale band, then catches up. With zeroUI's Gauge or from scratch.",
+      "How to build a React health bar with a damage trail: the old fill lingers as a pale band, then catches up. With zzzUI's Gauge or from scratch.",
     crumb: "Health bar trail",
     group: "guides",
   },
   {
     path: "/docs/guides/theme-tokens",
-    title: "Theme zeroUI with its tokens",
+    title: "Theme zzzUI with its tokens",
     description:
-      "How to theme zeroUI: override the slant, outline weights, accent colour and motion timings on :root, and every component follows.",
+      "How to theme zzzUI: override the slant, outline weights, accent colour and motion timings on :root, and every component follows.",
     crumb: "Theming",
     group: "guides",
   },
@@ -734,7 +734,7 @@ export const PAGES = [
     path: "/docs/direction",
     title: "Direction",
     description:
-      "Right-to-left support for zeroUI: Base UI's direction provider, so keys and popups follow the text.",
+      "Right-to-left support for zzzUI: Base UI's direction provider, so keys and popups follow the text.",
     crumb: "Direction",
     group: "foundation",
   },
@@ -862,7 +862,7 @@ export const PAGES = [
     path: "/docs/icons",
     title: "Icons",
     description:
-      "Thirty solid React SVG icons drawn on one grid, their strokes ending on the same slant as zeroUI's slabs.",
+      "Thirty solid React SVG icons drawn on one grid, their strokes ending on the same slant as zzzUI's slabs.",
     crumb: "Icons",
     group: "foundation",
   },
@@ -893,10 +893,10 @@ export function pageMetadata(path: PagePath): Metadata {
     alternates: { canonical: path },
     openGraph: {
       type: "website",
-      siteName: "zeroUI",
+      siteName: "zzzUI",
       locale: "en",
       url: path,
-      title: p.absoluteTitle ?? `${p.title} · zeroUI`,
+      title: p.absoluteTitle ?? `${p.title} · zzzUI`,
       description: p.description,
       images: [OG_IMAGE],
     },

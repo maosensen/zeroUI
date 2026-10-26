@@ -1,6 +1,6 @@
 /**
  * Each page's JSON-LD (yPulse docs/seo-geo.md §4, §5.1). The shared parts are in
- * `src/lib/seo/schema.ts`; this file puts zeroUI's types together.
+ * `src/lib/seo/schema.ts`; this file puts zzzUI's types together.
  *
  * The home page is a product landing page: the library as a `SoftwareApplication` (no `offers`:
  * it costs nothing), created by the brand. Every docs page is a `WebPage` about that same
@@ -34,7 +34,7 @@ function shell() {
     organization(LANG),
     website({
       url: SITE_URL,
-      name: "zeroUI",
+      name: "zzzUI",
       description: home.description,
       inLanguage: LANG,
     }),
@@ -44,7 +44,7 @@ function shell() {
 const library: SoftwareApplication = {
   "@type": "SoftwareApplication",
   "@id": LIBRARY_ID,
-  name: "zeroUI",
+  name: "zzzUI",
   description: home.description,
   url: pageUrl("/"),
   image: `${SITE_URL}${OG_IMAGE.url}`,
@@ -89,7 +89,7 @@ export function docGraph(path: Exclude<PagePath, "/">) {
     webPage({
       siteUrl: SITE_URL,
       url,
-      name: `${p.title} · zeroUI`,
+      name: `${p.title} · zzzUI`,
       description: p.description,
       inLanguage: LANG,
       about: LIBRARY_ID,
@@ -116,7 +116,7 @@ export function exampleGraph(path: "/examples" | "/examples/board") {
     webPage({
       siteUrl: SITE_URL,
       url,
-      name: `${p.title} · zeroUI`,
+      name: `${p.title} · zzzUI`,
       description: p.description,
       inLanguage: LANG,
       about: LIBRARY_ID,
@@ -159,7 +159,7 @@ export function guideGraph(path: Exclude<PagePath, "/">, published: string) {
     webPage({
       siteUrl: SITE_URL,
       url,
-      name: `${p.title} · zeroUI`,
+      name: `${p.title} · zzzUI`,
       description: p.description,
       inLanguage: LANG,
       about: LIBRARY_ID,

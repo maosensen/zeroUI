@@ -42,7 +42,7 @@ export default function InventoryPage() {
             <code>--zero-slot</code>.
           </p>
           <p>
-            The item art in the demo is zeroUI's own item icons: crate, cell,
+            The item art in the demo is zzzUI's own item icons: crate, cell,
             flare, key, chip and kit.
           </p>
         </Prose>

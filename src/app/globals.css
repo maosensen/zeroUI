@@ -50,8 +50,8 @@
 }
 
 :root {
-  /* shadcn's variables, for the neutral set in src/components/ui. zeroUI is dark only, so there
-     is one set, drawn from zeroUI's tokens (src/styles/zero/tokens.css), and no .dark block. */
+  /* shadcn's variables, for the neutral set in src/components/ui. zzzUI is dark only, so there
+     is one set, drawn from zzzUI's tokens (src/styles/zero/tokens.css), and no .dark block. */
   --background: var(--color-zero-ground);
   --foreground: var(--color-zero-text);
   --card: var(--color-zero-surface);

@@ -4,7 +4,7 @@
  * after a deploy; try --dry-run first. The key is in src/seo/site.ts, and public/<key>.txt holds
  * the same string (public, not a secret).
  *
- *   node scripts/seo/indexnow.mjs [--site https://zeroui.catforest.dev] [--dry-run]
+ *   node scripts/seo/indexnow.mjs [--site https://zzzui.catforest.dev] [--dry-run]
  */
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -16,7 +16,7 @@ const { submitIndexNow } = await import(join(ROOT, "src/lib/seo/indexnow.ts"));
 
 const { values } = parseArgs({
   options: {
-    site: { type: "string", default: "https://zeroui.catforest.dev" },
+    site: { type: "string", default: "https://zzzui.catforest.dev" },
     "dry-run": { type: "boolean", default: false },
   },
 });

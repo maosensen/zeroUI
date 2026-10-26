@@ -19,10 +19,11 @@ const section = (group: string) =>
 
 export function GET() {
   const body = llmsTxt({
-    title: "zeroUI",
+    title: "zzzUI",
     summary: home.description,
     details: [
-      `Made by ${IDENTITY.name}. zeroUI is installed the shadcn way: once per project, \`shadcn registry add @zeroui=${REGISTRY_URL}\`, then \`shadcn add @zeroui/<component>\` copies the component into the project, along with its foundation (tokens, motion and the slab shape, written into the project's stylesheet).`,
+      `Made by ${IDENTITY.name}. zzzUI is installed the shadcn way: once per project, \`shadcn registry add @zzzui=${REGISTRY_URL}\`, then \`shadcn add @zzzui/<component>\` copies the component into the project, along with its foundation (tokens, motion and the slab shape, written into the project's stylesheet).`,
+      "Fan-made and unofficial: the name is a tribute to Zenless Zone Zero; zzzUI is not affiliated with HoYoverse or the game and uses none of its logos, fonts, art or text.",
       "Dark only: there is no light theme. Seventy-eight components (forms, overlays, feedback, data display, navigation, disclosure, commands, chat, layout, and game pieces: gauges, inventory, dialogue, a compass, a radial menu), eleven blocks (whole game screens) and thirty icons, each listed below. Requires Tailwind CSS v4 and React 19; built on Base UI, not Radix.",
     ],
     sections: [
@@ -48,7 +49,7 @@ export function GET() {
           {
             title: "Registry index",
             url: `${SITE_URL}/r/registry.json`,
-            note: "Every @zeroui item: font, foundation, theme, icons, components.",
+            note: "Every @zzzui item: font, foundation, theme, icons, components.",
           },
         ],
       },

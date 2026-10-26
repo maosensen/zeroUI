@@ -1,7 +1,7 @@
 /**
  * Accessibility check: opens every page in the sitemap in headless Chrome, runs axe-core on it
  * once it has hydrated, and lists what fails, grouped by rule. Needs the dev server
- * (`~/github/catforest/dev start zeroUI`), or pass another base.
+ * (`~/github/catforest/dev start zzzUI`), or pass another base.
  *
  *   pnpm a11y                                   every page, against http://localhost:4374
  *   pnpm a11y --base http://localhost:4378      against the Workers preview
@@ -50,7 +50,7 @@ async function pages(): Promise<string[]> {
 }
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-const profile = mkdtempSync(join(tmpdir(), "zeroui-a11y-"));
+const profile = mkdtempSync(join(tmpdir(), "zzzui-a11y-"));
 const chrome = spawn(
   CHROME,
   [

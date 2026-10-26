@@ -4,9 +4,9 @@
  * contract against a site and prints what failed, plus one summary line per level.
  *
  *   node scripts/seo/audit.mjs                                    # local dev (:4374)
- *   node scripts/seo/audit.mjs --base http://localhost:4378 --canonical https://zeroui.catforest.dev
+ *   node scripts/seo/audit.mjs --base http://localhost:4378 --canonical https://zzzui.catforest.dev
  *                                                                 # the Workers preview (pnpm cf:preview)
- *   node scripts/seo/audit.mjs --base https://zeroui.catforest.dev  # live
+ *   node scripts/seo/audit.mjs --base https://zzzui.catforest.dev  # live
  *
  * --limit <n> checks only the first n sitemap pages; --all prints passes too; --json prints
  * everything. Exits 1 on any failure, so it can gate a release. The rules are in

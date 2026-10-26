@@ -32,7 +32,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/zero/toggle-group";
 /*
  * A community board: posts of every height packed into columns, a filter by kind, and a post
  * opening in a sheet with its body, its replies, and, for a commission, a way to take it. The
- * covers are posters drawn from zeroUI's own pieces (a token colour, an item icon, a leaning
+ * covers are posters drawn from zzzUI's own pieces (a token colour, an item icon, a leaning
  * word); put your pictures in their place. The posts are made up; feed your own.
  */
 

@@ -1,6 +1,6 @@
 /**
  * Captures the share card (public/og.png) from /studio/og, a 1200 × 630 page drawn with the
- * components themselves. Needs the dev server (`~/github/catforest/dev start zeroUI`).
+ * components themselves. Needs the dev server (`~/github/catforest/dev start zzzUI`).
  *
  *   pnpm og:capture
  *
@@ -18,7 +18,7 @@ const URL_TO_CAPTURE = "http://localhost:4374/studio/og";
 const PORT = 9333;
 const OUT = "public/og.png";
 
-const profile = mkdtempSync(join(tmpdir(), "zeroui-og-"));
+const profile = mkdtempSync(join(tmpdir(), "zzzui-og-"));
 const chrome = spawn(
   CHROME,
   [

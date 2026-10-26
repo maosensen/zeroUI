@@ -12,7 +12,7 @@ import { cn } from "@/lib/zero/cn";
 const Collapsible = CollapsiblePrimitive.Root;
 const CollapsibleTrigger = CollapsiblePrimitive.Trigger;
 
-/** The height a Base UI panel unfolds to, on zeroUI's reveal and dismiss timings. */
+/** The height a Base UI panel unfolds to, on zzzUI's reveal and dismiss timings. */
 const unfold = cn(
   "overflow-hidden transition-[height] duration-(--zero-dur-base) ease-(--zero-ease-out)",
   "data-starting-style:h-0 data-ending-style:h-0 data-ending-style:duration-(--zero-dur-fast) data-ending-style:ease-(--zero-ease-in)",

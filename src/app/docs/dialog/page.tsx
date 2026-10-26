@@ -32,7 +32,7 @@ export default function DialogPage() {
             Under reduced motion it only fades.
           </p>
           <p>
-            Give the trigger and the closing buttons zeroUI Buttons through{" "}
+            Give the trigger and the closing buttons zzzUI Buttons through{" "}
             <code>render</code>, as in the example. The corner close button is
             there by default; <code>showClose=&#123;false&#125;</code> removes
             it.

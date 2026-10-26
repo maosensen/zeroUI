@@ -30,7 +30,7 @@ export default function RarityPage() {
             The colours are tokens, <code>--color-zero-rarity-common</code> to{" "}
             <code>--color-zero-rarity-legendary</code>, kept clear of the
             accent, the focus yellow and danger, and readable as text on every
-            ground zeroUI uses.
+            ground zzzUI uses.
           </p>
           <p>
             Three components take a <code>rarity</code>: Badge fills with the

@@ -56,7 +56,7 @@ export default function HealthBarGuide() {
       />
       <DocHeader
         title="A health bar that shows the size of a hit"
-        lead="When a health bar drops, leave the old fill behind as a pale trail for half a second before it catches up: the player reads the size of the hit from the trail. Here is how that works, with zeroUI's Gauge or with two divs and a transition delay."
+        lead="When a health bar drops, leave the old fill behind as a pale trail for half a second before it catches up: the player reads the size of the hit from the trail. Here is how that works, with zzzUI's Gauge or with two divs and a transition delay."
       />
 
       <DocSection id="try" title="Try it">
@@ -76,7 +76,7 @@ export default function HealthBarGuide() {
       <DocSection id="gauge" title="With the Gauge component">
         <Prose>
           <p>
-            zeroUI's <Link href="/docs/gauge">Gauge</Link> does all of this. It
+            zzzUI's <Link href="/docs/gauge">Gauge</Link> does all of this. It
             is a Base UI Meter, so screen readers hear the value and its range,
             named by its label. <code>low</code> is the share under which it
             turns red; <code>segments</code> splits it into cells for shields or
@@ -112,7 +112,7 @@ export default function HealthBarGuide() {
           <p>
             Around half a second reads well: long enough to see the size of the
             hit, short enough that the bar is honest again before the next one.
-            zeroUI keeps it as a token, <code>--zero-dur-hold</code> (480 ms),
+            zzzUI keeps it as a token, <code>--zero-dur-hold</code> (480 ms),
             and moves both layers on its slow timing (420 ms). Under reduced
             motion the wait drops to zero, and so does the breathing of a low
             bar: the number is still right, nothing lingers.

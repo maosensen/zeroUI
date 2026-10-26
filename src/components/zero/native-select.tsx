@@ -6,9 +6,9 @@ import { inputVariants } from "@/components/zero/input";
 import { cn } from "@/lib/zero/cn";
 
 /*
- * The browser's own <select> in Input's well, with zeroUI's chevron: for forms that must work
+ * The browser's own <select> in Input's well, with zzzUI's chevron: for forms that must work
  * without JavaScript, or where the phone's own picker is wanted. Its list is drawn by the browser,
- * so it does not take zeroUI's look; use Select for that. className styles the well. Inside a
+ * so it does not take zzzUI's look; use Select for that. className styles the well. Inside a
  * Field it is the Field's control, so FieldLabel names it.
  */
 
