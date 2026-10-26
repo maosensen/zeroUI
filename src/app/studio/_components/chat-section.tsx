@@ -1,11 +1,11 @@
-import AttachmentFiles from "@/app/docs/_demos/attachment-files";
-import BubbleVariants from "@/app/docs/_demos/bubble-variants";
-import CodeBlockDiff from "@/app/docs/_demos/code-block-diff";
-import MarkerKinds from "@/app/docs/_demos/marker-kinds";
-import MessageScrollerChat from "@/app/docs/_demos/message-scroller-chat";
-import MessageTurns from "@/app/docs/_demos/message-turns";
-import QuestionnaireDispatch from "@/app/docs/_demos/questionnaire-dispatch";
-import TraceSteps from "@/app/docs/_demos/trace-steps";
+import AttachmentFiles from "@/app/[lang]/docs/_demos/attachment-files";
+import BubbleVariants from "@/app/[lang]/docs/_demos/bubble-variants";
+import CodeBlockDiff from "@/app/[lang]/docs/_demos/code-block-diff";
+import MarkerKinds from "@/app/[lang]/docs/_demos/marker-kinds";
+import MessageScrollerChat from "@/app/[lang]/docs/_demos/message-scroller-chat";
+import MessageTurns from "@/app/[lang]/docs/_demos/message-turns";
+import QuestionnaireDispatch from "@/app/[lang]/docs/_demos/questionnaire-dispatch";
+import TraceSteps from "@/app/[lang]/docs/_demos/trace-steps";
 
 function Row({
   label,

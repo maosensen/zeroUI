@@ -4,6 +4,14 @@
  * each page's metadata, the sitemap, llms.txt and the JSON-LD all read this one list.
  */
 import type { Metadata } from "next";
+import {
+  HTML_LANG,
+  isLang,
+  LANGS,
+  type Lang,
+  localize,
+  OG_LOCALE,
+} from "@/lib/i18n/locale";
 import { SITE_URL } from "@/lib/site";
 
 export { SITE_URL };
@@ -18,6 +26,20 @@ export const OG_IMAGE = {
 
 /** IndexNow key (public, not a secret): public/<key>.txt holds the same string. */
 export const INDEXNOW_KEY = "aebc74d868d931e341ced9e93a67694f";
+
+/** The site's one-line description, the layout's fallback for a page without its own. */
+export const SITE_DESCRIPTION: Record<Lang, string> = {
+  en: "A dark-only component library built on shadcn: its own tokens, motion and icons, installed through a shadcn registry.",
+  zh: "基于 shadcn 的暗色组件库，自带 token、动效和图标，通过 shadcn registry 安装。",
+};
+
+/** What a page says in a language: its title, description and breadcrumb name. */
+type PageCopy = {
+  title: string;
+  absoluteTitle?: string;
+  description: string;
+  crumb: string;
+};
 
 export type Page = {
   path: string;
@@ -46,6 +68,8 @@ export type Page = {
     | "chat"
     | "game"
     | "foundation";
+  /** The same in Chinese (written, not translated: the i18n-copy skill). */
+  zh?: PageCopy;
 };
 
 export const PAGES = [
@@ -925,30 +949,56 @@ export function page(path: PagePath): Page {
   return found;
 }
 
-/** The absolute address of a page (the root keeps its slash, as the sitemap writes it). */
-export const pageUrl = (path: string) =>
-  path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}`;
+/** A page's copy in a language; English is the entry itself. */
+export function pageCopy(p: Page, lang: Lang): PageCopy {
+  return lang === "zh" && p.zh ? p.zh : p;
+}
+
+/** The absolute address of a page in a language (the root keeps its slash, as the sitemap writes it). */
+export const pageUrl = (path: string, lang: Lang = "en") => {
+  const local = localize(lang, path);
+  return local === "/" ? `${SITE_URL}/` : `${SITE_URL}${local}`;
+};
+
+/** Each language's address of a page, for hreflang: both languages, English as the default. */
+export function pageAlternates(path: string): Record<string, string> {
+  return {
+    ...Object.fromEntries(
+      LANGS.map((lang) => [HTML_LANG[lang], localize(lang, path)]),
+    ),
+    "x-default": path,
+  };
+}
 
 /**
- * A page's metadata: title, description, canonical, and the share card. A page that sets
- * openGraph replaces the layout's whole openGraph (Next merges shallowly), so the card is always
- * carried here rather than left to the layout.
+ * A page's metadata in a language: title, description, its own canonical, hreflang to both
+ * languages, and the share card. A page that sets openGraph replaces the layout's whole
+ * openGraph (Next merges shallowly), so the card is always carried here.
  */
-export function pageMetadata(path: PagePath): Metadata {
-  const p: Page = page(path);
+export function pageMetadata(path: PagePath, lang: Lang = "en"): Metadata {
+  const c = pageCopy(page(path), lang);
+  const url = localize(lang, path);
   return {
-    title: p.absoluteTitle ? { absolute: p.absoluteTitle } : p.title,
-    description: p.description,
-    alternates: { canonical: path },
+    title: c.absoluteTitle ? { absolute: c.absoluteTitle } : c.title,
+    description: c.description,
+    alternates: { canonical: url, languages: pageAlternates(path) },
     openGraph: {
       type: "website",
       siteName: "zzzUI",
-      locale: "en",
-      url: path,
-      title: p.absoluteTitle ?? `${p.title} · zzzUI`,
-      description: p.description,
+      locale: OG_LOCALE[lang],
+      url,
+      title: c.absoluteTitle ?? `${c.title} · zzzUI`,
+      description: c.description,
       images: [OG_IMAGE],
     },
     twitter: { card: "summary_large_image", images: [OG_IMAGE.url] },
   };
 }
+
+/** A page's generateMetadata: `export const generateMetadata = metadataFor("/docs/button")`. */
+export const metadataFor =
+  (path: PagePath) =>
+  async ({ params }: { params: Promise<{ lang: string }> }) => {
+    const { lang } = await params;
+    return pageMetadata(path, isLang(lang) ? lang : "en");
+  };

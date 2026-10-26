@@ -1,8 +1,8 @@
-import AspectRatioMap from "@/app/docs/_demos/aspect-ratio-map";
-import EmptyBoard from "@/app/docs/_demos/empty-board";
-import ItemDrivers from "@/app/docs/_demos/item-drivers";
-import ScrollAreaLog from "@/app/docs/_demos/scroll-area-log";
-import SpinnerBasic from "@/app/docs/_demos/spinner-basic";
+import AspectRatioMap from "@/app/[lang]/docs/_demos/aspect-ratio-map";
+import EmptyBoard from "@/app/[lang]/docs/_demos/empty-board";
+import ItemDrivers from "@/app/[lang]/docs/_demos/item-drivers";
+import ScrollAreaLog from "@/app/[lang]/docs/_demos/scroll-area-log";
+import SpinnerBasic from "@/app/[lang]/docs/_demos/spinner-basic";
 
 function Row({
   label,

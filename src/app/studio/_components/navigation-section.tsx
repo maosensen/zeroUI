@@ -1,6 +1,6 @@
-import BreadcrumbBasic from "@/app/docs/_demos/breadcrumb-basic";
-import PaginationBasic from "@/app/docs/_demos/pagination-basic";
-import SidebarApp from "@/app/docs/_demos/sidebar-app";
+import BreadcrumbBasic from "@/app/[lang]/docs/_demos/breadcrumb-basic";
+import PaginationBasic from "@/app/[lang]/docs/_demos/pagination-basic";
+import SidebarApp from "@/app/[lang]/docs/_demos/sidebar-app";
 
 function Row({
   label,

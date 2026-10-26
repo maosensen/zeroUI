@@ -1,8 +1,8 @@
-import AccordionFaq from "@/app/docs/_demos/accordion-faq";
-import CollapsibleBasic from "@/app/docs/_demos/collapsible-basic";
-import SeparatorBasic from "@/app/docs/_demos/separator-basic";
-import ToggleBasic from "@/app/docs/_demos/toggle-basic";
-import ToggleGroupDistricts from "@/app/docs/_demos/toggle-group-districts";
+import AccordionFaq from "@/app/[lang]/docs/_demos/accordion-faq";
+import CollapsibleBasic from "@/app/[lang]/docs/_demos/collapsible-basic";
+import SeparatorBasic from "@/app/[lang]/docs/_demos/separator-basic";
+import ToggleBasic from "@/app/[lang]/docs/_demos/toggle-basic";
+import ToggleGroupDistricts from "@/app/[lang]/docs/_demos/toggle-group-districts";
 
 function Row({
   label,

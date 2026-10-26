@@ -1,0 +1,67 @@
+import { enter, type LangProps } from "@/lib/i18n/server";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { docGraph } from "@/seo/graph";
+import { metadataFor } from "@/seo/site";
+import { Demo } from "../_components/demo";
+import { DocHeader, DocSection, PropsTable, Prose } from "../_components/doc";
+import { Install } from "../_components/install";
+import BadgeVariants from "../_demos/badge-variants";
+
+export const generateMetadata = metadataFor("/docs/badge");
+
+export default async function BadgePage({ params }: LangProps) {
+  await enter(params);
+  return (
+    <>
+      <JsonLd data={docGraph("/docs/badge")} />
+      <DocHeader
+        title="Badge"
+        lead="A short label stuck on something: a small slab cut on both sides, in small leaning capitals."
+      />
+      <DocSection id="install">
+        <Install item="badge" />
+      </DocSection>
+      <DocSection id="examples">
+        <Demo file="badge-variants" title="Four variants and an icon">
+          <BadgeVariants />
+        </Demo>
+      </DocSection>
+      <DocSection id="behaviour">
+        <Prose>
+          <p>
+            The accent for what matters, the raised grey for the ordinary, a
+            black well with a quiet outline for the quiet, red for danger. An
+            icon goes before the word.
+          </p>
+          <p>
+            <code>render</code> turns it into a link or any other element; as a
+            link it lightens on hover and takes the focus frame.
+          </p>
+        </Prose>
+      </DocSection>
+      <DocSection id="props">
+        <PropsTable
+          part="Badge"
+          rows={[
+            {
+              name: "rarity",
+              type: '"common" | "uncommon" | "rare" | "epic" | "legendary"',
+              description: "Colours it by tier (see Rarity).",
+            },
+            {
+              name: "variant",
+              type: '"default" | "secondary" | "outline" | "danger"',
+              default: '"default"',
+              description: "Its fill.",
+            },
+            {
+              name: "render",
+              type: "ReactElement",
+              description: "The element to render as, such as a link.",
+            },
+          ]}
+        />
+      </DocSection>
+    </>
+  );
+}

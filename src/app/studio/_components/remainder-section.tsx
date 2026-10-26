@@ -1,7 +1,7 @@
-import ComboboxDistricts from "@/app/docs/_demos/combobox-districts";
-import FormHook from "@/app/docs/_demos/form-hook";
-import FormJob from "@/app/docs/_demos/form-job";
-import SidebarVariants from "@/app/docs/_demos/sidebar-variants";
+import ComboboxDistricts from "@/app/[lang]/docs/_demos/combobox-districts";
+import FormHook from "@/app/[lang]/docs/_demos/form-hook";
+import FormJob from "@/app/[lang]/docs/_demos/form-job";
+import SidebarVariants from "@/app/[lang]/docs/_demos/sidebar-variants";
 
 function Row({
   label,

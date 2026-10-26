@@ -7,6 +7,8 @@
  * library, with its breadcrumb trail.
  */
 import type { Article, SoftwareApplication } from "schema-dts";
+import { HTML_LANG, LANGS, type Lang } from "@/lib/i18n/locale";
+import { getLang } from "@/lib/i18n/server";
 import { ORG_ID } from "@/lib/seo/identity";
 import {
   breadcrumbs,
@@ -21,48 +23,64 @@ import {
   PAGES,
   type PagePath,
   page,
+  pageCopy,
   pageUrl,
   SITE_URL,
 } from "./site";
 
-const LANG = "en";
 const LIBRARY_ID = `${SITE_URL}/#library`;
-const home = page("/");
+
+/** The page being rendered: its language, and a page's copy and address in it. */
+function here() {
+  const lang: Lang = getLang();
+  return {
+    lang,
+    tag: HTML_LANG[lang],
+    copy: (path: PagePath) => pageCopy(page(path), lang),
+    url: (path: string) => pageUrl(path, lang),
+  };
+}
 
 function shell() {
+  const h = here();
   return [
-    organization(LANG),
+    organization(h.tag),
     website({
       url: SITE_URL,
       name: "zzzUI",
-      description: home.description,
-      inLanguage: LANG,
+      description: h.copy("/").description,
+      inLanguage: h.tag,
     }),
   ];
 }
 
-const library: SoftwareApplication = {
-  "@type": "SoftwareApplication",
-  "@id": LIBRARY_ID,
-  name: "zzzUI",
-  description: home.description,
-  url: pageUrl("/"),
-  image: `${SITE_URL}${OG_IMAGE.url}`,
-  applicationCategory: "DeveloperApplication",
-  operatingSystem: "Web",
-  creator: ref(ORG_ID),
-};
+function library(): SoftwareApplication {
+  const h = here();
+  return {
+    "@type": "SoftwareApplication",
+    "@id": LIBRARY_ID,
+    name: "zzzUI",
+    description: h.copy("/").description,
+    url: h.url("/"),
+    image: `${SITE_URL}${OG_IMAGE.url}`,
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web",
+    creator: ref(ORG_ID),
+  };
+}
 
 export function homeGraph() {
+  const h = here();
+  const home = h.copy("/");
   return graph([
     ...shell(),
-    library,
+    library(),
     webPage({
       siteUrl: SITE_URL,
-      url: pageUrl("/"),
+      url: h.url("/"),
       name: home.absoluteTitle ?? home.title,
       description: home.description,
-      inLanguage: LANG,
+      inLanguage: h.tag,
       about: LIBRARY_ID,
       image: `${SITE_URL}${OG_IMAGE.url}`,
     }),
@@ -70,28 +88,29 @@ export function homeGraph() {
 }
 
 export function docGraph(path: Exclude<PagePath, "/">) {
-  const p = page(path);
-  const url = pageUrl(path);
+  const h = here();
+  const p = h.copy(path);
+  const url = h.url(path);
   const trail = [
-    { name: home.crumb, url: pageUrl("/") },
+    { name: h.copy("/").crumb, url: h.url("/") },
     ...(path === "/docs"
       ? []
-      : [{ name: page("/docs").crumb, url: pageUrl("/docs") }]),
+      : [{ name: h.copy("/docs").crumb, url: h.url("/docs") }]),
     // a block sits under the blocks overview
     ...(path.startsWith("/docs/blocks/")
-      ? [{ name: page("/docs/blocks").crumb, url: pageUrl("/docs/blocks") }]
+      ? [{ name: h.copy("/docs/blocks").crumb, url: h.url("/docs/blocks") }]
       : []),
     { name: p.crumb, url },
   ];
   return graph([
     ...shell(),
-    library,
+    library(),
     webPage({
       siteUrl: SITE_URL,
       url,
       name: `${p.title} · zzzUI`,
       description: p.description,
-      inLanguage: LANG,
+      inLanguage: h.tag,
       about: LIBRARY_ID,
       breadcrumb: true,
     }),
@@ -107,24 +126,25 @@ export function exampleGraph(
     | "/examples/signal-board"
     | "/examples/ops-console",
 ) {
-  const p = page(path);
-  const url = pageUrl(path);
+  const h = here();
+  const p = h.copy(path);
+  const url = h.url(path);
   const trail = [
-    { name: home.crumb, url: pageUrl("/") },
+    { name: h.copy("/").crumb, url: h.url("/") },
     ...(path === "/examples"
       ? []
-      : [{ name: page("/examples").crumb, url: pageUrl("/examples") }]),
+      : [{ name: h.copy("/examples").crumb, url: h.url("/examples") }]),
     { name: p.crumb, url },
   ];
   return graph([
     ...shell(),
-    library,
+    library(),
     webPage({
       siteUrl: SITE_URL,
       url,
       name: `${p.title} · zzzUI`,
       description: p.description,
-      inLanguage: LANG,
+      inLanguage: h.tag,
       about: LIBRARY_ID,
       breadcrumb: true,
     }),
@@ -135,17 +155,22 @@ export function exampleGraph(
 /** Every page, for the sitemap and llms.txt. */
 export const publicPaths = () => PAGES.map((p) => p.path);
 
+/** Every page in every language, for the sitemap. */
+export const publicUrls = () =>
+  PAGES.flatMap((p) => LANGS.map((lang) => ({ path: p.path, lang })));
+
 /** A guide: a docs page that is also an `Article` by the brand, about the library. */
 export function guideGraph(path: Exclude<PagePath, "/">, published: string) {
-  const p = page(path);
-  const url = pageUrl(path);
+  const h = here();
+  const p = h.copy(path);
+  const url = h.url(path);
   const article: Article = {
     "@type": "Article",
     "@id": `${url}#article`,
     headline: p.title,
     description: p.description,
     url,
-    inLanguage: LANG,
+    inLanguage: h.tag,
     datePublished: published,
     author: ref(ORG_ID),
     publisher: ref(ORG_ID),
@@ -154,20 +179,20 @@ export function guideGraph(path: Exclude<PagePath, "/">, published: string) {
     image: `${SITE_URL}${OG_IMAGE.url}`,
   };
   const trail = [
-    { name: home.crumb, url: pageUrl("/") },
-    { name: page("/docs").crumb, url: pageUrl("/docs") },
-    { name: page("/docs/guides").crumb, url: pageUrl("/docs/guides") },
+    { name: h.copy("/").crumb, url: h.url("/") },
+    { name: h.copy("/docs").crumb, url: h.url("/docs") },
+    { name: h.copy("/docs/guides").crumb, url: h.url("/docs/guides") },
     { name: p.crumb, url },
   ];
   return graph([
     ...shell(),
-    library,
+    library(),
     webPage({
       siteUrl: SITE_URL,
       url,
       name: `${p.title} · zzzUI`,
       description: p.description,
-      inLanguage: LANG,
+      inLanguage: h.tag,
       about: LIBRARY_ID,
       breadcrumb: true,
     }),

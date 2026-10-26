@@ -1,8 +1,8 @@
-import ComboboxDistrict from "@/app/docs/_demos/combobox-district";
-import CommandPalette from "@/app/docs/_demos/command-palette";
-import ContextMenuJob from "@/app/docs/_demos/context-menu-job";
-import HoverCardDriver from "@/app/docs/_demos/hover-card-driver";
-import MenubarDispatch from "@/app/docs/_demos/menubar-dispatch";
+import ComboboxDistrict from "@/app/[lang]/docs/_demos/combobox-district";
+import CommandPalette from "@/app/[lang]/docs/_demos/command-palette";
+import ContextMenuJob from "@/app/[lang]/docs/_demos/context-menu-job";
+import HoverCardDriver from "@/app/[lang]/docs/_demos/hover-card-driver";
+import MenubarDispatch from "@/app/[lang]/docs/_demos/menubar-dispatch";
 
 function Row({
   label,

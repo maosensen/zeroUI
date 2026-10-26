@@ -1,6 +1,6 @@
-import AlertDialogAbandon from "@/app/docs/_demos/alert-dialog-abandon";
-import DrawerRoute from "@/app/docs/_demos/drawer-route";
-import NavigationMenuSite from "@/app/docs/_demos/navigation-menu-site";
+import AlertDialogAbandon from "@/app/[lang]/docs/_demos/alert-dialog-abandon";
+import DrawerRoute from "@/app/[lang]/docs/_demos/drawer-route";
+import NavigationMenuSite from "@/app/[lang]/docs/_demos/navigation-menu-site";
 
 function Row({
   label,

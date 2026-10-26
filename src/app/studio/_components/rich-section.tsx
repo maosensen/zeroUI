@@ -1,7 +1,7 @@
-import CalendarShift from "@/app/docs/_demos/calendar-shift";
-import CarouselCrates from "@/app/docs/_demos/carousel-crates";
-import ChartWeek from "@/app/docs/_demos/chart-week";
-import ResizablePanes from "@/app/docs/_demos/resizable-panes";
+import CalendarShift from "@/app/[lang]/docs/_demos/calendar-shift";
+import CarouselCrates from "@/app/[lang]/docs/_demos/carousel-crates";
+import ChartWeek from "@/app/[lang]/docs/_demos/chart-week";
+import ResizablePanes from "@/app/[lang]/docs/_demos/resizable-panes";
 
 function Row({
   label,

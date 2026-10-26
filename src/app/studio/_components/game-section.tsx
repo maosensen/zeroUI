@@ -1,18 +1,18 @@
-import CompassHeading from "@/app/docs/_demos/compass-heading";
-import CounterCredits from "@/app/docs/_demos/counter-credits";
-import DialogueTalk from "@/app/docs/_demos/dialogue-talk";
-import FeedEvents from "@/app/docs/_demos/feed-events";
-import FloatingTextHits from "@/app/docs/_demos/floating-text-hits";
-import GaugeHit from "@/app/docs/_demos/gauge-hit";
-import GaugeKinds from "@/app/docs/_demos/gauge-kinds";
-import HoldButtonScrap from "@/app/docs/_demos/hold-button-scrap";
-import InventoryHold from "@/app/docs/_demos/inventory-hold";
-import ObjectivesShift from "@/app/docs/_demos/objectives-shift";
-import PostCardFeed from "@/app/docs/_demos/post-card-feed";
-import ProfileChipBasic from "@/app/docs/_demos/profile-chip-basic";
-import RadialMenuQuick from "@/app/docs/_demos/radial-menu-quick";
-import RewardTrackLevels from "@/app/docs/_demos/reward-track-levels";
-import StatsCompare from "@/app/docs/_demos/stats-compare";
+import CompassHeading from "@/app/[lang]/docs/_demos/compass-heading";
+import CounterCredits from "@/app/[lang]/docs/_demos/counter-credits";
+import DialogueTalk from "@/app/[lang]/docs/_demos/dialogue-talk";
+import FeedEvents from "@/app/[lang]/docs/_demos/feed-events";
+import FloatingTextHits from "@/app/[lang]/docs/_demos/floating-text-hits";
+import GaugeHit from "@/app/[lang]/docs/_demos/gauge-hit";
+import GaugeKinds from "@/app/[lang]/docs/_demos/gauge-kinds";
+import HoldButtonScrap from "@/app/[lang]/docs/_demos/hold-button-scrap";
+import InventoryHold from "@/app/[lang]/docs/_demos/inventory-hold";
+import ObjectivesShift from "@/app/[lang]/docs/_demos/objectives-shift";
+import PostCardFeed from "@/app/[lang]/docs/_demos/post-card-feed";
+import ProfileChipBasic from "@/app/[lang]/docs/_demos/profile-chip-basic";
+import RadialMenuQuick from "@/app/[lang]/docs/_demos/radial-menu-quick";
+import RewardTrackLevels from "@/app/[lang]/docs/_demos/reward-track-levels";
+import StatsCompare from "@/app/[lang]/docs/_demos/stats-compare";
 
 function Row({
   label,

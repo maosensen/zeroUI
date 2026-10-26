@@ -1,9 +1,9 @@
-import ButtonGroupActions from "@/app/docs/_demos/button-group-actions";
-import InputGroupReward from "@/app/docs/_demos/input-group-reward";
-import InputOTPCode from "@/app/docs/_demos/input-otp-code";
-import KbdShortcuts from "@/app/docs/_demos/kbd-shortcuts";
-import LabelBasic from "@/app/docs/_demos/label-basic";
-import NativeSelectDistrict from "@/app/docs/_demos/native-select-district";
+import ButtonGroupActions from "@/app/[lang]/docs/_demos/button-group-actions";
+import InputGroupReward from "@/app/[lang]/docs/_demos/input-group-reward";
+import InputOTPCode from "@/app/[lang]/docs/_demos/input-otp-code";
+import KbdShortcuts from "@/app/[lang]/docs/_demos/kbd-shortcuts";
+import LabelBasic from "@/app/[lang]/docs/_demos/label-basic";
+import NativeSelectDistrict from "@/app/[lang]/docs/_demos/native-select-district";
 
 function Row({
   label,
