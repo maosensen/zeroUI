@@ -555,6 +555,20 @@ the palette (it had been held to hues that mean nothing else) and to allow a col
   the accent from CSS, so it is right from the first paint. The site header uses the picker at
   every width; on a phone it drops its chevron to fit.
 
+### Motion on the first screen (2026-10-26)
+
+The author found the home page still. Its first screen now has the hatching drifting sideways, as
+a game's waiting screen keeps moving; only there, since a texture moving under text to be read
+tires the eye.
+
+- **Drift, in the foundation.** `animate-zero-drift` slides a layer left by one hatch period
+  measured along a row (the 6px pitch × √2) and starts again, so the loop has no seam; it moves by
+  transform, so nothing is repainted. About 33 px a second. The layer must be one
+  `--zero-drift-step` wider than its box. Still under reduced motion.
+- **Settling.** The home page's hatching is two layers: the drifting one over the first screen,
+  fading out downward, and the still one fading in over the same stretch, so the drift dies away
+  where the content begins and the two never stack.
+
 ## The look is ours
 
 (Since 2026-10-26 the library is zzzUI, named in tribute to the game; see that decision. What

@@ -767,6 +767,12 @@ features:
     status: done
     completedAt: 2026-10-26
     note: '作者 2026-10-26 定:放开配色,十二个预设(lime、cyan、magenta 之外加 amber、mint、sky、violet、mono,随后作者又要一排:yellow #ffdc43(作者指定)、leaf、iris、orchid),红(危险)仍不用;黄与焦点框的黄接近,与 lime 同理靠焦点框里的墨黑间隙区分;靠近稀有度色相的几个,文档写明显示稀有度的界面优先用 lime、cyan、magenta、leaf、mono。墨黑字在每个预设上都 ≥7:1。悬停与按下的深浅改由地基里一条零特异度的 :where([data-zero-accent]) 规则从颜色本身混出,预设只写颜色(lime 保留手调的两档),于是自定义色只要 data-zero-accent="custom" 加两个内联变量。也允许自选颜色:不足 7:1 的拒绝并说明比值。AccentSwitch 改用共用的 useAccent 钩子,加 accents 属性;新的 AccentPicker 是一个色块按钮,弹出十二个预设的 4×3 网格与「Your own」(取色器与十六进制输入,礼貌播报的说明行);AccentScript 首帧前也能还原自选色。站点顶栏与两个示例改用取色器,手机上只留色块。'
+  - id: hatch-drift
+    title: 斜线纹理流动(drift)与首页首屏的动感
+    area: 地基
+    status: done
+    completedAt: 2026-10-26
+    note: '作者 2026-10-26 提出首页缺乏动感,定:只让首页第一屏的斜线匀速流动,做成地基里的动画,减少动态时停住。motion.css 新增 animate-zero-drift:用 translate 平移、不重绘,每次正好一个纹理周期(6px 节距 × √2 ≈ 8.485px,线是 45°),循环无接缝,约每秒 33px;图层要比所在盒子宽一个 --zero-drift-step。首页:第一屏一层流动的斜线向下渐隐,下面静止的斜线在同一段渐显,滚到内容处自然停下;原来通铺的静止斜线拆成这两层。'
   - id: rename-zzzui
     title: 改名 zzzUI(品牌、命名空间、域名)
     area: 站点与文档

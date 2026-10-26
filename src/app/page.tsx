@@ -65,8 +65,21 @@ const blocks = [
 
 export default function Home() {
   return (
-    <div className="relative min-h-svh overflow-x-clip bg-zero-ground bg-(image:--zero-hatch)">
+    <div className="relative min-h-svh overflow-x-clip bg-zero-ground">
       <JsonLd data={homeGraph()} />
+
+      {/* the hatching: drifting on the first screen, then fading into the still hatching below,
+          so it settles where the content to be read begins */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-svh overflow-hidden [mask-image:linear-gradient(to_bottom,black_65%,transparent)]"
+      >
+        <div className="absolute inset-y-0 left-0 right-[calc(-1*var(--zero-drift-step))] animate-zero-drift bg-(image:--zero-hatch) motion-reduce:animate-none" />
+      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-[65svh] bottom-0 bg-(image:--zero-hatch) [mask-image:linear-gradient(to_bottom,transparent,black_35svh)]"
+      />
       <SiteHeader
         end={
           <Button size="sm" nativeButton={false} render={<Link href="/docs" />}>

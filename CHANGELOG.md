@@ -18,6 +18,11 @@ All notable changes to zzzUI are documented here. The format is based on
   or hex). A colour too dark for ink text is refused, with its ratio. It keeps
   and remembers the accent as the Accent switch does; the site's header now has
   one at every width.
+- **Drift** — `animate-zero-drift` carries the hatching sideways at an even
+  pace, by transform (no repaint), one hatch period at a time so the loop has no
+  seam; put it on a layer one `--zero-drift-step` wider than its box. The home
+  page's first screen drifts and settles into still hatching where the content
+  begins; under reduced motion it does not move.
 
 ### Changed
 

@@ -107,7 +107,8 @@
   --zero-tilt: -6deg; /* big display lettering is rotated, not just italic */
 
   /* ── Texture ─────────────────────────────────────────────────────────
-   * A fine diagonal hatching laid over dark fills, running with the slant. */
+   * A fine diagonal hatching laid over dark fills, running with the slant. Its pitch (6px) is
+   * also in motion.css's --zero-drift-step: change one, change the other. */
   --zero-hatch: repeating-linear-gradient(
     135deg,
     rgb(255 255 255 / 0.025) 0 2px,

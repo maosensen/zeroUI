@@ -120,6 +120,30 @@
 }
 
 /*
+ * The drift: the hatching carried sideways at an even pace, for ever, under a screen that is
+ * waiting (a title, a showcase's first screen). It moves by transform, never by repainting: put
+ * the hatch on a layer one step wider than its box (right: calc(-1 * var(--zero-drift-step))) and
+ * the animation slides it left by that step and starts again. The step is one period of the
+ * hatch measured along a row, its 6px pitch × √2 (the lines run at 45°), so every start lands
+ * where the last pass ended and the loop has no seam. About 33 px a second: felt at the edge of
+ * the eye, never read. Still under reduced motion (motion-reduce:animate-none).
+ */
+:root {
+  --zero-drift-step: 8.4853px;
+  --zero-drift-dur: 260ms;
+}
+
+@theme {
+  --animate-zero-drift: zero-drift var(--zero-drift-dur) linear infinite;
+
+  @keyframes zero-drift {
+    to {
+      translate: calc(-1 * var(--zero-drift-step)) 0;
+    }
+  }
+}
+
+/*
  * The pulse: something running low breathes, its opacity dipping and coming back, one loop a
  * breath, for as long as it stays low (a gauge under its `low` mark). Still under reduced motion.
  */
