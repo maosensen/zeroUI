@@ -79,6 +79,8 @@ export const docsNav = [
       { href: "/docs/badge", title: "Badge" },
       { href: "/docs/avatar", title: "Avatar" },
       { href: "/docs/chart", title: "Chart" },
+      { href: "/docs/sparkline", title: "Sparkline" },
+      { href: "/docs/ticker", title: "Ticker" },
       { href: "/docs/carousel", title: "Carousel" },
     ],
   },

@@ -104,6 +104,22 @@
 }
 
 /*
+ * The ticker: a band of items carried right to left at an even pace, for ever. Its content is
+ * written twice side by side and moved by half its width, so the second copy arrives exactly
+ * where the first began. The pace is the component's (--ticker-dur, from how much it holds);
+ * under reduced motion the band does not move (Ticker turns the animation off and lets it scroll).
+ */
+@theme {
+  --animate-zero-ticker: zero-ticker var(--ticker-dur, 80s) linear infinite;
+
+  @keyframes zero-ticker {
+    to {
+      translate: -50% 0;
+    }
+  }
+}
+
+/*
  * The pulse: something running low breathes, its opacity dipping and coming back, one loop a
  * breath, for as long as it stays low (a gauge under its `low` mark). Still under reduced motion.
  */

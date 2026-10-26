@@ -618,6 +618,18 @@ const registry = {
       ["recharts"],
     ),
     component(
+      "sparkline",
+      "Sparkline",
+      "A trend in a word's space: a line through a run of numbers, its last point marked.",
+      [],
+    ),
+    component(
+      "ticker",
+      "Ticker",
+      "A band of short news that scrolls without end, stops when pointed at, and stands still for reduced motion.",
+      [],
+    ),
+    component(
       "resizable",
       "Resizable",
       "Panels with a draggable edge and a slanted grip (react-resizable-panels).",

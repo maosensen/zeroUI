@@ -268,6 +268,16 @@ const entries = [
     line: "Recharts in zzzUI's colours.",
   },
   {
+    href: "/docs/sparkline",
+    name: "Sparkline",
+    line: "A trend the size of a word.",
+  },
+  {
+    href: "/docs/ticker",
+    name: "Ticker",
+    line: "News that scrolls past without end.",
+  },
+  {
     href: "/docs/resizable",
     name: "Resizable",
     line: "Panels with a draggable edge.",

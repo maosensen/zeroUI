@@ -20,6 +20,8 @@ import { cn } from "@/lib/zero/cn";
 
 const tones = {
   accent: "[--gauge-tone:var(--color-zero-accent)]",
+  /** grey, for a reading among many where only the notable ones should wear a colour */
+  quiet: "[--gauge-tone:var(--color-zero-text-2)]",
   danger: "[--gauge-tone:var(--color-zero-danger)]",
   uncommon: "[--gauge-tone:var(--color-zero-rarity-uncommon)]",
   rare: "[--gauge-tone:var(--color-zero-rarity-rare)]",

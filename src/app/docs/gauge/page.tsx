@@ -41,8 +41,9 @@ export default function GaugePage() {
           <p>
             <code>segments</code> splits the well into slanted cells that fill
             in turn, for shields or charges. <code>tone</code> colours the fill:
-            the accent, danger, or a rarity tier. It is a Base UI Meter: screen
-            readers hear the value and its range, named by{" "}
+            the accent, danger, a rarity tier, or quiet grey for a reading among
+            many where only the notable ones should wear a colour. It is a Base
+            UI Meter: screen readers hear the value and its range, named by{" "}
             <code>GaugeLabel</code>.
           </p>
         </Prose>
@@ -68,7 +69,7 @@ export default function GaugePage() {
             },
             {
               name: "tone",
-              type: '"accent" | "danger" | "uncommon" | "rare" | "epic" | "legendary"',
+              type: '"accent" | "quiet" | "danger" | "uncommon" | "rare" | "epic" | "legendary"',
               default: '"accent"',
               description: "The fill's colour.",
             },
