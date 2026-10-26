@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import { createHighlighterCore, type HighlighterCore } from "shiki/core";
 import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
 
@@ -78,12 +79,18 @@ export type Token = { content: string; color?: string; style?: number };
 
 let highlighter: Promise<HighlighterCore> | undefined;
 
-/** Lines of tokens, cached: the docs' code never changes between requests. */
+/**
+ * Lines of tokens, cached: the docs' code never changes between requests, only between deploys.
+ * The lifetime is a year because every page that shows code takes it on: with Next's default (15
+ * minutes) those pages went stale on the Worker and asked to be regenerated, which the
+ * static-assets cache cannot do ("Dummy queue is not implemented"). A deploy rebuilds them anyway.
+ */
 export async function highlight(
   code: string,
   lang: Language,
 ): Promise<Token[][]> {
   "use cache";
+  cacheLife({ revalidate: 60 * 60 * 24 * 365, expire: 60 * 60 * 24 * 366 });
   highlighter ??= createHighlighterCore({
     themes: [zero],
     langs: [],

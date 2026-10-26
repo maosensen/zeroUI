@@ -135,6 +135,13 @@ Decisions land here with their date, in the commit that acts on them.
   points at the raw `--zero-*`); it now exports the raw names. Level 2 is accepted by the author's
   review.
 
+- **2026-10-26 — pages never go stale.** With Cache Components, the docs' cached highlighter gave
+  98 of 110 pages Next's default 15-minute revalidate. On the Worker the static-assets cache
+  cannot regenerate, so stale pages logged "Dummy queue is not implemented" and, under load, came
+  back incomplete (found when a release's checks failed on a long-running preview). The highlighter
+  now has a one-year `cacheLife`; deploys rebuild the pages. The check scripts also wait for a page
+  to load instead of a fixed 2.5 s, and a page that never loads is reported, not a crash.
+
 - **2026-10-26 — renamed zzzUI** (supersedes "public name zeroUI"). zeroUI was already taken
   several times over. The author chose zzzUI, after Zenless Zone Zero, as an open-source fan work:
   non-commercial, never registered as a trademark, and saying plainly that it is fan-made,

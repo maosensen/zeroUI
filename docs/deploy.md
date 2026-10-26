@@ -18,6 +18,11 @@ pnpm cf:deploy   # build and `wrangler deploy`
   domain property; Bing needs the new sitemap submitted (the author's step).
 - The domain is also written in `src/lib/site.ts` (`SITE_URL`): `metadataBase`, the registry URL
   in the docs and the registry's homepage all read it. Change both together.
+- Nothing may revalidate: the static-assets cache cannot regenerate a page, and a stale one asks
+  to be ("Dummy queue is not implemented"). The one `"use cache"` (`_lib/highlight.ts`) carries a
+  one-year `cacheLife` so the pages that show code do not take Next's 15-minute default; a new
+  `"use cache"` needs the same. Check `.next/prerender-manifest.json`: no route should carry a
+  short `initialRevalidateSeconds`.
 - Every page is prerendered; `open-next.config.ts` serves them from the static-assets incremental
   cache. Keep it even though nothing revalidates.
 - `/studio` is a 404 in any production build, the Workers one included.

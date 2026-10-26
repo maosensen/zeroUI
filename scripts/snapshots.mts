@@ -135,7 +135,12 @@ try {
   });
   for (const path of pages) {
     await send("Page.navigate", { url: `${BASE}${path}` });
-    await wait(2500);
+    // wait for the page itself, not a fixed time: a slow server must not hand a half-loaded page on
+    for (let i = 0; i < 60; i++) {
+      if ((await evaluate<string>("document.readyState")) === "complete") break;
+      await wait(250);
+    }
+    await wait(1500);
     await evaluate(
       "(async () => { const s = document.createElement('style'); s.textContent = '*, *::before, *::after { transition: none !important; animation: none !important; caret-color: transparent !important; } nextjs-portal { display: none !important; }'; document.head.append(s); await document.fonts.ready; })()",
     );

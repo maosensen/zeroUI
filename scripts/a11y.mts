@@ -115,11 +115,25 @@ try {
   const paths = await pages();
   for (const path of paths) {
     await send("Page.navigate", { url: `${BASE}${path}` });
-    await wait(2500); // fonts, hydration, the first placements
+    // wait for the page itself, not a fixed time: a slow server must not hand a half-loaded page on
+    for (let i = 0; i < 60; i++) {
+      if ((await evaluate<string>("document.readyState")) === "complete") break;
+      await wait(250);
+    }
+    await wait(1500); // fonts, hydration, the first placements
     await evaluate(AXE);
-    const violations = await evaluate<Violation[]>(
+    const found = await evaluate<Violation[] | undefined>(
       "axe.run(document, { resultTypes: ['violations'] }).then((r) => r.violations.map(({ id, impact, help, nodes }) => ({ id, impact, help, nodes: nodes.map(({ target, any }) => { const d = any?.[0]?.data; return { target, colours: d?.fgColor ? d.fgColor + ' on ' + d.bgColor + ' (' + d.contrastRatio + ':1)' : undefined }; }) })))",
     );
+    // a page that never came up is a failure of its own, not a crash of the run
+    const violations: Violation[] = found ?? [
+      {
+        id: "page-load",
+        impact: "serious",
+        help: "The page did not load in time for the check",
+        nodes: [{ target: ["document"] }],
+      },
+    ];
     for (const v of violations) {
       const entry = byRule.get(v.id) ?? {
         impact: v.impact,
