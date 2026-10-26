@@ -26,7 +26,8 @@ const inputVariants = cva(
     "hover:not-has-focus-visible:[--slab-line:var(--color-zero-text-3)]",
     "has-focus-visible:[--slab-line:var(--color-zero-focus)] has-focus-visible:[--slab-gap:var(--zero-stroke-thin)] has-focus-visible:[--slab-gap-fill:var(--color-zero-ink)]",
     "has-aria-invalid:[--slab-line:var(--color-zero-danger)] has-aria-invalid:has-focus-visible:[--slab-line:var(--color-zero-danger-hi)]",
-    "has-disabled:pointer-events-none has-disabled:[--slab-fill:var(--color-zero-raised)] has-disabled:[--slab-line:var(--color-zero-ink)] has-disabled:[--slab-ink:var(--color-zero-text-3)]",
+    // disabled is the input's own state: a disabled button beside it (Send, with nothing written) is not
+    "has-[>[data-slot=input-control]:disabled]:pointer-events-none has-[>[data-slot=input-control]:disabled]:[--slab-fill:var(--color-zero-raised)] has-[>[data-slot=input-control]:disabled]:[--slab-line:var(--color-zero-ink)] has-[>[data-slot=input-control]:disabled]:[--slab-ink:var(--color-zero-text-3)]",
     // a side that holds something takes the padding from the input
     "[&:has(>[data-slot=input-start])>[data-slot=input-control]]:ps-2 [&:has(>[data-slot=input-end])>[data-slot=input-control]]:pe-2",
   ],

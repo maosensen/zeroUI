@@ -31,9 +31,11 @@ export default function InputGroupPage() {
         <Prose>
           <p>
             The well behaves like Input's: the focus frame, the invalid outline,
-            the disabled fill. An end that holds an addon takes the input's
-            padding. For a single icon or action, Input's own <code>start</code>{" "}
-            and <code>end</code> are shorter.
+            the disabled fill, which follows the input alone: a Send button
+            disabled while nothing is written leaves the well as it is. An end
+            that holds an addon takes the input's padding. For a single icon or
+            action, Input's own <code>start</code> and <code>end</code> are
+            shorter.
           </p>
         </Prose>
       </DocSection>
