@@ -731,6 +731,7 @@ features:
     area: 站点与文档
     status: done
     completedAt: 2026-10-26
+    shippedIn: v0.2.0
     note: 作者 2026-10-26 定:zeroUI 已被多人使用,改名 zzzUI,作为《绝区零》的粉丝向开源二创;不盈利、不注册商标,README、首页页脚与 llms.txt 写明「粉丝自制、非官方、与 HoYoverse 及游戏无关」,AGENTS.md 的规矩随之改写(游戏的标志、字体、图标、美术、截图、文字仍一律不用)。品牌与包名改为 zzzUI / zzz-ui,registry 命名空间改为 @zzzui,域名改为 zzzui.catforest.dev(旧域名页面永久跳转、registry 文件照常可取);代码里的 zero 前缀不动。GitHub 仓库与本地目录最后改。
   - id: showcase
     title: 对外展示页

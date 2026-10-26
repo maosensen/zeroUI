@@ -6,6 +6,12 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-26
+
+zeroUI is now zzzUI: a new name, a new registry namespace (`@zzzui`) and a new
+home at https://zzzui.catforest.dev. The old domain redirects, and the code
+installed in your project does not change.
+
 ### Changed
 
 - **zeroUI is now zzzUI**, a fan-made tribute to Zenless Zone Zero (unofficial,
@@ -17,6 +23,13 @@ All notable changes to zzzUI are documented here. The format is based on
   now name their dependencies under it. The `zero` prefix in the code (tokens,
   classes, `components/zero/`) is unchanged, so installed components keep
   working.
+
+### Fixed
+
+- Pages that show code went stale on the Worker after fifteen minutes and tried
+  to regenerate, which the site's static cache cannot do; under load some came
+  back incomplete. Their cached code now lasts a year (every deploy rebuilds
+  them anyway).
 
 ## [0.1.7] - 2026-10-25
 
@@ -348,7 +361,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zzzUI/compare/v0.1.7...HEAD
+[Unreleased]: https://github.com/maosensen/zzzUI/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/maosensen/zzzUI/compare/v0.1.7...v0.2.0
 [0.1.7]: https://github.com/maosensen/zzzUI/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/maosensen/zzzUI/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/maosensen/zzzUI/compare/v0.1.4...v0.1.5
