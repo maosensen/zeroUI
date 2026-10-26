@@ -3,7 +3,7 @@
 # 约定:完成一个功能 = 同一次提交里更新对应条目(置 done + completedAt)。
 # 阶段与每阶段的完成标准在 docs/plan.md。
 
-project: maosensen/zeroUI
+project: maosensen/zzzUI
 track: oss
 launchedAt: 2026-10-24
 areas: [地基, 组件, 注册表, 站点与文档, 工作台, 工程与基建, 质量]

@@ -348,12 +348,12 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zeroUI/compare/v0.1.7...HEAD
-[0.1.7]: https://github.com/maosensen/zeroUI/compare/v0.1.6...v0.1.7
-[0.1.6]: https://github.com/maosensen/zeroUI/compare/v0.1.5...v0.1.6
-[0.1.5]: https://github.com/maosensen/zeroUI/compare/v0.1.4...v0.1.5
-[0.1.4]: https://github.com/maosensen/zeroUI/compare/v0.1.3...v0.1.4
-[0.1.3]: https://github.com/maosensen/zeroUI/compare/v0.1.2...v0.1.3
-[0.1.2]: https://github.com/maosensen/zeroUI/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/maosensen/zeroUI/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/maosensen/zeroUI/releases/tag/v0.1.0
+[Unreleased]: https://github.com/maosensen/zzzUI/compare/v0.1.7...HEAD
+[0.1.7]: https://github.com/maosensen/zzzUI/compare/v0.1.6...v0.1.7
+[0.1.6]: https://github.com/maosensen/zzzUI/compare/v0.1.5...v0.1.6
+[0.1.5]: https://github.com/maosensen/zzzUI/compare/v0.1.4...v0.1.5
+[0.1.4]: https://github.com/maosensen/zzzUI/compare/v0.1.3...v0.1.4
+[0.1.3]: https://github.com/maosensen/zzzUI/compare/v0.1.2...v0.1.3
+[0.1.2]: https://github.com/maosensen/zzzUI/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/maosensen/zzzUI/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/maosensen/zzzUI/releases/tag/v0.1.0
