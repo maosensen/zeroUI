@@ -474,6 +474,23 @@ then an example app. The lookbook replica stays as it is.
 - **Tab hotkeys.** On TabsList: two keys that step through the tabs from anywhere outside a
   text field, shown at the track's ends; Tabs now depends on Kbd.
 
+### Composite examples (2026-10-26)
+
+The author asked for examples that combine many components into one working screen, the first
+modelled on yLookbook's signal-board (a tech-news aggregator, its made-up data reused).
+
+- **Signal board.** `/examples/signal-board`: a ticker of the latest reports, readings, a board
+  ranked by heat (a segmented Gauge per row) with a sticky preview on wide screens, topics with
+  their own sparklines, and a Sheet with the story's coverage and thread. It is a page to scan, so
+  the keyboard is first-class: J / K and the arrows move the selection, Enter opens it, "/"
+  focuses the filter; the keys are on the window and stand aside in text fields and in radio and
+  toggle groups, where the arrows already mean something. Rows scroll into view only when keys
+  moved them, never on a click.
+- **New pieces it needed.** Ticker (written twice and moved by half, the copy hidden and inert;
+  still under reduced motion) and Sparkline (sized in em, quiet unless `hot`, said in words to
+  screen readers), each with a docs page; Gauge gained a `quiet` grey tone, since a board where
+  every row wears the accent says nothing about which matter.
+
 ### Blocks (2026-10-25)
 
 Whole screens built from the components, for what a game needs most often: a settings menu, a

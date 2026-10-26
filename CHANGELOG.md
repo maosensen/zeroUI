@@ -12,6 +12,16 @@ All notable changes to zzzUI are documented here. The format is based on
   `lime`, `magenta`) on `<html>` or any element recolours zzzUI; the switch lets
   visitors choose and remembers it, and `AccentScript` applies a remembered
   choice before the page paints. The site's header has one.
+- **Ticker** — a band of short news that scrolls across a screen without end,
+  stops while pointed at or focused, and stands still under reduced motion.
+- **Sparkline** — a trend the size of a word: a line through a run of numbers,
+  quiet grey or, with `hot`, in the accent; screen readers hear the run in words.
+- **Gauge `tone="quiet"`** — a grey fill, for a reading among many where only the
+  notable ones should wear a colour.
+- **Signal board example** (`/examples/signal-board`) — a news aggregator built
+  from the components: a live ticker, readings, a heat-ranked board walked with
+  J and K beside a preview, topics, and each story's coverage and thread in a
+  sheet. It answers to the accent switch.
 
 ## [0.2.0] - 2026-10-26
 

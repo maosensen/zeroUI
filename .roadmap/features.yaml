@@ -677,6 +677,24 @@ features:
     completedAt: 2026-10-25
     shippedIn: v0.1.7
     note: 用区块原样拼成的整页应用:黑顶栏(返回、资料胶囊、Q/E 热键页签),下面是帖子板、今日、等级三页。/examples 是示例总览,顶栏加了 Examples。界面模式取自 yLookbook 的绳网复刻,名字、画风、封面全部是 zeroUI 自己的;lookbook 那件原样保留。
+  - id: example-signal-board
+    title: 示例应用:信号板(/examples/signal-board)
+    area: 站点与文档
+    status: done
+    completedAt: 2026-10-26
+    note: '复合型示例:内容取自 yLookbook 的 signal-board(科技新闻聚合,同一份虚构数据),界面全部用组件重搭。顶上 Ticker 滚最新十条;顶栏有返回、倾斜字标、话题筛选、时钟和 AccentSwitch;读数面板(事件、来源、报道、评论、最热话题、24 小时 Sparkline);热度榜是 Table,热度用分段 Gauge,J / K 或方向键移动选中行、Enter 打开、/ 聚焦筛选,宽屏右侧有粘性预览;话题卡带各自的 Sparkline;Sheet 里是这件事的报道时间线与讨论。'
+  - id: ticker
+    title: Ticker(滚动新闻条)
+    area: 组件
+    status: done
+    completedAt: 2026-10-26
+    note: 内容写两遍、整体平移一半,循环无接缝;第二份 aria-hidden 且 inert,读屏只读一遍、Tab 不重复;指针悬停或焦点在内时暂停;减少动态时不动,改为手动横向滚动;duration 为一圈的秒数。TickerItem / TickerValue / TickerLive(呼吸点)。
+  - id: sparkline
+    title: Sparkline(迷你趋势线)
+    area: 组件
+    status: done
+    completedAt: 2026-10-26
+    note: 按 em 定尺寸(4:1),跟随旁边的文字;默认安静的灰,hot 用强调色并点亮末点;对读屏是一张图,不给 label 时用文字说出点数、起点、终点与峰值。顺带给 Gauge 加了 quiet 灰色 tone。
   - id: tilt
     title: tilt 倾斜大字(地基)
     area: 地基

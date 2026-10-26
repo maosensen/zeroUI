@@ -232,6 +232,14 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["shadcn chart dark", "recharts styled components"],
       where: "description and lead",
     },
+    "/docs/sparkline": {
+      phrases: ["sparkline react", "sparkline component"],
+      where: "description and lead",
+    },
+    "/docs/ticker": {
+      phrases: ["news ticker react", "scrolling ticker component"],
+      where: "description and lead",
+    },
     "/docs/resizable": {
       phrases: ["resizable panels react", "split pane component"],
       where: "description and lead",
@@ -358,6 +366,13 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
     },
     "/examples/board": {
       phrases: ["game community app ui", "react game forum example"],
+      where: "description and lead",
+    },
+    "/examples/signal-board": {
+      phrases: [
+        "news aggregator ui react",
+        "keyboard driven dashboard example",
+      ],
       where: "description and lead",
     },
     "/docs/guides": {

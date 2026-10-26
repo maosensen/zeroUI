@@ -179,6 +179,14 @@ export const PAGES = [
     group: "examples",
   },
   {
+    path: "/examples/signal-board",
+    title: "Signal board",
+    description:
+      "A data-first news aggregator built with zzzUI and shadcn: a live ticker, readings, a heat-ranked board walked with the keyboard, a preview pane and topics.",
+    crumb: "Signal board",
+    group: "examples",
+  },
+  {
     path: "/docs/guides",
     title: "Guides",
     description:
@@ -640,6 +648,22 @@ export const PAGES = [
     description:
       "Charts for shadcn with Recharts in a dark game-UI style: quiet axes, slanted swatches, a panel tooltip.",
     crumb: "Chart",
+    group: "data",
+  },
+  {
+    path: "/docs/sparkline",
+    title: "Sparkline",
+    description:
+      "A sparkline component for React in a dark game-UI style: a small trend line sized to its text, with an accent for the one that matters.",
+    crumb: "Sparkline",
+    group: "data",
+  },
+  {
+    path: "/docs/ticker",
+    title: "Ticker",
+    description:
+      "A news ticker component for React: an endless scrolling band that pauses on hover and focus and stands still for reduced motion.",
+    crumb: "Ticker",
     group: "data",
   },
   {

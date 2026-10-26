@@ -13,6 +13,11 @@ const examples = [
     title: "Courier board",
     line: "A community board, today's shifts and a rank page, under one top bar with tabs that Q and E step through. Built from the community feed, daily schedule and level rewards blocks.",
   },
+  {
+    href: "/examples/signal-board",
+    title: "Signal board",
+    line: "A news aggregator to scan, not read: a live ticker, readings, a heat-ranked board you walk with J and K beside a preview, topics, and stories in a sheet. Built from Ticker, Gauge, Sparkline, Table and Sheet.",
+  },
 ];
 
 export default function Examples() {
