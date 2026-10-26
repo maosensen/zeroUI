@@ -199,11 +199,17 @@ function TabsList({
     </TabsPrimitive.List>
   );
   if (!hotkeys) return list;
+  // the keys are shown only where there is likely a keyboard to press them: not on a touch screen,
+  // where they would only take room from the tabs
   return (
     <span className="inline-flex max-w-full items-center gap-2">
-      <Kbd aria-hidden>{hotkeys[0].toUpperCase()}</Kbd>
+      <Kbd aria-hidden className="pointer-coarse:hidden">
+        {hotkeys[0].toUpperCase()}
+      </Kbd>
       {list}
-      <Kbd aria-hidden>{hotkeys[1].toUpperCase()}</Kbd>
+      <Kbd aria-hidden className="pointer-coarse:hidden">
+        {hotkeys[1].toUpperCase()}
+      </Kbd>
     </span>
   );
 }

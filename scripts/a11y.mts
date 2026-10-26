@@ -8,7 +8,7 @@
  *   pnpm a11y /docs/button /docs/select         only these paths
  *   pnpm a11y --focus                           also Tab through each page and list every stop
  *                                               that shows no focus frame (the yellow, --color-zero-focus)
- *   pnpm a11y --mobile                          at a phone's width (375 × 812), and also list any
+ *   pnpm a11y --mobile                          at a phone's width (375 × 812), touch on, and also list any
  *                                               page that scrolls sideways, with what sticks out
  *
  * Exits 1 when anything fails. Like og:capture, it drives Chrome over the DevTools protocol with a
@@ -105,6 +105,13 @@ try {
     deviceScaleFactor: 1,
     mobile: MOBILE,
   });
+  // a phone has a touch screen, so a page that hides something on a coarse pointer is checked as
+  // a phone would show it
+  if (MOBILE)
+    await send("Emulation.setTouchEmulationEnabled", {
+      enabled: true,
+      maxTouchPoints: 5,
+    });
 
   const byRule = new Map<
     string,

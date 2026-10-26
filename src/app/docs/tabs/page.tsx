@@ -51,7 +51,9 @@ export default function TabsPage() {
             focused one, which then fills itself straight away inside the
             selection frame. Tabs are horizontal only. With <code>hotkeys</code>
             , two keys step back and forth from anywhere on the page, the way a
-            game pages with its shoulder buttons.
+            game pages with its shoulder buttons. The keys are shown at the
+            track&apos;s ends, but not on a touch screen, where there is no
+            keyboard to press them and they would only take room from the tabs.
           </p>
         </Prose>
       </DocSection>
