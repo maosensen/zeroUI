@@ -6,6 +6,12 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-10-26
+
+Composite examples: whole screens that put many components to work, with two
+new components and an accent you can switch. Install the new pieces with
+`pnpm dlx shadcn@latest add @zzzui/ticker @zzzui/sparkline @zzzui/accent-switch`.
+
 ### Added
 
 - **Accent presets and the Accent switch** — `data-zero-accent="cyan"` (or
@@ -394,7 +400,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zzzUI/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/maosensen/zzzUI/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/maosensen/zzzUI/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/maosensen/zzzUI/compare/v0.1.7...v0.2.0
 [0.1.7]: https://github.com/maosensen/zzzUI/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/maosensen/zzzUI/compare/v0.1.5...v0.1.6
