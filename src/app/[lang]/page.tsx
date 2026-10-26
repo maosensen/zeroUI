@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { Hud } from "@/components/blocks/hud";
 import { Button } from "@/components/zero/button";
 import { ArrowRightIcon } from "@/components/zero/icons";
-import { enter, type LangProps, link } from "@/lib/i18n/server";
+import { enter, type LangProps, link, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { REGISTRY_URL } from "@/lib/site";
 import { homeGraph } from "@/seo/graph";
@@ -38,16 +38,25 @@ function Heading({
 
 const rules = [
   {
-    title: "Cut, never rounded",
-    text: "Every block is a slab with an edge cut on one slant. Slabs set side by side nest into each other.",
+    title: { en: "Cut, never rounded", zh: "只切角，不倒圆" },
+    text: {
+      en: "Every block is a slab with an edge cut on one slant. Slabs set side by side nest into each other.",
+      zh: "每一块都是斜切块，边缘按同一角度斜切；并排放置时，彼此嵌合。",
+    },
   },
   {
-    title: "Lifted by outline",
-    text: "No shadows. Thick ink outlines and a quiet second line do the work, and a yellow frame marks focus.",
+    title: { en: "Lifted by outline", zh: "以描边分层" },
+    text: {
+      en: "No shadows. Thick ink outlines and a quiet second line do the work, and a yellow frame marks focus.",
+      zh: "不用阴影。层次由墨黑粗描边和一道暗色副线撑起，焦点由黄色焦点框标出。",
+    },
   },
   {
-    title: "Moves on purpose",
-    text: "A fast press and a springing release, a slab that slides, popups that grow and fold. All of it holds still for reduced motion.",
+    title: { en: "Moves on purpose", zh: "动效各有其用" },
+    text: {
+      en: "A fast press and a springing release, a slab that slides, popups that grow and fold. All of it holds still for reduced motion.",
+      zh: "按下迅速、松开回弹，斜切块滑动，弹出层展开又收起。系统开启「减少动态效果」时，全部静止。",
+    },
   },
 ];
 
@@ -89,7 +98,7 @@ export default async function Home({ params }: LangProps) {
             nativeButton={false}
             render={<Link href={link("/docs")} />}
           >
-            Get started
+            {pick({ en: "Get started", zh: "快速开始" })}
           </Button>
         }
       />
@@ -111,17 +120,34 @@ export default async function Home({ params }: LangProps) {
         <section className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:pt-6">
           <div className="grid justify-items-start gap-7">
             <p className="font-bold font-zero text-zero-text-2 text-zero-xs uppercase italic tracking-[0.12em]">
-              Components for shadcn, on Base UI
+              {pick({
+                en: "Components for shadcn, on Base UI",
+                zh: "基于 Base UI 的 shadcn 组件",
+              })}
             </p>
             <h1 className="origin-left rotate-(--zero-tilt) font-black font-zero text-zero-3xl italic">
-              Cut on
-              <br />
-              <span className="text-zero-accent">the slant.</span>
+              {pick({
+                en: (
+                  <>
+                    Cut on
+                    <br />
+                    <span className="text-zero-accent">the slant.</span>
+                  </>
+                ),
+                zh: (
+                  <>
+                    一切
+                    <br />
+                    <span className="text-zero-accent">皆斜切。</span>
+                  </>
+                ),
+              })}
             </h1>
             <p className="max-w-md font-medium text-zero-lg text-zero-text-2">
-              zzzUI is a dark-only component library with a strong game-UI look:
-              black bars, a charcoal ground, one fluorescent accent, slabs with
-              thick outlines.
+              {pick({
+                en: "zzzUI is a dark-only component library with a strong game-UI look: black bars, a charcoal ground, one fluorescent accent, slabs with thick outlines.",
+                zh: "zzzUI 是一套仅暗色的组件库，游戏 UI 风格鲜明：黑色横条、炭灰底色、一种荧光强调色，以及粗描边的斜切块。",
+              })}
             </p>
             <div className="flex flex-wrap gap-3">
               <Button
@@ -129,7 +155,7 @@ export default async function Home({ params }: LangProps) {
                 nativeButton={false}
                 render={<Link href={link("/docs")} />}
               >
-                Get started
+                {pick({ en: "Get started", zh: "快速开始" })}
                 <ArrowRightIcon />
               </Button>
               <Button
@@ -138,7 +164,7 @@ export default async function Home({ params }: LangProps) {
                 nativeButton={false}
                 render={<Link href={link("/docs/button")} />}
               >
-                Components
+                {pick({ en: "Components", zh: "组件" })}
               </Button>
             </div>
             <CodeBlock
@@ -154,20 +180,23 @@ pnpm dlx shadcn@latest add @zzzui/button`}
 
         <section className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <div className="grid gap-5">
-            <Heading eyebrow="The foundation">One angle, everywhere</Heading>
+            <Heading eyebrow={pick({ en: "The foundation", zh: "地基" })}>
+              {pick({ en: "One angle, everywhere", zh: "一个角度，贯穿全局" })}
+            </Heading>
             <p className="max-w-md font-medium text-zero-md text-zero-text-2 leading-relaxed">
-              Every slanted cut comes from a single token, set to sit with the
-              italic. Turn it and the buttons, the tabs and the wells all re-cut
-              together, with their outlines still even.
+              {pick({
+                en: "Every slanted cut comes from a single token, set to sit with the italic. Turn it and the buttons, the tabs and the wells all re-cut together, with their outlines still even.",
+                zh: "所有斜切都出自同一个设计令牌，角度与斜体字的倾角一致。调整它，按钮、标签页和输入框会一起重新切角，描边依旧均匀。",
+              })}
             </p>
             <ul className="grid gap-4">
               {rules.map(({ title, text }) => (
-                <li key={title} className="grid gap-1">
+                <li key={title.en} className="grid gap-1">
                   <span className="flex items-center gap-2.5 font-black font-zero text-zero-md italic before:h-[0.9em] before:w-[0.4em] before:-skew-x-(--zero-slant) before:bg-zero-accent">
-                    {title}
+                    {pick(title)}
                   </span>
                   <span className="max-w-md font-medium text-zero-sm text-zero-text-2">
-                    {text}
+                    {pick(text)}
                   </span>
                 </li>
               ))}
@@ -178,10 +207,14 @@ pnpm dlx shadcn@latest add @zzzui/button`}
 
         <section className="grid gap-8">
           <div className="grid gap-4">
-            <Heading eyebrow="At work">A dispatch console</Heading>
+            <Heading eyebrow={pick({ en: "At work", zh: "实战" })}>
+              {pick({ en: "A dispatch console", zh: "调度控制台" })}
+            </Heading>
             <p className="max-w-xl font-medium text-zero-md text-zero-text-2 leading-relaxed">
-              A command palette, a channel and a chart, built from the same
-              slabs. Run a command, or say something to the district.
+              {pick({
+                en: "A command palette, a channel and a chart, built from the same slabs. Run a command, or say something to the district.",
+                zh: "命令面板、频道与图表，都由同一套斜切块搭成。可以执行命令，也可以在街区频道里发言。",
+              })}
             </p>
           </div>
           <Console />
@@ -189,16 +222,21 @@ pnpm dlx shadcn@latest add @zzzui/button`}
 
         <section className="grid gap-8">
           <div className="grid gap-4">
-            <Heading eyebrow="In the game">A HUD that works</Heading>
+            <Heading eyebrow={pick({ en: "In the game", zh: "游戏内" })}>
+              {pick({ en: "A HUD that works", zh: "能实际操作的 HUD" })}
+            </Heading>
             <p className="max-w-xl font-medium text-zero-md text-zero-text-2 leading-relaxed">
-              Gauges that leave a trail, a hotbar with cooldowns, objectives
-              that strike through. Use the hotbar: the kit patches the hull, the
-              flare and the key finish the shift.
+              {pick({
+                en: "Gauges that leave a trail, a hotbar with cooldowns, objectives that strike through. Use the hotbar: the kit patches the hull, the flare and the key finish the shift.",
+                zh: "会留下残影的数值条、带冷却的快捷栏、完成后划掉的目标。快捷栏可以直接使用：维修包（kit）修补船体，信号弹（flare）和钥匙（key）用来完成这一班。",
+              })}
             </p>
           </div>
           <Hud />
           <p className="flex flex-wrap items-center gap-x-5 gap-y-2 font-bold font-zero text-zero-sm italic">
-            <span className="text-zero-text-3">More blocks:</span>
+            <span className="text-zero-text-3">
+              {pick({ en: "More blocks:", zh: "更多区块：" })}
+            </span>
             {blocks.map(([href, name]) => (
               <Link
                 key={href}
@@ -212,7 +250,9 @@ pnpm dlx shadcn@latest add @zzzui/button`}
         </section>
 
         <section className="grid gap-8">
-          <Heading eyebrow="The set">Components</Heading>
+          <Heading eyebrow={pick({ en: "The set", zh: "一览" })}>
+            {pick({ en: "Components", zh: "全部组件" })}
+          </Heading>
           <ComponentIndex />
         </section>
       </main>
@@ -220,14 +260,18 @@ pnpm dlx shadcn@latest add @zzzui/button`}
       <footer className="relative bg-zero-void">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 font-bold font-zero text-zero-sm text-zero-text-3 italic sm:px-8">
           <span>
-            zzz<span className="text-zero-accent">UI</span> · built on shadcn
-            and Base UI
+            zzz<span className="text-zero-accent">UI</span> ·{" "}
+            {pick({
+              en: "built on shadcn and Base UI",
+              zh: "基于 shadcn 与 Base UI 构建",
+            })}
           </span>
-          <span>A catforest project</span>
+          <span>{pick({ en: "A catforest project", zh: "猫森出品" })}</span>
           <p className="basis-full font-medium font-zero-text text-zero-xs not-italic">
-            Fan-made and unofficial: the name is a tribute to Zenless Zone Zero.
-            zzzUI is not affiliated with HoYoverse or the game, and uses none of
-            its logos, fonts, art or text.
+            {pick({
+              en: "Fan-made and unofficial: the name is a tribute to Zenless Zone Zero. zzzUI is not affiliated with HoYoverse or the game, and uses none of its logos, fonts, art or text.",
+              zh: "粉丝自制，非官方：名称致敬《绝区零》。zzzUI 与米哈游（HoYoverse）及该游戏无关，未使用其任何标志、字体、美术或文字。",
+            })}
           </p>
         </div>
       </footer>

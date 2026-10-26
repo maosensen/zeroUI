@@ -96,7 +96,10 @@ export function PropsTable({
       {rows.length > 0 ? (
         // scrolls sideways on a phone, so it can be reached and scrolled from the keyboard
         <section
-          aria-label={pick({ en: `${part} props`, zh: `${part} 的属性` })}
+          aria-label={pick({
+            en: `${part} props`,
+            zh: `${part}${/[\u4e00-\u9fff]$/.test(part) ? "" : " "}的属性`,
+          })}
           // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrolling region must be reachable from the keyboard
           tabIndex={0}
           className="overflow-x-auto border-(length:--zero-stroke-thin) border-zero-line outline-none focus-visible:outline-solid focus-visible:outline-(length:--zero-stroke-thin) focus-visible:outline-zero-focus focus-visible:-outline-offset-2"

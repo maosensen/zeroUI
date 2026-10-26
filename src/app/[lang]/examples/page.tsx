@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/app/[lang]/_site/site-header";
 import { ArrowRightIcon } from "@/components/zero/icons/arrow-right";
-import { enter, type LangProps, link } from "@/lib/i18n/server";
+import { enter, type LangProps, link, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { exampleGraph } from "@/seo/graph";
 import { metadataFor } from "@/seo/site";
@@ -12,17 +12,26 @@ const examples = [
   {
     href: "/examples/board",
     title: "Courier board",
-    line: "A community board, today's shifts and a rank page, under one top bar with tabs that Q and E step through. Built from the community feed, daily schedule and level rewards blocks.",
+    line: {
+      en: "A community board, today's shifts and a rank page, under one top bar with tabs that Q and E step through. Built from the community feed, daily schedule and level rewards blocks.",
+      zh: "社区留言板、今日排班与等级页共用一条顶栏，标签页用 Q、E 键切换。由 Community feed、Daily schedule 与 Level rewards 三个区块构成。",
+    },
   },
   {
     href: "/examples/signal-board",
     title: "Signal board",
-    line: "A news aggregator to scan, not read: a live ticker, readings, a heat-ranked board you walk with J and K beside a preview, topics, and stories in a sheet. Built from Ticker, Gauge, Sparkline, Table and Sheet.",
+    line: {
+      en: "A news aggregator to scan, not read: a live ticker, readings, a heat-ranked board you walk with J and K beside a preview, topics, and stories in a sheet. Built from Ticker, Gauge, Sparkline, Table and Sheet.",
+      zh: "供快速浏览而非细读的新闻聚合应用：实时快讯滚动条、数据读数、按热度排序的列表（用 J、K 键逐条移动，旁边附预览）、话题，以及在侧边面板中展开的报道。由 Ticker、Gauge、Sparkline、Table 与 Sheet 构成。",
+    },
   },
   {
     href: "/examples/ops-console",
     title: "Ops console",
-    line: "An afternoon on call: a live wall of services, an alert queue to acknowledge, and an incident whose war room and runbook you see through to resolved. Built from the chat components, Gauge, Feed, Table and HoldButton.",
+    line: {
+      en: "An afternoon on call: a live wall of services, an alert queue to acknowledge, and an incident whose war room and runbook you see through to resolved. Built from the chat components, Gauge, Feed, Table and HoldButton.",
+      zh: "值班的一个下午：实时更新的服务状态墙、待确认的告警队列，以及一起事故：在作战室中对照运维手册处理，直至解决。由聊天类组件、Gauge、Feed、Table 与 HoldButton 构成。",
+    },
   },
 ];
 
@@ -35,12 +44,25 @@ export default async function Examples({ params }: LangProps) {
       <main className="mx-auto grid max-w-4xl gap-8 px-4 py-14 sm:px-8">
         <header className="grid gap-4">
           <h1 className="font-black font-zero text-zero-2xl italic">
-            Examples
+            {pick({ en: "Examples", zh: "示例应用" })}
           </h1>
           <p className="max-w-2xl font-medium text-zero-md text-zero-text-2 leading-relaxed">
-            Whole apps put together from zzzUI's blocks and components, to show
-            how the pieces work side by side. Open one, then read its source:
-            every part of it installs from the registry.
+            {pick({
+              en: (
+                <>
+                  Whole apps put together from zzzUI's blocks and components, to
+                  show how the pieces work side by side. Open one, then read its
+                  source: every part of it installs from the registry.
+                </>
+              ),
+              zh: (
+                <>
+                  由 zzzUI
+                  的区块与组件组装而成的完整应用，展示各个部分如何协同工作。可以打开任意一个并查看源码：其中每个部分都能从
+                  registry 安装。
+                </>
+              ),
+            })}
           </p>
         </header>
         <ul className="grid gap-3">
@@ -55,7 +77,7 @@ export default async function Examples({ params }: LangProps) {
                   <ArrowRightIcon className="shrink-0 text-zero-text-3 transition-colors group-hover:text-zero-accent" />
                 </span>
                 <span className="font-medium font-zero-text text-zero-sm text-zero-text-2">
-                  {example.line}
+                  {pick(example.line)}
                 </span>
               </Link>
             </li>

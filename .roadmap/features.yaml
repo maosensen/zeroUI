@@ -773,6 +773,12 @@ features:
     status: done
     completedAt: 2026-10-26
     note: '作者 2026-10-26 提出首页缺乏动感,定:只让首页第一屏的斜线匀速流动,做成地基里的动画,减少动态时停住。motion.css 新增 animate-zero-drift:用 translate 平移、不重绘,每次正好一个纹理周期(6px 节距 × √2 ≈ 8.485px,线是 45°),循环无接缝,约每秒 33px;图层要比所在盒子宽一个 --zero-drift-step。首页:第一屏一层流动的斜线向下渐隐,下面静止的斜线在同一段渐显,滚到内容处自然停下;原来通铺的静止斜线拆成这两层。'
+  - id: site-i18n
+    title: 站点中英双语（/zh）
+    area: 站点与文档
+    status: done
+    completedAt: 2026-10-27
+    note: '作者 2026-10-27 定：全站一次做完；示例应用与文档示例保持英文；不按浏览器语言自动跳转，只放切换器。页面整体移入 src/app/[lang]/，英文保留原地址（next.config 的 afterFiles rewrite 转到 /en/…，单段与多段各一条，避开 Workers 上 %2F 的坑；/en/… 308 回不带前缀的地址），中文在 /zh。语言用 React cache 存放（enter/pick/link，客户端 usePick），每段可见文字原地写成 pick({ en, zh })；site.ts 每页带必填的 zh 标题、描述与面包屑。canonical、hreflang（含 x-default）、og:locale、JSON-LD 的 inLanguage 与 sitemap（216 条）随语言。中文按 i18n-copy 重写：首页、快速开始由主会话写，其余 106 页分 8 批由子代理写，每批再由一个未看过英文的子代理独立审校并改定；定下的用词写进 docs/i18n-glossary.md。中文页加载 Noto Sans SC（unicode-range 分片，只下用到的字），只挂在中文页的 <html> 上，不动注册表的地基。顶栏有语言切换；studio 另有根布局。'
   - id: rename-zzzui
     title: 改名 zzzUI(品牌、命名空间、域名)
     area: 站点与文档

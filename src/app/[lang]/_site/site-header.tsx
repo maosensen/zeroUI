@@ -27,7 +27,10 @@ export function SiteHeader({ end }: { end?: ReactNode }) {
         <Link href={link("/docs/button")} className={navLink}>
           {pick({ en: "Components", zh: "组件" })}
         </Link>
-        <Link href={link("/docs/blocks")} className={navLink}>
+        <Link
+          href={link("/docs/blocks")}
+          className={`${navLink} max-sm:hidden`}
+        >
           {pick({ en: "Blocks", zh: "区块" })}
         </Link>
         <Link href={link("/examples")} className={`${navLink} max-sm:hidden`}>

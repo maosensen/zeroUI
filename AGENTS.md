@@ -98,17 +98,38 @@ component in every state); it 404s in production builds.
 
 ### Site
 
-`/` is the showcase (src/app/page.tsx, pieces in `_showcase/`): a working job board built from the
-components, a dial on `--zero-slant`, and the component index. `_site/site-header.tsx` is the bar
-shared by the showcase and the docs. Everything written into the showcase is invented for it.
+`/` is the showcase (src/app/[lang]/page.tsx, pieces in `_showcase/`): a working job board built
+from the components, a dial on `--zero-slant`, and the component index. `_site/site-header.tsx` is
+the bar shared by the showcase and the docs, with the language switch. Everything written into the
+showcase is invented for it.
+
+### Languages
+
+The site speaks English and Chinese. Every public page lives in `src/app/[lang]/` and is built for
+both; English keeps its bare addresses (a rewrite in next.config serves them from `/en/…`), Chinese
+is under `/zh`. The studio, llms.txt, robots and the sitemap stay outside `[lang]`.
+
+- Every page and layout under `[lang]` starts with `await enter(params)`; below it, server
+  components read the language with `pick({ en, zh })` and site links with `link("/docs/…")`
+  (`@/lib/i18n/server`), client components with `usePick()` (`@/lib/i18n/client`). Never a bare
+  `href="/docs/…"`: it would lose the language.
+- **Every visible string is written in both languages, in place**: `pick({ en: "…", zh: "…" })`,
+  a Prose block as one `pick` of two fragments. A page's title, description and crumb in Chinese
+  are its `zh` entry in `src/seo/site.ts` (required). Changing a page's English means changing its
+  Chinese in the same commit.
+- The Chinese is written, not translated: the user-level `i18n-copy` skill, with the project's
+  terms in [docs/i18n-glossary.md](docs/i18n-glossary.md). Component and block names, code, keys,
+  the example apps and the demos stay English.
+- Chinese pages load Noto Sans SC (`app/_root/shell.tsx`, appended to the zero faces in
+  `globals.css` for `:lang(zh-CN)` only); the registry's foundation does not change.
 
 ### Docs
 
-`/docs` (src/app/docs): one page per component — install commands, live demos, behaviour, a props
-table per part. A demo is its own file in `_demos/`; the page renders it and shows that same file's
-source, so demo and code cannot drift. Code is highlighted on the server (`_lib/highlight.ts`,
-cached with `"use cache"`) in zzzUI's own colours. A new component gets demos, a page, and an
-entry in `_nav.ts`.
+`/docs` (src/app/[lang]/docs): one page per component — install commands, live demos, behaviour, a
+props table per part. A demo is its own file in `_demos/`; the page renders it and shows that same
+file's source, so demo and code cannot drift. Code is highlighted on the server
+(`_lib/highlight.ts`, cached with `"use cache"`) in zzzUI's own colours. A new component gets demos,
+a page in both languages, and an entry in `_nav.ts`.
 
 ### Deploy
 

@@ -1,4 +1,4 @@
-import { enter, type LangProps } from "@/lib/i18n/server";
+import { enter, type LangProps, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { docGraph } from "@/seo/graph";
 import { metadataFor } from "@/seo/site";
@@ -16,29 +16,57 @@ export default async function DialogPage({ params }: LangProps) {
       <JsonLd data={docGraph("/docs/dialog")} />
       <DocHeader
         title="Dialog"
-        lead="A panel over a dimmed page: a black header bar with the title, a body, and the actions. It opens out of its centre and folds back faster."
+        lead={pick({
+          en: "A panel over a dimmed page: a black header bar with the title, a body, and the actions. It opens out of its centre and folds back faster.",
+          zh: "浮在变暗页面之上的面板，由黑色标题栏、正文与操作按钮组成。打开时从中心展开，关闭时收回得更快。",
+        })}
       />
       <DocSection id="install">
         <Install item="dialog" />
       </DocSection>
       <DocSection id="examples">
-        <Demo file="dialog-basic" title="Confirm before taking a job">
+        <Demo
+          file="dialog-basic"
+          title={pick({
+            en: "Confirm before taking a job",
+            zh: "接受委托前的确认",
+          })}
+        >
           <DialogBasic />
         </Demo>
       </DocSection>
       <DocSection id="behaviour">
         <Prose>
-          <p>
-            Focus moves into the dialog when it opens and back to the trigger
-            when it closes; Escape or a click on the dimmed page closes it.
-            Under reduced motion it only fades.
-          </p>
-          <p>
-            Give the trigger and the closing buttons zzzUI Buttons through{" "}
-            <code>render</code>, as in the example. The corner close button is
-            there by default; <code>showClose=&#123;false&#125;</code> removes
-            it.
-          </p>
+          {pick({
+            en: (
+              <>
+                <p>
+                  Focus moves into the dialog when it opens and back to the
+                  trigger when it closes; Escape or a click on the dimmed page
+                  closes it. Under reduced motion it only fades.
+                </p>
+                <p>
+                  Give the trigger and the closing buttons zzzUI Buttons through{" "}
+                  <code>render</code>, as in the example. The corner close
+                  button is there by default;{" "}
+                  <code>showClose=&#123;false&#125;</code> removes it.
+                </p>
+              </>
+            ),
+            zh: (
+              <>
+                <p>
+                  打开时焦点移入对话框，关闭后回到触发器；按 Esc
+                  或点击变暗的页面即可关闭。系统开启「减少动态效果」时仅保留淡入淡出。
+                </p>
+                <p>
+                  触发器与关闭按钮可通过 <code>render</code> 换成 zzzUI 的
+                  Button，写法见示例。标题栏角落默认带有关闭按钮，设置{" "}
+                  <code>showClose=&#123;false&#125;</code> 即可隐藏。
+                </p>
+              </>
+            ),
+          })}
         </Prose>
       </DocSection>
       <DocSection id="props">
@@ -53,7 +81,10 @@ export default async function DialogPage({ params }: LangProps) {
               name: "showClose",
               type: "boolean",
               default: "true",
-              description: "The close button in the header's corner.",
+              description: pick({
+                en: "The close button in the header's corner.",
+                zh: "标题栏角落的关闭按钮。",
+              }),
             },
           ]}
         />
@@ -67,13 +98,19 @@ export default async function DialogPage({ params }: LangProps) {
             {
               name: "open",
               type: "boolean",
-              description: "Open, controlled; with onOpenChange.",
+              description: pick({
+                en: "Open, controlled; with onOpenChange.",
+                zh: "是否打开（受控），配合 onOpenChange 使用。",
+              }),
             },
             {
               name: "defaultOpen",
               type: "boolean",
               default: "false",
-              description: "Open, uncontrolled.",
+              description: pick({
+                en: "Open, uncontrolled.",
+                zh: "初始是否打开（非受控）。",
+              }),
             },
           ]}
         />

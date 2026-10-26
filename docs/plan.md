@@ -569,6 +569,29 @@ tires the eye.
   fading out downward, and the still one fading in over the same stretch, so the drift dies away
   where the content begins and the two never stack.
 
+### Two languages (2026-10-27)
+
+The author asked for the site in Chinese as well as English, the whole site at once, the example
+apps and demos staying English, and no redirect by browser language.
+
+- **Addresses.** Pages live in `app/[lang]/`. English keeps its bare addresses through an
+  afterFiles rewrite to `/en/…` (one rule for a single segment, one for more: a parameter across
+  slashes is encoded as `%2F` on Workers, as yIso found the same day); `/en/…` redirects back.
+  Static files and routes (the registry, llms.txt, the studio) match before the rewrite.
+  `cacheComponents` forbids `dynamicParams`; the layout's `notFound()` for an unknown language
+  does the same job.
+- **The language in the tree.** Read once per page and layout into React's request cache
+  (`enter`), then `pick` and `link` anywhere below on the server, `usePick` in client components.
+  Copy is written in place, both languages side by side, so a change to one shows the other.
+- **The writing.** Chinese is rewritten, not translated (the i18n-copy skill): the home page and
+  getting started by hand, the rest in eight batches by writers, each batch then read by a reviewer
+  who saw only the Chinese first, then checked intent against the English. The reviews found the
+  same faults across batches (keys as the subject of verbs, 「两侧斜切的斜切块」, 「低调」 for quiet,
+  invented timing words); they are rules in docs/i18n-glossary.md now.
+- **The face.** Montserrat and Outfit carry no CJK, and the systems' faces stop short of the black
+  weight the headings are set in, so Chinese pages load Noto Sans SC (500, 700, 900) in
+  unicode-range slices, on their `<html>` only. The registry's foundation is untouched.
+
 ## The look is ours
 
 (Since 2026-10-26 the library is zzzUI, named in tribute to the game; see that decision. What

@@ -8,6 +8,11 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ### Added
 
+- **The site in Chinese** — every page of zzzUI's site, docs and guides now
+  has a Chinese version under `/zh` (https://zzzui.catforest.dev/zh), written
+  for Chinese developers rather than translated, with a language switch in the
+  header. English addresses do not change. Code, component names and the
+  example apps stay in English.
 - **Nine more accent presets** — `amber`, `mint`, `sky`, `violet`, `mono`,
   `yellow`, `leaf`, `iris` and `orchid` join lime, cyan and magenta: twelve in
   all, each keeping ink text on it at 7 : 1 or more. Hover and pressed shades are now mixed from the colour by one

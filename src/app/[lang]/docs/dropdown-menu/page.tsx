@@ -1,4 +1,4 @@
-import { enter, type LangProps } from "@/lib/i18n/server";
+import { enter, type LangProps, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { docGraph } from "@/seo/graph";
 import { metadataFor } from "@/seo/site";
@@ -16,29 +16,58 @@ export default async function DropdownMenuPage({ params }: LangProps) {
       <JsonLd data={docGraph("/docs/dropdown-menu")} />
       <DocHeader
         title="Dropdown menu"
-        lead="A list of actions in a panel that drops from its trigger. The rows are Select's: slabs cut at the end, filled with the accent while highlighted."
+        lead={pick({
+          en: "A list of actions in a panel that drops from its trigger. The rows are Select's: slabs cut at the end, filled with the accent while highlighted.",
+          zh: "从触发器下方展开的面板，内含一列操作。各行与 Select 相同：末端斜切，高亮时填充强调色。",
+        })}
       />
       <DocSection id="install">
         <Install item="dropdown-menu" />
       </DocSection>
       <DocSection id="examples">
-        <Demo file="dropdown-menu-basic" title="Actions, a toggle, a choice">
+        <Demo
+          file="dropdown-menu-basic"
+          title={pick({
+            en: "Actions, a toggle, a choice",
+            zh: "操作、复选与单选",
+          })}
+        >
           <DropdownMenuBasic />
         </Demo>
       </DocSection>
       <DocSection id="behaviour">
         <Prose>
-          <p>
-            Rows take an icon or a <code>DropdownMenuShortcut</code>; a checkbox
-            row shows a check, a radio row the small slanted mark of a chosen
-            Select row; <code>danger</code> turns a row red.
-          </p>
-          <p>
-            Arrow keys move the highlight, typing jumps to a row, Enter
-            activates it. A submenu (DropdownMenuSub, with its SubTrigger and
-            SubContent) opens beside its row, which stays raised while it is
-            open.
-          </p>
+          {pick({
+            en: (
+              <>
+                <p>
+                  Rows take an icon or a <code>DropdownMenuShortcut</code>; a
+                  checkbox row shows a check, a radio row the small slanted mark
+                  of a chosen Select row; <code>danger</code> turns a row red.
+                </p>
+                <p>
+                  Arrow keys move the highlight, typing jumps to a row, Enter
+                  activates it. A submenu (DropdownMenuSub, with its SubTrigger
+                  and SubContent) opens beside its row, which stays raised while
+                  it is open.
+                </p>
+              </>
+            ),
+            zh: (
+              <>
+                <p>
+                  行内可放图标或 <code>DropdownMenuShortcut</code>
+                  。复选行选中时显示对勾，单选行显示与 Select
+                  选中行相同的斜切小标记；<code>danger</code> 使该行变为红色。
+                </p>
+                <p>
+                  按方向键移动高亮，输入字符可跳至匹配的行，按 Enter
+                  执行该行的操作。子菜单（DropdownMenuSub 及其
+                  SubTrigger、SubContent）在所属行旁打开，打开期间该行保持浮起色。
+                </p>
+              </>
+            ),
+          })}
         </Prose>
       </DocSection>
       <DocSection id="props">
@@ -53,13 +82,19 @@ export default async function DropdownMenuPage({ params }: LangProps) {
               name: "side",
               type: '"top" | "bottom" | "left" | "right"',
               default: '"bottom"',
-              description: "Where it opens from the trigger.",
+              description: pick({
+                en: "Where it opens from the trigger.",
+                zh: "相对触发器的打开方向。",
+              }),
             },
             {
               name: "align",
               type: '"start" | "center" | "end"',
               default: '"start"',
-              description: "How it lines up with the trigger.",
+              description: pick({
+                en: "How it lines up with the trigger.",
+                zh: "与触发器的对齐方式。",
+              }),
             },
           ]}
         />
@@ -74,8 +109,10 @@ export default async function DropdownMenuPage({ params }: LangProps) {
               name: "danger",
               type: "boolean",
               default: "false",
-              description:
-                "A destructive action: red, and red when highlighted.",
+              description: pick({
+                en: "A destructive action: red, and red when highlighted.",
+                zh: "破坏性操作：显示为红色，高亮时同样为红色。",
+              }),
             },
           ]}
         />

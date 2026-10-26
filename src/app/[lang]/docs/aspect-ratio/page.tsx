@@ -1,4 +1,4 @@
-import { enter, type LangProps } from "@/lib/i18n/server";
+import { enter, type LangProps, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { docGraph } from "@/seo/graph";
 import { metadataFor } from "@/seo/site";
@@ -16,19 +16,32 @@ export default async function AspectRatioPage({ params }: LangProps) {
       <JsonLd data={docGraph("/docs/aspect-ratio")} />
       <DocHeader
         title="Aspect ratio"
-        lead="Keeps its content to a ratio of width to height, so pictures, video and maps do not jump while they load."
+        lead={pick({
+          en: "Keeps its content to a ratio of width to height, so pictures, video and maps do not jump while they load.",
+          zh: "让内容保持固定的宽高比，图片、视频与地图在加载过程中不会造成布局跳动。",
+        })}
       />
       <DocSection id="install">
         <Install item="aspect-ratio" />
       </DocSection>
       <DocSection id="examples">
-        <Demo file="aspect-ratio-map" title="A 16 : 9 map">
+        <Demo
+          file="aspect-ratio-map"
+          title={pick({ en: "A 16 : 9 map", zh: "16 : 9 的地图" })}
+        >
           <AspectRatioMap />
         </Demo>
       </DocSection>
       <DocSection id="behaviour">
         <Prose>
-          <p>The content fills it; a picture inside is cropped to cover it.</p>
+          {pick({
+            en: (
+              <p>
+                The content fills it; a picture inside is cropped to cover it.
+              </p>
+            ),
+            zh: <p>内容填满容器；其中的图片会被裁切，以完整覆盖容器。</p>,
+          })}
         </Prose>
       </DocSection>
       <DocSection id="props">
@@ -39,7 +52,10 @@ export default async function AspectRatioPage({ params }: LangProps) {
               name: "ratio",
               type: "number",
               default: "16 / 9",
-              description: "Width divided by height.",
+              description: pick({
+                en: "Width divided by height.",
+                zh: "宽度除以高度。",
+              }),
             },
           ]}
         />

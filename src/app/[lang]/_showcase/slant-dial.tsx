@@ -6,10 +6,12 @@ import { SearchIcon } from "@/components/zero/icons";
 import { Input } from "@/components/zero/input";
 import { Slider } from "@/components/zero/slider";
 import { Tabs, TabsList, TabsTab } from "@/components/zero/tabs";
+import { usePick } from "@/lib/i18n/client";
 
 /** One slider on --zero-slant, and the components beside it all re-cut to follow. */
 export function SlantDial() {
   const [slant, setSlant] = useState(14);
+  const { pick } = usePick();
   return (
     <div className="grid min-w-0 gap-6 border-(length:--zero-stroke-thin) border-zero-line bg-zero-void p-5 sm:p-8">
       <div className="grid gap-2">
@@ -24,7 +26,7 @@ export function SlantDial() {
           max={30}
           value={slant}
           onValueChange={(value) => setSlant(value as number)}
-          aria-label="Slant, in degrees"
+          aria-label={pick({ en: "Slant, in degrees", zh: "斜切角度（度）" })}
         />
       </div>
       <div

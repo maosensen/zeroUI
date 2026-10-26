@@ -1,4 +1,9 @@
-import { Martian_Mono, Montserrat, Outfit } from "next/font/google";
+import {
+  Martian_Mono,
+  Montserrat,
+  Noto_Sans_SC,
+  Outfit,
+} from "next/font/google";
 import type { ReactNode } from "react";
 import "../globals.css";
 import { Providers } from "@/components/providers";
@@ -30,6 +35,17 @@ const martianMono = Martian_Mono({
   subsets: ["latin"],
 });
 
+// The Chinese pages' face: Montserrat and Outfit have no CJK glyphs, and the systems' own fall
+// short of the black weight the display face is set in. Google serves it in unicode-range slices,
+// so a page downloads only the slices holding its characters; it is put on <html> for Chinese only
+// (globals.css appends it to --font-zero and --font-zero-text there).
+const notoSansSC = Noto_Sans_SC({
+  variable: "--font-noto-sc",
+  weight: ["500", "700", "900"],
+  preload: false,
+  display: "swap",
+});
+
 export function RootShell({
   lang,
   children,
@@ -47,6 +63,7 @@ export function RootShell({
         montserrat.variable,
         outfit.variable,
         martianMono.variable,
+        lang === "zh-CN" && notoSansSC.variable,
         "font-sans",
       )}
     >

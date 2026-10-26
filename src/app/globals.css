@@ -3,6 +3,17 @@
 @import "shadcn/tailwind.css";
 @import "../styles/zero/zero.css";
 
+/* The Chinese pages: after the Latin faces, Noto Sans SC (loaded in app/_root/shell.tsx for them
+   only) carries the CJK glyphs, in the weights the display face is set in. */
+:root:lang(zh-CN) {
+  --font-zero:
+    var(--font-montserrat), var(--font-noto-sc), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-zero-text:
+    var(--font-outfit), var(--font-noto-sc), ui-sans-serif, system-ui,
+    sans-serif;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

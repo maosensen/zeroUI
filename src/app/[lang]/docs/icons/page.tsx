@@ -1,5 +1,5 @@
 import * as icons from "@/components/zero/icons";
-import { enter, type LangProps } from "@/lib/i18n/server";
+import { enter, type LangProps, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { docGraph } from "@/seo/graph";
 import { metadataFor } from "@/seo/site";
@@ -26,19 +26,34 @@ export default async function IconsPage({ params }: LangProps) {
     <>
       <JsonLd data={docGraph("/docs/icons")} />
       <DocHeader
-        title="Icons"
-        lead="Thirty solid icons drawn for zzzUI on a 24-unit grid, interface glyphs and a few things to carry. Strokes end on the same slant as the slabs, corners are cut, and only things round by nature are curved."
+        title={pick({ en: "Icons", zh: "图标" })}
+        lead={pick({
+          en: "Thirty solid icons drawn for zzzUI on a 24-unit grid, interface glyphs and a few things to carry. Strokes end on the same slant as the slabs, corners are cut, and only things round by nature are curved.",
+          zh: "专为 zzzUI 绘制的 30 个实心图标，基于 24 单位网格，包括界面符号和几件道具。笔画末端的斜角与斜切块相同，转角一律斜切，仅本身为圆形的物体使用曲线。",
+        })}
       />
       <DocSection id="install">
         <Prose>
-          <p>
-            All of them, with an index to import from — or one at a time as{" "}
-            <code>@zzzui/icon-search</code>, <code>@zzzui/icon-check</code>…
-          </p>
+          {pick({
+            en: (
+              <p>
+                All of them, with an index to import from — or one at a time as{" "}
+                <code>@zzzui/icon-search</code>, <code>@zzzui/icon-check</code>…
+              </p>
+            ),
+            zh: (
+              <p>
+                一次安装全部图标，附带一个统一导出的 index
+                文件；也可以逐个安装，如 <code>@zzzui/icon-search</code>、
+                <code>@zzzui/icon-check</code>
+                ……
+              </p>
+            ),
+          })}
         </Prose>
         <Install item="icons" />
       </DocSection>
-      <DocSection id="set" title="The set">
+      <DocSection id="set" title={pick({ en: "The set", zh: "全部图标" })}>
         <ul className="grid grid-cols-[repeat(auto-fill,minmax(8.5rem,1fr))] gap-3">
           {set.map(([name, Icon]) => (
             <li
@@ -58,14 +73,25 @@ export default async function IconsPage({ params }: LangProps) {
           ))}
         </ul>
       </DocSection>
-      <DocSection id="usage" title="Usage">
+      <DocSection id="usage" title={pick({ en: "Usage", zh: "用法" })}>
         <Prose>
-          <p>
-            An icon is <code>1.25em</code> square and takes the text colour, so
-            inside a button, a tab or an input it sizes and colours itself.
-            Decorative by default; give it a <code>title</code> when it stands
-            alone and means something.
-          </p>
+          {pick({
+            en: (
+              <p>
+                An icon is <code>1.25em</code> square and takes the text colour,
+                so inside a button, a tab or an input it sizes and colours
+                itself. Decorative by default; give it a <code>title</code> when
+                it stands alone and means something.
+              </p>
+            ),
+            zh: (
+              <p>
+                图标为 <code>1.25em</code>{" "}
+                见方，颜色取自当前文字颜色，因此用在按钮、标签页或输入框中时，尺寸和颜色会自动适配。图标默认视为装饰；单独出现且承载含义时，应为其设置{" "}
+                <code>title</code>。
+              </p>
+            ),
+          })}
         </Prose>
         <CodeBlock
           code={`import { Button } from "@/components/zero/button";
@@ -81,26 +107,32 @@ import { ArrowRightIcon, AlertIcon } from "@/components/zero/icons";
       </DocSection>
       <DocSection id="props">
         <PropsTable
-          part="Every icon"
+          part={pick({ en: "Every icon", zh: "所有图标" })}
           rows={[
             {
               name: "title",
               type: "string",
-              description:
-                'Makes the icon meaningful on its own: role="img", named by the title.',
+              description: pick({
+                en: 'Makes the icon meaningful on its own: role="img", named by the title.',
+                zh: '让图标独立表意：图标获得 role="img"，并以 title 作为可访问名称。',
+              }),
             },
             {
               name: "outline",
               type: "boolean",
               default: "false",
-              description:
-                "An ink outline around the whole shape, for an icon on the accent or on an image.",
+              description: pick({
+                en: "An ink outline around the whole shape, for an icon on the accent or on an image.",
+                zh: "沿整个形状添加墨黑描边，适用于置于强调色或图片之上的图标。",
+              }),
             },
             {
               name: "className",
               type: "string",
-              description:
-                "A size-* class overrides the 1.25em; a text-* class sets the colour.",
+              description: pick({
+                en: "A size-* class overrides the 1.25em; a text-* class sets the colour.",
+                zh: "size-* 类覆盖默认的 1.25em；text-* 类设置颜色。",
+              }),
             },
           ]}
         />
@@ -110,24 +142,35 @@ import { ArrowRightIcon, AlertIcon } from "@/components/zero/icons";
             {
               name: "shape.d",
               type: "string",
-              description: "The path, on the 24-unit grid.",
+              description: pick({
+                en: "The path, on the 24-unit grid.",
+                zh: "路径数据，基于 24 单位网格。",
+              }),
             },
             {
               name: "shape.fillRule",
               type: '"nonzero" | "evenodd"',
               default: '"nonzero"',
-              description: "evenodd turns overlapping paths into holes.",
+              description: pick({
+                en: "evenodd turns overlapping paths into holes.",
+                zh: "设为 evenodd 时，路径重叠处镂空。",
+              }),
             },
             {
               name: "shape.cut",
               type: "string",
-              description:
-                "A region taken out of d, for an opening a fill rule cannot make.",
+              description: pick({
+                en: "A region taken out of d, for an opening a fill rule cannot make.",
+                zh: "从 d 中挖去的区域，用于填充规则无法实现的开口。",
+              }),
             },
             {
               name: "shape.over",
               type: "string",
-              description: "Drawn on top after the cut.",
+              description: pick({
+                en: "Drawn on top after the cut.",
+                zh: "在挖去 cut 之后绘制，叠在最上层。",
+              }),
             },
           ]}
         />

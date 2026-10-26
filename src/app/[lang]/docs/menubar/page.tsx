@@ -1,4 +1,4 @@
-import { enter, type LangProps } from "@/lib/i18n/server";
+import { enter, type LangProps, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { docGraph } from "@/seo/graph";
 import { metadataFor } from "@/seo/site";
@@ -16,23 +16,42 @@ export default async function MenubarPage({ params }: LangProps) {
       <JsonLd data={docGraph("/docs/menubar")} />
       <DocHeader
         title="Menubar"
-        lead="The row of menus across the top of an application: a black bar of quiet slabs, each filled with the accent while its menu is open."
+        lead={pick({
+          en: "The row of menus across the top of an application: a black bar of quiet slabs, each filled with the accent while its menu is open.",
+          zh: "横贯应用顶部的一排菜单：黑色横条上排列着不填色的斜切块，菜单打开时，对应的斜切块填充强调色。",
+        })}
       />
       <DocSection id="install">
         <Install item="menubar" />
       </DocSection>
       <DocSection id="examples">
-        <Demo file="menubar-dispatch" title="Job, View, Help">
+        <Demo
+          file="menubar-dispatch"
+          title={pick({
+            en: "Job, View, Help",
+            zh: "Job、View、Help 三个菜单",
+          })}
+        >
           <MenubarDispatch />
         </Demo>
       </DocSection>
       <DocSection id="behaviour">
         <Prose>
-          <p>
-            Once one menu is open, moving along the bar opens the next; arrow
-            keys move between menus. The menus are Dropdown menus, with their
-            rows, submenus, checkbox and radio rows.
-          </p>
+          {pick({
+            en: (
+              <p>
+                Once one menu is open, moving along the bar opens the next;
+                arrow keys move between menus. The menus are Dropdown menus,
+                with their rows, submenus, checkbox and radio rows.
+              </p>
+            ),
+            zh: (
+              <p>
+                打开一个菜单后，指针沿横条移动即可依次打开其他菜单；用方向键在各菜单间切换焦点。每个菜单都是
+                Dropdown menu，包含菜单项、子菜单、复选与单选菜单项。
+              </p>
+            ),
+          })}
         </Prose>
       </DocSection>
       <DocSection id="props">
@@ -47,7 +66,10 @@ export default async function MenubarPage({ params }: LangProps) {
               name: "orientation",
               type: '"horizontal" | "vertical"',
               default: '"horizontal"',
-              description: "Which way the bar runs.",
+              description: pick({
+                en: "Which way the bar runs.",
+                zh: "菜单栏的方向。",
+              }),
             },
           ]}
         />
