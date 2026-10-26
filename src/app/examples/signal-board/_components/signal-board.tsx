@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AccentSwitch } from "@/components/zero/accent-switch";
+import { AccentPicker } from "@/components/zero/accent-picker";
 import { Badge } from "@/components/zero/badge";
 import { Button } from "@/components/zero/button";
 import { Gauge } from "@/components/zero/gauge";
@@ -304,7 +304,7 @@ export function SignalBoard() {
           <span className="font-semibold font-zero-text text-zero-sm text-zero-text-3 tabular-nums">
             {TN_EDITION.dateShort} · {tnClock(0)}
           </span>
-          <AccentSwitch className="max-sm:hidden" />
+          <AccentPicker />
         </div>
       </header>
 

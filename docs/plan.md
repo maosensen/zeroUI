@@ -532,6 +532,29 @@ mission briefing, a loadout, a leaderboard, a HUD.
 - **A HUD's key numbers** are drawn from `data-key` in CSS and given as `aria-keyshortcuts`, so
   they are announced as shortcuts and do not clash with the slot's name.
 
+### More accents (2026-10-26)
+
+The author asked for the accent switch to become a component with more colours, and chose to open
+the palette (it had been held to hues that mean nothing else) and to allow a colour of one's own.
+
+- **Twelve presets.** Lime, cyan, magenta, amber, mint, sky, violet, mono, then a third row the
+  author asked for: yellow (#ffdc43, the author's), leaf, iris and orchid, the last three from the
+  widest gaps left on the hue wheel. Ink on each at 7 : 1 or more. Red (danger) stays out; coral
+  too, beside it. Yellow sits near the focus frame's yellow, as lime already did (1.1 : 1): the
+  frame's ink gap keeps it visible on an accent fill. Several sit near a rarity tier's hue; the
+  docs say to prefer lime, cyan, magenta, leaf or mono on a screen that shows rarity.
+- **One rule mixes the shades.** `:where([data-zero-accent])` derives hover and pressed from
+  `--zero-accent` with `color-mix`; its zero specificity lets any preset (lime keeps its tuned
+  shades) win whatever order the host's stylesheet ends up in. A colour of one's own is then just
+  `data-zero-accent="custom"` and the two names inline.
+- **A guard, not a promise.** A colour of one's own is applied only if ink text reads on it at the
+  presets' floor; the picker says why it refused one, with the ratio, in a polite live note.
+- **Two components, one keeper.** `useAccent` reads storage after hydration, writes the target and
+  remembers what someone chose; AccentSwitch (a row) and AccentPicker (a swatch button opening a
+  popover with the grid and "Your own") both use it. On the whole page the picker's swatch reads
+  the accent from CSS, so it is right from the first paint. The site header uses the picker at
+  every width; on a phone it drops its chevron to fit.
+
 ## The look is ours
 
 (Since 2026-10-26 the library is zzzUI, named in tribute to the game; see that decision. What

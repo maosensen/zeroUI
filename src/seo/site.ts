@@ -758,10 +758,19 @@ export const PAGES = [
     path: "/docs/accent-switch",
     title: "Accent switch",
     description:
-      "Switch a React UI's accent colour at runtime with zzzUI: three presets set by a data attribute, chosen with swatches, remembered across visits.",
+      "Switch a React UI's accent colour at runtime with zzzUI: twelve presets set by a data attribute, chosen with swatches, remembered across visits.",
     crumb: "Accent switch",
     group: "foundation",
   },
+  {
+    path: "/docs/accent-picker",
+    title: "Accent picker",
+    description:
+      "A theme colour picker for React with zzzUI: twelve accent presets in a popover, or a colour of your own kept legible, remembered across visits.",
+    crumb: "Accent picker",
+    group: "foundation",
+  },
+
   {
     path: "/docs/rarity",
     title: "Rarity",

@@ -13,7 +13,9 @@ export default function AccentSwitchPreview() {
   const box = useRef<HTMLDivElement>(null);
   return (
     <div className="grid w-full max-w-md gap-4">
+      {/* five of the twelve: the ones clear of every rarity tier's hue */}
       <AccentSwitch
+        accents={["lime", "cyan", "magenta", "leaf", "mono"]}
         target={() => box.current}
         storageKey={null}
         aria-label="Accent of the preview"

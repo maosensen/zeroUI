@@ -961,8 +961,21 @@ const registry = {
     component(
       "accent-switch",
       "Accent switch",
-      "Chooses the accent from the foundation's presets with a row of swatches, and remembers it.",
+      "Chooses the accent from the foundation's twelve presets with a row of swatches, and remembers it.",
       ["@base-ui/react"],
+    ),
+    component(
+      "accent-picker",
+      "Accent picker",
+      "The accent from a small button: twelve presets in a popover, or a colour of your own that ink reads on.",
+      ["@base-ui/react"],
+      [
+        dep("accent-switch"),
+        dep("button"),
+        dep("icon-chevron-down"),
+        dep("input"),
+        dep("popover"),
+      ],
     ),
     component(
       "tabs",

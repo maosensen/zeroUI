@@ -116,19 +116,40 @@
 }
 
 /* ── Accent presets ──────────────────────────────────────────────────────
- * The one bright colour, chosen from a short list: set data-zero-accent on <html> for the whole
- * page, or on any element for what is inside it (AccentSwitch does it and remembers the choice).
- * Each preset keeps ink legible on it (cyan 12.6 : 1, magenta 7 : 1) and reads as text on the
- * ground and on raised fills, and each is clear of the hues that already mean something: the
- * focus yellow, danger red, and the five rarity tiers (so no amber, mint or violet).
+ * The one bright colour, chosen from twelve: set data-zero-accent on <html> for the whole page, or
+ * on any element for what is inside it (AccentSwitch and AccentPicker do it and remember the
+ * choice). Every preset keeps ink text on it at 7 : 1 or more (magenta, the darkest, is 7 : 1) and
+ * reads as text on the ground and on raised fills. Red stays out: it is danger. Yellow is in, near
+ * the focus frame's yellow as lime already is; the frame keeps an ink gap inside it, so it still
+ * shows on an accent fill. Amber, mint, sky, violet, yellow, iris and orchid sit near a rarity
+ * tier's hue: fine on most pages; on a screen that shows rarity, prefer lime, cyan, magenta, leaf
+ * or mono, so a tier is never mistaken for the accent.
  *
  * A preset sets both names a colour goes by: --zero-accent, the raw value a host project's
  * Tailwind utilities read (its theme is inline), and --color-zero-accent, which components read
- * inside arbitrary values. Hover and pressed shades are mixed from the colour. */
+ * inside arbitrary values. Hover and pressed shades are mixed from it by the rule below, which has
+ * no specificity, so a preset (lime keeps its own tuned shades) always wins over it, in any order.
+ * For a colour of your own, set data-zero-accent="custom" and the two names inline. */
 :root {
   --zero-accent-lime: #cde31c;
   --zero-accent-cyan: #2ee6d6;
   --zero-accent-magenta: #ff5cae;
+  --zero-accent-amber: #ffbf3c;
+  --zero-accent-mint: #5ff0a8;
+  --zero-accent-sky: #6cc8ff;
+  --zero-accent-violet: #c8a2ff;
+  --zero-accent-mono: #e8ecef;
+  --zero-accent-yellow: #ffdc43;
+  --zero-accent-leaf: #9cee5c;
+  --zero-accent-iris: #9eacff;
+  --zero-accent-orchid: #f08cff;
+}
+
+:where([data-zero-accent]) {
+  --zero-accent-hi: color-mix(in oklab, var(--zero-accent), white 22%);
+  --zero-accent-lo: color-mix(in oklab, var(--zero-accent), black 18%);
+  --color-zero-accent-hi: color-mix(in oklab, var(--zero-accent), white 22%);
+  --color-zero-accent-lo: color-mix(in oklab, var(--zero-accent), black 18%);
 }
 
 [data-zero-accent="lime"] {
@@ -142,34 +163,55 @@
 
 [data-zero-accent="cyan"] {
   --zero-accent: var(--zero-accent-cyan);
-  --zero-accent-hi: color-mix(in oklab, var(--zero-accent-cyan), white 22%);
-  --zero-accent-lo: color-mix(in oklab, var(--zero-accent-cyan), black 18%);
   --color-zero-accent: var(--zero-accent-cyan);
-  --color-zero-accent-hi: color-mix(
-    in oklab,
-    var(--zero-accent-cyan),
-    white 22%
-  );
-  --color-zero-accent-lo: color-mix(
-    in oklab,
-    var(--zero-accent-cyan),
-    black 18%
-  );
 }
 
 [data-zero-accent="magenta"] {
   --zero-accent: var(--zero-accent-magenta);
-  --zero-accent-hi: color-mix(in oklab, var(--zero-accent-magenta), white 22%);
-  --zero-accent-lo: color-mix(in oklab, var(--zero-accent-magenta), black 18%);
   --color-zero-accent: var(--zero-accent-magenta);
-  --color-zero-accent-hi: color-mix(
-    in oklab,
-    var(--zero-accent-magenta),
-    white 22%
-  );
-  --color-zero-accent-lo: color-mix(
-    in oklab,
-    var(--zero-accent-magenta),
-    black 18%
-  );
+}
+
+[data-zero-accent="amber"] {
+  --zero-accent: var(--zero-accent-amber);
+  --color-zero-accent: var(--zero-accent-amber);
+}
+
+[data-zero-accent="mint"] {
+  --zero-accent: var(--zero-accent-mint);
+  --color-zero-accent: var(--zero-accent-mint);
+}
+
+[data-zero-accent="sky"] {
+  --zero-accent: var(--zero-accent-sky);
+  --color-zero-accent: var(--zero-accent-sky);
+}
+
+[data-zero-accent="violet"] {
+  --zero-accent: var(--zero-accent-violet);
+  --color-zero-accent: var(--zero-accent-violet);
+}
+
+[data-zero-accent="mono"] {
+  --zero-accent: var(--zero-accent-mono);
+  --color-zero-accent: var(--zero-accent-mono);
+}
+
+[data-zero-accent="yellow"] {
+  --zero-accent: var(--zero-accent-yellow);
+  --color-zero-accent: var(--zero-accent-yellow);
+}
+
+[data-zero-accent="leaf"] {
+  --zero-accent: var(--zero-accent-leaf);
+  --color-zero-accent: var(--zero-accent-leaf);
+}
+
+[data-zero-accent="iris"] {
+  --zero-accent: var(--zero-accent-iris);
+  --color-zero-accent: var(--zero-accent-iris);
+}
+
+[data-zero-accent="orchid"] {
+  --zero-accent: var(--zero-accent-orchid);
+  --color-zero-accent: var(--zero-accent-orchid);
 }

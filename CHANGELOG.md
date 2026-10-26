@@ -6,6 +6,26 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Nine more accent presets** — `amber`, `mint`, `sky`, `violet`, `mono`,
+  `yellow`, `leaf`, `iris` and `orchid` join lime, cyan and magenta: twelve in
+  all, each keeping ink text on it at 7 : 1 or more. Hover and pressed shades are now mixed from the colour by one
+  foundation rule, so `data-zero-accent="custom"` with `--zero-accent` and
+  `--color-zero-accent` set inline takes a colour of your own.
+- **Accent picker** — the accent from a small button: the colour in use as a
+  swatch, opening on the twelve presets and a colour of your own (a colour well
+  or hex). A colour too dark for ink text is refused, with its ratio. It keeps
+  and remembers the accent as the Accent switch does; the site's header now has
+  one at every width.
+
+### Changed
+
+- **Accent switch** offers all twelve presets; `accents` picks which, and its
+  value may be a colour of your own (`"#rrggbb"`). `AccentScript` restores a
+  remembered colour of your own before the page paints. The hook it is built on,
+  `useAccent`, is exported, with `accentContrast` and `MIN_CONTRAST`.
+
 ## [0.2.1] - 2026-10-26
 
 Composite examples: whole screens that put many components to work, with two

@@ -410,7 +410,12 @@ const entries = [
   {
     href: "/docs/accent-switch",
     name: "Accent switch",
-    line: "Three accents, remembered.",
+    line: "Twelve accents in a row, remembered.",
+  },
+  {
+    href: "/docs/accent-picker",
+    name: "Accent picker",
+    line: "The accent from a button, or your own.",
   },
   {
     href: "/docs/icons",

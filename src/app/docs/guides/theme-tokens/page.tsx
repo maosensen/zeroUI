@@ -121,14 +121,17 @@ export default function ThemeTokensGuide() {
         <Prose>
           <p>
             The quickest way to change the accent is a preset: set{" "}
-            <code>data-zero-accent</code> to <code>lime</code>,{" "}
-            <code>cyan</code> or <code>magenta</code> on{" "}
-            <code>&lt;html&gt;</code>, or on any element to recolour only what
-            is inside it. The{" "}
-            <Link href="/docs/accent-switch">Accent switch</Link> lets visitors
-            choose one and remembers it. The presets were picked to keep ink
-            readable on them and to stay clear of the colours that already mean
-            something: the focus yellow, danger red and the rarity tiers.
+            <code>data-zero-accent</code> to one of twelve (<code>lime</code>,{" "}
+            <code>cyan</code>, <code>magenta</code>, <code>amber</code>,{" "}
+            <code>mint</code>, <code>sky</code>, <code>violet</code>,{" "}
+            <code>mono</code>, <code>yellow</code>, <code>leaf</code>,{" "}
+            <code>iris</code>, <code>orchid</code>) on <code>&lt;html&gt;</code>
+            , or on any element to recolour only what is inside it. The{" "}
+            <Link href="/docs/accent-switch">Accent switch</Link> and the{" "}
+            <Link href="/docs/accent-picker">Accent picker</Link> let visitors
+            choose one and remember it; the picker also takes a colour of their
+            own. Every preset keeps ink readable on it at 7 : 1, and red stays
+            out, since it means danger.
           </p>
         </Prose>
         <CodeBlock code={preset} lang="tsx" title="layout.tsx" />

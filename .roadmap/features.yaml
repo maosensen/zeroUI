@@ -761,6 +761,12 @@ features:
     completedAt: 2026-10-26
     shippedIn: v0.2.1
     note: '地基里三个强调色预设(lime 默认、cyan、magenta),在 <html> 或任意元素上写 data-zero-accent 即可;按含义挑色,避开焦点黄、危险红和五档稀有度的色相,墨黑字在上面都 ≥7:1。预设同时设 --zero-accent(宿主 inline 主题的工具类读它)与 --color-zero-accent(组件读它)。AccentSwitch 是一组斜切色块的单选组,只记住用户真正做出的选择;AccentScript 放在 <head> 里在首帧前套用。站点顶栏带一个。圆角不做切换(切角是规矩),方角用 --zero-slant: 0deg。'
+  - id: accent-picker
+    title: 强调色扩充到十二种与取色器(Accent picker)
+    area: 地基
+    status: done
+    completedAt: 2026-10-26
+    note: '作者 2026-10-26 定:放开配色,十二个预设(lime、cyan、magenta 之外加 amber、mint、sky、violet、mono,随后作者又要一排:yellow #ffdc43(作者指定)、leaf、iris、orchid),红(危险)仍不用;黄与焦点框的黄接近,与 lime 同理靠焦点框里的墨黑间隙区分;靠近稀有度色相的几个,文档写明显示稀有度的界面优先用 lime、cyan、magenta、leaf、mono。墨黑字在每个预设上都 ≥7:1。悬停与按下的深浅改由地基里一条零特异度的 :where([data-zero-accent]) 规则从颜色本身混出,预设只写颜色(lime 保留手调的两档),于是自定义色只要 data-zero-accent="custom" 加两个内联变量。也允许自选颜色:不足 7:1 的拒绝并说明比值。AccentSwitch 改用共用的 useAccent 钩子,加 accents 属性;新的 AccentPicker 是一个色块按钮,弹出十二个预设的 4×3 网格与「Your own」(取色器与十六进制输入,礼貌播报的说明行);AccentScript 首帧前也能还原自选色。站点顶栏与两个示例改用取色器,手机上只留色块。'
   - id: rename-zzzui
     title: 改名 zzzUI(品牌、命名空间、域名)
     area: 站点与文档

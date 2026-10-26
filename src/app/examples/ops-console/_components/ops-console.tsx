@@ -9,7 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { AccentSwitch } from "@/components/zero/accent-switch";
+import { AccentPicker } from "@/components/zero/accent-picker";
 import {
   Attachment,
   AttachmentContent,
@@ -616,7 +616,7 @@ export function OpsConsole() {
           <span className="font-semibold font-zero-text text-zero-sm text-zero-text-3 tabular-nums">
             {now}
           </span>
-          <AccentSwitch className="max-sm:hidden" />
+          <AccentPicker />
         </div>
       </header>
 
