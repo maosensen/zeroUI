@@ -171,6 +171,7 @@ export const docsNav = [
     group: "Foundation",
     pages: [
       { href: "/docs/icons", title: "Icons" },
+      { href: "/docs/accent-switch", title: "Accent switch" },
       { href: "/docs/rarity", title: "Rarity" },
       { href: "/docs/direction", title: "Direction" },
     ],

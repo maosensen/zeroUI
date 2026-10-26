@@ -947,6 +947,12 @@ const registry = {
       [dep("badge"), dep("button"), dep("objectives")],
     ),
     component(
+      "accent-switch",
+      "Accent switch",
+      "Chooses the accent from the foundation's presets with a row of swatches, and remembers it.",
+      ["@base-ui/react"],
+    ),
+    component(
       "tabs",
       "Tabs",
       "A slanted track with an accent slab that springs to the active tab.",

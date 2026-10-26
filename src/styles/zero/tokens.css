@@ -114,3 +114,62 @@
     transparent 2px 6px
   );
 }
+
+/* ── Accent presets ──────────────────────────────────────────────────────
+ * The one bright colour, chosen from a short list: set data-zero-accent on <html> for the whole
+ * page, or on any element for what is inside it (AccentSwitch does it and remembers the choice).
+ * Each preset keeps ink legible on it (cyan 12.6 : 1, magenta 7 : 1) and reads as text on the
+ * ground and on raised fills, and each is clear of the hues that already mean something: the
+ * focus yellow, danger red, and the five rarity tiers (so no amber, mint or violet).
+ *
+ * A preset sets both names a colour goes by: --zero-accent, the raw value a host project's
+ * Tailwind utilities read (its theme is inline), and --color-zero-accent, which components read
+ * inside arbitrary values. Hover and pressed shades are mixed from the colour. */
+:root {
+  --zero-accent-lime: #cde31c;
+  --zero-accent-cyan: #2ee6d6;
+  --zero-accent-magenta: #ff5cae;
+}
+
+[data-zero-accent="lime"] {
+  --zero-accent: var(--zero-accent-lime);
+  --zero-accent-hi: #def44a;
+  --zero-accent-lo: #a8bd0c;
+  --color-zero-accent: var(--zero-accent-lime);
+  --color-zero-accent-hi: #def44a;
+  --color-zero-accent-lo: #a8bd0c;
+}
+
+[data-zero-accent="cyan"] {
+  --zero-accent: var(--zero-accent-cyan);
+  --zero-accent-hi: color-mix(in oklab, var(--zero-accent-cyan), white 22%);
+  --zero-accent-lo: color-mix(in oklab, var(--zero-accent-cyan), black 18%);
+  --color-zero-accent: var(--zero-accent-cyan);
+  --color-zero-accent-hi: color-mix(
+    in oklab,
+    var(--zero-accent-cyan),
+    white 22%
+  );
+  --color-zero-accent-lo: color-mix(
+    in oklab,
+    var(--zero-accent-cyan),
+    black 18%
+  );
+}
+
+[data-zero-accent="magenta"] {
+  --zero-accent: var(--zero-accent-magenta);
+  --zero-accent-hi: color-mix(in oklab, var(--zero-accent-magenta), white 22%);
+  --zero-accent-lo: color-mix(in oklab, var(--zero-accent-magenta), black 18%);
+  --color-zero-accent: var(--zero-accent-magenta);
+  --color-zero-accent-hi: color-mix(
+    in oklab,
+    var(--zero-accent-magenta),
+    white 22%
+  );
+  --color-zero-accent-lo: color-mix(
+    in oklab,
+    var(--zero-accent-magenta),
+    black 18%
+  );
+}

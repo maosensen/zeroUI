@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Martian_Mono, Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { AccentScript } from "@/components/zero/accent-switch";
 import { SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { OG_IMAGE } from "@/seo/site";
@@ -53,6 +54,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "font-sans",
       )}
     >
+      <head>
+        <AccentScript />
+      </head>
       <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>
       </body>

@@ -398,6 +398,11 @@ const entries = [
     line: "Cards of any height in columns.",
   },
   {
+    href: "/docs/accent-switch",
+    name: "Accent switch",
+    line: "Three accents, remembered.",
+  },
+  {
     href: "/docs/icons",
     name: "Icons",
     line: "Thirty solid glyphs on the same slant.",

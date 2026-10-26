@@ -726,6 +726,12 @@ features:
     completedAt: 2026-10-25
     shippedIn: v0.1.5
     note: /docs/guides 总览与三篇:用 React 搭游戏设置菜单、会留伤害残影的血条(含不用 zeroUI 的从零写法)、用 token 改主题(说明宿主项目里要覆盖的是 --zero-* 原名而非 --color-zero-*);每篇开头先给结论,标题与开头段落含关键词地图里的长尾词,JSON-LD 为 Article(作者与发布者都是品牌),面包屑经过 Guides,站内互链到组件、区块与其他指南。L2 的验收是人审,待作者过目。
+  - id: accent-switch
+    title: 强调色预设与切换(Accent switch)
+    area: 地基
+    status: done
+    completedAt: 2026-10-26
+    note: '地基里三个强调色预设(lime 默认、cyan、magenta),在 <html> 或任意元素上写 data-zero-accent 即可;按含义挑色,避开焦点黄、危险红和五档稀有度的色相,墨黑字在上面都 ≥7:1。预设同时设 --zero-accent(宿主 inline 主题的工具类读它)与 --color-zero-accent(组件读它)。AccentSwitch 是一组斜切色块的单选组,只记住用户真正做出的选择;AccentScript 放在 <head> 里在首帧前套用。站点顶栏带一个。圆角不做切换(切角是规矩),方角用 --zero-slant: 0deg。'
   - id: rename-zzzui
     title: 改名 zzzUI(品牌、命名空间、域名)
     area: 站点与文档

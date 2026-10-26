@@ -416,6 +416,10 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["masonry layout react", "css columns masonry"],
       where: "description and lead",
     },
+    "/docs/accent-switch": {
+      phrases: ["theme color switcher react", "accent color picker shadcn"],
+      where: "description and lead",
+    },
     "/docs/icons": {
       phrases: ["solid svg icons react", "game ui icons"],
       where: "description and lead",

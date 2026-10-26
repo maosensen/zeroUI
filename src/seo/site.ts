@@ -723,6 +723,14 @@ export const PAGES = [
     group: "chat",
   },
   {
+    path: "/docs/accent-switch",
+    title: "Accent switch",
+    description:
+      "Switch a React UI's accent colour at runtime with zzzUI: three presets set by a data attribute, chosen with swatches, remembered across visits.",
+    crumb: "Accent switch",
+    group: "foundation",
+  },
+  {
     path: "/docs/rarity",
     title: "Rarity",
     description:

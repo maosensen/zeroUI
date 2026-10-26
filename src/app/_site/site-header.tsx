@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { AccentSwitch } from "@/components/zero/accent-switch";
 
 const navLink =
   "font-bold font-zero text-zero-md text-zero-text-2 italic outline-none hover:text-zero-text focus-visible:text-zero-focus";
@@ -31,7 +32,10 @@ export function SiteHeader({ end }: { end?: ReactNode }) {
           Icons
         </Link>
       </nav>
-      {end ? <div className="ms-auto max-sm:hidden">{end}</div> : null}
+      <div className="ms-auto flex items-center gap-6">
+        <AccentSwitch className="max-md:hidden" />
+        {end ? <div className="max-sm:hidden">{end}</div> : null}
+      </div>
     </header>
   );
 }

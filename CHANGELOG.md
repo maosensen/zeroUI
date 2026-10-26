@@ -6,6 +6,13 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ## [Unreleased]
 
+### Added
+
+- **Accent presets and the Accent switch** — `data-zero-accent="cyan"` (or
+  `lime`, `magenta`) on `<html>` or any element recolours zzzUI; the switch lets
+  visitors choose and remembers it, and `AccentScript` applies a remembered
+  choice before the page paints. The site's header has one.
+
 ## [0.2.0] - 2026-10-26
 
 zeroUI is now zzzUI: a new name, a new registry namespace (`@zzzui`) and a new

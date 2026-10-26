@@ -22,6 +22,13 @@ const accent = `:root {
   --zero-accent-lo: color-mix(in oklab, #2ee6d6, black 18%); /* pressed */
 }`;
 
+const preset = `<html lang="en" data-zero-accent="cyan" suppressHydrationWarning>
+  <head>
+    <AccentScript />  {/* applies a remembered choice before paint */}
+  </head>
+  …
+</html>`;
+
 const speed = `:root {
   /* everything a little quicker */
   --zero-dur-fast: 110ms;
@@ -108,6 +115,23 @@ export default function ThemeTokensGuide() {
           </p>
         </Prose>
         <CodeBlock code={slant} lang="css" title="globals.css" />
+      </DocSection>
+
+      <DocSection id="presets" title="Switch between the accent presets">
+        <Prose>
+          <p>
+            The quickest way to change the accent is a preset: set{" "}
+            <code>data-zero-accent</code> to <code>lime</code>,{" "}
+            <code>cyan</code> or <code>magenta</code> on{" "}
+            <code>&lt;html&gt;</code>, or on any element to recolour only what
+            is inside it. The{" "}
+            <Link href="/docs/accent-switch">Accent switch</Link> lets visitors
+            choose one and remembers it. The presets were picked to keep ink
+            readable on them and to stay clear of the colours that already mean
+            something: the focus yellow, danger red and the rarity tiers.
+          </p>
+        </Prose>
+        <CodeBlock code={preset} lang="tsx" title="layout.tsx" />
       </DocSection>
 
       <DocSection id="accent" title="Change the accent">

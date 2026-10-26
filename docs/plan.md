@@ -135,6 +135,16 @@ Decisions land here with their date, in the commit that acts on them.
   points at the raw `--zero-*`); it now exports the raw names. Level 2 is accepted by the author's
   review.
 
+- **2026-10-26 — accent presets and a switch** (the author asked whether the accent and the
+  corners could be switched). Three presets in the foundation, set by `data-zero-accent` on
+  `<html>` or any element: lime (the default), cyan, magenta. Chosen for meaning as much as
+  contrast: amber sits on the focus yellow and the legendary orange, mint on uncommon, violet on
+  epic, coral on danger, ice on rare. A preset sets both names a colour goes by (`--zero-accent`
+  for a host's inline-theme utilities, `--color-zero-accent` for components). `AccentSwitch` is a
+  radio group of swatches that writes the attribute and remembers only a choice someone made;
+  `AccentScript` in `<head>` applies it before paint. The site header carries one. Corners stay
+  cut, not rounded: `--zero-slant: 0deg` is the square-corner knob.
+
 - **2026-10-26 — pages never go stale.** With Cache Components, the docs' cached highlighter gave
   98 of 110 pages Next's default 15-minute revalidate. On the Worker the static-assets cache
   cannot regenerate, so stale pages logged "Dummy queue is not implemented" and, under load, came
