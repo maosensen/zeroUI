@@ -8,6 +8,7 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
+  chartMotion,
 } from "@/components/zero/chart";
 
 const week = [
@@ -33,8 +34,18 @@ export default function ChartWeek() {
         <XAxis dataKey="day" tickLine={false} axisLine={false} tickMargin={8} />
         <ChartTooltip content={<ChartTooltipContent />} cursor />
         <ChartLegend content={<ChartLegendContent />} />
-        <Bar dataKey="rush" fill="var(--color-rush)" stackId="jobs" />
-        <Bar dataKey="regular" fill="var(--color-regular)" stackId="jobs" />
+        <Bar
+          dataKey="rush"
+          fill="var(--color-rush)"
+          stackId="jobs"
+          {...chartMotion}
+        />
+        <Bar
+          dataKey="regular"
+          fill="var(--color-regular)"
+          stackId="jobs"
+          {...chartMotion}
+        />
       </BarChart>
     </ChartContainer>
   );

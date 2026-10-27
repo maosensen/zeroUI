@@ -8,6 +8,15 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ### Added
 
+- **Charts** — a section of its own: fifty-nine charts in zzzUI's look, built
+  on Recharts — area, bar, line, pie, radar and radial charts and the tooltips
+  they share, from the plain ones to stacked, labelled, negative, gradient and
+  interactive ones with a select or toggles. Each is a Card holding a Chart,
+  one file, installed on its own: `shadcn add @zzzui/chart-bar-stacked`.
+  A chart now draws itself when it first comes into view, its marks growing on
+  zzzUI's timing (`chartMotion`, a new `--zero-dur-draw`), and at once with
+  reduced motion. ChartSwatch is exported, polar axes get the quiet grey, and
+  a pie's legend no longer repeats a key.
 - **Every built-in string can be replaced** — what the components say by
   themselves (screen-reader sentences, close and copy buttons, the compass's
   points, Claim / Claimed, the accent picker's notes…) now comes from a prop

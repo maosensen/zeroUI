@@ -33,6 +33,12 @@ export function SiteHeader({ end }: { end?: ReactNode }) {
         >
           {pick({ en: "Blocks", zh: "代码块" })}
         </Link>
+        <Link
+          href={link("/docs/charts")}
+          className={`${navLink} max-sm:hidden`}
+        >
+          {pick({ en: "Charts", zh: "图表" })}
+        </Link>
         <Link href={link("/examples")} className={`${navLink} max-sm:hidden`}>
           {pick({ en: "Examples", zh: "示例" })}
         </Link>

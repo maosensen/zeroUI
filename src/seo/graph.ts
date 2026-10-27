@@ -100,6 +100,10 @@ export function docGraph(path: Exclude<PagePath, "/">) {
     ...(path.startsWith("/docs/blocks/")
       ? [{ name: h.copy("/docs/blocks").crumb, url: h.url("/docs/blocks") }]
       : []),
+    // a chart type sits under the charts overview
+    ...(path.startsWith("/docs/charts/")
+      ? [{ name: h.copy("/docs/charts").crumb, url: h.url("/docs/charts") }]
+      : []),
     { name: p.crumb, url },
   ];
   return graph([

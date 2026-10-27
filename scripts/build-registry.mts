@@ -19,6 +19,7 @@
  */
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import postcss, { type ChildNode, type Container } from "postcss";
+import { CHART_TYPES } from "../src/app/[lang]/docs/charts/_catalog.ts";
 import { SITE_URL } from "../src/lib/site.ts";
 
 const NAMESPACE = "@zzzui";
@@ -137,6 +138,32 @@ const block = (
       path: `src/components/blocks/${name}.tsx`,
       type: "registry:component",
       target: `@components/blocks/${name}.tsx`,
+    },
+  ],
+});
+
+/** A chart of the gallery: a Card holding a Chart, one file in components/charts/. */
+const chart = ({
+  name,
+  title,
+  description,
+  deps = [],
+}: (typeof CHART_TYPES)[number]["charts"][number]) => ({
+  name,
+  type: "registry:block",
+  title,
+  description,
+  registryDependencies: [
+    dep("foundation"),
+    dep("card"),
+    dep("chart"),
+    ...deps.map(dep),
+  ],
+  files: [
+    {
+      path: `src/components/charts/${name}.tsx`,
+      type: "registry:component",
+      target: `@components/charts/${name}.tsx`,
     },
   ],
 });
@@ -984,6 +1011,7 @@ const registry = {
       ["@base-ui/react", "motion"],
       [dep("kbd")],
     ),
+    ...CHART_TYPES.flatMap((t) => t.charts.map(chart)),
   ],
 };
 

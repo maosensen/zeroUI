@@ -18,6 +18,8 @@ export const duration = {
   glitch: 0.32,
   /** How long a gauge's trail waits before it catches up. */
   hold: 0.48,
+  /** A chart's marks growing to their values when it comes into view. */
+  draw: 0.72,
 } as const;
 
 export const ease = {

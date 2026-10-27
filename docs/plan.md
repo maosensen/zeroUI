@@ -608,6 +608,22 @@ default, so output is unchanged unless it is passed.
 - **The site uses it** where the component is part of the site rather than a demo: the header's
   accent picker speaks the page's language.
 
+### Charts on their own (2026-10-27)
+
+The author asked for Chart to be taken out and made complete. Chosen: a section like shadcn's
+charts, every standard type covered, every chart a registry item, and an entrance.
+
+- **A chart is a file, not a component.** Fifty-nine of them in `components/charts/`, each a Card
+  holding a Chart with its data written in: copied, then edited, like a block. One catalog
+  (`docs/charts/_catalog.ts`) feeds the pages and the registry script, so they cannot disagree.
+- **Drawn where it is seen.** ChartContainer mounts the chart when a quarter of it is first on
+  screen, and `chartMotion` gives each series zzzUI's timing: no delay, `--zero-dur-draw`, the
+  arriving ease. Under reduced motion it is drawn at once and Recharts skips the growing.
+- **Plain marks.** Bars stay square-cut rectangles: a slanted end would make a value harder to
+  read. The look comes from the colours, the panel tooltip, the slanted swatches and the cards.
+- **No game charts this time.** Character stats sit in the radar charts; charts made for game
+  screens (drop rates, damage over a fight) were offered and not taken.
+
 ## The look is ours
 
 (Since 2026-10-26 the library is zzzUI, named in tribute to the game; see that decision. What

@@ -1,4 +1,4 @@
-import { enter, type LangProps, pick } from "@/lib/i18n/server";
+import { enter, type LangProps, link, pick } from "@/lib/i18n/server";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { docGraph } from "@/seo/graph";
 import { metadataFor } from "@/seo/site";
@@ -50,6 +50,17 @@ export default async function ChartPage({ params }: LangProps) {
                   LineChart, XAxis…); ChartTooltipContent and ChartLegendContent
                   give its tooltip and legend zzzUI's look.
                 </p>
+                <p>
+                  The chart is drawn when it first comes into view, so its marks
+                  grow in where they are seen. Spread <code>chartMotion</code>{" "}
+                  on each series (<code>{"<Bar {...chartMotion} />"}</code>) for
+                  zzzUI's timing: no delay, <code>--zero-dur-draw</code>, the
+                  arriving ease. With reduced motion it is drawn at once.
+                </p>
+                <p>
+                  Ready-made charts of every kind, each installable on its own,
+                  are in <a href={link("/docs/charts")}>Charts</a>.
+                </p>
               </>
             ),
             zh: (
@@ -66,6 +77,17 @@ export default async function ChartPage({ params }: LangProps) {
                   图表本体用 Recharts
                   自带的组件搭建（BarChart、LineChart、XAxis……）；ChartTooltipContent
                   与 ChartLegendContent 为提示框和图例套用 zzzUI 的外观。
+                </p>
+                <p>
+                  图表首次进入视野时才开始绘制，因此读者能看到数据标记增长的全过程。在每个数据系列上展开{" "}
+                  <code>chartMotion</code>（
+                  <code>{"<Bar {...chartMotion} />"}</code>）即可采用 zzzUI
+                  的动效：无延迟，时长 <code>--zero-dur-draw</code>
+                  ，使用入场缓动。开启「减少动态效果」时直接显示完整图表。
+                </p>
+                <p>
+                  现成的各类图表都在 <a href={link("/docs/charts")}>图表</a>{" "}
+                  栏目中，每个都可单独安装。
                 </p>
               </>
             ),
@@ -107,6 +129,22 @@ export default async function ChartPage({ params }: LangProps) {
                 zh: "隐藏标题或色块。",
               }),
             },
+            {
+              name: "labelKey / nameKey",
+              type: "string",
+              description: pick({
+                en: "The config entry that names the heading, or each row, in place of the data key.",
+                zh: "以 config 中对应条目的名称作为标题或各行的名称，代替数据的键名。",
+              }),
+            },
+            {
+              name: "labelFormatter / formatter",
+              type: "function",
+              description: pick({
+                en: "Write the heading, or draw each row, yourself (Recharts' own signatures).",
+                zh: "自行生成标题文字或绘制每一行，函数签名与 Recharts 相同。",
+              }),
+            },
           ]}
         />
         <PropsTable
@@ -119,6 +157,28 @@ export default async function ChartPage({ params }: LangProps) {
               description: pick({
                 en: "Use the swatch even where the series has an icon.",
                 zh: "系列带图标时也改用色块。",
+              }),
+            },
+          ]}
+        />
+        <PropsTable
+          part="ChartSwatch"
+          rows={[
+            {
+              name: "color",
+              type: "string",
+              description: pick({
+                en: "The series' colour, for a row you draw yourself.",
+                zh: "数据系列的颜色，用于自行绘制的行。",
+              }),
+            },
+            {
+              name: "line",
+              type: "boolean",
+              default: "false",
+              description: pick({
+                en: "A thin upright bar instead of the block.",
+                zh: "改为细长的竖条，而非色块。",
               }),
             },
           ]}

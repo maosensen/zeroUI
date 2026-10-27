@@ -29,6 +29,7 @@ export function GET() {
     sections: [
       { heading: "Start", links: section("start") },
       { heading: "Blocks", links: section("blocks") },
+      { heading: "Charts", links: section("charts") },
       { heading: "Guides", links: section("guides") },
       { heading: "Examples", links: section("examples") },
       { heading: "Components", links: section("components") },

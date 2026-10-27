@@ -54,6 +54,7 @@ export type Page = {
     | "home"
     | "start"
     | "blocks"
+    | "charts"
     | "guides"
     | "examples"
     | "components"
@@ -325,6 +326,118 @@ export const PAGES = [
       description:
         "用 zzzUI 与 shadcn 构建的值班运维控制台：实时服务状态墙、待确认的告警队列，以及附带运维手册的事故作战室。",
       crumb: "Ops console",
+    },
+  },
+  {
+    path: "/docs/charts",
+    title: "Charts",
+    description:
+      "Charts for React in zzzUI's look: area, bar, line, pie, radar and radial charts and their tooltips, built on Recharts. Every chart installs from the shadcn registry on its own.",
+    crumb: "Charts",
+    group: "charts",
+    zh: {
+      title: "图表",
+      description:
+        "zzzUI 风格的 React 图表：面积图、柱状图、折线图、饼图、雷达图、径向图及提示框，基于 Recharts 构建。每个图表都可从 shadcn registry 单独安装。",
+      crumb: "图表",
+    },
+  },
+  {
+    path: "/docs/charts/area",
+    title: "Area charts",
+    description:
+      "Area charts for React in zzzUI's look: curved, straight and stepped, stacked and expanded, with gradients, a legend, axes, and one with a time range to pick. Built on Recharts.",
+    crumb: "Area",
+    group: "charts",
+    zh: {
+      title: "面积图",
+      description:
+        "zzzUI 风格的 React 面积图：曲线、直线与阶梯线，堆叠与百分比堆叠，渐变填充、图例与坐标轴，以及可切换时间范围的交互图表。基于 Recharts 构建。",
+      crumb: "面积图",
+    },
+  },
+  {
+    path: "/docs/charts/bar",
+    title: "Bar charts",
+    description:
+      "Bar charts for React in zzzUI's look: vertical and horizontal, grouped and stacked, labelled, with negative values, one bar marked, and one that switches series. Built on Recharts.",
+    crumb: "Bar",
+    group: "charts",
+    zh: {
+      title: "柱状图",
+      description:
+        "zzzUI 风格的 React 柱状图：纵向与横向、分组与堆叠、带数值标签、含负值、突出其中一根柱子，以及可切换数据系列的交互图表。基于 Recharts 构建。",
+      crumb: "柱状图",
+    },
+  },
+  {
+    path: "/docs/charts/line",
+    title: "Line charts",
+    description:
+      "Line charts for React in zzzUI's look: curved, straight and stepped, several series, dots, labels, and one that switches series. Built on Recharts.",
+    crumb: "Line",
+    group: "charts",
+    zh: {
+      title: "折线图",
+      description:
+        "zzzUI 风格的 React 折线图：曲线、直线与阶梯线，多条数据系列，数据点与标签，以及可切换数据系列的交互图表。基于 Recharts 构建。",
+      crumb: "折线图",
+    },
+  },
+  {
+    path: "/docs/charts/pie",
+    title: "Pie charts",
+    description:
+      "Pie and donut charts for React in zzzUI's look: labels, a legend, a slice pulled out, the total in the middle, two rings, and one with a month to pick. Built on Recharts.",
+    crumb: "Pie",
+    group: "charts",
+    zh: {
+      title: "饼图",
+      description:
+        "zzzUI 风格的 React 饼图与环形图：标签、图例、突出的扇区、居中的总数、双层环，以及可选择月份的交互图表。基于 Recharts 构建。",
+      crumb: "饼图",
+    },
+  },
+  {
+    path: "/docs/charts/radar",
+    title: "Radar charts",
+    description:
+      "Radar charts for React in zzzUI's look, made for stats like a character's: filled or outlined, dots, two compared, a round, filled or hidden grid, a legend and custom labels. Built on Recharts.",
+    crumb: "Radar",
+    group: "charts",
+    zh: {
+      title: "雷达图",
+      description:
+        "zzzUI 风格的 React 雷达图，适合角色属性这类数据：填充或描边、数据点、双组对比，圆形、填充或隐藏的网格，图例与自定义标签。基于 Recharts 构建。",
+      crumb: "雷达图",
+    },
+  },
+  {
+    path: "/docs/charts/radial",
+    title: "Radial charts",
+    description:
+      "Radial bar charts for React in zzzUI's look: a ring per district, labels, a grid, a number in the middle, and a stacked half circle. Built on Recharts.",
+    crumb: "Radial",
+    group: "charts",
+    zh: {
+      title: "径向图",
+      description:
+        "zzzUI 风格的 React 径向条形图：每个区域各占一圈，可加标签、网格与居中的数值，另有半圆形的堆叠图。基于 Recharts 构建。",
+      crumb: "径向图",
+    },
+  },
+  {
+    path: "/docs/charts/tooltip",
+    title: "Chart tooltips",
+    description:
+      "Chart tooltips for React in zzzUI's look: a block, a line or no indicator, custom labels, formatted values with a total, and icons. Built on Recharts.",
+    crumb: "Tooltip",
+    group: "charts",
+    zh: {
+      title: "图表提示框",
+      description:
+        "zzzUI 风格的 React 图表提示框：块状、线状或无指示标记，自定义标签，带合计的格式化数值，以及图标。基于 Recharts 构建。",
+      crumb: "提示框",
     },
   },
   {

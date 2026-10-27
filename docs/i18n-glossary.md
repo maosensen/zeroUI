@@ -49,6 +49,13 @@ zzzUI 站点中文版的用词。中文是重写，不是翻译（user 级 `i18n
 | job（示例数据） | 委托 | job | 示例里的送货委托；接受委托 |
 | tone | 色调 | tone | Alert 的四种：信息、成功、警告、危险 |
 | screen（游戏的） | 界面 | screen | 「画面」只指显示与画质（画面设置、画面撕裂） |
+| chart | 图表 | chart | 「图表」栏目（/docs/charts）；组件名 Chart 不译 |
+| area / bar / line chart | 面积图 / 柱状图 / 折线图 | area / bar / line chart | 横向的柱状图仍叫柱状图（横向柱状图） |
+| pie / donut chart | 饼图 / 环形图 | pie / donut chart | |
+| radar / radial chart | 雷达图 / 径向图 | radar / radial chart | radial bar 在正文中可写「径向条形图」 |
+| series | 数据系列 | series | 不简写成「系列」作主语 |
+| legend | 图例 | legend | |
+| tooltip（图表的） | 提示框 | tooltip | Tooltip 组件页沿用组件名 |
 
 ## 写法约定
 

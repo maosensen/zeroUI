@@ -121,7 +121,8 @@ try {
   });
 
   // with names given, only the pages they can be on: a demo is named after its page
-  // ("button-variants"), a block after its block ("block-hud" on /docs/blocks/hud)
+  // ("button-variants"), a block after its block ("block-hud" on /docs/blocks/hud), a chart after
+  // its type ("chart-bar-stacked" on /docs/charts/bar)
   const pages = (await docsPages()).filter((path) => {
     const slug = path.slice("/docs/".length);
     return (
@@ -129,7 +130,8 @@ try {
       [...only].some(
         (name) =>
           name.startsWith(`${slug}-`) ||
-          name === `block-${slug.replace(/^blocks\//, "")}`,
+          name === `block-${slug.replace(/^blocks\//, "")}` ||
+          name.startsWith(`chart-${slug.replace(/^charts\//, "")}-`),
       )
     );
   });

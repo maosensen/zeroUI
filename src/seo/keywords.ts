@@ -312,6 +312,38 @@ export const KEYWORDS: Record<PagePath, { phrases: string[]; where: string }> =
       phrases: ["quest tracker ui", "objective tracker react"],
       where: "description and lead",
     },
+    "/docs/charts": {
+      phrases: ["shadcn charts dark", "react chart components recharts"],
+      where: "title, description and lead",
+    },
+    "/docs/charts/area": {
+      phrases: ["react area chart recharts", "stacked area chart shadcn"],
+      where: "description and lead",
+    },
+    "/docs/charts/bar": {
+      phrases: ["react bar chart recharts", "stacked bar chart shadcn"],
+      where: "description and lead",
+    },
+    "/docs/charts/line": {
+      phrases: ["react line chart recharts", "shadcn line chart"],
+      where: "description and lead",
+    },
+    "/docs/charts/pie": {
+      phrases: ["react donut chart", "shadcn pie chart"],
+      where: "description and lead",
+    },
+    "/docs/charts/radar": {
+      phrases: ["react radar chart", "character stats radar chart"],
+      where: "description and lead",
+    },
+    "/docs/charts/radial": {
+      phrases: ["react radial bar chart", "shadcn radial chart"],
+      where: "description and lead",
+    },
+    "/docs/charts/tooltip": {
+      phrases: ["recharts custom tooltip", "shadcn chart tooltip"],
+      where: "description and lead",
+    },
     "/docs/blocks": {
       phrases: ["game ui blocks", "shadcn blocks game"],
       where: "description and lead",

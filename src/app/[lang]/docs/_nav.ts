@@ -1,6 +1,6 @@
 /**
- * The docs, in reading order. Groups, the overviews and the guides have a Chinese name (`zh`);
- * a component's or a block's name is its name in both languages.
+ * The docs, in reading order. Groups, the overviews, the guides and the chart types have a Chinese
+ * name (`zh`); a component's or a block's name is its name in both languages.
  */
 type NavPage = { href: string; title: string; zh?: string };
 type NavGroup = { group: string; zh: string; pages: NavPage[] };
@@ -27,6 +27,20 @@ export const docsNav: NavGroup[] = [
       { href: "/docs/blocks/community-feed", title: "Community feed" },
       { href: "/docs/blocks/level-rewards", title: "Level rewards" },
       { href: "/docs/blocks/daily-schedule", title: "Daily schedule" },
+    ],
+  },
+  {
+    group: "Charts",
+    zh: "图表",
+    pages: [
+      { href: "/docs/charts", title: "Overview", zh: "总览" },
+      { href: "/docs/charts/area", title: "Area", zh: "面积图" },
+      { href: "/docs/charts/bar", title: "Bar", zh: "柱状图" },
+      { href: "/docs/charts/line", title: "Line", zh: "折线图" },
+      { href: "/docs/charts/pie", title: "Pie", zh: "饼图" },
+      { href: "/docs/charts/radar", title: "Radar", zh: "雷达图" },
+      { href: "/docs/charts/radial", title: "Radial", zh: "径向图" },
+      { href: "/docs/charts/tooltip", title: "Tooltip", zh: "提示框" },
     ],
   },
   {

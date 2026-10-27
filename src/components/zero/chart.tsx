@@ -6,13 +6,18 @@ import {
   type CSSProperties,
   createContext,
   type ReactNode,
+  type Ref,
   useContext,
+  useEffect,
   useId,
   useMemo,
+  useRef,
+  useState,
 } from "react";
 import type { TooltipValueType } from "recharts";
 import * as RechartsPrimitive from "recharts";
 import { cn } from "@/lib/zero/cn";
+import { duration, ease } from "@/lib/zero/motion";
 
 /*
  * Charts drawn with Recharts in zzzUI's colours. ChartContainer names the series (`config`) and
@@ -21,7 +26,21 @@ import { cn } from "@/lib/zero/cn";
  * 3 the quiet grey, 4 the danger red, 5 the pressed accent. Axes and grid are the quiet line and
  * grey; the tooltip is a small panel and every swatch is a slanted block. Dark only, so a series
  * has one colour, not a light and a dark one.
+ *
+ * A chart is drawn when it first comes into view, so its marks grow in where they are seen: spread
+ * chartMotion on each series (<Bar {...chartMotion} />) for zzzUI's timing. Under reduced motion it
+ * is drawn at once and Recharts skips the growing.
  */
+
+/** The easings Recharts' types name. It takes any cubic-bezier, though, and gets one below. */
+type Timing = "ease" | "ease-in" | "ease-out" | "ease-in-out" | "linear";
+
+/** The draw timing for a series: no delay, --zero-dur-draw, the arriving ease. */
+const chartMotion = {
+  animationBegin: 0,
+  animationDuration: duration.draw * 1000,
+  animationEasing: `cubic-bezier(${ease.out.join(",")})` as Timing,
+};
 
 type ChartConfig = Record<
   string,
@@ -43,6 +62,7 @@ function ChartContainer({
   children,
   config,
   style,
+  ref,
   ...props
 }: ComponentProps<"div"> & {
   config: ChartConfig;
@@ -57,36 +77,77 @@ function ChartContainer({
       .filter(([, item]) => item.color)
       .map(([key, item]) => [`--color-${key}`, item.color]),
   );
+  const [box, seen] = useSeen(ref);
   return (
     <ChartContext.Provider value={{ config }}>
       <div
+        ref={box}
         data-slot="chart"
         data-chart={chartId}
         style={{ ...colours, ...style } as CSSProperties}
         className={cn(
           "flex aspect-video justify-center font-semibold font-zero-text text-zero-xs",
           "[--zero-chart-1:var(--color-zero-accent)] [--zero-chart-2:var(--color-zero-text)] [--zero-chart-3:var(--color-zero-text-3)] [--zero-chart-4:var(--color-zero-danger)] [--zero-chart-5:var(--color-zero-accent-lo)]",
-          "[&_.recharts-cartesian-axis-tick_text]:fill-zero-text-3 [&_.recharts-cartesian-axis-line]:stroke-zero-line [&_.recharts-cartesian-axis-tick-line]:stroke-zero-line",
+          "[&_.recharts-cartesian-axis-tick_text]:fill-zero-text-3 [&_.recharts-polar-angle-axis-tick_text]:fill-zero-text-3 [&_.recharts-polar-radius-axis-tick_text]:fill-zero-text-3 [&_.recharts-cartesian-axis-line]:stroke-zero-line [&_.recharts-cartesian-axis-tick-line]:stroke-zero-line",
           "[&_.recharts-cartesian-grid_line]:stroke-zero-line [&_.recharts-polar-grid_[stroke]]:stroke-zero-line [&_.recharts-reference-line_line]:stroke-zero-line",
           "[&_.recharts-curve.recharts-tooltip-cursor]:stroke-zero-text-3 [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-zero-raised/60",
           "[&_.recharts-dot[stroke='#fff']]:stroke-zero-ink [&_.recharts-sector[stroke='#fff']]:stroke-zero-ink [&_.recharts-radial-bar-background-sector]:fill-zero-raised",
           "[&_.recharts-layer]:outline-none [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
-          // the surface takes keyboard focus (accessibilityLayer): frame it then
+          // the surface takes keyboard focus (accessibilityLayer), and so does a pie: frame them then
           "[&_.recharts-surface:focus-visible]:outline-solid [&_.recharts-surface:focus-visible]:outline-(length:--zero-stroke-thin) [&_.recharts-surface:focus-visible]:outline-zero-focus",
+          "[&_.recharts-pie:focus-visible]:outline-solid [&_.recharts-pie:focus-visible]:outline-(length:--zero-stroke-thin) [&_.recharts-pie:focus-visible]:outline-zero-focus",
           className,
         )}
         {...props}
       >
-        <RechartsPrimitive.ResponsiveContainer>
-          {children}
-        </RechartsPrimitive.ResponsiveContainer>
+        {seen ? (
+          <RechartsPrimitive.ResponsiveContainer>
+            {children}
+          </RechartsPrimitive.ResponsiveContainer>
+        ) : null}
       </div>
     </ChartContext.Provider>
   );
 }
 
-/** A series' swatch: a small slanted block in its colour. */
-function Swatch({ color, line }: { color?: string; line?: boolean }) {
+/**
+ * Whether the chart has come into view yet (a quarter of it on screen), and the ref that watches.
+ * True at once under reduced motion, where there is no growing to be seen.
+ */
+function useSeen(ref: Ref<HTMLDivElement> | undefined) {
+  const own = useRef<HTMLDivElement>(null);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const node = own.current;
+    if (
+      !node ||
+      typeof IntersectionObserver === "undefined" ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setSeen(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        setSeen(true);
+        observer.disconnect();
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  const box = (node: HTMLDivElement | null) => {
+    own.current = node;
+    if (typeof ref === "function") ref(node);
+    else if (ref) ref.current = node;
+  };
+  return [box, seen] as const;
+}
+
+/** A series' swatch: a small slanted block in its colour; `line` makes it a thin upright bar. */
+function ChartSwatch({ color, line }: { color?: string; line?: boolean }) {
   return (
     <span
       aria-hidden
@@ -191,7 +252,7 @@ function ChartTooltipContent({
                     {itemConfig?.icon ? (
                       <itemConfig.icon />
                     ) : hideIndicator ? null : (
-                      <Swatch color={swatch} line={indicator === "line"} />
+                      <ChartSwatch color={swatch} line={indicator === "line"} />
                     )}
                     <span className="text-zero-text-2">
                       {itemConfig?.label ?? item.name}
@@ -242,13 +303,14 @@ function ChartLegendContent({
           const itemConfig = configFor(config, item, key);
           return (
             <div
-              key={key}
+              // a pie's slices share one name key: each is told apart by its value
+              key={`${key}-${item.value}`}
               className="flex items-center gap-1.5 [&>svg]:size-3 [&>svg]:text-zero-text-3"
             >
               {itemConfig?.icon && !hideIcon ? (
                 <itemConfig.icon />
               ) : (
-                <Swatch color={item.color} />
+                <ChartSwatch color={item.color} />
               )}
               {itemConfig?.label}
             </div>
@@ -280,7 +342,9 @@ export {
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
+  ChartSwatch,
   ChartTooltip,
   ChartTooltipContent,
+  chartMotion,
   useChart,
 };
