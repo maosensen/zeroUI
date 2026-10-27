@@ -766,30 +766,35 @@ features:
     area: 地基
     status: done
     completedAt: 2026-10-26
+    shippedIn: v0.2.2
     note: '作者 2026-10-26 定:放开配色,十二个预设(lime、cyan、magenta 之外加 amber、mint、sky、violet、mono,随后作者又要一排:yellow #ffdc43(作者指定)、leaf、iris、orchid),红(危险)仍不用;黄与焦点框的黄接近,与 lime 同理靠焦点框里的墨黑间隙区分;靠近稀有度色相的几个,文档写明显示稀有度的界面优先用 lime、cyan、magenta、leaf、mono。墨黑字在每个预设上都 ≥7:1。悬停与按下的深浅改由地基里一条零特异度的 :where([data-zero-accent]) 规则从颜色本身混出,预设只写颜色(lime 保留手调的两档),于是自定义色只要 data-zero-accent="custom" 加两个内联变量。也允许自选颜色:不足 7:1 的拒绝并说明比值。AccentSwitch 改用共用的 useAccent 钩子,加 accents 属性;新的 AccentPicker 是一个色块按钮,弹出十二个预设的 4×3 网格与「Your own」(取色器与十六进制输入,礼貌播报的说明行);AccentScript 首帧前也能还原自选色。站点顶栏与两个示例改用取色器,手机上只留色块。'
   - id: hatch-drift
     title: 斜线纹理流动(drift)与首页首屏的动感
     area: 地基
     status: done
     completedAt: 2026-10-26
+    shippedIn: v0.2.2
     note: '作者 2026-10-26 提出首页缺乏动感,定:只让首页第一屏的斜线匀速流动,做成地基里的动画,减少动态时停住。motion.css 新增 animate-zero-drift:用 translate 平移、不重绘,每次正好一个纹理周期(6px 节距 × √2 ≈ 8.485px,线是 45°),循环无接缝,约每秒 33px;图层要比所在盒子宽一个 --zero-drift-step。首页:第一屏一层流动的斜线向下渐隐,下面静止的斜线在同一段渐显,滚到内容处自然停下;原来通铺的静止斜线拆成这两层。'
   - id: chart-gallery
     title: 图表栏目（59 个可单独安装的图表）
     area: 组件
     status: done
     completedAt: 2026-10-27
+    shippedIn: v0.2.2
     note: '作者 2026-10-27 提出 Chart 要单独拿出来做全面，选定：独立的图表栏目（像 shadcn 的 charts）、标准类型全覆盖、每个图表进 registry、入场动效；游戏向图表未选。/docs/charts 总览加面积、柱状、折线、饼图、雷达、径向、提示框七页，共 59 个图表，每个是 components/charts/ 里的一个文件（Card 中容纳 Chart，数据写在文件里），registry 里各是一个 registry:block 条目，依赖 card、chart；目录 _catalog.ts 同时供页面与 build-registry 读取。图表下的「代码」按钮打开侧滑面板，含安装命令与源码。ChartContainer 改为首次进入视野才绘制，chartMotion 用地基的 --zero-dur-draw（720ms）与入场缓动，减少动态时直接画完；导出 ChartSwatch；极坐标轴文字改为暗灰；饼图图例的重复 key 修掉。数据是新编的城市快递委托（区域、货物种类、快递员属性），图表内文字为英文。顶栏与文档侧栏各加「图表」入口，SEO 八页两种语言，中文经独立审校。各类型由七个子代理按同一份简报并行写成，主会话逐页截图审过（正方形图表在 grid 里宽度塌成 0、雷达左右标签被裁、半圆径向图留白，均已修）。'
   - id: component-labels
     title: 组件内置文字可替换（labels）
     area: 组件
     status: done
     completedAt: 2026-10-27
+    shippedIn: v0.2.2
     note: '组件自己写出的英文（读屏句子、关闭与复制按钮、方位字母、Claim / Claimed、取色器的提示语等）改为属性，默认值仍是原来的英文、逐字不变。多处文字用 labels 对象（含带数字的句子函数，英文默认值导出：accentLabels、objectiveLabels、statLabels、rewardTierLabels、compassLabels），单处用 label / closeLabel / removeLabel / viewsLabel；本来就能用 children、aria-label、aria-description、title 覆盖的不动（Dialogue、Questionnaire、Pagination 上下页、Spinner 等），Calendar 沿用 DayPicker 的 labels。没有用全局 provider：受影响的 26 个组件里 11 个是服务端组件，context 会逼它们变成客户端组件。区块不在范围内（区块本就是带示例数据、由使用者直接改的整屏）。站点顶栏的取色器在中文页用中文；示例与示例应用仍为英文。19 个组件页的 props 表补了新属性，两种语言。'
   - id: site-i18n
     title: 站点中英双语（/zh）
     area: 站点与文档
     status: done
     completedAt: 2026-10-27
+    shippedIn: v0.2.2
     note: '作者 2026-10-27 定：全站一次做完；示例应用与文档示例保持英文；不按浏览器语言自动跳转，只放切换器。页面整体移入 src/app/[lang]/，英文保留原地址（next.config 的 afterFiles rewrite 转到 /en/…，单段与多段各一条，避开 Workers 上 %2F 的坑；/en/… 308 回不带前缀的地址），中文在 /zh。语言用 React cache 存放（enter/pick/link，客户端 usePick），每段可见文字原地写成 pick({ en, zh })；site.ts 每页带必填的 zh 标题、描述与面包屑。canonical、hreflang（含 x-default）、og:locale、JSON-LD 的 inLanguage 与 sitemap（216 条）随语言。中文按 i18n-copy 重写：首页、快速开始由主会话写，其余 106 页分 8 批由子代理写，每批再由一个未看过英文的子代理独立审校并改定；定下的用词写进 docs/i18n-glossary.md。中文页加载 Noto Sans SC（unicode-range 分片，只下用到的字），只挂在中文页的 <html> 上，不动注册表的地基。顶栏有语言切换；studio 另有根布局。'
   - id: rename-zzzui
     title: 改名 zzzUI(品牌、命名空间、域名)

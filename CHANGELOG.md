@@ -6,6 +6,13 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-10-27
+
+Charts, and the site in Chinese: fifty-nine charts in a section of their own,
+each installed on its own, every string a component says replaceable, twelve
+accent presets with a picker, and hatching that drifts. Install a chart with
+`pnpm dlx shadcn@latest add @zzzui/chart-area-gradient`.
+
 ### Added
 
 - **Charts** — a section of its own: fifty-nine charts in zzzUI's look, built
@@ -448,7 +455,8 @@ shadcn and Base UI, at https://zeroui.catforest.dev.
   can search, filter, take jobs from and hand them in, and a dial that turns
   the slant under a button, tabs and a field.
 
-[Unreleased]: https://github.com/maosensen/zzzUI/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/maosensen/zzzUI/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/maosensen/zzzUI/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/maosensen/zzzUI/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/maosensen/zzzUI/compare/v0.1.7...v0.2.0
 [0.1.7]: https://github.com/maosensen/zzzUI/compare/v0.1.6...v0.1.7
