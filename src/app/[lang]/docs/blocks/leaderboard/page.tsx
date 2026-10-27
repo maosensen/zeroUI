@@ -66,7 +66,7 @@ export default async function LeaderboardPage({ params }: LangProps) {
                   <a href={link("/docs/tabs")}>Tabs</a>、
                   <a href={link("/docs/avatar")}>Avatar</a>、
                   <a href={link("/docs/badge")}>Badge</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

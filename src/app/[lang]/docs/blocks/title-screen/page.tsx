@@ -60,12 +60,12 @@ export default async function TitleScreenPage({ params }: LangProps) {
                   <code>onChoose</code> 接收所选条目的 id。
                 </p>
                 <p>
-                  标题按区块宽度确定字号（容器单位），并以故障效果浮现一次。背景为代码绘制的占位，可将自己的主视觉置于其后。
+                  标题按代码块宽度确定字号（容器单位），并以故障效果浮现一次。背景为代码绘制的占位，可将自己的主视觉置于其后。
                 </p>
                 <p>
                   由 <a href={link("/docs/badge")}>Badge</a>、
                   <a href={link("/docs/kbd")}>Kbd</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

@@ -94,8 +94,12 @@ function MessageScrollerButton({
   className,
   children,
   render,
+  label = direction === "end" ? "Scroll to the newest" : "Scroll to the start",
   ...props
-}: ComponentProps<typeof MessageScrollerPrimitive.Button>) {
+}: ComponentProps<typeof MessageScrollerPrimitive.Button> & {
+  /** What screen readers hear for the arrow; by direction, "Scroll to the newest" or "…start". */
+  label?: string;
+}) {
   return (
     <MessageScrollerPrimitive.Button
       data-slot="message-scroller-button"
@@ -115,11 +119,7 @@ function MessageScrollerButton({
       {children ?? (
         <>
           <ArrowDownIcon />
-          <span className="sr-only">
-            {direction === "end"
-              ? "Scroll to the newest"
-              : "Scroll to the start"}
-          </span>
+          <span className="sr-only">{label}</span>
         </>
       )}
     </MessageScrollerPrimitive.Button>

@@ -66,7 +66,7 @@ export default async function LoadoutPage({ params }: LangProps) {
                   拆解一件物品，并按其价值计入信用点，数字随之递增。
                 </p>
                 <p>
-                  两组网格内均可用方向键切换选中的物品格。区块宽度足够时排成两栏，在手机上为一栏。物品为本地状态，可替换为自己的数据。
+                  两组网格内均可用方向键切换选中的物品格。代码块宽度足够时排成两栏，在手机上为一栏。物品为本地状态，可替换为自己的数据。
                 </p>
                 <p>
                   由 <a href={link("/docs/inventory")}>Inventory</a>、
@@ -75,7 +75,7 @@ export default async function LoadoutPage({ params }: LangProps) {
                   <a href={link("/docs/badge")}>Badge</a>、
                   <a href={link("/docs/button")}>Button</a>、
                   <a href={link("/docs/hold-button")}>Hold button</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

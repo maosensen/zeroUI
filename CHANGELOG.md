@@ -8,6 +8,15 @@ All notable changes to zzzUI are documented here. The format is based on
 
 ### Added
 
+- **Every built-in string can be replaced** — what the components say by
+  themselves (screen-reader sentences, close and copy buttons, the compass's
+  points, Claim / Claimed, the accent picker's notes…) now comes from a prop
+  with its English default, so an app in another language can say it in its
+  own: `labels` where there are several strings (with functions for sentences
+  that carry numbers, and the English defaults exported, e.g. `statLabels`,
+  `compassLabels`), `label` / `closeLabel` / `removeLabel` / `viewsLabel` where
+  there is one. Nothing changes unless you pass them. The site's own accent
+  picker speaks Chinese on the Chinese pages.
 - **The site in Chinese** — every page of zzzUI's site, docs and guides now
   has a Chinese version under `/zh` (https://zzzui.catforest.dev/zh), written
   for Chinese developers rather than translated, with a language switch in the

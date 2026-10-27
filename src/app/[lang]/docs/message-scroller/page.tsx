@@ -83,6 +83,15 @@ export default async function MessageScrollerPage({ params }: LangProps) {
                 zh: "返回最新一轮发言，或跳至第一轮。",
               }),
             },
+            {
+              name: "label",
+              type: "string",
+              default: '"Scroll to the newest"',
+              description: pick({
+                en: 'What screen readers hear for the arrow; with direction="start", "Scroll to the start".',
+                zh: '读屏软件为箭头读出的文字；direction="start" 时默认为 "Scroll to the start"。',
+              }),
+            },
           ]}
         />
         <PropsTable

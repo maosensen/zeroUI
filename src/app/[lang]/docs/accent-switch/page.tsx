@@ -116,7 +116,7 @@ export default async function AccentSwitchPage({ params }: LangProps) {
                   <code>--zero-slant</code>；设为 <code>0deg</code>{" "}
                   时，所有切角都变为直角（参见
                   <a href={link("/docs/guides/theme-tokens")}>
-                    用设计令牌为 zzzUI 定制主题
+                    用设计 token 为 zzzUI 定制主题
                   </a>
                   ）。
                 </p>
@@ -172,6 +172,15 @@ export default async function AccentSwitchPage({ params }: LangProps) {
               description: pick({
                 en: "The group's name.",
                 zh: "单选组的可访问名称。",
+              }),
+            },
+            {
+              name: "labels",
+              type: "AccentLabelsInput",
+              default: "accentLabels",
+              description: pick({
+                en: "The presets' names in another language (labels.names); what is left out stays English.",
+                zh: "预设的名称换成其他语言（labels.names）；未提供的部分保持英文。",
               }),
             },
           ]}

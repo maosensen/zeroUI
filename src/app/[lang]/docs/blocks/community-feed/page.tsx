@@ -69,7 +69,8 @@ export default async function CommunityFeedPage({ params }: LangProps) {
                   在退出过程中保留原有内容。
                 </p>
                 <p>
-                  封面是由设计令牌中的颜色、一个物品图标和一个倾斜的单词组成的海报，可替换为自己的图片。
+                  封面是由设计 token
+                  中的颜色、一个物品图标和一个倾斜的单词组成的海报，可替换为自己的图片。
                 </p>
                 <p>
                   由 <a href={link("/docs/post-card")}>Post card</a>、
@@ -78,7 +79,7 @@ export default async function CommunityFeedPage({ params }: LangProps) {
                   <a href={link("/docs/toggle-group")}>Toggle group</a>、
                   <a href={link("/docs/avatar")}>Avatar</a>、
                   <a href={link("/docs/button")}>Button</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

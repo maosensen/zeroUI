@@ -14,7 +14,8 @@
       "!dist",
       "!build",
       "!public/r",
-      "!registry.json"
+      "!registry.json",
+      "!.claude/worktrees"
     ]
   },
   "formatter": {

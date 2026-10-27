@@ -28,6 +28,20 @@ function Stats({ className, ...props }: ComponentProps<"dl">) {
   );
 }
 
+/** What a Stat says in words for screen readers; English by default. */
+type StatLabels = {
+  /** No difference from what you have now. */
+  same: string;
+  /** A difference: its amount written out with the unit ("2 kg"), which way, and whether that is better. */
+  diff: (amount: string, more: boolean, better: boolean) => string;
+};
+
+const statLabels: StatLabels = {
+  same: "same as now",
+  diff: (amount, more, better) =>
+    `${amount} ${more ? "more" : "less"} than now, ${better ? "better" : "worse"}`,
+};
+
 function Stat({
   className,
   label,
@@ -36,6 +50,7 @@ function Stat({
   better = "higher",
   unit = "",
   format = (n: number) => n.toLocaleString("en-US"),
+  labels,
 }: {
   className?: string;
   label: string;
@@ -46,7 +61,10 @@ function Stat({
   /** Written after each number, as " kg" or "%". */
   unit?: string;
   format?: (n: number) => string;
+  /** What it says in words, in another language: any part of statLabels. */
+  labels?: Partial<StatLabels>;
 }) {
+  const said = { ...statLabels, ...labels };
   const diff = compare === undefined ? 0 : value - compare;
   const good = better === "higher" ? diff > 0 : diff < 0;
   return (
@@ -73,7 +91,7 @@ function Stat({
         {compare === undefined ? null : diff === 0 ? (
           <>
             <span aria-hidden>=</span>
-            <span className="sr-only">same as now</span>
+            <span className="sr-only">{said.same}</span>
           </>
         ) : (
           <>
@@ -85,9 +103,7 @@ function Stat({
               {unit}
             </span>
             <span className="sr-only">
-              {format(Math.abs(diff))}
-              {unit} {diff > 0 ? "more" : "less"} than now,{" "}
-              {good ? "better" : "worse"}
+              {said.diff(`${format(Math.abs(diff))}${unit}`, diff > 0, good)}
             </span>
           </>
         )}
@@ -96,4 +112,4 @@ function Stat({
   );
 }
 
-export { Stat, Stats };
+export { Stat, type StatLabels, Stats, statLabels };

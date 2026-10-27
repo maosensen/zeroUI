@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { AccentPicker } from "@/components/zero/accent-picker";
 import { link, pick } from "@/lib/i18n/server";
 import { LangSwitch } from "./lang-switch";
+import { SiteAccentPicker } from "./site-accent-picker";
 
 const navLink =
   "font-bold font-zero text-zero-sm text-zero-text-2 italic sm:text-zero-md outline-none hover:text-zero-text focus-visible:text-zero-focus";
@@ -31,7 +31,7 @@ export function SiteHeader({ end }: { end?: ReactNode }) {
           href={link("/docs/blocks")}
           className={`${navLink} max-sm:hidden`}
         >
-          {pick({ en: "Blocks", zh: "区块" })}
+          {pick({ en: "Blocks", zh: "代码块" })}
         </Link>
         <Link href={link("/examples")} className={`${navLink} max-sm:hidden`}>
           {pick({ en: "Examples", zh: "示例" })}
@@ -43,7 +43,7 @@ export function SiteHeader({ end }: { end?: ReactNode }) {
       <div className="ms-auto flex items-center gap-4 sm:gap-6">
         <LangSwitch className={navLink} />
         {/* on a phone the swatch alone is the button: the chevron would push the bar off the screen */}
-        <AccentPicker className="max-sm:[&>svg]:hidden" />
+        <SiteAccentPicker className="max-sm:[&>svg]:hidden" />
         {end ? <div className="max-sm:hidden">{end}</div> : null}
       </div>
     </header>

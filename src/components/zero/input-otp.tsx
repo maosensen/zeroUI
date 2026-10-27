@@ -14,8 +14,12 @@ function InputOTP({
   className,
   children,
   length,
+  label = (character, length) => `Character ${character} of ${length}`,
   ...props
-}: OTPFieldPrimitive.Root.Props) {
+}: OTPFieldPrimitive.Root.Props & {
+  /** Each drawn cell's name, from its place (from 1) and the length. */
+  label?: (character: number, length: number) => string;
+}) {
   return (
     <OTPFieldPrimitive.Root
       data-slot="input-otp"
@@ -28,7 +32,7 @@ function InputOTP({
           <InputOTPSlot
             // biome-ignore lint/suspicious/noArrayIndexKey: one cell per character, in order
             key={index}
-            aria-label={`Character ${index + 1} of ${length}`}
+            aria-label={label(index + 1, length)}
           />
         ))}
     </OTPFieldPrimitive.Root>

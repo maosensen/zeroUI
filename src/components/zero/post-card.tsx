@@ -40,9 +40,14 @@ function PostCard({ className, ...props }: ComponentProps<"article">) {
 function PostCardCover({
   className,
   views,
+  viewsLabel = (views) => `Seen ${views} times`,
   children,
   ...props
-}: ComponentProps<"div"> & { views?: number }) {
+}: ComponentProps<"div"> & {
+  views?: number;
+  /** What screen readers hear for the count, given it written out ("1,204"). */
+  viewsLabel?: (views: string) => string;
+}) {
   return (
     <div
       data-slot="post-card-cover"
@@ -56,9 +61,10 @@ function PostCardCover({
       {views !== undefined ? (
         <span className="absolute top-2.5 left-3 flex items-center gap-1 font-bold font-zero-text text-zero-sm tabular-nums [text-shadow:0_1px_0_var(--color-zero-ink),0_0_4px_var(--color-zero-ink)]">
           <EyeIcon className="size-4" />
-          <span className="sr-only">Seen </span>
-          {views.toLocaleString("en-US")}
-          <span className="sr-only"> times</span>
+          <span className="sr-only">
+            {viewsLabel(views.toLocaleString("en-US"))}
+          </span>
+          <span aria-hidden>{views.toLocaleString("en-US")}</span>
         </span>
       ) : null}
     </div>

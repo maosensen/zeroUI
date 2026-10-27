@@ -105,6 +105,15 @@ export default async function InputOTPPage({ params }: LangProps) {
                 zh: "所有格子填满时调用。",
               }),
             },
+            {
+              name: "label",
+              type: "(character: number, length: number) => string",
+              default: '"Character {n} of {length}"',
+              description: pick({
+                en: "Each drawn cell's name, from its place (from 1) and the length.",
+                zh: "每个自动绘制的格子的可访问名称，由序号（从 1 起）与总长度生成。",
+              }),
+            },
           ]}
         />
         <PropsTable

@@ -177,6 +177,7 @@ function Sidebar({
   side = "left",
   variant = "sidebar",
   collapsible = "offcanvas",
+  label = "Sidebar",
   className,
   children,
   ...props
@@ -189,6 +190,8 @@ function Sidebar({
   variant?: "sidebar" | "floating" | "inset";
   /** What closing does on a wide screen: slide away, fold to icons, or nothing. */
   collapsible?: "offcanvas" | "icon" | "none";
+  /** On a phone it opens as a sheet; this is the sheet's (hidden) title. */
+  label?: string;
 }) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
 
@@ -219,7 +222,7 @@ function Sidebar({
           className="w-(--sidebar-width) bg-zero-void p-0"
           style={{ "--sidebar-width": SIDEBAR_WIDTH_MOBILE } as CSSProperties}
         >
-          <SheetTitle className="sr-only">Sidebar</SheetTitle>
+          <SheetTitle className="sr-only">{label}</SheetTitle>
           <div className="flex size-full flex-col">{children}</div>
         </SheetContent>
       </Sheet>

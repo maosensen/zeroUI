@@ -135,6 +135,15 @@ export default async function ComboboxPage({ params }: LangProps) {
                 zh: "是否显示清除按钮。",
               }),
             },
+            {
+              name: "labels",
+              type: "{ clear?: string; show?: string }",
+              default: '"Clear" / "Show suggestions"',
+              description: pick({
+                en: "The two small buttons' names.",
+                zh: "两个小按钮的可访问名称。",
+              }),
+            },
           ]}
         />
         <PropsTable
@@ -144,6 +153,20 @@ export default async function ComboboxPage({ params }: LangProps) {
             href: "https://base-ui.com/react/components/combobox",
           }}
           rows={[]}
+        />
+        <PropsTable
+          part="ComboboxChip"
+          rows={[
+            {
+              name: "removeLabel",
+              type: "string",
+              default: '"Remove"',
+              description: pick({
+                en: "The chip's remove button's name.",
+                zh: "已选项上移除按钮的可访问名称。",
+              }),
+            },
+          ]}
         />
       </DocSection>
     </>

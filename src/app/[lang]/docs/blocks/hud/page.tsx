@@ -71,7 +71,7 @@ export default async function HudPage({ params }: LangProps) {
                   <a href={link("/docs/objectives")}>Objectives</a>、
                   <a href={link("/docs/inventory")}>Inventory</a>、
                   <a href={link("/docs/cut-in")}>Cut-in</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

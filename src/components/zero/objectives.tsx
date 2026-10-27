@@ -23,7 +23,8 @@ import { cn } from "@/lib/zero/cn";
 
 type ObjectiveState = "pending" | "active" | "done" | "failed";
 
-const said: Record<ObjectiveState, string> = {
+/** What screen readers hear before an objective's title, by state; English by default. */
+const objectiveLabels: Record<ObjectiveState, string> = {
   pending: "To do: ",
   active: "Current: ",
   done: "Done: ",
@@ -65,9 +66,14 @@ function ObjectivesHeader({ className, ...props }: ComponentProps<"h3">) {
 function Objective({
   className,
   state = "pending",
+  labels,
   children,
   ...props
-}: ComponentProps<"div"> & { state?: ObjectiveState }) {
+}: ComponentProps<"div"> & {
+  state?: ObjectiveState;
+  /** The lead-ins in another language: any part of objectiveLabels. */
+  labels?: Partial<Record<ObjectiveState, string>>;
+}) {
   return (
     <div
       data-slot="objective"
@@ -92,7 +98,9 @@ function Objective({
       >
         {state === "done" ? <CheckIcon /> : null}
         {state === "failed" ? <CloseIcon /> : null}
-        <span className="sr-only">{said[state]}</span>
+        <span className="sr-only">
+          {labels?.[state] ?? objectiveLabels[state]}
+        </span>
       </span>
       {children}
     </div>
@@ -150,6 +158,7 @@ export {
   Objective,
   ObjectiveCount,
   ObjectiveDescription,
+  objectiveLabels,
   Objectives,
   ObjectivesHeader,
   type ObjectiveState,

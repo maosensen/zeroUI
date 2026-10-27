@@ -20,6 +20,9 @@ import { cn } from "@/lib/zero/cn";
  *
  * An accent is a preset's name or a colour of your own, "#rrggbb". Your own must keep ink text on
  * it legible (MIN_CONTRAST, the presets' own floor); `accentContrast` measures it.
+ *
+ * What the switch and the picker say (the presets' names, the picker's title and notes) is in
+ * English by default, `accentLabels`; pass any part of it as `labels` to say it otherwise.
  */
 
 const ACCENTS = [
@@ -72,9 +75,54 @@ const isAccent = (value: unknown): value is Accent =>
 const accentColor = (accent: Accent) =>
   isPreset(accent) ? `var(--zero-accent-${accent})` : accent;
 
-const accentLabel = (accent: Accent) =>
-  ACCENTS.find((preset) => preset.value === accent)?.label ??
-  accent.toUpperCase();
+/** What the accent components say. The picker's notes are functions of the ratio and the floor. */
+type AccentLabels = {
+  /** Each preset's name: its swatch's accessible name, and the picker's when it is chosen. */
+  names: Record<AccentPreset, string>;
+  /** AccentPicker's button: its name (aria-label) and the accent in use: "Accent colour: Lime". */
+  trigger: (label: string, name: string) => string;
+  /** AccentPicker: the popover's title, the label of the field for your own, the colour well's name. */
+  title: string;
+  own: string;
+  pick: string;
+  /** AccentPicker's note under the field: before anything is typed, when it is not hex, when ink
+   * reads on it, when it is too dark. */
+  hint: (min: number) => string;
+  invalid: string;
+  reads: (ratio: string) => string;
+  tooDark: (ratio: string, min: number) => string;
+};
+
+/** Any part of AccentLabels; what is left out stays English. */
+type AccentLabelsInput = Partial<Omit<AccentLabels, "names">> & {
+  names?: Partial<Record<AccentPreset, string>>;
+};
+
+const accentLabels: AccentLabels = {
+  names: Object.fromEntries(
+    ACCENTS.map((preset) => [preset.value, preset.label]),
+  ) as Record<AccentPreset, string>,
+  trigger: (label, name) => `${label}: ${name}`,
+  title: "Accent",
+  own: "Your own",
+  pick: "Pick a colour",
+  hint: (min) => `Ink text has to read on it: ${min} : 1 or more.`,
+  invalid: "Six hex digits, as #ff8a5c.",
+  reads: (ratio) => `Ink on it reads at ${ratio} : 1.`,
+  tooDark: (ratio, min) => `Too dark for ink text: ${ratio} : 1, needs ${min}.`,
+};
+
+const withAccentLabels = (labels?: AccentLabelsInput): AccentLabels => ({
+  ...accentLabels,
+  ...labels,
+  names: { ...accentLabels.names, ...labels?.names },
+});
+
+/** An accent's name: its preset's, or its own hex. */
+const accentLabel = (
+  accent: Accent,
+  names: Record<AccentPreset, string> = accentLabels.names,
+) => (isPreset(accent) ? names[accent] : accent.toUpperCase());
 
 /** Writes an accent onto an element: a preset by name, your own as "custom" plus the colour. */
 function applyAccent(element: HTMLElement, accent: Accent) {
@@ -151,12 +199,15 @@ function AccentSwatches({
   value,
   onValueChange,
   accents,
+  names = accentLabels.names,
   "aria-label": label = "Accent colour",
 }: {
   className?: string;
   value: Accent;
   onValueChange: (value: Accent) => void;
   accents?: readonly AccentPreset[];
+  /** The presets' names, as their swatches are named. */
+  names?: Record<AccentPreset, string>;
   "aria-label"?: string;
 }) {
   const shown = accents
@@ -176,7 +227,7 @@ function AccentSwatches({
         <RadioPrimitive.Root
           key={accent.value}
           value={accent.value}
-          aria-label={accent.label}
+          aria-label={names[accent.value]}
           data-slot="accent-switch-swatch"
           style={{ "--slab-fill": accentColor(accent.value) } as CSSProperties}
           className={cn(
@@ -196,12 +247,15 @@ function AccentSwatches({
 function AccentSwitch({
   className,
   accents,
+  labels,
   "aria-label": label,
   ...options
 }: AccentOptions & {
   className?: string;
   /** Which presets to offer, in the foundation's order; all twelve when omitted. */
   accents?: readonly AccentPreset[];
+  /** The presets' names in another language (`names`); the rest of AccentLabels is the picker's. */
+  labels?: AccentLabelsInput;
   "aria-label"?: string;
 }) {
   const [accent, choose] = useAccent(options);
@@ -211,6 +265,7 @@ function AccentSwitch({
       value={accent}
       onValueChange={choose}
       accents={accents}
+      names={withAccentLabels(labels).names}
       aria-label={label}
     />
   );
@@ -238,9 +293,13 @@ export {
   AccentSwitch,
   accentColor,
   accentContrast,
+  type AccentLabels,
+  type AccentLabelsInput,
   accentLabel,
+  accentLabels,
   applyAccent,
   isAccent,
   MIN_CONTRAST,
+  withAccentLabels,
   useAccent,
 };

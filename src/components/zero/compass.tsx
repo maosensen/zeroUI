@@ -27,17 +27,37 @@ type CompassMarker = {
   tone?: keyof typeof tones;
 };
 
-const points = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
-const words = [
-  "north",
-  "north-east",
-  "east",
-  "south-east",
-  "south",
-  "south-west",
-  "west",
-  "north-west",
-];
+/** What a compass says: the eight points on the strip, their names for screen readers, and the
+ * sentence read out. English by default. */
+type CompassLabels = {
+  /** On the strip, from north clockwise: N, NE, E… */
+  points: readonly string[];
+  /** The same eight, as words: north, north-east… */
+  directions: readonly string[];
+  /** "Facing north-east, 45 degrees." */
+  facing: (direction: string, degrees: number) => string;
+  /** A marker straight ahead. */
+  ahead: string;
+  /** A marker off to one side: "30 degrees right". */
+  turn: (degrees: number, side: "left" | "right") => string;
+};
+
+const compassLabels: CompassLabels = {
+  points: ["N", "NE", "E", "SE", "S", "SW", "W", "NW"],
+  directions: [
+    "north",
+    "north-east",
+    "east",
+    "south-east",
+    "south",
+    "south-west",
+    "west",
+    "north-west",
+  ],
+  facing: (direction, degrees) => `Facing ${direction}, ${degrees} degrees.`,
+  ahead: "ahead",
+  turn: (degrees, side) => `${degrees} degrees ${side}`,
+};
 
 /** 0–360, whatever comes in. */
 const wrap = (deg: number) => ((deg % 360) + 360) % 360;
@@ -50,6 +70,7 @@ function Compass({
   heading,
   markers = [],
   fov = 180,
+  labels,
   ...props
 }: ComponentProps<"div"> & {
   /** Where you face, in degrees; 0 is north, 90 east. */
@@ -57,7 +78,10 @@ function Compass({
   markers?: CompassMarker[];
   /** How many degrees the strip spans. */
   fov?: number;
+  /** What it says, in another language: any part of compassLabels. */
+  labels?: Partial<CompassLabels>;
 }) {
+  const said = { ...compassLabels, ...labels };
   const h = wrap(heading);
   const x = (offset: number) => `${(offset / fov + 0.5) * 100}%`;
   // ticks keep their key (their bearing, unwrapped) so they slide rather than jump
@@ -68,10 +92,10 @@ function Compass({
   return (
     <div
       role="img"
-      aria-label={`Facing ${words[point(h)]}, ${Math.round(h)} degrees. ${markers
+      aria-label={`${said.facing(said.directions[point(h)], Math.round(h))} ${markers
         .map((m) => {
           const t = Math.round(turn(h, m.bearing));
-          return `${m.label}: ${t === 0 ? "ahead" : `${Math.abs(t)} degrees ${t > 0 ? "right" : "left"}`}`;
+          return `${m.label}: ${t === 0 ? said.ahead : said.turn(Math.abs(t), t > 0 ? "right" : "left")}`;
         })
         .join(". ")}`}
       data-slot="compass"
@@ -102,7 +126,7 @@ function Compass({
                     wrap(b) === 0 ? "text-zero-accent" : "text-zero-text",
                   )}
                 >
-                  {points[wrap(b) / 45]}
+                  {said.points[wrap(b) / 45]}
                 </span>
               ) : null}
               <span
@@ -149,4 +173,4 @@ function Compass({
   );
 }
 
-export { Compass, type CompassMarker };
+export { Compass, type CompassLabels, type CompassMarker, compassLabels };

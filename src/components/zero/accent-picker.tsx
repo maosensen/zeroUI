@@ -3,6 +3,8 @@
 import { type CSSProperties, useId, useState } from "react";
 import {
   type Accent,
+  type AccentLabels,
+  type AccentLabelsInput,
   type AccentOptions,
   type AccentPreset,
   AccentSwatches,
@@ -11,6 +13,7 @@ import {
   accentLabel,
   MIN_CONTRAST,
   useAccent,
+  withAccentLabels,
 } from "@/components/zero/accent-switch";
 import { Button } from "@/components/zero/button";
 import { ChevronDownIcon } from "@/components/zero/icons/chevron-down";
@@ -33,6 +36,7 @@ import { cn } from "@/lib/zero/cn";
  *
  *   <AccentPicker />                                   the whole page, remembered
  *   <AccentPicker accents={["lime", "sky"]} custom={false} />
+ *   <AccentPicker labels={{ title: "强调色", own: "自定义" }} />   any part of accentLabels
  */
 
 /** "#abc123", "abc123" or "#ABC123" → "#abc123"; anything else → null. */
@@ -44,9 +48,11 @@ const toHex = (text: string) => {
 function OwnColour({
   accent,
   onChoose,
+  labels,
 }: {
   accent: Accent;
   onChoose: (accent: Accent) => void;
+  labels: AccentLabels;
 }) {
   const id = useId();
   const [text, setText] = useState(accent.startsWith("#") ? accent : "");
@@ -66,12 +72,12 @@ function OwnColour({
         htmlFor={`${id}-hex`}
         className="font-black font-zero text-zero-xs uppercase italic tracking-[0.14em]"
       >
-        Your own
+        {labels.own}
       </label>
       <div className="flex items-center gap-2">
         <input
           type="color"
-          aria-label="Pick a colour"
+          aria-label={labels.pick}
           value={hex ?? (accent.startsWith("#") ? accent : "#cde31c")}
           onChange={(event) => take(event.target.value)}
           className={cn(
@@ -102,11 +108,11 @@ function OwnColour({
       >
         {hex === null
           ? text.trim()
-            ? "Six hex digits, as #ff8a5c."
-            : `Ink text has to read on it: ${MIN_CONTRAST} : 1 or more.`
+            ? labels.invalid
+            : labels.hint(MIN_CONTRAST)
           : legible
-            ? `Ink on it reads at ${ratio.toFixed(1)} : 1.`
-            : `Too dark for ink text: ${ratio?.toFixed(1)} : 1, needs ${MIN_CONTRAST}.`}
+            ? labels.reads(ratio.toFixed(1))
+            : labels.tooDark((ratio ?? 0).toFixed(1), MIN_CONTRAST)}
       </p>
     </div>
   );
@@ -118,6 +124,7 @@ function AccentPicker({
   custom = true,
   side = "bottom",
   align = "end",
+  labels: given,
   "aria-label": label = "Accent colour",
   ...options
 }: AccentOptions & {
@@ -128,9 +135,12 @@ function AccentPicker({
   custom?: boolean;
   side?: "top" | "bottom" | "left" | "right";
   align?: "start" | "center" | "end";
+  /** What it says, in another language: any part of accentLabels. */
+  labels?: AccentLabelsInput;
   "aria-label"?: string;
 }) {
   const [accent, choose] = useAccent(options);
+  const labels = withAccentLabels(given);
   // on the whole page, the swatch reads the accent from CSS, so it is right from the first paint
   // (AccentScript sets it before React has read the stored choice)
   const fill = options.target
@@ -140,7 +150,7 @@ function AccentPicker({
     <Popover>
       <PopoverTrigger
         data-slot="accent-picker"
-        aria-label={`${label}: ${accentLabel(accent)}`}
+        aria-label={labels.trigger(label, accentLabel(accent, labels.names))}
         render={<Button variant="secondary" size="sm" cut="both" />}
         className={cn("[--slab-px:0.625rem]", className)}
       >
@@ -152,15 +162,18 @@ function AccentPicker({
         <ChevronDownIcon />
       </PopoverTrigger>
       <PopoverContent side={side} align={align} className="w-64 gap-3">
-        <PopoverTitle>Accent</PopoverTitle>
+        <PopoverTitle>{labels.title}</PopoverTitle>
         <AccentSwatches
           value={accent}
           onValueChange={choose}
           accents={accents}
+          names={labels.names}
           aria-label={label}
           className="grid grid-cols-4 justify-items-start gap-2.5 text-zero-lg"
         />
-        {custom ? <OwnColour accent={accent} onChoose={choose} /> : null}
+        {custom ? (
+          <OwnColour accent={accent} onChoose={choose} labels={labels} />
+        ) : null}
       </PopoverContent>
     </Popover>
   );

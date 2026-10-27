@@ -21,10 +21,28 @@ import { cn } from "@/lib/zero/cn";
 
 type RewardState = "claimed" | "ready" | "locked";
 
-const said: Record<RewardState, string> = {
+/** What a tier says: its lead-in for screen readers, its button, its claimed mark, what a locked
+ * tier takes. English by default. */
+type RewardTierLabels = {
+  /** "Level 5, ready to claim, your level." */
+  tier: (level: number, state: RewardState, current: boolean) => string;
+  claim: string;
+  claimed: string;
+  locked: (level: number) => string;
+};
+
+const states: Record<RewardState, string> = {
   claimed: "claimed",
   ready: "ready to claim",
   locked: "locked",
+};
+
+const rewardTierLabels: RewardTierLabels = {
+  tier: (level, state, current) =>
+    `Level ${level}, ${states[state]}${current ? ", your level" : ""}.`,
+  claim: "Claim",
+  claimed: "Claimed",
+  locked: (level) => `Reach level ${level}`,
 };
 
 function RewardTrack({ className, ...props }: ComponentProps<"ol">) {
@@ -43,7 +61,8 @@ function RewardTier({
   state,
   current,
   onClaim,
-  locked = `Reach level ${level}`,
+  labels,
+  locked,
   note,
   children,
   ...props
@@ -53,13 +72,16 @@ function RewardTier({
   /** The level you are on now. */
   current?: boolean;
   onClaim?: () => void;
-  /** What a locked tier says it takes. */
+  /** What it says, in another language: any part of rewardTierLabels. */
+  labels?: Partial<RewardTierLabels>;
+  /** What a locked tier says it takes; labels.locked(level) when omitted. */
   locked?: ReactNode;
   /** A line about the level itself ("Night routes open"), never dimmed. */
   note?: ReactNode;
   /** The rewards: InventorySlots. */
   children?: ReactNode;
 }) {
+  const said = { ...rewardTierLabels, ...labels };
   return (
     <li
       data-slot="reward-tier"
@@ -75,8 +97,7 @@ function RewardTier({
       {...props}
     >
       <span className="sr-only">
-        Level {level}, {said[state]}
-        {current ? ", your level" : ""}.
+        {said.tier(level, state, Boolean(current))}
       </span>
       <span
         aria-hidden
@@ -111,17 +132,17 @@ function RewardTier({
       <div className="col-span-2 flex items-center justify-end gap-2 sm:col-span-1">
         {state === "ready" ? (
           <Button size="sm" onClick={onClaim}>
-            Claim
+            {said.claim}
           </Button>
         ) : state === "claimed" ? (
           <span className="flex items-center gap-1.5 font-bold font-zero text-zero-sm text-zero-text-3 italic">
             <CheckIcon className="size-4" />
-            Claimed
+            {said.claimed}
           </span>
         ) : (
           <span className="flex items-center gap-1.5 font-semibold font-zero-text text-zero-sm text-zero-text-3">
             <LockIcon className="size-4" />
-            {locked}
+            {locked ?? said.locked(level)}
           </span>
         )}
       </div>
@@ -129,4 +150,10 @@ function RewardTier({
   );
 }
 
-export { RewardTier, RewardTrack, type RewardState };
+export {
+  RewardTier,
+  type RewardTierLabels,
+  RewardTrack,
+  type RewardState,
+  rewardTierLabels,
+};

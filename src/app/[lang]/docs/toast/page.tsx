@@ -102,6 +102,15 @@ export default async function ToastPage({ params }: LangProps) {
                 zh: "同时显示的最大数量。",
               }),
             },
+            {
+              name: "closeLabel",
+              type: "string",
+              default: '"Close"',
+              description: pick({
+                en: "Each toast's close button's name.",
+                zh: "每条提示的关闭按钮的可访问名称。",
+              }),
+            },
           ]}
         />
         <PropsTable

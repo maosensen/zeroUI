@@ -35,7 +35,7 @@ const guides = [
     href: "/docs/guides/theme-tokens",
     title: {
       en: "Theme zzzUI with its tokens",
-      zh: "用设计令牌定制 zzzUI 主题",
+      zh: "用设计 token 定制 zzzUI 主题",
     },
     line: {
       en: "One slant, one accent, the timings.",

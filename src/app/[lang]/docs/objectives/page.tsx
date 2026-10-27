@@ -80,6 +80,15 @@ export default async function ObjectivesPage({ params }: LangProps) {
                 zh: "标记样式，以及标题的绘制方式。",
               }),
             },
+            {
+              name: "labels",
+              type: "Partial<Record<ObjectiveState, string>>",
+              default: "objectiveLabels",
+              description: pick({
+                en: 'What screen readers hear before the title, by state ("Done: "…).',
+                zh: '读屏软件在标题前读出的状态说明（如 "Done: "），按状态分别设定。',
+              }),
+            },
           ]}
         />
         <PropsTable

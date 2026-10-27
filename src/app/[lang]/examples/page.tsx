@@ -14,7 +14,7 @@ const examples = [
     title: "Courier board",
     line: {
       en: "A community board, today's shifts and a rank page, under one top bar with tabs that Q and E step through. Built from the community feed, daily schedule and level rewards blocks.",
-      zh: "社区留言板、今日排班与等级页共用一条顶栏，标签页用 Q、E 键切换。由 Community feed、Daily schedule 与 Level rewards 三个区块构成。",
+      zh: "社区留言板、今日排班与等级页共用一条顶栏，标签页用 Q、E 键切换。由 Community feed、Daily schedule 与 Level rewards 三个代码块构成。",
     },
   },
   {
@@ -58,7 +58,7 @@ export default async function Examples({ params }: LangProps) {
               zh: (
                 <>
                   由 zzzUI
-                  的区块与组件组装而成的完整应用，展示各个部分如何协同工作。可以打开任意一个并查看源码：其中每个部分都能从
+                  的代码块与组件组装而成的完整应用，展示各个部分如何协同工作。可以打开任意一个并查看源码：其中每个部分都能从
                   registry 安装。
                 </>
               ),

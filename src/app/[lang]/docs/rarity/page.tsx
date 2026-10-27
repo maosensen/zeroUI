@@ -57,15 +57,17 @@ export default async function RarityPage({ params }: LangProps) {
             zh: (
               <>
                 <p>
-                  颜色以设计令牌提供，从 <code>--color-zero-rarity-common</code>{" "}
-                  到 <code>--color-zero-rarity-legendary</code>
+                  颜色以设计 token 提供，从{" "}
+                  <code>--color-zero-rarity-common</code> 到{" "}
+                  <code>--color-zero-rarity-legendary</code>
                   ，与强调色、焦点框的黄色和危险色都有明显区分；用作文字时，在
                   zzzUI 的各种底色上也都清晰可读。
                 </p>
                 <p>
                   有三个组件接受 <code>rarity</code>：Badge 以该档颜色填充，Card
                   的顶边使用该颜色，Item
-                  则像游戏物品栏那样为标题着色，并在起始一侧加一道色条。其他场合可直接使用设计令牌（
+                  则像游戏物品栏那样为标题着色，并在起始一侧加一道色条。其他场合可直接使用设计
+                  token（
                   <code>text-zero-rarity-epic</code>、
                   <code>bg-zero-rarity-rare</code>）。
                 </p>

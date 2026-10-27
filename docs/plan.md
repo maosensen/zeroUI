@@ -592,6 +592,22 @@ apps and demos staying English, and no redirect by browser language.
   weight the headings are set in, so Chinese pages load Noto Sans SC (500, 700, 900) in
   unicode-range slices, on their `<html>` only. The registry's foundation is untouched.
 
+### The components' own words (2026-10-27)
+
+Writing the Chinese docs turned up the text the components write by themselves: screen-reader
+sentences, button names, the compass's points. Every one of those is now a prop with its English
+default, so output is unchanged unless it is passed.
+
+- **Props, not a provider.** Eleven of the twenty-six components that write text are server
+  components; a context would make them client components. A component with one string takes a
+  `label` (or `closeLabel`, `removeLabel`, `viewsLabel`); one with several takes `labels`, any part
+  of a type whose English default is exported (`statLabels`, `compassLabels`…), with functions for
+  sentences that carry numbers. Strings already reachable through `children`, `aria-label`,
+  `aria-description` or `title` were left as they were; Calendar has DayPicker's own `labels`.
+- **Blocks are not in it.** A block is a whole screen with its data written in, made to be edited.
+- **The site uses it** where the component is part of the site rather than a demo: the header's
+  accent picker speaks the page's language.
+
 ## The look is ours
 
 (Since 2026-10-26 the library is zzzUI, named in tribute to the game; see that decision. What

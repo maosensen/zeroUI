@@ -105,6 +105,20 @@ export default async function PaginationPage({ params }: LangProps) {
           part="Pagination, PaginationContent, PaginationItem, PaginationEllipsis"
           rows={[]}
         />
+        <PropsTable
+          part="PaginationEllipsis"
+          rows={[
+            {
+              name: "label",
+              type: "string",
+              default: '"More pages"',
+              description: pick({
+                en: "What screen readers hear for the pages left out.",
+                zh: "读屏软件为省略的页码读出的文字。",
+              }),
+            },
+          ]}
+        />
       </DocSection>
     </>
   );

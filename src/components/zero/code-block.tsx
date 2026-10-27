@@ -99,8 +99,15 @@ function CodeBlockCopyButton({
   value,
   className,
   onClick,
+  labels,
   ...props
-}: ComponentProps<typeof Button> & { value: string }) {
+}: ComponentProps<typeof Button> & {
+  value: string;
+  /** The button's name before and after copying ("Copy", "Copied"). */
+  labels?: { copy?: string; copied?: string };
+}) {
+  const copyLabel = labels?.copy ?? "Copy";
+  const copiedLabel = labels?.copied ?? "Copied";
   const [copied, setCopied] = useState(false);
   useEffect(() => {
     if (!copied) return;
@@ -115,7 +122,7 @@ function CodeBlockCopyButton({
         variant="ghost"
         size="sm"
         cut="both"
-        aria-label={copied ? "Copied" : "Copy"}
+        aria-label={copied ? copiedLabel : copyLabel}
         className={cn(
           "w-[calc(var(--height-zero-sm)*(1+tan(var(--zero-slant))))] [--slab-px:0px] data-copied:[--slab-ink:var(--color-zero-accent)]",
           className,
@@ -132,7 +139,7 @@ function CodeBlockCopyButton({
         {copied ? <CheckIcon /> : <CopyIcon />}
       </Button>
       <span aria-live="polite" className="sr-only">
-        {copied ? "Copied" : ""}
+        {copied ? copiedLabel : ""}
       </span>
     </>
   );

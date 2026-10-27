@@ -189,7 +189,7 @@ export default async function HealthBarGuide({ params }: LangProps) {
             zh: (
               <p>
                 半秒左右最合适：既足以看清这一击的伤害量，又足够短，能在下一击到来之前让血条恢复准确。zzzUI
-                把这个时长定义为设计令牌（token）<code>--zero-dur-hold</code>
+                把这个时长定义为设计 token <code>--zero-dur-hold</code>
                 （480 ms），两层的移动则使用慢速时长（420
                 ms）。开启「减少动态效果」时，停顿降为零，数值偏低时的呼吸式明暗变化也随之取消：数值依然准确，只是不再有残影停留。
               </p>
@@ -215,10 +215,10 @@ export default async function HealthBarGuide({ params }: LangProps) {
             ),
             zh: (
               <p>
-                <Link href={link("/docs/blocks/hud")}>HUD 区块</Link>
+                <Link href={link("/docs/blocks/hud")}>HUD 代码块</Link>
                 把数值条与快捷栏、任务目标放在一起；
                 <Link href={link("/docs/blocks/loadout")}>Loadout</Link>{" "}
-                区块用它显示耐久度和负重。若数值只朝一个方向变化，请参阅{" "}
+                代码块用它显示耐久度和负重。若数值只朝一个方向变化，请参阅{" "}
                 <Link href={link("/docs/progress")}>Progress</Link>。
               </p>
             ),

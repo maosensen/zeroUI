@@ -126,6 +126,15 @@ export default async function StatsPage({ params }: LangProps) {
                 zh: "数字格式。",
               }),
             },
+            {
+              name: "labels",
+              type: "Partial<StatLabels>",
+              default: "statLabels",
+              description: pick({
+                en: "The difference in words, in another language: same, and diff(amount, more, better).",
+                zh: "换成其他语言的差值说明：same，以及 diff(amount, more, better)。",
+              }),
+            },
           ]}
         />
         <PropsTable part="Stats" rows={[]} />

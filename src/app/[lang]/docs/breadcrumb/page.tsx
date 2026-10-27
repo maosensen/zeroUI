@@ -86,6 +86,20 @@ export default async function BreadcrumbPage({ params }: LangProps) {
           part="Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis"
           rows={[]}
         />
+        <PropsTable
+          part="BreadcrumbEllipsis"
+          rows={[
+            {
+              name: "label",
+              type: "string",
+              default: '"More"',
+              description: pick({
+                en: "What screen readers hear for the folded crumbs.",
+                zh: "读屏软件为折叠起来的层级读出的文字。",
+              }),
+            },
+          ]}
+        />
       </DocSection>
     </>
   );

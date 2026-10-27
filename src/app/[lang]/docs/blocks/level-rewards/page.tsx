@@ -79,7 +79,7 @@ export default async function LevelRewardsPage({ params }: LangProps) {
                   <a href={link("/docs/inventory")}>Inventory</a>、
                   <a href={link("/docs/avatar")}>Avatar</a>、
                   <a href={link("/docs/button")}>Button</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

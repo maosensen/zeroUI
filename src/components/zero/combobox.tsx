@@ -34,6 +34,8 @@ type ComboboxInputProps = Omit<ComboboxPrimitive.Input.Props, "size"> &
   Pick<VariantProps<typeof inputVariants>, "size" | "cut"> & {
     /** Hides the clear button. */
     showClear?: boolean;
+    /** The two small buttons' names ("Clear", "Show suggestions"). */
+    labels?: { clear?: string; show?: string };
   };
 
 const action =
@@ -44,6 +46,7 @@ function ComboboxInput({
   size,
   cut,
   showClear = true,
+  labels,
   ...props
 }: ComboboxInputProps) {
   return (
@@ -65,12 +68,15 @@ function ComboboxInput({
         className="flex h-full shrink-0 items-center gap-1 pe-(--input-px) text-zero-text-3"
       >
         {showClear ? (
-          <ComboboxPrimitive.Clear aria-label="Clear" className={action}>
+          <ComboboxPrimitive.Clear
+            aria-label={labels?.clear ?? "Clear"}
+            className={action}
+          >
             <CloseIcon />
           </ComboboxPrimitive.Clear>
         ) : null}
         <ComboboxPrimitive.Trigger
-          aria-label="Show suggestions"
+          aria-label={labels?.show ?? "Show suggestions"}
           className={cn(
             action,
             "[&_svg]:transition-transform [&_svg]:duration-(--zero-dur-base) data-popup-open:[&_svg]:rotate-180",
@@ -231,8 +237,12 @@ function ComboboxChips({
 function ComboboxChip({
   className,
   children,
+  removeLabel = "Remove",
   ...props
-}: ComboboxPrimitive.Chip.Props) {
+}: ComboboxPrimitive.Chip.Props & {
+  /** The chip's remove button's name. */
+  removeLabel?: string;
+}) {
   return (
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
@@ -247,7 +257,7 @@ function ComboboxChip({
     >
       {children}
       <ComboboxPrimitive.ChipRemove
-        aria-label="Remove"
+        aria-label={removeLabel}
         className="-me-0.5 grid place-items-center text-zero-text-3 outline-none hover:text-zero-danger [&_svg]:size-[1.1em]"
       >
         <CloseIcon />

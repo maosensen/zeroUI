@@ -63,13 +63,13 @@ export default async function GameSettingsMenuGuide({ params }: LangProps) {
         })}
         lead={pick({
           en: "A game settings menu is tabs of rows: a setting's name on the left, its control on the right, and a footer that applies the changes. This guide builds one with zzzUI on shadcn, or installs the finished block with one command.",
-          zh: "游戏设置菜单通常由几个标签页组成，每页包含若干设置行：左侧为设置名称，右侧为对应的控件，底部是应用更改的操作栏。本文介绍如何用 React、shadcn 和 zzzUI 搭建这样一个设置菜单；如需直接使用，也可以用一条命令安装现成的区块。",
+          zh: "游戏设置菜单通常由几个标签页组成，每页包含若干设置行：左侧为设置名称，右侧为对应的控件，底部是应用更改的操作栏。本文介绍如何用 React、shadcn 和 zzzUI 搭建这样一个设置菜单；如需直接使用，也可以用一条命令安装现成的代码块。",
         })}
       />
 
       <DocSection
         id="install"
-        title={pick({ en: "Start from the block", zh: "直接安装现成区块" })}
+        title={pick({ en: "Start from the block", zh: "直接安装现成代码块" })}
       >
         <Prose>
           {pick({
@@ -88,7 +88,7 @@ export default async function GameSettingsMenuGuide({ params }: LangProps) {
               <p>
                 最快的做法是安装{" "}
                 <Link href={link("/docs/blocks/settings-menu")}>
-                  Settings menu 区块
+                  Settings menu 代码块
                 </Link>
                 ：它只有一个文件，位于 <code>components/blocks/</code>
                 ，下文介绍的各个部分都已组装完成。安装时会一并安装它用到的组件。
@@ -112,7 +112,7 @@ pnpm dlx shadcn@latest add @zzzui/settings-menu`}
             ),
             zh: (
               <p>
-                本页其余部分说明这个区块是如何组装的，便于按需修改，或自行实现一个。
+                本页其余部分说明这个代码块是如何组装的，便于按需修改，或自行实现一个。
               </p>
             ),
           })}
@@ -294,11 +294,11 @@ pnpm dlx shadcn@latest add @zzzui/settings-menu`}
             zh: (
               <p>
                 游戏的其他界面可参考
-                <Link href={link("/docs/blocks")}>区块</Link>
+                <Link href={link("/docs/blocks")}>代码块</Link>
                 ：Mission briefing、Loadout、Leaderboard 与
                 HUD。若要一次性改变它们的整体外观，请阅读《
                 <Link href={link("/docs/guides/theme-tokens")}>
-                  用设计令牌定制 zzzUI 主题
+                  用设计 token 定制 zzzUI 主题
                 </Link>
                 》。
               </p>

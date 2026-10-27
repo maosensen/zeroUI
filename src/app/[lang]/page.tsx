@@ -186,7 +186,7 @@ pnpm dlx shadcn@latest add @zzzui/button`}
             <p className="max-w-md font-medium text-zero-md text-zero-text-2 leading-relaxed">
               {pick({
                 en: "Every slanted cut comes from a single token, set to sit with the italic. Turn it and the buttons, the tabs and the wells all re-cut together, with their outlines still even.",
-                zh: "所有斜切都出自同一个设计令牌，角度与斜体字的倾角一致。调整它，按钮、标签页和输入框会一起重新切角，描边依旧均匀。",
+                zh: "所有斜切都出自同一个设计 token，角度与斜体字的倾角一致。调整它，按钮、标签页和输入框会一起重新切角，描边依旧均匀。",
               })}
             </p>
             <ul className="grid gap-4">
@@ -235,7 +235,7 @@ pnpm dlx shadcn@latest add @zzzui/button`}
           <Hud />
           <p className="flex flex-wrap items-center gap-x-5 gap-y-2 font-bold font-zero text-zero-sm italic">
             <span className="text-zero-text-3">
-              {pick({ en: "More blocks:", zh: "更多区块：" })}
+              {pick({ en: "More blocks:", zh: "更多代码块：" })}
             </span>
             {blocks.map(([href, name]) => (
               <Link

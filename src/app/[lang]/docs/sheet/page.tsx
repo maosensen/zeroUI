@@ -91,6 +91,15 @@ export default async function SheetPage({ params }: LangProps) {
                 zh: "角落的关闭按钮。",
               }),
             },
+            {
+              name: "closeLabel",
+              type: "string",
+              default: '"Close"',
+              description: pick({
+                en: "The corner close button's name.",
+                zh: "右上角关闭按钮的可访问名称。",
+              }),
+            },
           ]}
         />
       </DocSection>

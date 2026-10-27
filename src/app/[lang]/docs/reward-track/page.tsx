@@ -125,6 +125,15 @@ export default async function RewardTrackPage({ params }: LangProps) {
                 zh: "未解锁时显示的解锁条件。",
               }),
             },
+            {
+              name: "labels",
+              type: "Partial<RewardTierLabels>",
+              default: "rewardTierLabels",
+              description: pick({
+                en: "What it says, in another language: the lead-in for screen readers, Claim, Claimed and what a locked tier takes.",
+                zh: "换成其他语言的文字：读屏前缀、「Claim」「Claimed」，以及未解锁时的条件。",
+              }),
+            },
           ]}
         />
         <PropsTable part="RewardTrack" rows={[]} />

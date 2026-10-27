@@ -99,7 +99,7 @@ export default async function GettingStartedPage({ params }: LangProps) {
             zh: (
               <p>
                 安装第一个组件时会一并带上<strong>地基</strong>
-                ：设计令牌、动效与斜切块写入样式表，<code>cn</code>{" "}
+                ：设计 token、动效与斜切块写入样式表，<code>cn</code>{" "}
                 与动效时长写入 <code>lib/zero/</code>，Montserrat（展示字体）与
                 Outfit（正文字体）在布局中加载。组件本身写入{" "}
                 <code>components/zero/</code>。

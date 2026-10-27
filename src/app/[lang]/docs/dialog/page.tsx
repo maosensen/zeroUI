@@ -86,6 +86,15 @@ export default async function DialogPage({ params }: LangProps) {
                 zh: "标题栏角落的关闭按钮。",
               }),
             },
+            {
+              name: "closeLabel",
+              type: "string",
+              default: '"Close"',
+              description: pick({
+                en: "The corner close button's name.",
+                zh: "右上角关闭按钮的可访问名称。",
+              }),
+            },
           ]}
         />
         <PropsTable

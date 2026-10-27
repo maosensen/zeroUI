@@ -83,6 +83,15 @@ export default async function PostCardPage({ params }: LangProps) {
                 zh: "浏览量，显示在角落。",
               }),
             },
+            {
+              name: "viewsLabel",
+              type: "(views: string) => string",
+              default: '"Seen {views} times"',
+              description: pick({
+                en: "What screen readers hear for the view count, given it written out.",
+                zh: "读屏软件为浏览次数读出的文字，参数是已格式化的数字。",
+              }),
+            },
           ]}
         />
         <PropsTable

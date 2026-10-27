@@ -244,7 +244,14 @@ function CarouselNext({
 }
 
 /** One slanted pip per slide, the current one in the accent; each goes to its slide. */
-function CarouselDots({ className, ...props }: ComponentProps<"div">) {
+function CarouselDots({
+  className,
+  label = (slide, count) => `Slide ${slide} of ${count}`,
+  ...props
+}: ComponentProps<"div"> & {
+  /** Each pip's name, from its slide's number (from 1) and the count. */
+  label?: (slide: number, count: number) => string;
+}) {
   const { api, selected, count } = useCarousel();
   return (
     <div
@@ -257,7 +264,7 @@ function CarouselDots({ className, ...props }: ComponentProps<"div">) {
           // biome-ignore lint/suspicious/noArrayIndexKey: one pip per slide, in order
           key={index}
           type="button"
-          aria-label={`Slide ${index + 1} of ${count}`}
+          aria-label={label(index + 1, count)}
           aria-current={index === selected ? "true" : undefined}
           onClick={() => api?.scrollTo(index)}
           className={cn(

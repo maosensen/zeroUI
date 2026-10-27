@@ -93,6 +93,20 @@ export default async function CarouselPage({ params }: LangProps) {
           part="CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselDots"
           rows={[]}
         />
+        <PropsTable
+          part="CarouselDots"
+          rows={[
+            {
+              name: "label",
+              type: "(slide: number, count: number) => string",
+              default: '"Slide {slide} of {count}"',
+              description: pick({
+                en: "Each pip's name, from its slide's number (from 1) and the count.",
+                zh: "每个指示条的可访问名称，由幻灯片序号（从 1 起）与总数生成。",
+              }),
+            },
+          ]}
+        />
       </DocSection>
     </>
   );

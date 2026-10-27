@@ -98,6 +98,15 @@ export default async function CompassPage({ params }: LangProps) {
                 zh: "罗盘条覆盖的角度。",
               }),
             },
+            {
+              name: "labels",
+              type: "Partial<CompassLabels>",
+              default: "compassLabels",
+              description: pick({
+                en: "What it says, in another language: the eight points on the strip, their names, and the sentence read out.",
+                zh: "换成其他语言的文字：方位条上的八个方位字母、方位名称，以及播报的整句。",
+              }),
+            },
           ]}
         />
       </DocSection>

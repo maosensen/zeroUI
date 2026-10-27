@@ -57,7 +57,8 @@ export default async function ChartPage({ params }: LangProps) {
                 <p>
                   ChartContainer 在 <code>config</code> 中为各数据系列命名，并以{" "}
                   <code>--color-&lt;key&gt;</code>{" "}
-                  的形式提供各系列的颜色，供图表各部分使用。组件自带五种系列色，均取自设计令牌：
+                  的形式提供各系列的颜色，供图表各部分使用。组件自带五种系列色，均取自设计
+                  token：
                   <code>--zero-chart-1</code> 为强调色，2 为文字的白色，3
                   为次要文字的灰，4 为危险红，5 为按下状态的强调色。
                 </p>

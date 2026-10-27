@@ -102,7 +102,7 @@ export default async function BlocksPage({ params }: LangProps) {
     <>
       <JsonLd data={docGraph("/docs/blocks")} />
       <DocHeader
-        title={pick({ en: "Blocks", zh: "区块" })}
+        title={pick({ en: "Blocks", zh: "代码块" })}
         lead={pick({
           en: "Whole game screens built from zzzUI's components, installed with one command: a title screen, a settings menu, a pause menu, a mission briefing, a character select, a loadout, a leaderboard, a HUD, a community feed, level rewards and a daily schedule.",
           zh: "由 zzzUI 组件组合而成的完整游戏界面，一条命令即可安装：标题画面、设置菜单、暂停菜单、任务简报、角色选择、装备配置、排行榜、HUD、社区留言板、等级奖励与每日日程。",
@@ -110,7 +110,7 @@ export default async function BlocksPage({ params }: LangProps) {
       />
       <DocSection
         id="about"
-        title={pick({ en: "About blocks", zh: "关于区块" })}
+        title={pick({ en: "About blocks", zh: "关于代码块" })}
       >
         <Prose>
           {pick({
@@ -128,15 +128,18 @@ export default async function BlocksPage({ params }: LangProps) {
             zh: (
               <>
                 <p>
-                  区块是 <code>components/blocks/</code>{" "}
-                  中的一个文件，把多个组件组合成一整屏界面，状态逻辑直接写在文件里，各部分如何联动一目了然。安装区块时，会一并安装它用到的组件。区块复制到项目后即归项目所有，可自由修改。
+                  代码块是 <code>components/blocks/</code>{" "}
+                  中的一个文件，把多个组件组合成一整屏界面，状态逻辑直接写在文件里，各部分如何联动一目了然。安装代码块时，会一并安装它用到的组件。代码块复制到项目后即归项目所有，可自由修改。
                 </p>
               </>
             ),
           })}
         </Prose>
       </DocSection>
-      <DocSection id="list" title={pick({ en: "The blocks", zh: "全部区块" })}>
+      <DocSection
+        id="list"
+        title={pick({ en: "The blocks", zh: "全部代码块" })}
+      >
         <ul className="grid gap-3 sm:grid-cols-2">
           {blocks.map((block) => (
             <li key={block.href}>

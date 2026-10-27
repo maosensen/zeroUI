@@ -165,6 +165,15 @@ export default async function AccentPickerPage({ params }: LangProps) {
                 zh: "按钮的可访问名称，其后附上当前强调色。",
               }),
             },
+            {
+              name: "labels",
+              type: "AccentLabelsInput",
+              default: "accentLabels",
+              description: pick({
+                en: "What it says in another language: the presets' names, the button's name, the title, the label for your own and the notes (functions of the ratio). Any part; the rest stays English.",
+                zh: "换成其他语言的文字：预设名称、按钮名称、标题、自定义一栏的标签，以及提示语（随对比度变化的函数）。可只传一部分，其余保持英文。",
+              }),
+            },
           ]}
         />
       </DocSection>

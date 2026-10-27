@@ -45,17 +45,20 @@ export default async function ThemeTokensGuide({ params }: LangProps) {
       <DocHeader
         title={pick({
           en: "Theme zzzUI with its tokens",
-          zh: "用设计令牌定制 zzzUI 主题",
+          zh: "用设计 token 定制 zzzUI 主题",
         })}
         lead={pick({
           en: "zzzUI's look comes from a handful of tokens: one slant angle, three outline weights, one accent and a set of timings. Override them on :root in your own stylesheet and every component follows, with nothing else to edit.",
-          zh: "zzzUI 是基于 shadcn、仅暗色的组件库，外观由少数几个设计令牌（token）决定：一个斜切角度、三档描边粗细、一种强调色和一组动效时长。自定义主题时，只需在自己样式表的 :root 中覆盖这些值，所有组件都会随之改变，无需修改其他代码。",
+          zh: "zzzUI 是基于 shadcn、仅暗色的组件库，外观由少数几个设计 token 决定：一个斜切角度、三档描边粗细、一种强调色和一组动效时长。自定义主题时，只需在自己样式表的 :root 中覆盖这些值，所有组件都会随之改变，无需修改其他代码。",
         })}
       />
 
       <DocSection
         id="where"
-        title={pick({ en: "Where the tokens live", zh: "设计令牌定义在哪里" })}
+        title={pick({
+          en: "Where the tokens live",
+          zh: "设计 token 定义在哪里",
+        })}
       >
         <Prose>
           {pick({
@@ -73,12 +76,11 @@ export default async function ThemeTokensGuide({ params }: LangProps) {
             ),
             zh: (
               <p>
-                安装任意一个 zzzUI
-                组件时，地基会写入项目的主样式表：每个设计令牌以{" "}
-                <code>--zero-</code> 开头命名，在 <code>:root</code>{" "}
+                安装任意一个 zzzUI 组件时，地基会写入项目的主样式表：每个设计
+                token 以 <code>--zero-</code> 开头命名，在 <code>:root</code>{" "}
                 上声明一次，Tailwind 的主题再引用它，因此{" "}
                 <code>bg-zero-accent</code> 读取的是 <code>--zero-accent</code>
-                。要修改某个设计令牌，在地基之后再写一条 <code>:root</code>{" "}
+                。要修改某个设计 token，在地基之后再写一条 <code>:root</code>{" "}
                 规则，重新设置同名变量即可。注意要覆盖 <code>--zero-</code>{" "}
                 开头的变量，而不是 <code>--color-zero-</code>{" "}
                 开头的：工具类读取的是前者。
@@ -87,7 +89,7 @@ export default async function ThemeTokensGuide({ params }: LangProps) {
           })}
         </Prose>
         <PropsTable
-          part={pick({ en: "The main tokens", zh: "主要设计令牌" })}
+          part={pick({ en: "The main tokens", zh: "主要设计 token" })}
           rows={[
             {
               name: "--zero-slant",
@@ -163,8 +165,9 @@ export default async function ThemeTokensGuide({ params }: LangProps) {
             zh: (
               <p>
                 每一处切角都由 <code>--zero-slant</code>{" "}
-                和元素高度计算得出，每一道描边都是形状精确向内收缩的结果。因此换一个角度，按钮、标签页、输入框和徽章会一起重新斜切，描边粗细依旧均匀。文字使用字体自带的斜体，不随该设计令牌变化；若希望切角与文字协调，角度应保持在默认值附近（8
-                到 18 度之间）。
+                和元素高度计算得出，每一道描边都是形状精确向内收缩的结果。因此换一个角度，按钮、标签页、输入框和徽章会一起重新斜切，描边粗细依旧均匀。文字使用字体自带的斜体，不随该设计
+                token 变化；若希望切角与文字协调，角度应保持在默认值附近（8 到
+                18 度之间）。
               </p>
             ),
           })}
@@ -268,7 +271,8 @@ export default async function ThemeTokensGuide({ params }: LangProps) {
             ),
             zh: (
               <p>
-                时长同样是设计令牌，整体缩放这些值，即可改变整套组件的手感：按下反馈、弹出层、标签页滑动、Gauge
+                时长同样是设计
+                token，整体缩放这些值，即可改变整套组件的手感：按下反馈、弹出层、标签页滑动、Gauge
                 的残影。开启「减少动态效果」时，无论这里如何设置，zzzUI
                 都会把装饰性动效（高光、故障效果、等待中的循环动画）的时长降为零。
               </p>
@@ -299,8 +303,9 @@ export default async function ThemeTokensGuide({ params }: LangProps) {
                 <Link href={link("/docs/rarity")}>Rarity</Link>{" "}
                 介绍各档稀有度的颜色及其使用位置；
                 <Link href={link("/docs/icons")}>Icons</Link>{" "}
-                说明图标如何沿用同一个斜切角度。要查看设计令牌在完整界面中的效果，请浏览
-                <Link href={link("/docs/blocks")}>区块</Link>。
+                说明图标如何沿用同一个斜切角度。要查看设计 token
+                在完整界面中的效果，请浏览
+                <Link href={link("/docs/blocks")}>代码块</Link>。
               </p>
             ),
           })}

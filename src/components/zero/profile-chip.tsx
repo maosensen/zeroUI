@@ -17,6 +17,8 @@ function ProfileChip({
   xp,
   xpMax,
   avatar,
+  label = (name, level, xp, xpMax) =>
+    `${name}, level ${level}, ${xp} of ${xpMax} experience`,
   ...props
 }: Omit<ComponentProps<"div">, "children"> & {
   name: string;
@@ -24,6 +26,8 @@ function ProfileChip({
   xp: number;
   xpMax: number;
   avatar?: ReactNode;
+  /** The sentence screen readers hear in place of the chip's parts. */
+  label?: (name: string, level: number, xp: number, xpMax: number) => string;
 }) {
   const share = Math.min(1, Math.max(0, xp / (xpMax || 1)));
   return (
@@ -36,9 +40,7 @@ function ProfileChip({
       )}
       {...props}
     >
-      <span className="sr-only">
-        {name}, level {level}, {xp} of {xpMax} experience
-      </span>
+      <span className="sr-only">{label(name, level, xp, xpMax)}</span>
       {avatar ? (
         <span aria-hidden className="shrink-0">
           {avatar}

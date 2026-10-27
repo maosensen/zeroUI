@@ -27,11 +27,18 @@ import { cn } from "@/lib/zero/cn";
 
 const useToast = ToastPrimitive.useToastManager;
 
-function ToastProvider({ children, ...props }: ToastPrimitive.Provider.Props) {
+function ToastProvider({
+  children,
+  closeLabel,
+  ...props
+}: ToastPrimitive.Provider.Props & {
+  /** Each toast's close button's name ("Close"). */
+  closeLabel?: string;
+}) {
   return (
     <ToastPrimitive.Provider {...props}>
       {children}
-      <Toaster />
+      <Toaster closeLabel={closeLabel} />
     </ToastPrimitive.Provider>
   );
 }
@@ -40,7 +47,11 @@ const tones = new Set<string>(Object.keys(alertIcons));
 
 /** The corner the toasts appear in. ToastProvider renders it; render it yourself only when you
  * build the provider from Base UI's parts. */
-function Toaster({ className, ...props }: ToastPrimitive.Viewport.Props) {
+function Toaster({
+  className,
+  closeLabel = "Close",
+  ...props
+}: ToastPrimitive.Viewport.Props & { closeLabel?: string }) {
   const { toasts } = useToast();
   return (
     <ToastPrimitive.Portal>
@@ -106,7 +117,7 @@ function Toaster({ className, ...props }: ToastPrimitive.Viewport.Props) {
                       }
                     />
                     <ToastPrimitive.Close
-                      aria-label="Close"
+                      aria-label={closeLabel}
                       render={
                         <Button
                           variant="ghost"

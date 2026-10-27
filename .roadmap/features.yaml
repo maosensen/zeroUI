@@ -773,6 +773,12 @@ features:
     status: done
     completedAt: 2026-10-26
     note: '作者 2026-10-26 提出首页缺乏动感,定:只让首页第一屏的斜线匀速流动,做成地基里的动画,减少动态时停住。motion.css 新增 animate-zero-drift:用 translate 平移、不重绘,每次正好一个纹理周期(6px 节距 × √2 ≈ 8.485px,线是 45°),循环无接缝,约每秒 33px;图层要比所在盒子宽一个 --zero-drift-step。首页:第一屏一层流动的斜线向下渐隐,下面静止的斜线在同一段渐显,滚到内容处自然停下;原来通铺的静止斜线拆成这两层。'
+  - id: component-labels
+    title: 组件内置文字可替换（labels）
+    area: 组件
+    status: done
+    completedAt: 2026-10-27
+    note: '组件自己写出的英文（读屏句子、关闭与复制按钮、方位字母、Claim / Claimed、取色器的提示语等）改为属性，默认值仍是原来的英文、逐字不变。多处文字用 labels 对象（含带数字的句子函数，英文默认值导出：accentLabels、objectiveLabels、statLabels、rewardTierLabels、compassLabels），单处用 label / closeLabel / removeLabel / viewsLabel；本来就能用 children、aria-label、aria-description、title 覆盖的不动（Dialogue、Questionnaire、Pagination 上下页、Spinner 等），Calendar 沿用 DayPicker 的 labels。没有用全局 provider：受影响的 26 个组件里 11 个是服务端组件，context 会逼它们变成客户端组件。区块不在范围内（区块本就是带示例数据、由使用者直接改的整屏）。站点顶栏的取色器在中文页用中文；示例与示例应用仍为英文。19 个组件页的 props 表补了新属性，两种语言。'
   - id: site-i18n
     title: 站点中英双语（/zh）
     area: 站点与文档

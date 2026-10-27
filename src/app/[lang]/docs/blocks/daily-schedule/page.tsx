@@ -63,13 +63,13 @@ export default async function DailySchedulePage({ params }: LangProps) {
                   NOW（对读屏软件而言，它是列表的当前项）；已过去的时段变暗。
                 </p>
                 <p>
-                  根据区块自身的宽度（容器查询），各时段排成四列、两列，或上下堆叠。
+                  根据代码块自身的宽度（容器查询），各时段排成四列、两列，或上下堆叠。
                 </p>
                 <p>
                   由 <a href={link("/docs/objectives")}>Objectives</a>、
                   <a href={link("/docs/badge")}>Badge</a>、
                   <a href={link("/docs/button")}>Button</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

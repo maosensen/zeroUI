@@ -91,6 +91,15 @@ export default async function ProfileChipPage({ params }: LangProps) {
               type: "ReactNode",
               description: pick({ en: "An Avatar.", zh: "一个 Avatar。" }),
             },
+            {
+              name: "label",
+              type: "(name, level, xp, xpMax) => string",
+              default: '"{name}, level {level}, {xp} of {xpMax} experience"',
+              description: pick({
+                en: "The sentence screen readers hear in place of the chip's parts.",
+                zh: "读屏软件读出的整句，代替组件的各个部分。",
+              }),
+            },
           ]}
         />
       </DocSection>

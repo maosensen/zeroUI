@@ -63,14 +63,14 @@ export default async function CharacterSelectPage({ params }: LangProps) {
                 <p>
                   选中信使的四项评级是五格的{" "}
                   <a href={link("/docs/gauge")}>Gauge</a>
-                  ；专长显示在一块带强调色边线的内嵌面板中；出发需按住确认。区块宽度足够时排成两栏。
+                  ；专长显示在一块带强调色边线的内嵌面板中；出发需按住确认。代码块宽度足够时排成两栏。
                 </p>
                 <p>
                   由 <a href={link("/docs/gauge")}>Gauge</a>、
                   <a href={link("/docs/badge")}>Badge</a>、
                   <a href={link("/docs/button")}>Button</a>、
                   <a href={link("/docs/hold-button")}>Hold button</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

@@ -99,7 +99,14 @@ function BreadcrumbSeparator({
   );
 }
 
-function BreadcrumbEllipsis({ className, ...props }: ComponentProps<"span">) {
+function BreadcrumbEllipsis({
+  className,
+  label = "More",
+  ...props
+}: ComponentProps<"span"> & {
+  /** What screen readers hear for the folded crumbs. */
+  label?: string;
+}) {
   return (
     <span
       data-slot="breadcrumb-ellipsis"
@@ -109,7 +116,7 @@ function BreadcrumbEllipsis({ className, ...props }: ComponentProps<"span">) {
       {...props}
     >
       <MoreIcon />
-      <span className="sr-only">More</span>
+      <span className="sr-only">{label}</span>
     </span>
   );
 }

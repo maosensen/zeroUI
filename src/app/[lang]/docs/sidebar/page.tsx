@@ -152,6 +152,15 @@ export default async function SidebarPage({ params }: LangProps) {
                 zh: "停靠在哪一侧。",
               }),
             },
+            {
+              name: "label",
+              type: "string",
+              default: '"Sidebar"',
+              description: pick({
+                en: "On a phone it opens as a sheet; this is that sheet's hidden title.",
+                zh: "手机上侧边栏以侧滑面板打开，这是该面板的隐藏标题。",
+              }),
+            },
           ]}
         />
         <PropsTable

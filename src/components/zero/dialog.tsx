@@ -27,10 +27,10 @@ const DialogTrigger = DialogPrimitive.Trigger;
 const DialogClose = DialogPrimitive.Close;
 
 /** The corner close button shared by dialogs and sheets. */
-function CornerClose() {
+function CornerClose({ label = "Close" }: { label?: string }) {
   return (
     <DialogPrimitive.Close
-      aria-label="Close"
+      aria-label={label}
       render={
         <Button
           variant="ghost"
@@ -65,8 +65,13 @@ function DialogContent({
   className,
   children,
   showClose = true,
+  closeLabel,
   ...props
-}: DialogPrimitive.Popup.Props & { showClose?: boolean }) {
+}: DialogPrimitive.Popup.Props & {
+  showClose?: boolean;
+  /** The corner close button's name ("Close"). */
+  closeLabel?: string;
+}) {
   return (
     <DialogPrimitive.Portal>
       <DialogBackdrop />
@@ -79,7 +84,7 @@ function DialogContent({
         {...props}
       >
         {children}
-        {showClose ? <CornerClose /> : null}
+        {showClose ? <CornerClose label={closeLabel} /> : null}
       </DialogPrimitive.Popup>
     </DialogPrimitive.Portal>
   );

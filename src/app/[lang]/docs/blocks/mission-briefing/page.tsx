@@ -70,7 +70,7 @@ export default async function MissionBriefingPage({ params }: LangProps) {
                 <p>
                   接受委托需要按住按钮（或按住 <strong>E</strong>
                   ），避免误点接受；接受委托后，Cut-in
-                  宣告任务开始，第一项目标成为当前目标。只要区块自身宽度足够（容器查询），无论置于何处都排成两栏。
+                  宣告任务开始，第一项目标成为当前目标。只要代码块自身宽度足够（容器查询），无论置于何处都排成两栏。
                 </p>
                 <p>
                   由 <a href={link("/docs/objectives")}>Objectives</a>、
@@ -82,7 +82,7 @@ export default async function MissionBriefingPage({ params }: LangProps) {
                   <a href={link("/docs/cut-in")}>Cut-in</a>、
                   <a href={link("/docs/kbd")}>Kbd</a>、
                   <a href={link("/docs/button")}>Button</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

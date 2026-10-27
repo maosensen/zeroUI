@@ -38,10 +38,13 @@ function SheetContent({
   children,
   side = "right",
   showClose = true,
+  closeLabel,
   ...props
 }: DialogPrimitive.Popup.Props & {
   side?: keyof typeof sides;
   showClose?: boolean;
+  /** The corner close button's name ("Close"). */
+  closeLabel?: string;
 }) {
   return (
     <DialogPrimitive.Portal>
@@ -60,7 +63,7 @@ function SheetContent({
         {...props}
       >
         {children}
-        {showClose ? <CornerClose /> : null}
+        {showClose ? <CornerClose label={closeLabel} /> : null}
       </DialogPrimitive.Popup>
     </DialogPrimitive.Portal>
   );

@@ -13,7 +13,7 @@ export const docsNav: NavGroup[] = [
   },
   {
     group: "Blocks",
-    zh: "区块",
+    zh: "代码块",
     pages: [
       { href: "/docs/blocks", title: "Overview", zh: "总览" },
       { href: "/docs/blocks/settings-menu", title: "Settings menu" },

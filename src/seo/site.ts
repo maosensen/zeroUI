@@ -111,10 +111,10 @@ export const PAGES = [
     crumb: "Blocks",
     group: "blocks",
     zh: {
-      title: "区块",
+      title: "代码块",
       description:
-        "React 与 shadcn 的游戏 UI 区块：标题画面、设置菜单、暂停菜单、任务简报、角色选择、装备配置、排行榜、HUD、社区留言板、等级奖励与每日日程。",
-      crumb: "区块",
+        "React 与 shadcn 的游戏 UI 代码块：标题画面、设置菜单、暂停菜单、任务简报、角色选择、装备配置、排行榜、HUD、社区留言板、等级奖励与每日日程。",
+      crumb: "代码块",
     },
   },
   {
@@ -127,7 +127,7 @@ export const PAGES = [
     zh: {
       title: "Settings menu",
       description:
-        "React 游戏设置菜单区块：显示、音频、操作与玩法分页，由 zzzUI 的 Select、Slider、Switch 与 Hold button 组成。",
+        "React 游戏设置菜单代码块：显示、音频、操作与玩法分页，由 zzzUI 的 Select、Slider、Switch 与 Hold button 组成。",
       crumb: "Settings menu",
     },
   },
@@ -141,7 +141,7 @@ export const PAGES = [
     zh: {
       title: "Mission briefing",
       description:
-        "React 游戏任务简报区块：路线图、任务目标、威胁等级数值条与报酬；按住接受委托，接受后以 Cut-in 宣告任务开始。",
+        "React 游戏任务简报代码块：路线图、任务目标、威胁等级数值条与报酬；按住接受委托，接受后以 Cut-in 宣告任务开始。",
       crumb: "Mission briefing",
     },
   },
@@ -155,7 +155,7 @@ export const PAGES = [
     zh: {
       title: "Loadout",
       description:
-        "React 游戏装备配置与货舱物品栏区块：物品网格、带数值条的物品详情、可装备的腰带栏，以及按住拆解、换取信用点。",
+        "React 游戏装备配置与货舱物品栏代码块：物品网格、带数值条的物品详情、可装备的腰带栏，以及按住拆解、换取信用点。",
       crumb: "Loadout",
     },
   },
@@ -169,7 +169,7 @@ export const PAGES = [
     zh: {
       title: "Leaderboard",
       description:
-        "React 游戏排行榜区块：按周期分页，前三名以传说、史诗、稀有三档标出，玩家本人所在行高亮并固定在底部。",
+        "React 游戏排行榜代码块：按周期分页，前三名以传说、史诗、稀有三档标出，玩家本人所在行高亮并固定在底部。",
       crumb: "Leaderboard",
     },
   },
@@ -183,7 +183,7 @@ export const PAGES = [
     zh: {
       title: "HUD",
       description:
-        "React 游戏 HUD 区块：叠加在场景之上的船体（生命值）与护盾数值条、信用点计数、任务目标，以及可实际使用、带冷却时间的快捷栏。",
+        "React 游戏 HUD 代码块：叠加在场景之上的船体（生命值）与护盾数值条、信用点计数、任务目标，以及可实际使用、带冷却时间的快捷栏。",
       crumb: "HUD",
     },
   },
@@ -197,7 +197,7 @@ export const PAGES = [
     zh: {
       title: "Title screen",
       description:
-        "React 游戏标题画面与主菜单区块：以故障效果浮现的标题、方向键操作的菜单、公告面板与按键提示。",
+        "React 游戏标题画面与主菜单代码块：以故障效果浮现的标题、方向键操作的菜单、公告面板与按键提示。",
       crumb: "Title screen",
     },
   },
@@ -211,7 +211,7 @@ export const PAGES = [
     zh: {
       title: "Pause menu",
       description:
-        "React 游戏暂停菜单区块：本局战绩、继续、设置与地图，以及按住放弃本局；按 Esc 打开或关闭。",
+        "React 游戏暂停菜单代码块：本局战绩、继续、设置与地图，以及按住放弃本局；按 Esc 打开或关闭。",
       crumb: "Pause menu",
     },
   },
@@ -225,7 +225,7 @@ export const PAGES = [
     zh: {
       title: "Character select",
       description:
-        "React 游戏角色选择区块：角色卡片名单、以分段数值条显示的评级、专长、未解锁角色，以及按住出发。",
+        "React 游戏角色选择代码块：角色卡片名单、以分段数值条显示的评级、专长、未解锁角色，以及按住出发。",
       crumb: "Character select",
     },
   },
@@ -239,7 +239,7 @@ export const PAGES = [
     zh: {
       title: "Community feed",
       description:
-        "React 游戏社区留言板区块：帖子卡片瀑布流、类型筛选，以及带回复与操作的帖子侧滑面板。",
+        "React 游戏社区留言板代码块：帖子卡片瀑布流、类型筛选，以及带回复与操作的帖子侧滑面板。",
       crumb: "Community feed",
     },
   },
@@ -253,7 +253,7 @@ export const PAGES = [
     zh: {
       title: "Level rewards",
       description:
-        "React 赛季通行证区块：带经验值的个人信息条、按等级排列的奖励轨道，支持逐个领取与一键全部领取。",
+        "React 赛季通行证代码块：带经验值的个人信息条、按等级排列的奖励轨道，支持逐个领取与一键全部领取。",
       crumb: "Level rewards",
     },
   },
@@ -267,7 +267,7 @@ export const PAGES = [
     zh: {
       title: "Daily schedule",
       description:
-        "React 游戏每日日程区块：各时段的待办事项以任务目标形式列出，当前时段加框并标出 NOW。",
+        "React 游戏每日日程代码块：各时段的待办事项以任务目标形式列出，当前时段加框并标出 NOW。",
       crumb: "Daily schedule",
     },
   },
@@ -281,7 +281,7 @@ export const PAGES = [
     zh: {
       title: "示例应用",
       description:
-        "用 zzzUI 构建的示例应用：以区块与组件拼成完整的游戏界面，每个部分都能从 shadcn registry 安装。",
+        "用 zzzUI 构建的示例应用：以代码块与组件拼成完整的游戏界面，每个部分都能从 shadcn registry 安装。",
       crumb: "示例应用",
     },
   },
@@ -337,7 +337,7 @@ export const PAGES = [
     zh: {
       title: "指南",
       description:
-        "用 React 搭建游戏 UI 的系列教程：基于 zzzUI 和 shadcn，逐步实现游戏设置菜单和带伤害残影的血条，并介绍如何用设计令牌定制主题。",
+        "用 React 搭建游戏 UI 的系列教程：基于 zzzUI 和 shadcn，逐步实现游戏设置菜单和带伤害残影的血条，并介绍如何用设计 token 定制主题。",
       crumb: "指南",
     },
   },
@@ -377,9 +377,9 @@ export const PAGES = [
     crumb: "Theming",
     group: "guides",
     zh: {
-      title: "用设计令牌定制 zzzUI 主题",
+      title: "用设计 token 定制 zzzUI 主题",
       description:
-        "介绍如何定制 zzzUI 主题：在 :root 上覆盖斜切角度、描边粗细、强调色和动效时长的设计令牌，所有组件随之改变。",
+        "介绍如何定制 zzzUI 主题：在 :root 上覆盖斜切角度、描边粗细、强调色和动效时长的设计 token，所有组件随之改变。",
       crumb: "主题",
     },
   },
@@ -1258,7 +1258,7 @@ export const PAGES = [
     zh: {
       title: "Code block",
       description:
-        "React 代码块组件，支持行号、复制按钮，以及新增、删除与高亮行标记。",
+        "React 代码高亮展示组件 CodeBlock，支持行号、复制按钮，以及新增、删除与高亮行标记。",
       crumb: "Code block",
     },
   },

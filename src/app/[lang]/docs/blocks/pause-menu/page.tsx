@@ -75,7 +75,7 @@ export default async function PauseMenuPage({ params }: LangProps) {
                   <a href={link("/docs/hold-button")}>Hold button</a>、
                   <a href={link("/docs/gauge")}>Gauge</a>、
                   <a href={link("/docs/kbd")}>Kbd</a>{" "}
-                  组成，安装此区块时会一并安装这些组件。
+                  组成，安装此代码块时会一并安装这些组件。
                 </p>
               </>
             ),

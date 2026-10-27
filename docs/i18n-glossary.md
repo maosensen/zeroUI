@@ -6,12 +6,12 @@ zzzUI 站点中文版的用词。中文是重写，不是翻译（user 级 `i18n
 | 概念 | zh | en | 说明 |
 |---|---|---|---|
 | component | 组件 | component | |
-| block | 区块 | block | 一整屏的组合，`registry:block` |
+| block | 代码块 | block | 一整屏的组合，`registry:block`（作者 2026-10-27 定，原为「区块」）；Code block 组件在正文里写组件名 CodeBlock，不叫代码块 |
 | example (app) | 示例应用 | example | 整页的示例，界面保持英文 |
 | demo | 示例 | demo / example | 文档里的一个示例 |
 | props | 属性 | props | 表头「属性」；属性名保留英文 |
 | foundation | 地基 | foundation | token、动效、图标与 CSS 工具类的总称 |
-| token | 设计令牌 | token | 首次出现可写「设计令牌（token）」；`--zero-*` 保留原样 |
+| token | 设计 token | token | 作者 2026-10-27 定（原为「设计令牌」）；`--zero-*` 保留原样 |
 | slab | 斜切块 | slab | 固定高度、两端斜切的块；工具类名 `slab` 保留 |
 | slant | 斜切角度 | slant | `--zero-slant` |
 | cut | 切角 / 斜切 | cut | 动词用「斜切」，名词用「切角」 |
@@ -62,6 +62,6 @@ zzzUI 站点中文版的用词。中文是重写，不是翻译（user 级 `i18n
 
 ## 保留英文的
 
-组件名与区块名（Button、Gauge、Settings menu……，导航和标题里也不译）、shadcn、registry、Base UI、React、
+组件名与代码块名（Button、Gauge、Settings menu……，导航和标题里也不译）、shadcn、registry、Base UI、React、
 Tailwind、Next.js、CSS、SVG、ARIA、`aria-*` 属性、HTML 元素名、属性名与类型、token 名、类名、键名（Q、E、Enter）、
 代码与命令、示例应用和示例里的界面文字。

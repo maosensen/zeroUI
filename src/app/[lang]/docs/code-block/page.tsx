@@ -60,7 +60,8 @@ export default async function CodeBlockPage({ params }: LangProps) {
             zh: (
               <>
                 <p>
-                  头部可选，用于放置标题与操作按钮；没有头部时，操作按钮位于角落，指针悬停在代码块上时才显示。CodeBlockCopyButton
+                  头部可选，用于放置标题与操作按钮；没有头部时，操作按钮位于角落，指针悬停在
+                  CodeBlock 上时才显示。CodeBlockCopyButton
                   复制代码后显示一个对勾，持续两秒。
                 </p>
                 <p>
@@ -154,6 +155,15 @@ export default async function CodeBlockPage({ params }: LangProps) {
               description: pick({
                 en: "What it copies.",
                 zh: "要复制的内容。",
+              }),
+            },
+            {
+              name: "labels",
+              type: "{ copy?: string; copied?: string }",
+              default: '"Copy" / "Copied"',
+              description: pick({
+                en: "The button's name before and after copying.",
+                zh: "复制前后按钮的可访问名称。",
               }),
             },
           ]}

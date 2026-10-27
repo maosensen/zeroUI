@@ -106,7 +106,14 @@ function PaginationNext({
   );
 }
 
-function PaginationEllipsis({ className, ...props }: ComponentProps<"span">) {
+function PaginationEllipsis({
+  className,
+  label = "More pages",
+  ...props
+}: ComponentProps<"span"> & {
+  /** What screen readers hear for the pages left out. */
+  label?: string;
+}) {
   return (
     <span
       aria-hidden
@@ -118,7 +125,7 @@ function PaginationEllipsis({ className, ...props }: ComponentProps<"span">) {
       {...props}
     >
       <MoreIcon />
-      <span className="sr-only">More pages</span>
+      <span className="sr-only">{label}</span>
     </span>
   );
 }
