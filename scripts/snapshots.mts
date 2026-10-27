@@ -147,6 +147,17 @@ try {
       "(async () => { const s = document.createElement('style'); s.textContent = '*, *::before, *::after { transition: none !important; animation: none !important; caret-color: transparent !important; } nextjs-portal { display: none !important; }'; document.head.append(s); await document.fonts.ready; })()",
     );
     await wait(1200); // charts and carousels settle
+    // a chart sizes itself from its box after a ResizeObserver round, late on a busy machine:
+    // wait until every chart fills its box and the sizes hold still for two looks
+    let last = "";
+    for (let i = 0; i < 40; i++) {
+      const sizes = await evaluate<string>(
+        "[...document.querySelectorAll('.recharts-responsive-container')].map((box) => { const chart = box.querySelector('.recharts-wrapper'); if (!chart) return 'none'; const b = box.getBoundingClientRect(), c = chart.getBoundingClientRect(); return Math.abs(b.width - c.width) > 1 ? 'off' : Math.round(c.width) + 'x' + Math.round(c.height); }).join(' ')",
+      );
+      if (sizes === last && !/none|off/.test(sizes)) break;
+      last = sizes;
+      await wait(300);
+    }
     const demos = await evaluate<
       { name: string; x: number; y: number; w: number; h: number }[]
     >(
@@ -155,18 +166,30 @@ try {
     for (const demo of demos) {
       if (SKIP.has(demo.name)) continue;
       if (only.size > 0 && !only.has(demo.name)) continue;
-      const { data } = await send<{ data: string }>("Page.captureScreenshot", {
-        format: "png",
-        captureBeyondViewport: true,
-        clip: {
-          x: demo.x,
-          y: demo.y,
-          width: Math.ceil(demo.w),
-          height: Math.ceil(demo.h),
-          scale: 1,
-        },
-      });
-      const shot = Buffer.from(data, "base64");
+      // photograph a demo where it is on screen: a chart below the fold is painted from a stale
+      // frame when captured beyond the viewport; leave room above it for the sticky header
+      const photograph = async () => {
+        const top = await evaluate<number>(
+          `(async () => { scrollTo(0, ${demo.y - 160}); await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))); return scrollY; })()`,
+        );
+        await wait(150);
+        const { data } = await send<{ data: string }>(
+          "Page.captureScreenshot",
+          {
+            format: "png",
+            captureBeyondViewport: demo.h > 900 - (demo.y - top),
+            clip: {
+              x: demo.x,
+              y: demo.y,
+              width: Math.ceil(demo.w),
+              height: Math.ceil(demo.h),
+              scale: 1,
+            },
+          },
+        );
+        return Buffer.from(data, "base64");
+      };
+      let shot = await photograph();
       const file = join(DIR, `${demo.name}.png`);
       checked++;
       if (UPDATE || !existsSync(file)) {
@@ -175,29 +198,41 @@ try {
         continue;
       }
       const before = PNG.sync.read(readFileSync(file));
-      const after = PNG.sync.read(shot);
-      if (before.width !== after.width || before.height !== after.height) {
-        changed.push(
-          `${demo.name} (size ${before.width}×${before.height} → ${after.width}×${after.height})`,
+      /** How this photo differs from the baseline, or null when it matches. */
+      const differs = (shot: Buffer) => {
+        const after = PNG.sync.read(shot);
+        if (before.width !== after.width || before.height !== after.height)
+          return {
+            label: `${demo.name} (size ${before.width}×${before.height} → ${after.width}×${after.height})`,
+          };
+        const diff = new PNG({ width: after.width, height: after.height });
+        const pixels = pixelmatch(
+          before.data,
+          after.data,
+          diff.data,
+          after.width,
+          after.height,
+          { threshold: 0.1 },
         );
-        writeFileSync(join(DIFFS, `${demo.name}.after.png`), shot);
-        continue;
+        return pixels / (after.width * after.height) > TOLERANCE
+          ? { label: `${demo.name} (${pixels} px)`, diff }
+          : null;
+      };
+      // a busy machine can hand over a frame from before the page settled: a demo counts as
+      // changed only when it still differs a second and a third time (a real change always does)
+      let found = differs(shot);
+      for (let retry = 0; found && retry < 2; retry++) {
+        await wait(1000);
+        shot = await photograph();
+        found = differs(shot);
       }
-      const diff = new PNG({ width: after.width, height: after.height });
-      const pixels = pixelmatch(
-        before.data,
-        after.data,
-        diff.data,
-        after.width,
-        after.height,
-        { threshold: 0.1 },
-      );
-      if (pixels / (after.width * after.height) > TOLERANCE) {
-        changed.push(`${demo.name} (${pixels} px)`);
-        writeFileSync(
-          join(DIFFS, `${demo.name}.diff.png`),
-          PNG.sync.write(diff),
-        );
+      if (found) {
+        changed.push(found.label);
+        if (found.diff)
+          writeFileSync(
+            join(DIFFS, `${demo.name}.diff.png`),
+            PNG.sync.write(found.diff),
+          );
         writeFileSync(join(DIFFS, `${demo.name}.after.png`), shot);
       }
     }
